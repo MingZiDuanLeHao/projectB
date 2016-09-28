@@ -6,16 +6,11 @@
 //  Copyright © 2016年 苏  华. All rights reserved.
 //
 
-#import "CenterTableViewController.h"
-#import "NewsMainController.h"
-#import "BuyMainController.h"
-#import "RadioMainController.h"
-#import "VedioMainController.h"
-#import "MMNavigationController.h"
-#import "UIViewController+MMDrawerController.h"
+#import "LeftSettingController.h"
 
 
-@interface CenterTableViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@interface LeftSettingController ()<UITableViewDelegate, UITableViewDataSource>
 
 
 @property (nonatomic,strong ) NSArray *array;
@@ -23,7 +18,7 @@
 
 @end
 
-@implementation CenterTableViewController
+@implementation LeftSettingController
 
 -(id)init{
     
@@ -55,7 +50,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _array = @[@"本地", @"主页", @"清理缓存", @"设置",@"关于"];
+    _array = @[@"主页",@"本地", @"清理缓存", @"设置",@"关于"];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     
@@ -100,29 +95,8 @@
     switch (indexPath.row) {
         case 0://阅读
         {
-            //创建一个TabBarController,作为window的根视图控制器
-            UITabBarController *mainTab = [[UITabBarController alloc]init];
-            //数组有几个元素 代表有几个小模块
-            //新闻模块
-            NewsMainController *vc = [NewsMainController new];
-            UINavigationController *newNav = [[UINavigationController alloc]initWithRootViewController:vc];
-         //   newNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"新闻" image:@"11" selectedImage:@"11"];
             
-            //视听模块
-            VedioMainController *vedio = [VedioMainController new];
-            UINavigationController *vedionav = [[UINavigationController alloc]initWithRootViewController:vedio];
-         //   vedionav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"新闻" image:@"11" selectedImage:@"11"];
-            
-            //视听模块
-            RadioMainController *deal = [RadioMainController new];
-            UINavigationController *dealnav = [[UINavigationController alloc]initWithRootViewController:deal];
-          //  dealnav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"新闻" image:@"" selectedImage:@""];
-            
-            //tabbar
-            mainTab.viewControllers = @[newNav,vedionav,dealnav];
-            
-            [self.mm_drawerController setCenterViewController:mainTab withCloseAnimation:YES completion:nil];
-            
+    
         }
             break;
         case 1://电台

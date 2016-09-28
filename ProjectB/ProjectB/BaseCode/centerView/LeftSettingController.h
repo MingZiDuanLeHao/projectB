@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterTableViewController : UIViewController
+@interface LeftSettingController : UIViewController
 
 @end

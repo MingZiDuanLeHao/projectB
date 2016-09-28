@@ -1,18 +1,18 @@
 //
-//  RightWeatherController.m
+//  ShowViewController.m
 //  ProjectB
 //
-//  Created by lanou on 2016/9/28.
+//  Created by 瓶子 on 2016/9/28.
 //  Copyright © 2016年 lanou. All rights reserved.
 //
 
-#import "RightWeatherController.h"
+#import "ShowViewController.h"
 
-@interface RightWeatherController ()
+@interface ShowViewController ()
 
 @end
 
-@implementation RightWeatherController
+@implementation ShowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
