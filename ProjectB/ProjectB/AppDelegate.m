@@ -83,14 +83,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-                                          green:173.0/255.0
-                                           blue:234.0/255.0
-                                          alpha:1.0];
-    [self.window setTintColor:tintColor];
     [self.window setRootViewController:self.drawerController];
     return YES;
 }
+
 //- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
 //{
 //    NSString * key = [identifierComponents lastObject];
@@ -100,8 +96,6 @@
 //    else if ([key isEqualToString:@"center"]) {
 //        return ((MMDrawerController *)self.window.rootViewController).centerViewController;
 //    }
-
-    
 //    return nil;
 //    
 //}
@@ -109,6 +103,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
