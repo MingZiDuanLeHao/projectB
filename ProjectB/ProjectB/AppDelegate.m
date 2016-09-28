@@ -7,12 +7,61 @@
 //
 
 #import "AppDelegate.h"
+#import "NewsMainController.h"
+#import "RightWeatherController.h"
 
 @interface AppDelegate ()
+@property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    
+#pragma mark 抽屉
+    NewsMainController *CenterVC = [NewsMainController new];
+    
+    
+    CenterTableViewController *leftVC = [CenterTableViewController new];
+    RightWeatherController *RightVC = [RightWeatherController new];
+    
+    UINavigationController *nav = [[MMNavigationController alloc] initWithRootViewController:CenterVC];
+    [nav setRestorationIdentifier:@"center"];
+    
+    
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:nav leftDrawerViewController:leftVC rightDrawerViewController:RightVC];
+    
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                          green:173.0/255.0
+                                           blue:234.0/255.0
+                                          alpha:1.0];
+    [self.window setTintColor:tintColor];
+    [self.window setRootViewController:self.drawerController];
+    return YES;
+}
+- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    NSString * key = [identifierComponents lastObject];
+    if([key isEqualToString:@"MMDrawer"]){
+        return self.window.rootViewController;
+    }
+    else if ([key isEqualToString:@"center"]) {
+        return ((MMDrawerController *)self.window.rootViewController).centerViewController;
+    }
+    
+    
+    return nil;
+    
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
