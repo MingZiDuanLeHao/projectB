@@ -71,6 +71,8 @@
 		3F45A8441D9BA7FD00A83BB1 /* ProjectB */ = {
 			isa = PBXGroup;
 			children = (
+				3F45A8A51D9BC80000A83BB1 /* BaseCode */,
+				3F45A8A41D9BC79700A83BB1 /* Libs */,
 				3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */,
 				3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */,
 				3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */,
@@ -88,6 +90,189 @@
 				3F45A8461D9BA7FD00A83BB1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F45A8A41D9BC79700A83BB1 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		3F45A8A51D9BC80000A83BB1 /* BaseCode */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8BB1D9BCBFE00A83BB1 /* Weather */,
+				3F45A8A91D9BC97F00A83BB1 /* Main */,
+				3F45A8A71D9BC8F800A83BB1 /* Setting */,
+				3F45A8A61D9BC81D00A83BB1 /* About */,
+			);
+			path = BaseCode;
+			sourceTree = "<group>";
+		};
+		3F45A8A61D9BC81D00A83BB1 /* About */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = About;
+			path = about;
+			sourceTree = "<group>";
+		};
+		3F45A8A71D9BC8F800A83BB1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3F45A8A91D9BC97F00A83BB1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8AA1D9BC9B900A83BB1 /* News */,
+				3F45A8AB1D9BC9CF00A83BB1 /* Play */,
+				3F45A8AC1D9BC9E600A83BB1 /* Buy */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3F45A8AA1D9BC9B900A83BB1 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8B11D9BCA8400A83BB1 /* Controller */,
+				3F45A8B01D9BCA7300A83BB1 /* Model */,
+				3F45A8AF1D9BCA6100A83BB1 /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		3F45A8AB1D9BC9CF00A83BB1 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8AE1D9BCA2600A83BB1 /* Vedio */,
+				3F45A8AD1D9BCA1400A83BB1 /* Radio */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		3F45A8AC1D9BC9E600A83BB1 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8BA1D9BCB6F00A83BB1 /* Controller */,
+				3F45A8B91D9BCB6000A83BB1 /* Model */,
+				3F45A8B81D9BCB4D00A83BB1 /* View */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		3F45A8AD1D9BCA1400A83BB1 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8B71D9BCB3C00A83BB1 /* Controller */,
+				3F45A8B61D9BCB2F00A83BB1 /* Model */,
+				3F45A8B51D9BCB2300A83BB1 /* View */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		3F45A8AE1D9BCA2600A83BB1 /* Vedio */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8B41D9BCB0D00A83BB1 /* Controller */,
+				3F45A8B31D9BCAFE00A83BB1 /* Model */,
+				3F45A8B21D9BCAEE00A83BB1 /* View */,
+			);
+			path = Vedio;
+			sourceTree = "<group>";
+		};
+		3F45A8AF1D9BCA6100A83BB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F45A8B01D9BCA7300A83BB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F45A8B11D9BCA8400A83BB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F45A8B21D9BCAEE00A83BB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F45A8B31D9BCAFE00A83BB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F45A8B41D9BCB0D00A83BB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F45A8B51D9BCB2300A83BB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F45A8B61D9BCB2F00A83BB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F45A8B71D9BCB3C00A83BB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F45A8B81D9BCB4D00A83BB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F45A8B91D9BCB6000A83BB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F45A8BA1D9BCB6F00A83BB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F45A8BB1D9BCBFE00A83BB1 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Weather;
 			sourceTree = "<group>";
 		};
 		8F838638800B8B98F8DB260C /* Frameworks */ = {
