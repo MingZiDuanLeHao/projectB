@@ -9,6 +9,7 @@
 #import "RadioMainController.h"
 
 @interface RadioMainController ()
+@property (nonatomic,strong) UIScrollView *scroll;
 
 @end
 
@@ -16,22 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"电台";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)initUI
+{
+    self.scroll.frame = CGRectMake(0, 0, 320, 640);
 }
 
-/*
-#pragma mark - Navigation
+#pragma marks- 懒加载
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UIScrollView *)scroll
+{
+    if (!_scroll) {
+        _scroll = [[UIScrollView alloc]init];
+    }
+    return _scroll;
 }
-*/
+
 
 @end

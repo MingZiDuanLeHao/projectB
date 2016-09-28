@@ -7,6 +7,8 @@
 //
 
 #import "ShowViewController.h"
+#import "VedioMainController.h"
+#import "RadioMainController.h"
 
 @interface ShowViewController ()
 
@@ -19,10 +21,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//进入视频列表
+- (IBAction)vedioHandle:(UIButton *)sender {
+    VedioMainController *vedioVC = [VedioMainController new];
+    [self.navigationController pushViewController:vedioVC animated:YES];
+    
 }
+- (IBAction)RadioHandle:(UIButton *)sender {
+    RadioMainController *radioVC = [RadioMainController new];
+    [self.navigationController pushViewController:radioVC animated:YES];
+}
+
+
 
 /*
 #pragma mark - Navigation
