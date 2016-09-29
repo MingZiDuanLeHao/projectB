@@ -17,8 +17,12 @@
 		3F2539531D9BFB460072831B /* 外卖2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394D1D9BFB460072831B /* 外卖2.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539541D9BFB460072831B /* 新闻.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394E1D9BFB460072831B /* 新闻.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539551D9BFB460072831B /* 新闻2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394F1D9BFB460072831B /* 新闻2.png */; settings = {ASSET_TAGS = (); }; };
+<<<<<<< HEAD
 		3F33C6F01D9CB3E900621E92 /* RadioDetailList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6EE1D9CB3E900621E92 /* RadioDetailList.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C6F11D9CB3E900621E92 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6EF1D9CB3E900621E92 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
+=======
+		3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F25395E1D9CB3820072831B /* NetWorkRequest.m */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> 2a80254cf64825c00939ebb71d4cab159a3b8354
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -53,9 +57,14 @@
 		3F25394E1D9BFB460072831B /* 新闻.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻.png"; sourceTree = "<group>"; };
 		3F25394F1D9BFB460072831B /* 新闻2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻2.png"; sourceTree = "<group>"; };
 		3F25395A1D9CA38D0072831B /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		3F33C6ED1D9CB3E900621E92 /* RadioDetailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailList.h; sourceTree = "<group>"; };
 		3F33C6EE1D9CB3E900621E92 /* RadioDetailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailList.m; sourceTree = "<group>"; };
 		3F33C6EF1D9CB3E900621E92 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
+=======
+		3F25395D1D9CB3820072831B /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		3F25395E1D9CB3820072831B /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
+>>>>>>> 2a80254cf64825c00939ebb71d4cab159a3b8354
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,7 +77,7 @@
 		3F45A8C71D9BDB7D00A83BB1 /* LeftSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSettingController.m; sourceTree = "<group>"; };
 		3F45A8C81D9BDB7D00A83BB1 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
 		3F45A8C91D9BDB7D00A83BB1 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
-		3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../../PrefixHeader.pch; sourceTree = "<group>"; };
 		3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioMainController.h; sourceTree = "<group>"; };
 		3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioMainController.m; sourceTree = "<group>"; };
 		3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioMainController.xib; sourceTree = "<group>"; };
@@ -142,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				3F25395A1D9CA38D0072831B /* ToolsHelper.h */,
+				3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -177,7 +187,6 @@
 				3F45A8531D9BA7FD00A83BB1 /* LaunchScreen.storyboard */,
 				3F45A8561D9BA7FD00A83BB1 /* Info.plist */,
 				3F45A8451D9BA7FD00A83BB1 /* Supporting Files */,
-				3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */,
 			);
 			path = ProjectB;
 			sourceTree = "<group>";
@@ -193,6 +202,8 @@
 		3F45A8A41D9BC79700A83BB1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3F25395D1D9CB3820072831B /* NetWorkRequest.h */,
+				3F25395E1D9CB3820072831B /* NetWorkRequest.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -556,6 +567,7 @@
 				3F33C6F01D9CB3E900621E92 /* RadioDetailList.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
+				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
 				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
 			);

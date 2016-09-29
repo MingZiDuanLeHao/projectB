@@ -3,6 +3,7 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -22,15 +23,17 @@ PODS:
 DEPENDENCIES:
   - FMDB (~> 2.6)
   - MBProgressHUD (~> 1.0.0)
+  - MJRefresh (~> 3.1)
   - MMDrawerController (~> 0.6)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 9285abf0b1063ff5f2a88c399e5be940b6c142d9
+PODFILE CHECKSUM: fdb728cd41c71e54b95671902c11b41eb0c12091
 
 COCOAPODS: 1.0.0
