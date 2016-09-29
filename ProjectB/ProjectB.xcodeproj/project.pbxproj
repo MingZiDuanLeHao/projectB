@@ -17,6 +17,8 @@
 		3F2539531D9BFB460072831B /* 外卖2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394D1D9BFB460072831B /* 外卖2.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539541D9BFB460072831B /* 新闻.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394E1D9BFB460072831B /* 新闻.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539551D9BFB460072831B /* 新闻2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394F1D9BFB460072831B /* 新闻2.png */; settings = {ASSET_TAGS = (); }; };
+		3F33C6F01D9CB3E900621E92 /* RadioDetailList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6EE1D9CB3E900621E92 /* RadioDetailList.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C6F11D9CB3E900621E92 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6EF1D9CB3E900621E92 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -51,6 +53,9 @@
 		3F25394E1D9BFB460072831B /* 新闻.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻.png"; sourceTree = "<group>"; };
 		3F25394F1D9BFB460072831B /* 新闻2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻2.png"; sourceTree = "<group>"; };
 		3F25395A1D9CA38D0072831B /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
+		3F33C6ED1D9CB3E900621E92 /* RadioDetailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailList.h; sourceTree = "<group>"; };
+		3F33C6EE1D9CB3E900621E92 /* RadioDetailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailList.m; sourceTree = "<group>"; };
+		3F33C6EF1D9CB3E900621E92 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -347,6 +352,9 @@
 				3F45A8D81D9BE27000A83BB1 /* RadioMainController.h */,
 				3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */,
 				3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */,
+				3F33C6ED1D9CB3E900621E92 /* RadioDetailList.h */,
+				3F33C6EE1D9CB3E900621E92 /* RadioDetailList.m */,
+				3F33C6EF1D9CB3E900621E92 /* RadioDetailList.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,6 +475,7 @@
 			files = (
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
+				3F33C6F11D9CB3E900621E92 /* RadioDetailList.xib in Resources */,
 				3F2539491D9BF5940072831B /* ShowViewController.xib in Resources */,
 				3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */,
 				3F2539541D9BFB460072831B /* 新闻.png in Resources */,
@@ -544,6 +553,7 @@
 				3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */,
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
 				3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */,
+				3F33C6F01D9CB3E900621E92 /* RadioDetailList.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
