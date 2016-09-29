@@ -1,5 +1,5 @@
 //
-//  RadioDetailList.h
+//  RedioDetailListCell.h
 //  ProjectB
 //
 //  Created by lanou on 2016/9/29.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RadioDetailList : UIViewController
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segMent;
+@interface RedioDetailListCell : UITableViewCell
 
 @end

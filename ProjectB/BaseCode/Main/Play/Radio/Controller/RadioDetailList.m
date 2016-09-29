@@ -7,21 +7,104 @@
 //
 
 #import "RadioDetailList.h"
+#import "RedioDetailListCell.h"
+#import "radioController.h"
 
-@interface RadioDetailList ()
+@interface RadioDetailList ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) UITableView *listTab;
+@property (nonatomic,strong) UIScrollView *ScrollView;
 
 @end
-
+static NSString *detailListCell = @"detailListCell";
 @implementation RadioDetailList
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self initUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)initUI
+{
+    //scrollview
+    self.ScrollView.frame = CGRectMake(0, 250, SWidth, SHeight - 260 - 44);
+    _ScrollView.contentSize = CGSizeMake(SWidth * 2, 0);
+    _ScrollView.pagingEnabled = YES;
+    _ScrollView.delegate = self;
+    _ScrollView.tag = 100;
+    [self.view addSubview:_ScrollView];
+    
+    //listtable
+    self.listTab.frame = CGRectMake(SWidth, 0, SWidth, SHeight -260 - 44);
+    [_listTab registerNib:[UINib nibWithNibName:@"RedioDetailListCell" bundle:nil] forCellReuseIdentifier:detailListCell];
+    _listTab.showsVerticalScrollIndicator = NO;
+    _listTab.delegate = self;
+    _listTab.dataSource = self;
+    
+    [_ScrollView addSubview:_listTab];
+}
+#pragma marks- 懒加载
+//scroll
+-(UIScrollView *)ScrollView
+{
+    if (!_ScrollView) {
+        _ScrollView = [[UIScrollView alloc]init];
+    }
+    return _ScrollView;
+}
+
+//列表
+-(UITableView *)listTab
+{
+    if (!_listTab) {
+        _listTab = [[UITableView alloc]init];
+    }
+    return _listTab;
+}
+
+#pragma mark - UITableViewDelegate DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 120;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+ 
+    RedioDetailListCell *cell = [tableView dequeueReusableCellWithIdentifier:detailListCell];
+ 
+    return cell;
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    radioController *vc = [radioController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - segmentHandle
+- (IBAction)segHandle:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+      [_ScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }else
+    {
+      [_ScrollView setContentOffset:CGPointMake(SWidth, 0) animated:YES];
+    }
+}
+#pragma mark - SCrollViewDelegate
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    //因为tableView继承scrollView所以滑动tableView也会执行scrollViewDidEndDecelerating代理方法
+    if (scrollView.tag == 100) {
+        NSInteger index = scrollView.contentOffset.x / SWidth;
+        _segMent.selectedSegmentIndex = index;
+    }
+    
+
+
 }
 
 /*
