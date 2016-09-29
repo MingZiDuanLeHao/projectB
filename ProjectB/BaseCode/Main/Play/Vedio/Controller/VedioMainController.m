@@ -46,12 +46,18 @@
     [img2 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
     [img3 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
     [img4 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
+    img1.userInteractionEnabled = YES;
+    img2.userInteractionEnabled = YES;
+    img3.userInteractionEnabled = YES;
+    img4.userInteractionEnabled = YES;
+    
 }
 
 
 -(void)imgClick:(UITapGestureRecognizer *)tap
 {
-    
+
+    NSLog(@"%ld",tap.view.tag);
 }
 
 #pragma marks-懒加载
