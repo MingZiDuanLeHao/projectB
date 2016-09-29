@@ -16,5 +16,6 @@
 #import "MMDrawerBarButtonItem.h"
 #import "LeftSettingController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "ToolsHelper.h"
 
 #endif /* PrefixHeader_pch */

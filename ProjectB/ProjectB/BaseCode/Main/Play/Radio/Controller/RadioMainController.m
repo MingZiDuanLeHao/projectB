@@ -22,7 +22,7 @@
 
 -(void)initUI
 {
-    self.scroll.frame = CGRectMake(0, 0, 320, 640);
+    self.scroll.frame = CGRectMake(0, 0,, 640);
 }
 
 #pragma marks- 懒加载
