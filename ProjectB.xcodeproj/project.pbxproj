@@ -27,6 +27,8 @@
 		3F33C7041D9CEA3100621E92 /* radioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C7021D9CEA3100621E92 /* radioController.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7031D9CEA3100621E92 /* radioController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7081D9D0D5D00621E92 /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F33C7101D9D2E6A00621E92 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70C1D9D2E6A00621E92 /* List.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70E1D9D2E6A00621E92 /* RadioMain.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -76,6 +78,11 @@
 		3F33C7021D9CEA3100621E92 /* radioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = radioController.m; sourceTree = "<group>"; };
 		3F33C7031D9CEA3100621E92 /* radioController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = radioController.xib; sourceTree = "<group>"; };
 		3F33C7081D9D0D5D00621E92 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		3F33C70B1D9D2E6A00621E92 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		3F33C70C1D9D2E6A00621E92 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		3F33C70D1D9D2E6A00621E92 /* RadioMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMain.h; sourceTree = "<group>"; };
+		3F33C70E1D9D2E6A00621E92 /* RadioMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMain.m; sourceTree = "<group>"; };
+		3F33C70F1D9D2E6A00621E92 /* RadioMainDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainDataModels.h; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +172,18 @@
 				3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		3F33C70A1D9D2E6A00621E92 /* RadioMain */ = {
+			isa = PBXGroup;
+			children = (
+				3F33C70B1D9D2E6A00621E92 /* List.h */,
+				3F33C70C1D9D2E6A00621E92 /* List.m */,
+				3F33C70D1D9D2E6A00621E92 /* RadioMain.h */,
+				3F33C70E1D9D2E6A00621E92 /* RadioMain.m */,
+				3F33C70F1D9D2E6A00621E92 /* RadioMainDataModels.h */,
+			);
+			path = RadioMain;
 			sourceTree = "<group>";
 		};
 		3F45A8391D9BA7FD00A83BB1 = {
@@ -371,6 +390,7 @@
 		3F45A8B61D9BCB2F00A83BB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F33C70A1D9D2E6A00621E92 /* RadioMain */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -593,9 +613,11 @@
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
 				3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */,
 				3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */,
+				3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
+				3F33C7101D9D2E6A00621E92 /* List.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
 				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
 			);

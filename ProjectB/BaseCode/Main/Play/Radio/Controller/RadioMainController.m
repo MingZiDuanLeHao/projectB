@@ -9,6 +9,8 @@
 #import "RadioMainController.h"
 #import "RadioDetailList.h"
 #import "RadioMainRightTableCell.h"
+#import "NetWorkRequest.h"
+#import "RadioMainDataModels.h"
 
 @interface RadioMainController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *leftTable;
@@ -25,11 +27,11 @@ static NSString *rightCell = @"rightCell";
     [super viewDidLoad];
     self.title = @"电台";
     [self initUI];
+  //  [self requestData];
 }
 
 -(void)initUI
 {
-    
     //左table
     self.leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
     [_leftTable registerClass:[UITableViewCell class] forCellReuseIdentifier:leftCell];
@@ -58,7 +60,17 @@ static NSString *rightCell = @"rightCell";
     }
     _selectIndex = selectIndex;
 
-
+}
+//
+-(void)requestData
+{
+    [NetWorkRequest requestWithMethod:GET URL:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=113&pageId=1&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27" para:nil success:^(NSData *data) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"dic======%@",dic);
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
+    
 }
 
 #pragma marks- 懒加载
@@ -95,12 +107,14 @@ static NSString *rightCell = @"rightCell";
     }
     
 }
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView == _leftTable) {
-        cell.textLabel.textColor = [UIColor grayColor];
-    }
-}
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (tableView == _leftTable) {
+//        cell.textLabel.textColor = [UIColor grayColor];
+//        
+//      
+//    }
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // 左边表格
    
@@ -111,6 +125,10 @@ static NSString *rightCell = @"rightCell";
         cell.textLabel.text = _radioArr[indexPath.row];
         cell.textLabel.textColor = [UIColor grayColor];
         cell.textLabel.numberOfLines = 0;
+        if (indexPath.row == 0) {
+
+            cell.textLabel.textColor = [UIColor redColor];
+        }
         //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -146,11 +164,12 @@ static NSString *rightCell = @"rightCell";
 #pragma mark - <UITableViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectIndex = indexPath.row;
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+   // [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == _leftTable) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.textLabel.textColor = [UIColor redColor];
+            self.selectIndex = indexPath.row;
         
     }else{
         RadioDetailList *listVC = [RadioDetailList new];
