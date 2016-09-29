@@ -7,6 +7,7 @@
 //
 
 #import "NewsMainController.h"
+#import "NewsMainTableViewCell.h"
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
@@ -77,7 +78,10 @@
         UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(i * self.contentScrollView.frame.size.width * Ratio, 0, self.contentScrollView.frame.size.width * Ratio, self.contentScrollView.frame.size.height) style:UITableViewStylePlain];
         table.delegate = self;
         table.dataSource = self;
-        [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ccc"];
+        UINib *myNib = [UINib nibWithNibName:@"NewsMainTableViewCell" bundle:nil];
+        [table registerNib:myNib forCellReuseIdentifier:@"NewsMainTableViewCell"];
+        table.estimatedRowHeight = 70;
+        table.rowHeight = UITableViewAutomaticDimension;
         [self.contentScrollView addSubview:table];
     }
     
@@ -105,18 +109,25 @@
 {
     return 1;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 50;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 50;
+//}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     //    if ([tableView isKindOfClass:[UITableView class]]) {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ccc"];
-    cell.textLabel.text = @"哈哈哈";
+    NewsMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsMainTableViewCell"];
+    
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+#pragma mark ScrollView
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -144,6 +155,8 @@
         
     }
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
