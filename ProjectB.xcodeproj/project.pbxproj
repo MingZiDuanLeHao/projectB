@@ -27,12 +27,12 @@
 		3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8C91D9BDB7D00A83BB1 /* MMNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */; settings = {ASSET_TAGS = (); }; };
-		3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8DC1D9BE27000A83BB1 /* RadioMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8DE1D9BE28E00A83BB1 /* NewsMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8DF1D9BE28E00A83BB1 /* NewsMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */; settings = {ASSET_TAGS = (); }; };
+		3FA6AB9E1D9CC1D2009D5B67 /* RadioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */; };
 		403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -543,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */,
+				3FA6AB9E1D9CC1D2009D5B67 /* RadioMainController.m in Sources */,
 				3F2539481D9BF5940072831B /* ShowViewController.m in Sources */,
 				3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */,
 				3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */,
