@@ -20,6 +20,13 @@
 		3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F25395E1D9CB3820072831B /* NetWorkRequest.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C6F51D9CBD3700621E92 /* RadioDetailList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C6F61D9CBD3700621E92 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
+		3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6F81D9CBF8500621E92 /* RadioMainRightTableCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C6FB1D9CBF8500621E92 /* RadioMainRightTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6F91D9CBF8500621E92 /* RadioMainRightTableCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F33C6FF1D9CDFC800621E92 /* RedioDetailListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6FD1D9CDFC800621E92 /* RedioDetailListCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7001D9CDFC800621E92 /* RedioDetailListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6FE1D9CDFC800621E92 /* RedioDetailListCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F33C7041D9CEA3100621E92 /* radioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C7021D9CEA3100621E92 /* radioController.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7031D9CEA3100621E92 /* radioController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7081D9D0D5D00621E92 /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -29,14 +36,12 @@
 		3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8C91D9BDB7D00A83BB1 /* MMNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8DC1D9BE27000A83BB1 /* RadioMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8DE1D9BE28E00A83BB1 /* NewsMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8DF1D9BE28E00A83BB1 /* NewsMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */; settings = {ASSET_TAGS = (); }; };
-		3FA6AB9E1D9CC1D2009D5B67 /* RadioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */; };
-		3FA6ABA21D9D10BC009D5B67 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		3FA6ABA31D9D10BC009D5B67 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,16 @@
 		3F33C6F21D9CBD3700621E92 /* RadioDetailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailList.h; sourceTree = "<group>"; };
 		3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailList.m; sourceTree = "<group>"; };
 		3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
+		3F33C6F71D9CBF8500621E92 /* RadioMainRightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainRightTableCell.h; sourceTree = "<group>"; };
+		3F33C6F81D9CBF8500621E92 /* RadioMainRightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMainRightTableCell.m; sourceTree = "<group>"; };
+		3F33C6F91D9CBF8500621E92 /* RadioMainRightTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioMainRightTableCell.xib; sourceTree = "<group>"; };
+		3F33C6FC1D9CDFC800621E92 /* RedioDetailListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedioDetailListCell.h; sourceTree = "<group>"; };
+		3F33C6FD1D9CDFC800621E92 /* RedioDetailListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedioDetailListCell.m; sourceTree = "<group>"; };
+		3F33C6FE1D9CDFC800621E92 /* RedioDetailListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedioDetailListCell.xib; sourceTree = "<group>"; };
+		3F33C7011D9CEA3100621E92 /* radioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radioController.h; sourceTree = "<group>"; };
+		3F33C7021D9CEA3100621E92 /* radioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = radioController.m; sourceTree = "<group>"; };
+		3F33C7031D9CEA3100621E92 /* radioController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = radioController.xib; sourceTree = "<group>"; };
+		3F33C7081D9D0D5D00621E92 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,9 +101,6 @@
 		3F45A8E21D9BE2B500A83BB1 /* BuyMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyMainController.h; sourceTree = "<group>"; };
 		3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyMainController.m; sourceTree = "<group>"; };
 		3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyMainController.xib; sourceTree = "<group>"; };
-		3FA6AB9F1D9D10BC009D5B67 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
-		3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
-		3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		E5B94A3F61DF1F0EFDA62FC5 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +195,7 @@
 				3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */,
 				3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */,
 				3F45A8511D9BA7FD00A83BB1 /* Assets.xcassets */,
+				3F33C7081D9D0D5D00621E92 /* 1.jpg */,
 				3F45A8531D9BA7FD00A83BB1 /* LaunchScreen.storyboard */,
 				3F45A8561D9BA7FD00A83BB1 /* Info.plist */,
 				3F45A8451D9BA7FD00A83BB1 /* Supporting Files */,
@@ -297,9 +310,6 @@
 		3F45A8AF1D9BCA6100A83BB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3FA6AB9F1D9D10BC009D5B67 /* NewsTableViewCell.h */,
-				3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */,
-				3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +358,12 @@
 		3F45A8B51D9BCB2300A83BB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F33C6F71D9CBF8500621E92 /* RadioMainRightTableCell.h */,
+				3F33C6F81D9CBF8500621E92 /* RadioMainRightTableCell.m */,
+				3F33C6F91D9CBF8500621E92 /* RadioMainRightTableCell.xib */,
+				3F33C6FC1D9CDFC800621E92 /* RedioDetailListCell.h */,
+				3F33C6FD1D9CDFC800621E92 /* RedioDetailListCell.m */,
+				3F33C6FE1D9CDFC800621E92 /* RedioDetailListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +384,9 @@
 				3F33C6F21D9CBD3700621E92 /* RadioDetailList.h */,
 				3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */,
 				3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */,
+				3F33C7011D9CEA3100621E92 /* radioController.h */,
+				3F33C7021D9CEA3100621E92 /* radioController.m */,
+				3F33C7031D9CEA3100621E92 /* radioController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,7 +507,6 @@
 			files = (
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
-				3FA6ABA31D9D10BC009D5B67 /* NewsTableViewCell.xib in Resources */,
 				3F33C6F61D9CBD3700621E92 /* RadioDetailList.xib in Resources */,
 				3F2539491D9BF5940072831B /* ShowViewController.xib in Resources */,
 				3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */,
@@ -496,10 +514,14 @@
 				3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */,
+				3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
 				3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */,
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
+				3F33C6FB1D9CBF8500621E92 /* RadioMainRightTableCell.xib in Resources */,
+				3F33C7001D9CDFC800621E92 /* RedioDetailListCell.xib in Resources */,
+				3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */,
 				3F2539531D9BFB460072831B /* 外卖2.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F45A8DC1D9BE27000A83BB1 /* RadioMainController.xib in Resources */,
@@ -561,18 +583,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA6AB9E1D9CC1D2009D5B67 /* RadioMainController.m in Sources */,
+				3F33C6FF1D9CDFC800621E92 /* RedioDetailListCell.m in Sources */,
+				3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */,
+				3F33C7041D9CEA3100621E92 /* radioController.m in Sources */,
 				3F2539481D9BF5940072831B /* ShowViewController.m in Sources */,
 				3F33C6F51D9CBD3700621E92 /* RadioDetailList.m in Sources */,
 				3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */,
 				3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */,
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
 				3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */,
+				3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
-				3FA6ABA21D9D10BC009D5B67 /* NewsTableViewCell.m in Sources */,
 				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

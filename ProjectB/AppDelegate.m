@@ -20,6 +20,7 @@
 @interface AppDelegate ()
 @property (nonatomic,strong) MMDrawerController * drawerController;
 
+
 @end
 
 @implementation AppDelegate
@@ -70,7 +71,7 @@
     
     [self.drawerController setCenterViewController:mainTab withCloseAnimation:YES completion:nil];
     
-    
+    _mainTabble = mainTab;
     
 //    [mainTab setRestorationIdentifier:@"center"];
     
@@ -80,7 +81,7 @@
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
-    _mainBar = mainTab;
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [self.window setRootViewController:self.drawerController];

@@ -9,6 +9,8 @@
 #import "VedioMainController.h"
 
 @interface VedioMainController ()
+@property (strong, nonatomic)  UIScrollView *titleScrollView;
+@property (strong, nonatomic)  UIScrollView *contentScrollView;
 
 @end
 
@@ -16,22 +18,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self initUI];
+}
+-(void)initUI
+{
+    UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64 - 44)/2)];
+    img1.image = [UIImage imageNamed:@"1.jpg"];
+    img1.tag = 100;
+    [self.view addSubview:img1];
+    
+    UIImageView *img2 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, 64, SWidth/2, (SHeight - 64 - 44)/2)];
+        img2.tag = 101;
+    img2.image = [UIImage imageNamed:@"1.jpg"];
+    [self.view addSubview:img2];
+    
+    UIImageView *img3 = [[UIImageView alloc]initWithFrame:CGRectMake(0, SHeight/2, SWidth/2, (SHeight - 64 - 44)/2)];
+            img3.tag = 103;
+    img3.image = [UIImage imageNamed:@"1.jpg"];
+    [self.view addSubview:img3];
+    
+    UIImageView *img4 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, SHeight/2, SWidth/2, (SHeight - 64 - 44)/2)];
+            img4.tag = 104;
+    img4.image = [UIImage imageNamed:@"1.jpg"];
+    [self.view addSubview:img4];
+    
+    [img1 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
+    [img2 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
+    [img3 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
+    [img4 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)imgClick:(UITapGestureRecognizer *)tap
+{
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma marks-懒加载
+//标题
+-(UIScrollView *)titleScrollView
+{
+    if (!_titleScrollView) {
+        _titleScrollView = [[UIScrollView alloc]init];
+    }
+    return _titleScrollView;
 }
-*/
+//内容
+-(UIScrollView *)contentScrollView
+{
+    if (!_contentScrollView) {
+        _contentScrollView = [[UIScrollView alloc]init];
+    }
+    return _contentScrollView;
+}
 
 @end

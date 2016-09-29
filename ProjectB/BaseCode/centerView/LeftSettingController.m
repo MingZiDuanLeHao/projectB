@@ -96,8 +96,7 @@
     switch (indexPath.row) {
         case 0://阅读
         {
-            
-            [self.mm_drawerController setCenterViewController:((AppDelegate *)([UIApplication sharedApplication].delegate)).mainBar withCloseAnimation:YES completion:nil];
+             [self.mm_drawerController setCenterViewController:((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble withCloseAnimation:YES completion:nil];
     
         }
             break;

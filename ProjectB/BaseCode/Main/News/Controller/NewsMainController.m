@@ -112,10 +112,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    if ([tableView isKindOfClass:[UITableView class]]) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ccc"];
-        cell.textLabel.text = @"哈哈哈";
-        return cell;
+    //    if ([tableView isKindOfClass:[UITableView class]]) {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ccc"];
+    cell.textLabel.text = @"哈哈哈";
+    return cell;
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -144,12 +144,6 @@
         
     }
 }
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

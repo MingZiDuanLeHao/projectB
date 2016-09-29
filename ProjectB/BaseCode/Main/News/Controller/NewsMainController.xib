@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsMainController">
             <connections>
-                <outlet property="contentScrollView" destination="6D1-cz-aQr" id="cxp-Of-HFc"/>
-                <outlet property="titleScrollView" destination="uwM-95-Bi0" id="ey1-AC-AJz"/>
+                <outlet property="contentScrollView" destination="9qd-Fc-wpX" id="sMN-8w-HAJ"/>
+                <outlet property="titleScrollView" destination="nkA-rs-Sfb" id="55H-y9-S8t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,30 +16,30 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwM-95-Bi0">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkA-rs-Sfb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="38" id="AEh-cl-5yX"/>
+                        <constraint firstAttribute="height" constant="40" id="33R-64-rJV"/>
                     </constraints>
                 </scrollView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6D1-cz-aQr">
-                    <rect key="frame" x="0.0" y="38" width="320" height="530"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-Fc-wpX">
+                    <rect key="frame" x="0.0" y="40" width="320" height="528"/>
                     <animations/>
                 </scrollView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="6D1-cz-aQr" firstAttribute="top" secondItem="uwM-95-Bi0" secondAttribute="bottom" id="1bi-no-kZ2"/>
-                <constraint firstAttribute="bottom" secondItem="6D1-cz-aQr" secondAttribute="bottom" id="9OB-st-NKy"/>
-                <constraint firstItem="uwM-95-Bi0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S2a-Z5-Kw4"/>
-                <constraint firstAttribute="trailing" secondItem="uwM-95-Bi0" secondAttribute="trailing" id="USO-OE-DdK"/>
-                <constraint firstItem="6D1-cz-aQr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e0k-Xa-tzg"/>
-                <constraint firstItem="uwM-95-Bi0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jpI-w4-hbK"/>
-                <constraint firstAttribute="trailing" secondItem="6D1-cz-aQr" secondAttribute="trailing" id="olT-2D-8mp"/>
+                <constraint firstItem="nkA-rs-Sfb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="84j-Mo-VaP"/>
+                <constraint firstAttribute="trailing" secondItem="9qd-Fc-wpX" secondAttribute="trailing" id="9Su-No-vLZ"/>
+                <constraint firstItem="nkA-rs-Sfb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pei-Z3-ijg"/>
+                <constraint firstItem="9qd-Fc-wpX" firstAttribute="top" secondItem="nkA-rs-Sfb" secondAttribute="bottom" id="cfC-tm-Vej"/>
+                <constraint firstItem="9qd-Fc-wpX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gE1-41-70u"/>
+                <constraint firstAttribute="trailing" secondItem="nkA-rs-Sfb" secondAttribute="trailing" id="iWM-70-jTz"/>
+                <constraint firstAttribute="bottom" secondItem="9qd-Fc-wpX" secondAttribute="bottom" id="jZR-fk-Wot"/>
             </constraints>
-            <point key="canvasLocation" x="305" y="422"/>
+            <point key="canvasLocation" x="140" y="154"/>
         </view>
     </objects>
 </document>
