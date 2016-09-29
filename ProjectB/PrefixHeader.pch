@@ -18,5 +18,6 @@
 #import "UIViewController+MMDrawerController.h"
 #import "ToolsHelper.h"
 #import "MBProgressHUD.h"
+#import <WebKit/WebKit.h>
 
 #endif /* PrefixHeader_pch */

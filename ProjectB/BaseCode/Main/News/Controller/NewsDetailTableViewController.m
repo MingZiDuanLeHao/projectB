@@ -8,8 +8,9 @@
 
 #import "NewsDetailTableViewController.h"
 
-@interface NewsDetailTableViewController ()
 
+@interface NewsDetailTableViewController ()
+@property(nonatomic,strong)WKWebView *WebView;
 @end
 
 @implementation NewsDetailTableViewController
@@ -21,6 +22,9 @@
 
 -(void)initUI
 {
+    self.title = @"文章详情";
+    _WebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SWidth, SHeight)];
+    
     
 }
 

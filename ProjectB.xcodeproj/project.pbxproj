@@ -47,6 +47,7 @@
 		3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABAB1D9D36BE009D5B67 /* NewsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABAA1D9D36BE009D5B67 /* NewsDetailTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */; };
 		403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsMainTableViewCell.xib; sourceTree = "<group>"; };
 		3FA6ABA91D9D36BE009D5B67 /* NewsDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailTableViewController.h; sourceTree = "<group>"; };
 		3FA6ABAA1D9D36BE009D5B67 /* NewsDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailTableViewController.m; sourceTree = "<group>"; };
+		3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E5B94A3F61DF1F0EFDA62FC5 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */,
 				403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +476,7 @@
 		8F838638800B8B98F8DB260C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */,
 				29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */,
 			);
 			name = Frameworks;
