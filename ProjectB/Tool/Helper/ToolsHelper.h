@@ -18,6 +18,7 @@
 //屏幕高宽
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height
+#define Ratio SWidth / 320
 
 //16进制的颜色
 

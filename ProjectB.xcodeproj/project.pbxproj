@@ -35,6 +35,8 @@
 		3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3FA6AB9E1D9CC1D2009D5B67 /* RadioMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */; };
+		3FA6ABA21D9D10BC009D5B67 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		3FA6ABA31D9D10BC009D5B67 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,9 @@
 		3F45A8E21D9BE2B500A83BB1 /* BuyMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyMainController.h; sourceTree = "<group>"; };
 		3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyMainController.m; sourceTree = "<group>"; };
 		3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyMainController.xib; sourceTree = "<group>"; };
+		3FA6AB9F1D9D10BC009D5B67 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		E5B94A3F61DF1F0EFDA62FC5 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +297,9 @@
 		3F45A8AF1D9BCA6100A83BB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3FA6AB9F1D9D10BC009D5B67 /* NewsTableViewCell.h */,
+				3FA6ABA01D9D10BC009D5B67 /* NewsTableViewCell.m */,
+				3FA6ABA11D9D10BC009D5B67 /* NewsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 			files = (
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
+				3FA6ABA31D9D10BC009D5B67 /* NewsTableViewCell.xib in Resources */,
 				3F33C6F61D9CBD3700621E92 /* RadioDetailList.xib in Resources */,
 				3F2539491D9BF5940072831B /* ShowViewController.xib in Resources */,
 				3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */,
@@ -563,6 +572,7 @@
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
+				3FA6ABA21D9D10BC009D5B67 /* NewsTableViewCell.m in Sources */,
 				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
