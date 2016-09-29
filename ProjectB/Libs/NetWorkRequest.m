@@ -10,7 +10,8 @@
 
 @implementation NetWorkRequest
 
-+(void)requestWithMethod:(RequestType)method URL:(NSString *)requestURL para:(NSDictionary *)paraDic success:(success)suc error:(fail)failerror view:(UIView *)view
++(void)requestWithMethod:(RequestType)method URL:(NSString *)requestURL para:(NSDictionary
+                                                                              *)paraDic success:(success)suc error:(fail)failerror view:(UIView *)view
 {
     //判断网络,显示HUD,呈现加载,没有网络直接return
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
