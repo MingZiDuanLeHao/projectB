@@ -17,6 +17,8 @@
 @property (nonatomic,strong) UITableView *rightTable;
 @property (nonatomic,strong) NSArray  *radioArr;
 @property (nonatomic,assign) NSInteger selectIndex;
+@property (nonatomic,assign) NSInteger keywordId;
+@property (nonatomic,assign) NSInteger pageId;
 @end
 
 static NSString *leftCell = @"leftCell";
@@ -27,7 +29,9 @@ static NSString *rightCell = @"rightCell";
     [super viewDidLoad];
     self.title = @"电台";
     [self initUI];
-  //  [self requestData];
+    self.pageId = 1;
+    self.keywordId = 113;
+    [self requestData];
 }
 
 -(void)initUI
@@ -64,7 +68,8 @@ static NSString *rightCell = @"rightCell";
 //
 -(void)requestData
 {
-    [NetWorkRequest requestWithMethod:GET URL:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=113&pageId=1&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27" para:nil success:^(NSData *data) {
+    
+    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=%ld&pageId=%ld&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27",(long)self.keywordId,self.pageId] para:nil success:^(NSData *data) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"dic======%@",dic);
     } error:^(NSError *error) {
