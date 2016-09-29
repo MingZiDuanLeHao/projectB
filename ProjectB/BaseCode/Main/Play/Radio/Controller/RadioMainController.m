@@ -14,6 +14,7 @@
 @property (nonatomic,strong) UITableView *leftTable;
 @property (nonatomic,strong) UITableView *rightTable;
 @property (nonatomic,strong) NSArray  *radioArr;
+@property (nonatomic,assign) NSInteger selectIndex;
 @end
 
 static NSString *leftCell = @"leftCell";
@@ -45,6 +46,19 @@ static NSString *rightCell = @"rightCell";
     
     self.radioArr = @[@"综合台",@"文艺台",@"音乐台",@"新闻台",@"故事台"];
     
+}
+-(void)setSelectIndex:(NSInteger)selectIndex
+{
+    if (_selectIndex != selectIndex) {
+        UITableViewCell *cell = [_leftTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_selectIndex inSection:0]];
+        cell.textLabel.textColor = [UIColor grayColor];
+        //当前点击这个cell
+        UITableViewCell *cell1 = [_leftTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectIndex inSection:0]];
+        cell1.textLabel.textColor = [UIColor redColor];
+    }
+    _selectIndex = selectIndex;
+
+
 }
 
 #pragma marks- 懒加载
@@ -81,20 +95,25 @@ static NSString *rightCell = @"rightCell";
     }
     
 }
-
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == _leftTable) {
+        cell.textLabel.textColor = [UIColor grayColor];
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // 左边表格
+   
     if (tableView == _leftTable) {
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:leftCell];
 
-        cell.textLabel.highlightedTextColor = [UIColor redColor];
-        
         cell.textLabel.text = _radioArr[indexPath.row];
+        cell.textLabel.textColor = [UIColor grayColor];
         cell.textLabel.numberOfLines = 0;
         //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         // 右边表格
@@ -107,7 +126,7 @@ static NSString *rightCell = @"rightCell";
         cell.playCount.text = @"一万";
         cell.NumCount.text = @"11";
         cell.desc.text = @"获得左边表格被选中的模型获得左边表格被选中的模型获得左边表格被选中的模型获得左边表格被选中的模型";
-        
+
         
         return cell;
     }
@@ -127,8 +146,11 @@ static NSString *rightCell = @"rightCell";
 #pragma mark - <UITableViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectIndex = indexPath.row;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == _leftTable) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.textLabel.textColor = [UIColor redColor];
         
     }else{
         RadioDetailList *listVC = [RadioDetailList new];

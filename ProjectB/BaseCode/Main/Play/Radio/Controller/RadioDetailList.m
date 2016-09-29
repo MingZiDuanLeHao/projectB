@@ -39,6 +39,8 @@ static NSString *detailListCell = @"detailListCell";
     _listTab.showsVerticalScrollIndicator = NO;
     _listTab.delegate = self;
     _listTab.dataSource = self;
+    _listTab.separatorColor = [UIColor blueColor];
+    
     
     [_ScrollView addSubview:_listTab];
 }
@@ -68,13 +70,14 @@ static NSString *detailListCell = @"detailListCell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
  
     RedioDetailListCell *cell = [tableView dequeueReusableCellWithIdentifier:detailListCell];
+    
  
     return cell;
     
