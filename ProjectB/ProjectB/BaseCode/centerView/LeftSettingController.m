@@ -95,7 +95,7 @@
     switch (indexPath.row) {
         case 0://阅读
         {
-            
+//             [self.mm_drawerController setCenterViewController: withCloseAnimation:YES completion:nil];
     
         }
             break;

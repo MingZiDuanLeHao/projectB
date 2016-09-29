@@ -50,6 +50,7 @@
 		3F25394D1D9BFB460072831B /* 外卖2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "外卖2.png"; sourceTree = "<group>"; };
 		3F25394E1D9BFB460072831B /* 新闻.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻.png"; sourceTree = "<group>"; };
 		3F25394F1D9BFB460072831B /* 新闻2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻2.png"; sourceTree = "<group>"; };
+		3F25395A1D9CA38D0072831B /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		3F2539361D9BF1BC0072831B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3F2539581D9C0F1C0072831B /* Helper */,
 				3F2539371D9BF1F40072831B /* Images */,
 			);
 			path = Tool;
@@ -129,6 +131,14 @@
 			);
 			name = Show;
 			path = ../Show;
+			sourceTree = "<group>";
+		};
+		3F2539581D9C0F1C0072831B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F25395A1D9CA38D0072831B /* ToolsHelper.h */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		3F45A8391D9BA7FD00A83BB1 = {
