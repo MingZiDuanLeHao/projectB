@@ -19,5 +19,6 @@
 #import "ToolsHelper.h"
 #import "MBProgressHUD.h"
 #import <WebKit/WebKit.h>
+#import "NetWorkRequest.h"
 
 #endif /* PrefixHeader_pch */

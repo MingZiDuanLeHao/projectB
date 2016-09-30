@@ -8,11 +8,18 @@
 
 #import "NewsMainController.h"
 #import "NewsMainTableViewCell.h"
+#import "DataModels.h"
+#import "UIImageView+WebCache.h"
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property(nonatomic,assign)NSInteger titleIndex;
+@property(nonatomic,strong)NSString *cateNumStr;
+@property(nonatomic,assign)NSInteger tableTag;
+@property(nonatomic,strong)NSMutableArray *cateNumArr;
+
+@property(nonatomic,strong)BaseClass *base;
 
 @end
 
@@ -24,6 +31,7 @@
     [self setupTitle];
     [self someSet];
     [self setupContent];
+    [self askData];
     
 }
 
@@ -61,6 +69,9 @@
     UILabel *first = (UILabel *)[self.view viewWithTag:100];
     first.textColor = [UIColor redColor];
     _titleIndex = 100;
+    _cateNumArr =[@[@"T1429173683626",@"T1441074311424",@"T1348654105308",@"T1348650593803",@"T1348654204705",@"T1348648037603"]mutableCopy];
+    _cateNumStr = _cateNumArr[0];
+    _tableTag = 200;
 }
 
 
@@ -82,7 +93,9 @@
         [table registerNib:myNib forCellReuseIdentifier:@"NewsMainTableViewCell"];
         table.estimatedRowHeight = 70;
         table.rowHeight = UITableViewAutomaticDimension;
+        table.tag = i + 200;
         [self.contentScrollView addSubview:table];
+        
     }
     
 }
@@ -98,26 +111,50 @@
     _titleIndex = titleIndex;
 }
 
-
+#pragma mark handleData
+-(void)askData
+{
+    NSLog(@"%@___",_cateNumStr);
+    NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/list/%@/0-20.html",_cateNumStr];
+    NSLog(@"%@",url);
+    [NetWorkRequest requestWithMethod:GET URL:@"http://c.m.163.com/nc/article/C20N3VJE000146BE/full.html" para:nil success:^(NSData *data) {
+        if (data) {
+            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            _base = [BaseClass modelObjectWithDictionary:dic];
+            NSLog(@"%@___",str);
+            UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [table reloadData];
+            });
+        }
+    } error:^(NSError *error) {
+        NSLog(@"error__%@",error);
+    } view:self.view];
+}
 
 #pragma mark TableView代理
+        
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return _base.t1441074311424.count;
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 50;
-//}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //    if ([tableView isKindOfClass:[UITableView class]]) {
     NewsMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsMainTableViewCell"];
+    T1441074311424 *model =  _base.t1441074311424[indexPath.row];
+    [cell.coverimg sd_setImageWithURL:[NSURL URLWithString:model.imgsrc]];
+    cell.mainTitle.text = model.title;
+    cell.subTitle.text = model.digest;
+    cell.From.text = model.source;
+    cell.followCount.text = [NSString stringWithFormat:@"%f跟帖",model.replyCount];
     
     return cell;
 }
