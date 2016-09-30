@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsMainTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *coverimg;
+@property (weak, nonatomic) IBOutlet UILabel *mainTitle;
+@property (weak, nonatomic) IBOutlet UILabel *subTitle;
+@property (weak, nonatomic) IBOutlet UILabel *From;
+@property (weak, nonatomic) IBOutlet UILabel *followCount;
 
 @end

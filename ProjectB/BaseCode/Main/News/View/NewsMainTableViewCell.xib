@@ -38,19 +38,8 @@
                         <rect key="frame" x="133" y="63" width="42" height="21"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="42" id="Dpg-KA-pR8"/>
-                            <constraint firstAttribute="height" constant="21" id="Xot-Ar-y6g"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDK-34-7Aj">
-                        <rect key="frame" x="175" y="63" width="42" height="21"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="R9r-Ur-gzP"/>
-                            <constraint firstAttribute="width" constant="42" id="RdA-fV-0HE"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="192-DX-H8u"/>
+                            <constraint firstAttribute="height" constant="21" id="fcA-T2-ORi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,25 +59,49 @@
                             </mask>
                         </variation>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDK-34-7Aj">
+                        <rect key="frame" x="413" y="63" width="42" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="89A-mj-9kE"/>
+                            <constraint firstAttribute="height" constant="21" id="NZf-oH-c3G"/>
+                            <constraint firstAttribute="width" constant="42" id="RdA-fV-0HE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RdA-fV-0HE"/>
+                            </mask>
+                        </variation>
+                    </label>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="bvG-6w-vUu" secondAttribute="trailing" constant="8" id="1IE-sC-NGI"/>
                     <constraint firstItem="bvG-6w-vUu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="A6v-HN-1Ya"/>
+                    <constraint firstItem="BCV-4S-ux1" firstAttribute="top" secondItem="ZZR-s8-MVg" secondAttribute="bottom" constant="2" id="ETO-gV-Eu4"/>
+                    <constraint firstAttribute="trailing" secondItem="UDK-34-7Aj" secondAttribute="trailing" constant="8" id="H9X-AX-r6c"/>
                     <constraint firstItem="ZZR-s8-MVg" firstAttribute="leading" secondItem="ECm-U4-x9j" secondAttribute="trailing" constant="8" id="Ham-ee-LWl"/>
-                    <constraint firstItem="UDK-34-7Aj" firstAttribute="top" secondItem="ZZR-s8-MVg" secondAttribute="bottom" constant="2" id="Rh4-Tg-iju"/>
+                    <constraint firstItem="UDK-34-7Aj" firstAttribute="top" secondItem="ZZR-s8-MVg" secondAttribute="bottom" constant="2" id="Lh7-rB-F1C"/>
                     <constraint firstItem="ECm-U4-x9j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Rom-xa-Uzf"/>
                     <constraint firstItem="ZZR-s8-MVg" firstAttribute="top" secondItem="bvG-6w-vUu" secondAttribute="bottom" id="UvU-8I-OIq"/>
                     <constraint firstAttribute="trailing" secondItem="ZZR-s8-MVg" secondAttribute="trailing" constant="8" id="YmA-ZJ-sPW"/>
-                    <constraint firstItem="UDK-34-7Aj" firstAttribute="leading" secondItem="BCV-4S-ux1" secondAttribute="trailing" id="b7M-S5-dDH"/>
                     <constraint firstItem="ECm-U4-x9j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="dJr-cx-dXY"/>
-                    <constraint firstItem="BCV-4S-ux1" firstAttribute="leading" secondItem="ECm-U4-x9j" secondAttribute="trailing" constant="8" id="gVk-GO-0lx"/>
+                    <constraint firstItem="BCV-4S-ux1" firstAttribute="leading" secondItem="ECm-U4-x9j" secondAttribute="trailing" constant="8" id="iND-x8-vpS"/>
                     <constraint firstAttribute="bottom" secondItem="ECm-U4-x9j" secondAttribute="bottom" constant="8" id="rLs-hy-4hJ"/>
-                    <constraint firstItem="BCV-4S-ux1" firstAttribute="top" secondItem="ZZR-s8-MVg" secondAttribute="bottom" constant="2" id="s80-wg-thU"/>
                     <constraint firstItem="bvG-6w-vUu" firstAttribute="leading" secondItem="ECm-U4-x9j" secondAttribute="trailing" constant="8" id="wnL-I5-3xK"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="From" destination="BCV-4S-ux1" id="hGa-d3-cbb"/>
+                <outlet property="coverimg" destination="ECm-U4-x9j" id="CNZ-0v-ciJ"/>
+                <outlet property="followCount" destination="UDK-34-7Aj" id="PF1-Hm-CoN"/>
+                <outlet property="mainTitle" destination="bvG-6w-vUu" id="O9R-Yi-3YF"/>
+                <outlet property="subTitle" destination="ZZR-s8-MVg" id="4WZ-Jv-FlW"/>
+            </connections>
             <point key="canvasLocation" x="309.5" y="278.5"/>
         </tableViewCell>
     </objects>

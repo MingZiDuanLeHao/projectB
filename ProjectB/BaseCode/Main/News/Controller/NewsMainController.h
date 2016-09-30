@@ -10,4 +10,10 @@
 
 @interface NewsMainController : UIViewController
 
+////枚举
+//typedef NS_ENUM(NSInteger, cateNumStr) {
+//    GET = 0,
+//    
+//};
+
 @end
