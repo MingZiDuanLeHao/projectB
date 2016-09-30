@@ -34,7 +34,7 @@ static NSString *detailListCell = @"detailListCell";
 -(void)initUI
 {
     //scrollview
-    self.ScrollView.frame = CGRectMake(0, 250, SWidth, SHeight - 260 - 44);
+    self.ScrollView.frame = CGRectMake(0, 250, SWidth, SHeight - 260);
     _ScrollView.contentSize = CGSizeMake(SWidth * 2, 0);
     _ScrollView.pagingEnabled = YES;
     _ScrollView.delegate = self;
@@ -42,7 +42,7 @@ static NSString *detailListCell = @"detailListCell";
     [self.view addSubview:_ScrollView];
     
     //listtable
-    self.listTab.frame = CGRectMake(SWidth, 0, SWidth, SHeight -260 - 44);
+    self.listTab.frame = CGRectMake(SWidth, 0, SWidth, SHeight -260);
     [_listTab registerNib:[UINib nibWithNibName:@"RedioDetailListCell" bundle:nil] forCellReuseIdentifier:detailListCell];
     _listTab.showsVerticalScrollIndicator = NO;
     _listTab.delegate = self;
@@ -70,11 +70,12 @@ static NSString *detailListCell = @"detailListCell";
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             self.detailList = [RadioDetailListRadioDetailList modelObjectWithDictionary:dic];
 
-            NSLog(@"%@",dic);
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 [_listTab reloadData];
                [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
+                self.titleLabel.text = self.titleID;
+                self.playCount.text = [NSString stringWithFormat:@"播放次数:%.0f",_detailList.data.album.playTimes];
                 
             });
         }
@@ -125,7 +126,8 @@ static NSString *detailListCell = @"detailListCell";
 {
  
     RedioDetailListCell *cell = [tableView dequeueReusableCellWithIdentifier:detailListCell];
-    
+    RadioDetailListList *list = _detailList.data.tracks.list[indexPath.row];
+    [cell setDataWithModel:list];
  
     return cell;
     

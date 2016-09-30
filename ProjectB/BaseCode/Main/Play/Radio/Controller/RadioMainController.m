@@ -250,6 +250,7 @@ static NSString *rightCell = @"rightCell";
         RadioDetailList *listVC = [RadioDetailList new];
         List *list = _radioMain.list[indexPath.row];
         listVC.albumId = [NSString stringWithFormat:@"%.0f",list.albumId];
+        listVC.titleID = list.title;
         listVC.statEvent = [NSString stringWithFormat:@"40%@",listVC.albumId];
         NSLog(@"albumID %@   statEvent %@",listVC.albumId,listVC.statEvent);
         if (self.selectIndex == 0) {

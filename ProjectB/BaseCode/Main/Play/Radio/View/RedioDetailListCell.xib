@@ -26,29 +26,29 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="eae-Qt-KMm"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-Cm-re0">
-                        <rect key="frame" x="80" y="44" width="60" height="30"/>
+                        <rect key="frame" x="80" y="44" width="100" height="30"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="6mS-a2-bOi"/>
+                            <constraint firstAttribute="width" constant="100" id="6mS-a2-bOi"/>
                             <constraint firstAttribute="height" constant="30" id="NYf-v2-f8h"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRt-V8-8Le">
-                        <rect key="frame" x="145" y="44" width="100" height="30"/>
+                        <rect key="frame" x="185" y="44" width="100" height="30"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="1gP-ES-Uws"/>
                             <constraint firstAttribute="height" constant="30" id="JI4-vT-hPd"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -68,6 +68,12 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="img" destination="Yau-LA-YUG" id="rVN-1Z-mJV"/>
+                <outlet property="playCount" destination="x3n-Cm-re0" id="Yrt-7a-Lgt"/>
+                <outlet property="time" destination="fRt-V8-8Le" id="JQQ-FY-muz"/>
+                <outlet property="titleLabel" destination="tDu-uO-XI2" id="bgY-pQ-HeL"/>
+            </connections>
             <point key="canvasLocation" x="243.5" y="423"/>
         </tableViewCell>
     </objects>

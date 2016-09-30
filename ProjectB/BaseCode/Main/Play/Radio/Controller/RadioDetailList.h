@@ -16,6 +16,8 @@
 @property(nonatomic,strong) NSString *statModule;
 /**statEvent*/
 @property(nonatomic,strong) NSString *statEvent;
+/**主播*/
+@property(nonatomic,strong) NSString *titleID;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

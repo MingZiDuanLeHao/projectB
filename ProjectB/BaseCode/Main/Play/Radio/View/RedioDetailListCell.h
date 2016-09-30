@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RadioDetailListList.h"
 
 @interface RedioDetailListCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playCount;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (nonatomic,strong) RadioDetailListList *list;
+-(void)setDataWithModel:(RadioDetailListList *)model;
 
 @end
