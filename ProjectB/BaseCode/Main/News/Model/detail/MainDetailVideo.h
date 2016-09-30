@@ -1,5 +1,5 @@
 //
-//  Video.h
+//  MainDetailVideo.h
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
@@ -9,7 +9,7 @@
 
 
 
-@interface Video : NSObject <NSCoding, NSCopying>
+@interface MainDetailVideo : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *urlMp4;
 @property (nonatomic, strong) NSString *commentid;

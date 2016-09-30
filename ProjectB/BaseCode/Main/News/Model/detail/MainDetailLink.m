@@ -1,25 +1,25 @@
 //
-//  Link.m
+//  MainDetailLink.m
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
 //
 
-#import "Link.h"
+#import "MainDetailLink.h"
 
 
-NSString *const kLinkRef = @"ref";
-NSString *const kLinkTitle = @"title";
-NSString *const kLinkHref = @"href";
+NSString *const kMainDetailLinkRef = @"ref";
+NSString *const kMainDetailLinkTitle = @"title";
+NSString *const kMainDetailLinkHref = @"href";
 
 
-@interface Link ()
+@interface MainDetailLink ()
 
 - (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
 
 @end
 
-@implementation Link
+@implementation MainDetailLink
 
 @synthesize ref = _ref;
 @synthesize title = _title;
@@ -38,9 +38,9 @@ NSString *const kLinkHref = @"href";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.ref = [self objectOrNilForKey:kLinkRef fromDictionary:dict];
-            self.title = [self objectOrNilForKey:kLinkTitle fromDictionary:dict];
-            self.href = [self objectOrNilForKey:kLinkHref fromDictionary:dict];
+            self.ref = [self objectOrNilForKey:kMainDetailLinkRef fromDictionary:dict];
+            self.title = [self objectOrNilForKey:kMainDetailLinkTitle fromDictionary:dict];
+            self.href = [self objectOrNilForKey:kMainDetailLinkHref fromDictionary:dict];
 
     }
     
@@ -51,9 +51,9 @@ NSString *const kLinkHref = @"href";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.ref forKey:kLinkRef];
-    [mutableDict setValue:self.title forKey:kLinkTitle];
-    [mutableDict setValue:self.href forKey:kLinkHref];
+    [mutableDict setValue:self.ref forKey:kMainDetailLinkRef];
+    [mutableDict setValue:self.title forKey:kMainDetailLinkTitle];
+    [mutableDict setValue:self.href forKey:kMainDetailLinkHref];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -77,23 +77,23 @@ NSString *const kLinkHref = @"href";
 {
     self = [super init];
 
-    self.ref = [aDecoder decodeObjectForKey:kLinkRef];
-    self.title = [aDecoder decodeObjectForKey:kLinkTitle];
-    self.href = [aDecoder decodeObjectForKey:kLinkHref];
+    self.ref = [aDecoder decodeObjectForKey:kMainDetailLinkRef];
+    self.title = [aDecoder decodeObjectForKey:kMainDetailLinkTitle];
+    self.href = [aDecoder decodeObjectForKey:kMainDetailLinkHref];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_ref forKey:kLinkRef];
-    [aCoder encodeObject:_title forKey:kLinkTitle];
-    [aCoder encodeObject:_href forKey:kLinkHref];
+    [aCoder encodeObject:_ref forKey:kMainDetailLinkRef];
+    [aCoder encodeObject:_title forKey:kMainDetailLinkTitle];
+    [aCoder encodeObject:_href forKey:kMainDetailLinkHref];
 }
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    Link *copy = [[Link alloc] init];
+    MainDetailLink *copy = [[MainDetailLink alloc] init];
     
     if (copy) {
 

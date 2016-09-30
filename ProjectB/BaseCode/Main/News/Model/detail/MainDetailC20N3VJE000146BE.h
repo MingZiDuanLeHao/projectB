@@ -1,5 +1,5 @@
 //
-//  C20N3VJE000146BE.h
+//  MainDetailC20N3VJE000146BE.h
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
@@ -9,7 +9,7 @@
 
 
 
-@interface C20N3VJE000146BE : NSObject <NSCoding, NSCopying>
+@interface MainDetailC20N3VJE000146BE : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *ptime;
 @property (nonatomic, strong) NSString *source;
