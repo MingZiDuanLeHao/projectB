@@ -115,8 +115,10 @@ static NSString *rightCell = @"rightCell";
 
 -(void)requestData
 {
-    
-    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=%ld&pageId=%ld&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27",(long)self.keywordId,self.pageId] para:nil success:^(NSData *data) {
+     NSString *UrlStr = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=%ld&pageId=%ld&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27",(long)self.keywordId,self.pageId];
+    //转化一下,不然返回的data无法解析
+        UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
         if (data) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
            // NSLog(@"dic======%@",dic);

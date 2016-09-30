@@ -52,20 +52,58 @@ static NSString *detailListCell = @"detailListCell";
 -(void)requestData
 {
     
-    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
-        if (data) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"dic======%@",dic);
+//    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
+//        if (data) {
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            NSLog(@"dic======%@",dic);
+//
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [_listTab reloadData];
+//                
+//            });
+//        }
+//        
+//    } error:^(NSError *error) {
+//        NSLog(@"error===%@",error);
+//    } view:self.view];
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_listTab reloadData];
-                
-            });
+ 
+//    NSString *UrlStr = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=@&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%@&statModule=%@&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1",self.albumId,self.statEvent,self.statModule];
+//    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+//    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
+//        if (data) {
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//             NSLog(@"dic======%@,%@",dic,data);
+//
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//
+//                
+//            });
+//        }
+//        
+//    } error:^(NSError *error) {
+//        NSLog(@"error===%@",error);
+//    } view:self.view];
+    
+    
+    //全局的网络会话
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSString *url = @"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1";
+
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    
+    //用session开启了一个请求数据的任务
+    NSURLSessionTask *task = [session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"dataStr____%@,%@",dataStr,data);
+        }else
+        {
+            NSLog(@"error%@",error);
         }
-        
-    } error:^(NSError *error) {
-        NSLog(@"error===%@",error);
-    } view:self.view];
+    }];
+    //resume继续  任务开启
+    [task resume];
 }
 #pragma marks- 懒加载
 //scroll
