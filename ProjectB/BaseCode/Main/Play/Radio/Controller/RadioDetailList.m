@@ -12,10 +12,13 @@
 #import "NetWorkRequest.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "RadioDetailListDataModels.h"
+#import "MJRefresh.h"
 
 @interface RadioDetailList ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *listTab;
 @property (nonatomic,strong) UIScrollView *ScrollView;
+@property (nonatomic,strong) RadioDetailListRadioDetailList *detailList;
 
 @end
 static NSString *detailListCell = @"detailListCell";
@@ -25,6 +28,7 @@ static NSString *detailListCell = @"detailListCell";
     [super viewDidLoad];
     [self initUI];
     [self requestData];
+    [self initUIData];
 }
 
 -(void)initUI
@@ -45,65 +49,48 @@ static NSString *detailListCell = @"detailListCell";
     _listTab.dataSource = self;
     _listTab.separatorColor = [UIColor blueColor];
     
-    
     [_ScrollView addSubview:_listTab];
+    
+    //上提加载更多
+    _listTab.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //最新
+        [self requestData];
+    }];
 }
 
 -(void)requestData
 {
-    
-//    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
-//        if (data) {
-//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//            NSLog(@"dic======%@",dic);
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [_listTab reloadData];
-//                
-//            });
-//        }
-//        
-//    } error:^(NSError *error) {
-//        NSLog(@"error===%@",error);
-//    } view:self.view];
+    NSString * statPage = @"%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0";
+    NSString *UrlStr1 = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=%@&device=iPad&pageSize=20&source=5&statEvent=pageview%@album%@&statModule=%@&statPage=categorytag%@&statPosition=1",self.albumId,@"%2F",self.statEvent,self.statModule,statPage];
 
- 
-//    NSString *UrlStr = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=@&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%@&statModule=%@&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1",self.albumId,self.statEvent,self.statModule];
-//    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
-//    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
-//        if (data) {
-//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-//             NSLog(@"dic======%@,%@",dic,data);
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                
-//            });
-//        }
-//        
-//    } error:^(NSError *error) {
-//        NSLog(@"error===%@",error);
-//    } view:self.view];
-    
-    
-    //全局的网络会话
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSString *url = @"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1";
-
-    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
-    
-    //用session开启了一个请求数据的任务
-    NSURLSessionTask *task = [session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    UrlStr1 = [UrlStr1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr1 para:nil success:^(NSData *data) {
         if (data) {
-            NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"dataStr____%@,%@",dataStr,data);
-        }else
-        {
-            NSLog(@"error%@",error);
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            self.detailList = [RadioDetailListRadioDetailList modelObjectWithDictionary:dic];
+
+            NSLog(@"%@",dic);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                [_listTab reloadData];
+                   [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
+                
+            });
         }
-    }];
-    //resume继续  任务开启
-    [task resume];
+        
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
+
+}
+
+
+-(void)initUIData
+{
+    
+ 
+    
 }
 #pragma marks- 懒加载
 //scroll

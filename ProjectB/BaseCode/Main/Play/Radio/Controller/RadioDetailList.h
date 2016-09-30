@@ -17,4 +17,9 @@
 /**statEvent*/
 @property(nonatomic,strong) NSString *statEvent;
 
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *playCount;
+
 @end

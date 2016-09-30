@@ -6,7 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioDetailList">
             <connections>
+                <outlet property="avatar" destination="gxO-bR-JLq" id="Vdb-8V-F3z"/>
+                <outlet property="nameLabel" destination="Jt2-8U-Yqh" id="ifF-GJ-MPP"/>
+                <outlet property="playCount" destination="JrN-qE-OKX" id="ryf-xX-bUx"/>
                 <outlet property="segMent" destination="las-FA-cC2" id="4HS-EP-Lht"/>
+                <outlet property="titleLabel" destination="kes-IQ-z4w" id="hOU-bY-QN6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

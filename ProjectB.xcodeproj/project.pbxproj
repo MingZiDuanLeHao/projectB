@@ -30,6 +30,12 @@
 		3F33C7101D9D2E6A00621E92 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70C1D9D2E6A00621E92 /* List.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70E1D9D2E6A00621E92 /* RadioMain.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C7131D9E068500621E92 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7121D9E068500621E92 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
+		3F33C7361D9E403A00621E92 /* RadioDetailListAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C72A1D9E403A00621E92 /* RadioDetailListAlbum.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7371D9E403A00621E92 /* RadioDetailListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C72C1D9E403A00621E92 /* RadioDetailListData.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7381D9E403A00621E92 /* RadioDetailListList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C72F1D9E403A00621E92 /* RadioDetailListList.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7391D9E403A00621E92 /* RadioDetailListRadioDetailList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C7311D9E403A00621E92 /* RadioDetailListRadioDetailList.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C73A1D9E403A00621E92 /* RadioDetailListTracks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C7331D9E403A00621E92 /* RadioDetailListTracks.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C73B1D9E403A00621E92 /* RadioDetailListUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C7351D9E403A00621E92 /* RadioDetailListUser.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -102,6 +108,19 @@
 		3F33C70E1D9D2E6A00621E92 /* RadioMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMain.m; sourceTree = "<group>"; };
 		3F33C70F1D9D2E6A00621E92 /* RadioMainDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainDataModels.h; sourceTree = "<group>"; };
 		3F33C7121D9E068500621E92 /* 列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "列表.png"; sourceTree = "<group>"; };
+		3F33C7291D9E403A00621E92 /* RadioDetailListAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListAlbum.h; sourceTree = "<group>"; };
+		3F33C72A1D9E403A00621E92 /* RadioDetailListAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListAlbum.m; sourceTree = "<group>"; };
+		3F33C72B1D9E403A00621E92 /* RadioDetailListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListData.h; sourceTree = "<group>"; };
+		3F33C72C1D9E403A00621E92 /* RadioDetailListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListData.m; sourceTree = "<group>"; };
+		3F33C72D1D9E403A00621E92 /* RadioDetailListDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListDataModels.h; sourceTree = "<group>"; };
+		3F33C72E1D9E403A00621E92 /* RadioDetailListList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListList.h; sourceTree = "<group>"; };
+		3F33C72F1D9E403A00621E92 /* RadioDetailListList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListList.m; sourceTree = "<group>"; };
+		3F33C7301D9E403A00621E92 /* RadioDetailListRadioDetailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListRadioDetailList.h; sourceTree = "<group>"; };
+		3F33C7311D9E403A00621E92 /* RadioDetailListRadioDetailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListRadioDetailList.m; sourceTree = "<group>"; };
+		3F33C7321D9E403A00621E92 /* RadioDetailListTracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListTracks.h; sourceTree = "<group>"; };
+		3F33C7331D9E403A00621E92 /* RadioDetailListTracks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListTracks.m; sourceTree = "<group>"; };
+		3F33C7341D9E403A00621E92 /* RadioDetailListUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListUser.h; sourceTree = "<group>"; };
+		3F33C7351D9E403A00621E92 /* RadioDetailListUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListUser.m; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -237,6 +256,26 @@
 				3F33C70F1D9D2E6A00621E92 /* RadioMainDataModels.h */,
 			);
 			path = RadioMain;
+			sourceTree = "<group>";
+		};
+		3F33C7281D9E403A00621E92 /* RadioDetailList */ = {
+			isa = PBXGroup;
+			children = (
+				3F33C7291D9E403A00621E92 /* RadioDetailListAlbum.h */,
+				3F33C72A1D9E403A00621E92 /* RadioDetailListAlbum.m */,
+				3F33C72B1D9E403A00621E92 /* RadioDetailListData.h */,
+				3F33C72C1D9E403A00621E92 /* RadioDetailListData.m */,
+				3F33C72D1D9E403A00621E92 /* RadioDetailListDataModels.h */,
+				3F33C72E1D9E403A00621E92 /* RadioDetailListList.h */,
+				3F33C72F1D9E403A00621E92 /* RadioDetailListList.m */,
+				3F33C7301D9E403A00621E92 /* RadioDetailListRadioDetailList.h */,
+				3F33C7311D9E403A00621E92 /* RadioDetailListRadioDetailList.m */,
+				3F33C7321D9E403A00621E92 /* RadioDetailListTracks.h */,
+				3F33C7331D9E403A00621E92 /* RadioDetailListTracks.m */,
+				3F33C7341D9E403A00621E92 /* RadioDetailListUser.h */,
+				3F33C7351D9E403A00621E92 /* RadioDetailListUser.m */,
+			);
+			path = RadioDetailList;
 			sourceTree = "<group>";
 		};
 		3F45A8391D9BA7FD00A83BB1 = {
@@ -454,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				3F33C70A1D9D2E6A00621E92 /* RadioMain */,
+				3F33C7281D9E403A00621E92 /* RadioDetailList */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -709,6 +749,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F33C7361D9E403A00621E92 /* RadioDetailListAlbum.m in Sources */,
 				3F7999B91D9E0DC8009DAF97 /* C20N3VJE000146BE.m in Sources */,
 				3F33C6FF1D9CDFC800621E92 /* RedioDetailListCell.m in Sources */,
 				3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */,
@@ -730,16 +771,21 @@
 				3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */,
 				3F7999BA1D9E0DC8009DAF97 /* Huati.m in Sources */,
 				3F7999B71D9E0DC8009DAF97 /* Askbar.m in Sources */,
+				3F33C7381D9E403A00621E92 /* RadioDetailListList.m in Sources */,
 				3F7999BD1D9E0DC8009DAF97 /* TopiclistNews.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
+				3F33C7371D9E403A00621E92 /* RadioDetailListData.m in Sources */,
 				3F79999D1D9DFB45009DAF97 /* LiveInfo.m in Sources */,
 				3F7999BC1D9E0DC8009DAF97 /* RelativeSys.m in Sources */,
+				3F33C73B1D9E403A00621E92 /* RadioDetailListUser.m in Sources */,
 				3F7999C11D9E1B2C009DAF97 /* NewsCommentController.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F33C7101D9D2E6A00621E92 /* List.m in Sources */,
+				3F33C73A1D9E403A00621E92 /* RadioDetailListTracks.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
 				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
+				3F33C7391D9E403A00621E92 /* RadioDetailListRadioDetailList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
