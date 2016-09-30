@@ -11,14 +11,20 @@
 #import "RadioMainRightTableCell.h"
 #import "NetWorkRequest.h"
 #import "RadioMainDataModels.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "AppDelegate.h"
 
 @interface RadioMainController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *leftTable;
 @property (nonatomic,strong) UITableView *rightTable;
-@property (nonatomic,strong) NSArray  *radioArr;
+@property (nonatomic,strong) NSArray  *leftRadioNameArr;
+@property (nonatomic,strong) NSArray  *rightRadioCount;
 @property (nonatomic,assign) NSInteger selectIndex;
 @property (nonatomic,assign) NSInteger keywordId;
 @property (nonatomic,assign) NSInteger pageId;
+@property (nonatomic,strong) RadioMain  *radioMain;
+@property (nonatomic,assign) BOOL HideList;
 @end
 
 static NSString *leftCell = @"leftCell";
@@ -32,6 +38,7 @@ static NSString *rightCell = @"rightCell";
     self.pageId = 1;
     self.keywordId = 113;
     [self requestData];
+    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
 }
 
 -(void)initUI
@@ -48,9 +55,49 @@ static NSString *rightCell = @"rightCell";
     [_rightTable registerNib:[UINib nibWithNibName:@"RadioMainRightTableCell" bundle:nil] forCellReuseIdentifier:rightCell];
     _rightTable.delegate = self;
     _rightTable.dataSource = self;
+    //隐藏导航条
+    _rightTable.showsVerticalScrollIndicator = NO;
+ 
+    _rightTable.tableFooterView = [UIView new];
     [self.view addSubview:_rightTable];
     
-    self.radioArr = @[@"综合台",@"文艺台",@"音乐台",@"新闻台",@"故事台"];
+    //左边列表
+    self.leftRadioNameArr = @[@"综合台",@"文艺台",@"音乐台",@"新闻台",@"故事台"];
+    
+    //上提加载更多
+    _rightTable.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //最新
+        self.pageId ++;
+        [self requestData];
+    }];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"列表"] style:UIBarButtonItemStylePlain target:self action:@selector(listHandle)];
+    
+}
+-(void)listHandle
+{
+    if (_HideList == NO) {
+        [UIView animateWithDuration:1 animations:^{
+            _leftTable.frame = CGRectMake(0, 0, 50, -SHeight);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+            _rightTable.frame = CGRectMake(0, 64, SWidth, SHeight - 64);
+            }];
+
+        }];
+        _HideList = YES;
+    }else
+    {
+        [UIView animateWithDuration:1 animations:^{
+          _rightTable.frame = CGRectMake(50, 64, SWidth - 60, SHeight - 64);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+            _leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
+            }];
+        }];
+        _HideList = NO;
+    }
     
 }
 -(void)setSelectIndex:(NSInteger)selectIndex
@@ -65,13 +112,21 @@ static NSString *rightCell = @"rightCell";
     _selectIndex = selectIndex;
 
 }
-//
+
 -(void)requestData
 {
     
     [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=%ld&pageId=%ld&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27",(long)self.keywordId,self.pageId] para:nil success:^(NSData *data) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"dic======%@",dic);
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+           // NSLog(@"dic======%@",dic);
+            self.radioMain = [RadioMain modelObjectWithDictionary:dic];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_rightTable reloadData];
+
+            });
+        }
+       
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
     } view:self.view];
@@ -102,13 +157,13 @@ static NSString *rightCell = @"rightCell";
     // 左边表格
     if (tableView == _leftTable)
     {
-        return _radioArr.count;
+        return _leftRadioNameArr.count;
     }
     else
     {
         // 右边表格
-        
-        return 20;
+       
+        return _radioMain.list.count;
     }
     
 }
@@ -127,7 +182,7 @@ static NSString *rightCell = @"rightCell";
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:leftCell];
 
-        cell.textLabel.text = _radioArr[indexPath.row];
+        cell.textLabel.text = _leftRadioNameArr[indexPath.row];
         cell.textLabel.textColor = [UIColor grayColor];
         cell.textLabel.numberOfLines = 0;
         if (indexPath.row == 0) {
@@ -145,12 +200,8 @@ static NSString *rightCell = @"rightCell";
         
         // 获得左边表格被选中的模型
         //        XMGCategory *c = self.categories[self.categoryTableView.indexPathForSelectedRow.row];
-        cell.titlelabel.text = @"头条";
-        cell.playCount.text = @"一万";
-        cell.NumCount.text = @"11";
-        cell.desc.text = @"获得左边表格被选中的模型获得左边表格被选中的模型获得左边表格被选中的模型获得左边表格被选中的模型";
-
-        
+        List *list = _radioMain.list[indexPath.row];
+        [cell setDataWithModel:list];
         return cell;
     }
 }
@@ -162,7 +213,7 @@ static NSString *rightCell = @"rightCell";
     }
     else
     {
-        return 100;
+        return 120;
     }
 }
 
@@ -175,9 +226,42 @@ static NSString *rightCell = @"rightCell";
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.textLabel.textColor = [UIColor redColor];
             self.selectIndex = indexPath.row;
+        if (indexPath.row == 0) {
+            self.keywordId = 113;
+            [self requestData];
+        }else if(indexPath.row == 1){
+            self.keywordId = 106;
+            [self requestData];
+        }else if(indexPath.row == 2 ){
+            self.keywordId = 102;
+            [self requestData];
+        }else if(indexPath.row == 3 ){
+            self.keywordId = 101;
+            [self requestData];
+        }else if(indexPath.row == 4 ){
+            self.keywordId = 107;
+            [self requestData];
+            
+        }
         
     }else{
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         RadioDetailList *listVC = [RadioDetailList new];
+        List *list = _radioMain.list[indexPath.row];
+        listVC.albumId = [NSString stringWithFormat:@"%.0f",list.albumId];
+        listVC.statEvent = [NSString stringWithFormat:@"40%@",listVC.albumId];
+        NSLog(@"albumID %@   statEvent %@",listVC.albumId,listVC.statEvent);
+        if (self.selectIndex == 0) {
+            listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E7%BB%BC%E5%90%88%E5%8F%B0";
+        }else if (self.selectIndex == 1){
+            listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E6%96%87%E8%89%BA%E5%8F%B0";
+        }else if (self.selectIndex == 2){
+            listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0";
+        }else if (self.selectIndex == 3){
+            listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E6%96%B0%E9%97%BB%E5%8F%B0";
+        }else if (self.selectIndex == 4){
+            listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E6%95%85%E4%BA%8B%E5%8F%B0";
+        }
         [self.navigationController pushViewController:listVC animated:YES];
         
     }

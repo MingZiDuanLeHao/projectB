@@ -29,6 +29,7 @@
 		3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7081D9D0D5D00621E92 /* 1.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F33C7101D9D2E6A00621E92 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70C1D9D2E6A00621E92 /* List.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C70E1D9D2E6A00621E92 /* RadioMain.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C7131D9E068500621E92 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C7121D9E068500621E92 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
 		3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8461D9BA7FD00A83BB1 /* main.m */; };
 		3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8491D9BA7FD00A83BB1 /* AppDelegate.m */; };
 		3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A84E1D9BA7FD00A83BB1 /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		3F33C70D1D9D2E6A00621E92 /* RadioMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMain.h; sourceTree = "<group>"; };
 		3F33C70E1D9D2E6A00621E92 /* RadioMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMain.m; sourceTree = "<group>"; };
 		3F33C70F1D9D2E6A00621E92 /* RadioMainDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainDataModels.h; sourceTree = "<group>"; };
+		3F33C7121D9E068500621E92 /* 列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "列表.png"; sourceTree = "<group>"; };
 		3F45A8421D9BA7FD00A83BB1 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45A8461D9BA7FD00A83BB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F45A8481D9BA7FD00A83BB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		3F45A8B71D9BCB3C00A83BB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3F33C7121D9E068500621E92 /* 列表.png */,
 				3F45A8D81D9BE27000A83BB1 /* RadioMainController.h */,
 				3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */,
 				3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */,
@@ -560,6 +563,7 @@
 				3F33C7001D9CDFC800621E92 /* RedioDetailListCell.xib in Resources */,
 				3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */,
 				3F2539531D9BFB460072831B /* 外卖2.png in Resources */,
+				3F33C7131D9E068500621E92 /* 列表.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F45A8DC1D9BE27000A83BB1 /* RadioMainController.xib in Resources */,
 				3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */,

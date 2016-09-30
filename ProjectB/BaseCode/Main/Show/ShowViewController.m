@@ -9,6 +9,8 @@
 #import "ShowViewController.h"
 #import "VedioMainController.h"
 #import "RadioMainController.h"
+#import "AppDelegate.h"
+#import "NetWorkRequest.h"
 
 @interface ShowViewController ()
 
@@ -18,7 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self askData];
+}
+-(void)askData
+{
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+        ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
 }
 
 //进入视频列表

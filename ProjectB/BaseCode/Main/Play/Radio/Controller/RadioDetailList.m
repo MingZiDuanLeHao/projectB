@@ -9,6 +9,9 @@
 #import "RadioDetailList.h"
 #import "RedioDetailListCell.h"
 #import "radioController.h"
+#import "NetWorkRequest.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
 
 @interface RadioDetailList ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *listTab;
@@ -21,6 +24,7 @@ static NSString *detailListCell = @"detailListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self requestData];
 }
 
 -(void)initUI
@@ -43,6 +47,25 @@ static NSString *detailListCell = @"detailListCell";
     
     
     [_ScrollView addSubview:_listTab];
+}
+
+-(void)requestData
+{
+    
+    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/v1/album?albumId=3524772&device=iPad&pageSize=20&source=5&statEvent=pageview%2Falbum%403524772&statModule=%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPage=categorytag%40%E7%94%B5%E5%8F%B0_%E9%9F%B3%E4%B9%90%E5%8F%B0&statPosition=1"] para:nil success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"dic======%@",dic);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_listTab reloadData];
+                
+            });
+        }
+        
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
 }
 #pragma marks- 懒加载
 //scroll

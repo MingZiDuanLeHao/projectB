@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "List.h"
 
 @interface RadioMainRightTableCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titlelabel;
@@ -14,5 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *desc;
 @property (weak, nonatomic) IBOutlet UILabel *NumCount;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (strong,nonatomic) List *list;
+
+-(void)setDataWithModel:(List *)model;
 
 @end

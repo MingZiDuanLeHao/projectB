@@ -10,5 +10,11 @@
 
 @interface RadioDetailList : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segMent;
+/**albumId*/
+@property(nonatomic,strong) NSString *albumId;
+/**statModule*/
+@property(nonatomic,strong) NSString *statModule;
+/**statEvent*/
+@property(nonatomic,strong) NSString *statEvent;
 
 @end

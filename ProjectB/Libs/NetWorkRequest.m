@@ -39,6 +39,11 @@
         {
             //取消 给用户提示
             failerror(error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [hud hideAnimated:YES];
+                
+            });
         }
     }];
     [task resume];
