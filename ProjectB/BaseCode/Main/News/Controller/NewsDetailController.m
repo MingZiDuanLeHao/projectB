@@ -36,19 +36,32 @@
 
 -(void)requestData
 {
-    [NetWorkRequest requestWithMethod:GET URL:@"http://c.m.163.com/nc/article/C20N3VJE000146BE/full.html" para:nil success:^(NSData *data) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        _base = [detailBaseClass modelObjectWithDictionary:dic];
-        dispatch_async(dispatch_get_main_queue(), ^{
+//    [NetWorkRequest requestWithMethod:GET URL:@"http://c.m.163.com/nc/article/C20N3VJE000146BE/full.html" para:nil success:^(NSData *data) {
+//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//        _base = [detailBaseClass modelObjectWithDictionary:dic];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            NSURL *cssURL = [[NSBundle mainBundle]URLForResource:@"style" withExtension:@"css"];
+//           
+//            [_WebView loadHTMLString:_base.c20N3VJE000146BE.shareLink baseURL:cssURL];
+//            
+//        });
+//    } error:^(NSError *error) {
+//        
+//    }view:self.view];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:@"http://c.m.163.com/nc/article/list/T1429173683626/0-20.html" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
 
-            NSURL *cssURL = [[NSBundle mainBundle]URLForResource:@"style" withExtension:@"css"];
-           
-            [_WebView loadHTMLString:_base.c20N3VJE000146BE.shareLink baseURL:cssURL];
-            
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [_TableView reloadData];
         });
-    } error:^(NSError *error) {
         
-    }view:self.view];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

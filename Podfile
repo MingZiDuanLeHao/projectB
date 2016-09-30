@@ -6,4 +6,5 @@ target 'ProjectB’ do
    pod 'FMDB', '~> 2.6'
    pod 'MMDrawerController', '~> 0.6'
    pod 'MJRefresh', '~> 3.1'
+   pod 'AFNetworking', '~> 3.1'
 end
