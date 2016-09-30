@@ -214,7 +214,7 @@ static NSString *rightCell = @"rightCell";
     }
     else
     {
-        return 120;
+        return 85;
     }
 }
 
