@@ -7,7 +7,7 @@
 //
 
 #import "RadioMainController.h"
-#import "RadioDetailList.h"
+#import "RadioDetailListController.h"
 #import "RadioMainRightTableCell.h"
 #import "NetWorkRequest.h"
 #import "RadioMainDataModels.h"
@@ -247,7 +247,7 @@ static NSString *rightCell = @"rightCell";
         
     }else{
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        RadioDetailList *listVC = [RadioDetailList new];
+        RadioDetailListController *listVC = [RadioDetailListController new];
         List *list = _radioMain.list[indexPath.row];
         listVC.albumId = [NSString stringWithFormat:@"%.0f",list.albumId];
         listVC.titleID = list.title;

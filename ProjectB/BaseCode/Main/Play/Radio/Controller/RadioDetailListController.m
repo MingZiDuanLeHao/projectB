@@ -6,7 +6,7 @@
 //  Copyright © 2016年 lanou. All rights reserved.
 //
 
-#import "RadioDetailList.h"
+#import "RadioDetailListController.h"
 #import "RedioDetailListCell.h"
 #import "radioController.h"
 #import "NetWorkRequest.h"
@@ -15,14 +15,14 @@
 #import "RadioDetailListDataModels.h"
 #import "MJRefresh.h"
 
-@interface RadioDetailList ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface RadioDetailListController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *listTab;
 @property (nonatomic,strong) UIScrollView *ScrollView;
 @property (nonatomic,strong) RadioDetailListRadioDetailList *detailList;
 
 @end
 static NSString *detailListCell = @"detailListCell";
-@implementation RadioDetailList
+@implementation RadioDetailListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +33,7 @@ static NSString *detailListCell = @"detailListCell";
 
 -(void)initUI
 {
+    self.title = @"专辑详情";
     //scrollview
     self.ScrollView.frame = CGRectMake(0, 250, SWidth, SHeight - 260);
     _ScrollView.contentSize = CGSizeMake(SWidth * 2, 0);
@@ -76,6 +77,7 @@ static NSString *detailListCell = @"detailListCell";
                [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
                 self.titleLabel.text = self.titleID;
                 self.playCount.text = [NSString stringWithFormat:@"播放次数:%.0f",_detailList.data.album.playTimes];
+                self.nameLabel.text =[NSString stringWithFormat:@"作者:%@", _detailList.data.user.nickname];
                 
             });
         }

@@ -18,7 +18,7 @@
 		3F2539541D9BFB460072831B /* 新闻.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394E1D9BFB460072831B /* 新闻.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539551D9BFB460072831B /* 新闻2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394F1D9BFB460072831B /* 新闻2.png */; settings = {ASSET_TAGS = (); }; };
 		3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F25395E1D9CB3820072831B /* NetWorkRequest.m */; settings = {ASSET_TAGS = (); }; };
-		3F33C6F51D9CBD3700621E92 /* RadioDetailList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */; settings = {ASSET_TAGS = (); }; };
+		3F33C6F51D9CBD3700621E92 /* RadioDetailListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6F31D9CBD3700621E92 /* RadioDetailListController.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C6F61D9CBD3700621E92 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
 		3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F33C6F81D9CBF8500621E92 /* RadioMainRightTableCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F33C6FB1D9CBF8500621E92 /* RadioMainRightTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F33C6F91D9CBF8500621E92 /* RadioMainRightTableCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -103,8 +103,8 @@
 		3F25395A1D9CA38D0072831B /* ToolsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsHelper.h; sourceTree = "<group>"; };
 		3F25395D1D9CB3820072831B /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
 		3F25395E1D9CB3820072831B /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
-		3F33C6F21D9CBD3700621E92 /* RadioDetailList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailList.h; sourceTree = "<group>"; };
-		3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailList.m; sourceTree = "<group>"; };
+		3F33C6F21D9CBD3700621E92 /* RadioDetailListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioDetailListController.h; sourceTree = "<group>"; };
+		3F33C6F31D9CBD3700621E92 /* RadioDetailListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioDetailListController.m; sourceTree = "<group>"; };
 		3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
 		3F33C6F71D9CBF8500621E92 /* RadioMainRightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainRightTableCell.h; sourceTree = "<group>"; };
 		3F33C6F81D9CBF8500621E92 /* RadioMainRightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMainRightTableCell.m; sourceTree = "<group>"; };
@@ -555,8 +555,8 @@
 				3F45A8D81D9BE27000A83BB1 /* RadioMainController.h */,
 				3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */,
 				3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */,
-				3F33C6F21D9CBD3700621E92 /* RadioDetailList.h */,
-				3F33C6F31D9CBD3700621E92 /* RadioDetailList.m */,
+				3F33C6F21D9CBD3700621E92 /* RadioDetailListController.h */,
+				3F33C6F31D9CBD3700621E92 /* RadioDetailListController.m */,
 				3F33C6F41D9CBD3700621E92 /* RadioDetailList.xib */,
 				3F33C7011D9CEA3100621E92 /* radioController.h */,
 				3F33C7021D9CEA3100621E92 /* radioController.m */,
@@ -820,7 +820,7 @@
 				3F33C7041D9CEA3100621E92 /* radioController.m in Sources */,
 				3F2539481D9BF5940072831B /* ShowViewController.m in Sources */,
 				3F799A1F1D9E4F3E009DAF97 /* BeautyViewController.m in Sources */,
-				3F33C6F51D9CBD3700621E92 /* RadioDetailList.m in Sources */,
+				3F33C6F51D9CBD3700621E92 /* RadioDetailListController.m in Sources */,
 				3F799A1A1D9E4F2C009DAF97 /* VedioPlayViewController.m in Sources */,
 				3F7999FD1D9E485B009DAF97 /* T1441074311424.m in Sources */,
 				3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */,

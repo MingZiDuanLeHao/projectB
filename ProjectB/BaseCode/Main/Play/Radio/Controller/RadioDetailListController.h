@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RadioDetailList : UIViewController
+@interface RadioDetailListController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segMent;
 /**albumId*/
 @property(nonatomic,strong) NSString *albumId;
