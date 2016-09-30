@@ -13,8 +13,8 @@
 
 @property (nonatomic, strong) NSArray *t1441074311424;
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict key:(NSString *)key;
+- (instancetype)initWithDictionary:(NSDictionary *)dict key:(NSString *)key;
 - (NSDictionary *)dictionaryRepresentation;
 
 @end

@@ -23,19 +23,19 @@ NSString *const kBaseClassT1441074311424 = @"T1441074311424";
 @synthesize t1441074311424 = _t1441074311424;
 
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict key:(NSString *)key
 {
-    return [[self alloc] initWithDictionary:dict];
+    return [[self alloc] initWithDictionary:dict key:key ];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict
+- (instancetype)initWithDictionary:(NSDictionary *)dict key:(NSString *)key
 {
     self = [super init];
     
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-    NSObject *receivedT1441074311424 = [dict objectForKey:kBaseClassT1441074311424];
+    NSObject *receivedT1441074311424 = [dict objectForKey:key];
     NSMutableArray *parsedT1441074311424 = [NSMutableArray array];
     if ([receivedT1441074311424 isKindOfClass:[NSArray class]]) {
         for (NSDictionary *item in (NSArray *)receivedT1441074311424) {

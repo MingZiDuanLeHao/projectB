@@ -70,7 +70,7 @@
     first.textColor = [UIColor redColor];
     _titleIndex = 100;
     _cateNumArr =[@[@"T1429173683626",@"T1441074311424",@"T1348654105308",@"T1348650593803",@"T1348654204705",@"T1348648037603"]mutableCopy];
-    _cateNumStr = _cateNumArr[0];
+    _cateNumStr = _cateNumArr[2];
     _tableTag = 200;
 }
 
@@ -114,23 +114,41 @@
 #pragma mark handleData
 -(void)askData
 {
-    NSLog(@"%@___",_cateNumStr);
+//    NSLog(@"%@___",_cateNumStr);
+
     NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/list/%@/0-20.html",_cateNumStr];
-    NSLog(@"%@",url);
-    [NetWorkRequest requestWithMethod:GET URL:@"http://c.m.163.com/nc/article/C20N3VJE000146BE/full.html" para:nil success:^(NSData *data) {
-        if (data) {
-            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            _base = [BaseClass modelObjectWithDictionary:dic];
-            NSLog(@"%@___",str);
-            UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [table reloadData];
-            });
-        }
-    } error:^(NSError *error) {
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+//
+//    [NetWorkRequest requestWithMethod:GET URL:url para:nil success:^(NSData *data) {
+//        if (data) {
+////            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//            _base = [BaseClass modelObjectWithDictionary:dic];
+//            NSLog(@"%@___",dic);
+//            UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [table reloadData];
+//            });
+//        }
+//    } error:^(NSError *error) {
+//        NSLog(@"error__%@",error);
+//    } view:self.view];
+//    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        
+        _base = [BaseClass modelObjectWithDictionary:dic key:_cateNumStr];
+        NSLog(@"%@___",_base);
+        UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [table reloadData];
+        });
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error__%@",error);
-    } view:self.view];
+    }];
 }
 
 #pragma mark TableView代理
