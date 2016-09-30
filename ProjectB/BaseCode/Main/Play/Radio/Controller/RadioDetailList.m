@@ -74,7 +74,7 @@ static NSString *detailListCell = @"detailListCell";
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 [_listTab reloadData];
-                   [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
+               [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
                 
             });
         }
