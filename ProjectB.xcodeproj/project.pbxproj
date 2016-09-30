@@ -65,6 +65,20 @@
 		3F799A141D9E4864009DAF97 /* MainDetailRelativeSys.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A0A1D9E4864009DAF97 /* MainDetailRelativeSys.m */; settings = {ASSET_TAGS = (); }; };
 		3F799A151D9E4864009DAF97 /* MainDetailTopiclistNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A0C1D9E4864009DAF97 /* MainDetailTopiclistNews.m */; settings = {ASSET_TAGS = (); }; };
 		3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A0E1D9E4864009DAF97 /* MainDetailVideo.m */; settings = {ASSET_TAGS = (); }; };
+		3F799A1A1D9E4F2C009DAF97 /* VedioPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3F799A1B1D9E4F2C009DAF97 /* VedioPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F799A1F1D9E4F3E009DAF97 /* BeautyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3F799A201D9E4F3E009DAF97 /* BeautyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F799A241D9E4F4C009DAF97 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A221D9E4F4C009DAF97 /* PictureViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3F799A251D9E4F4C009DAF97 /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F799A291D9E4F57009DAF97 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A271D9E4F57009DAF97 /* TextViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3F799A2A1D9E4F57009DAF97 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A281D9E4F57009DAF97 /* TextViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2B1D9E51DA009DAF97 /* blue.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F799A301D9E51DA009DAF97 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2C1D9E51DA009DAF97 /* green.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */; settings = {ASSET_TAGS = (); }; };
+		3F799A321D9E51DA009DAF97 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2E1D9E51DA009DAF97 /* red.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F799A341D9E5286009DAF97 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A331D9E5286009DAF97 /* black.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A351D9E53E0009DAF97 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */; };
@@ -175,6 +189,24 @@
 		3F799A0C1D9E4864009DAF97 /* MainDetailTopiclistNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailTopiclistNews.m; sourceTree = "<group>"; };
 		3F799A0D1D9E4864009DAF97 /* MainDetailVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDetailVideo.h; sourceTree = "<group>"; };
 		3F799A0E1D9E4864009DAF97 /* MainDetailVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailVideo.m; sourceTree = "<group>"; };
+		3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayViewController.h; sourceTree = "<group>"; };
+		3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayViewController.m; sourceTree = "<group>"; };
+		3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayViewController.xib; sourceTree = "<group>"; };
+		3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyViewController.h; sourceTree = "<group>"; };
+		3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyViewController.m; sourceTree = "<group>"; };
+		3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeautyViewController.xib; sourceTree = "<group>"; };
+		3F799A211D9E4F4C009DAF97 /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
+		3F799A221D9E4F4C009DAF97 /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
+		3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
+		3F799A261D9E4F57009DAF97 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		3F799A271D9E4F57009DAF97 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		3F799A281D9E4F57009DAF97 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
+		3F799A2B1D9E51DA009DAF97 /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
+		3F799A2C1D9E51DA009DAF97 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
+		3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hailan.jpeg; sourceTree = "<group>"; };
+		3F799A2E1D9E51DA009DAF97 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
+		3F799A331D9E5286009DAF97 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
+		3F799A351D9E53E0009DAF97 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		3FA6ABA41D9D31FD009D5B67 /* NewsMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsMainTableViewCell.h; sourceTree = "<group>"; };
 		3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsMainTableViewCell.m; sourceTree = "<group>"; };
 		3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -222,6 +254,12 @@
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F25394E1D9BFB460072831B /* 新闻.png */,
 				3F25394F1D9BFB460072831B /* 新闻2.png */,
+				3F799A331D9E5286009DAF97 /* black.jpg */,
+				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
+				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
+				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
+				3F799A2E1D9E51DA009DAF97 /* red.jpg */,
+				3F799A351D9E53E0009DAF97 /* 4.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -472,6 +510,18 @@
 				3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */,
 				3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */,
 				3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */,
+				3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */,
+				3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */,
+				3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */,
+				3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */,
+				3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */,
+				3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */,
+				3F799A211D9E4F4C009DAF97 /* PictureViewController.h */,
+				3F799A221D9E4F4C009DAF97 /* PictureViewController.m */,
+				3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */,
+				3F799A261D9E4F57009DAF97 /* TextViewController.h */,
+				3F799A271D9E4F57009DAF97 /* TextViewController.m */,
+				3F799A281D9E4F57009DAF97 /* TextViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -668,21 +718,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
+				3F799A1B1D9E4F2C009DAF97 /* VedioPlayViewController.xib in Resources */,
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
+				3F799A251D9E4F4C009DAF97 /* PictureViewController.xib in Resources */,
+				3F799A201D9E4F3E009DAF97 /* BeautyViewController.xib in Resources */,
 				3F33C6F61D9CBD3700621E92 /* RadioDetailList.xib in Resources */,
 				3F2539491D9BF5940072831B /* ShowViewController.xib in Resources */,
 				3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */,
 				3F2539541D9BFB460072831B /* 新闻.png in Resources */,
+				3F799A2A1D9E4F57009DAF97 /* TextViewController.xib in Resources */,
 				3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */,
+				3F799A301D9E51DA009DAF97 /* green.jpg in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */,
+				3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */,
 				3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
 				3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */,
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
 				3F33C6FB1D9CBF8500621E92 /* RadioMainRightTableCell.xib in Resources */,
+				3F799A341D9E5286009DAF97 /* black.jpg in Resources */,
+				3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */,
+				3F799A321D9E51DA009DAF97 /* red.jpg in Resources */,
 				3F33C7001D9CDFC800621E92 /* RedioDetailListCell.xib in Resources */,
 				3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */,
 				3F2539531D9BFB460072831B /* 外卖2.png in Resources */,
@@ -756,9 +816,12 @@
 				3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */,
 				3F7999FB1D9E485B009DAF97 /* BaseClass.m in Sources */,
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
+				3F799A291D9E4F57009DAF97 /* TextViewController.m in Sources */,
 				3F33C7041D9CEA3100621E92 /* radioController.m in Sources */,
 				3F2539481D9BF5940072831B /* ShowViewController.m in Sources */,
+				3F799A1F1D9E4F3E009DAF97 /* BeautyViewController.m in Sources */,
 				3F33C6F51D9CBD3700621E92 /* RadioDetailList.m in Sources */,
+				3F799A1A1D9E4F2C009DAF97 /* VedioPlayViewController.m in Sources */,
 				3F7999FD1D9E485B009DAF97 /* T1441074311424.m in Sources */,
 				3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */,
 				3F7999FC1D9E485B009DAF97 /* LiveInfo.m in Sources */,
@@ -768,6 +831,7 @@
 				3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */,
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
 				3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */,
+				3F799A241D9E4F4C009DAF97 /* PictureViewController.m in Sources */,
 				3F799A101D9E4864009DAF97 /* MainDetailBaseClass.m in Sources */,
 				3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */,
 				3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */,

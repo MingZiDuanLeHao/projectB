@@ -15,23 +15,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-Pz-sUd">
-                    <rect key="frame" x="94" y="269" width="46" height="30"/>
+                    <rect key="frame" x="103" y="488" width="46" height="30"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="OFh-z3-tVM"/>
-                        <constraint firstAttribute="width" constant="46" id="zPn-07-9jF"/>
+                        <constraint firstAttribute="height" constant="30" id="SQ1-x0-rUn"/>
+                        <constraint firstAttribute="width" constant="46" id="dA3-YY-TF3"/>
                     </constraints>
                     <state key="normal" title="娱乐"/>
                     <connections>
                         <action selector="vedioHandle:" destination="-1" eventType="touchUpInside" id="0pT-2g-Xgq"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-Hk-9lB">
+                    <rect key="frame" x="0.0" y="64" width="320" height="418"/>
+                    <animations/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veC-RE-qh1">
-                    <rect key="frame" x="180" y="269" width="46" height="30"/>
+                    <rect key="frame" x="172" y="488" width="46" height="30"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Dlj-8G-GBQ"/>
-                        <constraint firstAttribute="width" constant="46" id="Svc-79-f9n"/>
+                        <constraint firstAttribute="height" constant="30" id="11V-ts-QJ3"/>
+                        <constraint firstAttribute="width" constant="46" id="8ou-SN-RTP"/>
                     </constraints>
                     <state key="normal" title="电台"/>
                     <connections>
@@ -42,12 +46,19 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="veC-RE-qh1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="12D-hh-NGK"/>
-                <constraint firstItem="YCY-Pz-sUd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="94" id="67S-1b-FCl"/>
-                <constraint firstItem="YCY-Pz-sUd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="x8K-V0-6x0"/>
-                <constraint firstAttribute="trailing" secondItem="veC-RE-qh1" secondAttribute="trailing" constant="94" id="xrC-9R-M1p"/>
+                <constraint firstItem="YCY-Pz-sUd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="103" id="AZC-Nd-ifB"/>
+                <constraint firstAttribute="trailing" secondItem="veC-RE-qh1" secondAttribute="trailing" constant="102" id="St1-C3-s8X"/>
+                <constraint firstAttribute="bottom" secondItem="veC-RE-qh1" secondAttribute="bottom" constant="50" id="egm-Ns-QJS"/>
+                <constraint firstAttribute="trailing" secondItem="3uh-Hk-9lB" secondAttribute="trailing" id="f1I-GB-Dxj"/>
+                <constraint firstItem="3uh-Hk-9lB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="gvP-WG-KIh"/>
+                <constraint firstAttribute="bottom" secondItem="YCY-Pz-sUd" secondAttribute="bottom" constant="50" id="nGs-k5-YPv"/>
+                <constraint firstItem="veC-RE-qh1" firstAttribute="top" secondItem="3uh-Hk-9lB" secondAttribute="bottom" constant="6" id="nlh-4y-MKD"/>
+                <constraint firstItem="3uh-Hk-9lB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tE0-ml-enm"/>
             </constraints>
             <point key="canvasLocation" x="340" y="283"/>
         </view>
     </objects>
+    <resources>
+        <image name="4.jpg" width="167" height="220"/>
+    </resources>
 </document>

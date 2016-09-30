@@ -21,7 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self askData];
+    [self initUI];
 }
+
+-(void)initUI
+{
+    self.title = @"视听";
+   
+}
+
 -(void)askData
 {
  
