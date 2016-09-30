@@ -24,7 +24,7 @@
 }
 -(void)askData
 {
-
+ 
 }
 -(void)viewDidAppear:(BOOL)animated
 {
