@@ -10,6 +10,7 @@
 #import "NewsMainTableViewCell.h"
 #import "DataModels.h"
 #import "UIImageView+WebCache.h"
+#import "NewsDetailController.h"
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
@@ -18,6 +19,7 @@
 @property(nonatomic,strong)NSString *cateNumStr;
 @property(nonatomic,assign)NSInteger tableTag;
 @property(nonatomic,strong)NSMutableArray *cateNumArr;
+
 
 @property(nonatomic,strong)BaseClass *base;
 
@@ -70,7 +72,7 @@
     first.textColor = [UIColor redColor];
     _titleIndex = 100;
     _cateNumArr =[@[@"T1429173683626",@"T1441074311424",@"T1348654105308",@"T1348650593803",@"T1348654204705",@"T1348648037603"]mutableCopy];
-    _cateNumStr = _cateNumArr[2];
+    _cateNumStr = _cateNumArr[0];
     _tableTag = 200;
 }
 
@@ -82,6 +84,9 @@
     offset.x = (index-100) * self.contentScrollView.frame.size.width;
     [self.contentScrollView setContentOffset:offset animated:YES];
     self.titleIndex = index;
+    _cateNumStr = _cateNumArr[index-100];
+    _tableTag = 200 + index - 100;
+    [self askData];
 }
 -(void)setupContent
 {
@@ -114,41 +119,22 @@
 #pragma mark handleData
 -(void)askData
 {
-//    NSLog(@"%@___",_cateNumStr);
-
     NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/list/%@/0-20.html",_cateNumStr];
-    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
-//
-//    [NetWorkRequest requestWithMethod:GET URL:url para:nil success:^(NSData *data) {
-//        if (data) {
-////            NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//            _base = [BaseClass modelObjectWithDictionary:dic];
-//            NSLog(@"%@___",dic);
-//            UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [table reloadData];
-//            });
-//        }
-//    } error:^(NSError *error) {
-//        NSLog(@"error__%@",error);
-//    } view:self.view];
-//    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:url parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        
-        _base = [BaseClass modelObjectWithDictionary:dic key:_cateNumStr];
-        NSLog(@"%@___",_base);
-        UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [table reloadData];
-        });
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [NetWorkRequest requestWithMethod:GET URL:url para:nil success:^(NSData *data) {
+        if (data) {
+
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            _base = [BaseClass modelObjectWithDictionary:dic key:_cateNumStr];
+            
+            UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [table reloadData];
+            });
+        }
+    } error:^(NSError *error) {
         NSLog(@"error__%@",error);
-    }];
+    } view:self.view];
+
 }
 
 #pragma mark TableView代理
@@ -172,14 +158,17 @@
     cell.mainTitle.text = model.title;
     cell.subTitle.text = model.digest;
     cell.From.text = model.source;
-    cell.followCount.text = [NSString stringWithFormat:@"%f跟帖",model.replyCount];
+    cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NewsDetailController *detailVC = [NewsDetailController new];
+    T1441074311424 *model =  _base.t1441074311424[indexPath.row];
+    detailVC.postid = model.postid;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark ScrollView
@@ -187,12 +176,19 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView == self.contentScrollView) {
+        
+        
         // 一些临时变量
         CGFloat width = scrollView.frame.size.width;
         CGFloat offsetX = scrollView.contentOffset.x;
         
         // 当前位置需要显示的控制器的索引
         NSInteger index = offsetX / width;
+        
+        //刷新UI
+        _cateNumStr = _cateNumArr[index];
+        _tableTag = 200 + index;
+        [self askData];
         
         // 让对应的顶部标题居中显示
         UILabel *label = self.titleScrollView.subviews[index];
@@ -207,6 +203,7 @@
         [self.titleScrollView setContentOffset:titleOffset animated:YES];
         
         self.titleIndex = index + 100;
+        
         
     }
 }

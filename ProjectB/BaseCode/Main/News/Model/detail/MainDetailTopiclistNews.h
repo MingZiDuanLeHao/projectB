@@ -1,5 +1,5 @@
 //
-//  TopiclistNews.h
+//  MainDetailTopiclistNews.h
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
@@ -9,7 +9,7 @@
 
 
 
-@interface TopiclistNews : NSObject <NSCoding, NSCopying>
+@interface MainDetailTopiclistNews : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *tname;
 @property (nonatomic, strong) NSString *alias;

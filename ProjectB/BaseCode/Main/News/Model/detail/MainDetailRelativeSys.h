@@ -1,5 +1,5 @@
 //
-//  RelativeSys.h
+//  MainDetailRelativeSys.h
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
@@ -9,7 +9,7 @@
 
 
 
-@interface RelativeSys : NSObject <NSCoding, NSCopying>
+@interface MainDetailRelativeSys : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *source;
 @property (nonatomic, strong) NSString *ptime;

@@ -1,24 +1,24 @@
 //
-//  Huati.m
+//  MainDetailHuati.m
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
 //
 
-#import "Huati.h"
+#import "MainDetailHuati.h"
 
 
-NSString *const kHuatiTopicId = @"topicId";
-NSString *const kHuatiTopicName = @"topicName";
+NSString *const kMainDetailHuatiTopicId = @"topicId";
+NSString *const kMainDetailHuatiTopicName = @"topicName";
 
 
-@interface Huati ()
+@interface MainDetailHuati ()
 
 - (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
 
 @end
 
-@implementation Huati
+@implementation MainDetailHuati
 
 @synthesize topicId = _topicId;
 @synthesize topicName = _topicName;
@@ -36,8 +36,8 @@ NSString *const kHuatiTopicName = @"topicName";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.topicId = [self objectOrNilForKey:kHuatiTopicId fromDictionary:dict];
-            self.topicName = [self objectOrNilForKey:kHuatiTopicName fromDictionary:dict];
+            self.topicId = [self objectOrNilForKey:kMainDetailHuatiTopicId fromDictionary:dict];
+            self.topicName = [self objectOrNilForKey:kMainDetailHuatiTopicName fromDictionary:dict];
 
     }
     
@@ -48,8 +48,8 @@ NSString *const kHuatiTopicName = @"topicName";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.topicId forKey:kHuatiTopicId];
-    [mutableDict setValue:self.topicName forKey:kHuatiTopicName];
+    [mutableDict setValue:self.topicId forKey:kMainDetailHuatiTopicId];
+    [mutableDict setValue:self.topicName forKey:kMainDetailHuatiTopicName];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -73,21 +73,21 @@ NSString *const kHuatiTopicName = @"topicName";
 {
     self = [super init];
 
-    self.topicId = [aDecoder decodeObjectForKey:kHuatiTopicId];
-    self.topicName = [aDecoder decodeObjectForKey:kHuatiTopicName];
+    self.topicId = [aDecoder decodeObjectForKey:kMainDetailHuatiTopicId];
+    self.topicName = [aDecoder decodeObjectForKey:kMainDetailHuatiTopicName];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_topicId forKey:kHuatiTopicId];
-    [aCoder encodeObject:_topicName forKey:kHuatiTopicName];
+    [aCoder encodeObject:_topicId forKey:kMainDetailHuatiTopicId];
+    [aCoder encodeObject:_topicName forKey:kMainDetailHuatiTopicName];
 }
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    Huati *copy = [[Huati alloc] init];
+    MainDetailHuati *copy = [[MainDetailHuati alloc] init];
     
     if (copy) {
 

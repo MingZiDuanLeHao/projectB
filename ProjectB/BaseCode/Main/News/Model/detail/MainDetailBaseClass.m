@@ -1,41 +1,41 @@
 //
-//  BaseClass.m
+//  MainDetailBaseClass.m
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
 //
 
-#import "detailBaseClass.h"
-#import "C20N3VJE000146BE.h"
+#import "MainDetailBaseClass.h"
+#import "MainDetailC20N3VJE000146BE.h"
 
 
-NSString *const kBaseClassC20N3VJE000146BE = @"C20N3VJE000146BE";
+NSString *const kMainDetailBaseClassC20N3VJE000146BE = @"C20N3VJE000146BE";
 
 
-@interface detailBaseClass ()
+@interface MainDetailBaseClass ()
 
 - (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
 
 @end
 
-@implementation detailBaseClass
+@implementation MainDetailBaseClass
 
 @synthesize c20N3VJE000146BE = _c20N3VJE000146BE;
 
 
-+ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
++ (instancetype)modelObjectWithDictionary:(NSDictionary *)dict key:(NSString *)key
 {
-    return [[self alloc] initWithDictionary:dict];
+    return [[self alloc] initWithDictionary:dict key:key];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict
+- (instancetype)initWithDictionary:(NSDictionary *)dict key:(NSString *)key
 {
     self = [super init];
     
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.c20N3VJE000146BE = [C20N3VJE000146BE modelObjectWithDictionary:[dict objectForKey:kBaseClassC20N3VJE000146BE]];
+            self.c20N3VJE000146BE = [MainDetailC20N3VJE000146BE modelObjectWithDictionary:[dict objectForKey:key]];
 
     }
     
@@ -46,7 +46,7 @@ NSString *const kBaseClassC20N3VJE000146BE = @"C20N3VJE000146BE";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:[self.c20N3VJE000146BE dictionaryRepresentation] forKey:kBaseClassC20N3VJE000146BE];
+    [mutableDict setValue:[self.c20N3VJE000146BE dictionaryRepresentation] forKey:kMainDetailBaseClassC20N3VJE000146BE];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -70,19 +70,19 @@ NSString *const kBaseClassC20N3VJE000146BE = @"C20N3VJE000146BE";
 {
     self = [super init];
 
-    self.c20N3VJE000146BE = [aDecoder decodeObjectForKey:kBaseClassC20N3VJE000146BE];
+    self.c20N3VJE000146BE = [aDecoder decodeObjectForKey:kMainDetailBaseClassC20N3VJE000146BE];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_c20N3VJE000146BE forKey:kBaseClassC20N3VJE000146BE];
+    [aCoder encodeObject:_c20N3VJE000146BE forKey:kMainDetailBaseClassC20N3VJE000146BE];
 }
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    detailBaseClass *copy = [[detailBaseClass alloc] init];
+    MainDetailBaseClass *copy = [[MainDetailBaseClass alloc] init];
     
     if (copy) {
 

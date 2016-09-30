@@ -1,5 +1,5 @@
 //
-//  Askbar.h
+//  MainDetailLink.h
 //
 //  Created by   on 2016/9/30
 //  Copyright (c) 2016 __MyCompanyName__. All rights reserved.
@@ -9,14 +9,11 @@
 
 
 
-@interface Askbar : NSObject <NSCoding, NSCopying>
+@interface MainDetailLink : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, assign) double concernCount;
+@property (nonatomic, strong) NSString *ref;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *headpicurl;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *alias;
-@property (nonatomic, strong) NSString *expertId;
+@property (nonatomic, strong) NSString *href;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

@@ -7,11 +7,11 @@
 //
 
 #import "NewsDetailController.h"
-#import "detailDataModels.h"
+#import "MainDetailDataModels.h"
 
 @interface NewsDetailController ()
 @property(nonatomic,strong)WKWebView *WebView;
-@property(nonatomic,strong)detailBaseClass *base;
+@property(nonatomic,strong)MainDetailBaseClass *base;
 @end
 
 @implementation NewsDetailController
@@ -27,41 +27,30 @@
 -(void)initUI
 {
     self.title = @"文章详情";
-    _WebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 64, SWidth, SHeight-64)];
+    _WebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, SWidth, SHeight+64)];
     [self.view addSubview:_WebView];
-    UIBarButtonItem *comment = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(commentAction)];
-    UIBarButtonItem *share = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareAction)];
-    self.navigationItem.rightBarButtonItems = @[share,comment];
+//    UIBarButtonItem *comment = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(commentAction)];
+//    UIBarButtonItem *share = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareAction)];
+//    self.navigationItem.rightBarButtonItems = @[share,comment];
 }
 
 -(void)requestData
 {
-//    [NetWorkRequest requestWithMethod:GET URL:@"http://c.m.163.com/nc/article/C20N3VJE000146BE/full.html" para:nil success:^(NSData *data) {
-//        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//        _base = [detailBaseClass modelObjectWithDictionary:dic];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//            NSURL *cssURL = [[NSBundle mainBundle]URLForResource:@"style" withExtension:@"css"];
-//           
-//            [_WebView loadHTMLString:_base.c20N3VJE000146BE.shareLink baseURL:cssURL];
-//            
-//        });
-//    } error:^(NSError *error) {
-//        
-//    }view:self.view];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:@"http://c.m.163.com/nc/article/list/T1429173683626/0-20.html" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-
+    [NetWorkRequest requestWithMethod:GET URL:[NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/full.html",_postid] para:nil success:^(NSData *data) {
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        _base = [MainDetailBaseClass modelObjectWithDictionary:dic key:_postid];
         dispatch_async(dispatch_get_main_queue(), ^{
-//            [_TableView reloadData];
+
+//            NSURL *cssURL = [[NSBundle mainBundle]URLForResource:@"style" withExtension:@"css"];
+            
+            [_WebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_base.c20N3VJE000146BE.shareLink]]];
+            
         });
+    } error:^(NSError *error) {
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
+    }view:self.view];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
