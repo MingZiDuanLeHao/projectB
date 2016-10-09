@@ -1,18 +1,18 @@
 //
-//  radioController.m
+//  RadioPlayViewController.m
 //  ProjectB
 //
-//  Created by lanou on 2016/9/29.
+//  Created by 瓶子 on 2016/10/9.
 //  Copyright © 2016年 lanou. All rights reserved.
 //
 
-#import "radioController.h"
+#import "RadioPlayViewController.h"
 
-@interface radioController ()
+@interface RadioPlayViewController ()
 
 @end
 
-@implementation radioController
+@implementation RadioPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
