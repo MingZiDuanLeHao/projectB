@@ -71,14 +71,19 @@
 		3F799A201D9E4F3E009DAF97 /* BeautyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F799A241D9E4F4C009DAF97 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A221D9E4F4C009DAF97 /* PictureViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3F799A251D9E4F4C009DAF97 /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		3F799A291D9E4F57009DAF97 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F799A271D9E4F57009DAF97 /* TextViewController.m */; settings = {ASSET_TAGS = (); }; };
-		3F799A2A1D9E4F57009DAF97 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A281D9E4F57009DAF97 /* TextViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2B1D9E51DA009DAF97 /* blue.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A301D9E51DA009DAF97 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2C1D9E51DA009DAF97 /* green.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */; settings = {ASSET_TAGS = (); }; };
 		3F799A321D9E51DA009DAF97 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2E1D9E51DA009DAF97 /* red.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A341D9E5286009DAF97 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A331D9E5286009DAF97 /* black.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A351D9E53E0009DAF97 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D241DA89881000305B8 /* POPopupOverlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E2D231DA89881000305B8 /* POPopupOverlayer.m */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D271DA89986000305B8 /* POContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E2D261DA89986000305B8 /* POContentView.m */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D2F1DA8E911000305B8 /* BeautyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E2D2D1DA8E911000305B8 /* BeautyCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D301DA8E911000305B8 /* BeautyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E2D2E1DA8E911000305B8 /* BeautyCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D331DA90EAD000305B8 /* waterFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E2D321DA90EAD000305B8 /* waterFlow.m */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D371DA90FFD000305B8 /* imageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E2D341DA90FFD000305B8 /* imageModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F9E2D381DA90FFD000305B8 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F9E2D361DA90FFD000305B8 /* Data.json */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */; };
@@ -148,9 +153,9 @@
 		3F45A8C81D9BDB7D00A83BB1 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
 		3F45A8C91D9BDB7D00A83BB1 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		3F45A8CF1D9BE07900A83BB1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../../PrefixHeader.pch; sourceTree = "<group>"; };
-		3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioMainController.h; sourceTree = "<group>"; };
-		3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioMainController.m; sourceTree = "<group>"; };
-		3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioMainController.xib; sourceTree = "<group>"; };
+		3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VedioMainController.h; path = ../Vedio/Controller/VedioMainController.h; sourceTree = "<group>"; };
+		3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VedioMainController.m; path = ../Vedio/Controller/VedioMainController.m; sourceTree = "<group>"; };
+		3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VedioMainController.xib; path = ../Vedio/Controller/VedioMainController.xib; sourceTree = "<group>"; };
 		3F45A8D81D9BE27000A83BB1 /* RadioMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioMainController.h; sourceTree = "<group>"; };
 		3F45A8D91D9BE27000A83BB1 /* RadioMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioMainController.m; sourceTree = "<group>"; };
 		3F45A8DA1D9BE27000A83BB1 /* RadioMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioMainController.xib; sourceTree = "<group>"; };
@@ -189,24 +194,33 @@
 		3F799A0C1D9E4864009DAF97 /* MainDetailTopiclistNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailTopiclistNews.m; sourceTree = "<group>"; };
 		3F799A0D1D9E4864009DAF97 /* MainDetailVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDetailVideo.h; sourceTree = "<group>"; };
 		3F799A0E1D9E4864009DAF97 /* MainDetailVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailVideo.m; sourceTree = "<group>"; };
-		3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayViewController.h; sourceTree = "<group>"; };
-		3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayViewController.m; sourceTree = "<group>"; };
-		3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayViewController.xib; sourceTree = "<group>"; };
-		3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyViewController.h; sourceTree = "<group>"; };
-		3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyViewController.m; sourceTree = "<group>"; };
-		3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeautyViewController.xib; sourceTree = "<group>"; };
-		3F799A211D9E4F4C009DAF97 /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
-		3F799A221D9E4F4C009DAF97 /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
-		3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
-		3F799A261D9E4F57009DAF97 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
-		3F799A271D9E4F57009DAF97 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
-		3F799A281D9E4F57009DAF97 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
+		3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VedioPlayViewController.h; path = Controller/VedioPlayViewController.h; sourceTree = "<group>"; };
+		3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VedioPlayViewController.m; path = Controller/VedioPlayViewController.m; sourceTree = "<group>"; };
+		3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VedioPlayViewController.xib; path = Controller/VedioPlayViewController.xib; sourceTree = "<group>"; };
+		3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeautyViewController.h; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/BeautyViewController.h; sourceTree = SOURCE_ROOT; };
+		3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeautyViewController.m; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/BeautyViewController.m; sourceTree = SOURCE_ROOT; };
+		3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeautyViewController.xib; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/BeautyViewController.xib; sourceTree = SOURCE_ROOT; };
+		3F799A211D9E4F4C009DAF97 /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureViewController.h; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/PictureViewController.h; sourceTree = SOURCE_ROOT; };
+		3F799A221D9E4F4C009DAF97 /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureViewController.m; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/PictureViewController.m; sourceTree = SOURCE_ROOT; };
+		3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PictureViewController.xib; path = ProjectB/BaseCode/Main/Play/Vedio/Controller/PictureViewController.xib; sourceTree = SOURCE_ROOT; };
 		3F799A2B1D9E51DA009DAF97 /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
 		3F799A2C1D9E51DA009DAF97 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
 		3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hailan.jpeg; sourceTree = "<group>"; };
 		3F799A2E1D9E51DA009DAF97 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
 		3F799A331D9E5286009DAF97 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		3F799A351D9E53E0009DAF97 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		3F9E2D221DA89881000305B8 /* POPopupOverlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPopupOverlayer.h; sourceTree = "<group>"; };
+		3F9E2D231DA89881000305B8 /* POPopupOverlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPopupOverlayer.m; sourceTree = "<group>"; };
+		3F9E2D251DA89986000305B8 /* POContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POContentView.h; sourceTree = "<group>"; };
+		3F9E2D261DA89986000305B8 /* POContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POContentView.m; sourceTree = "<group>"; };
+		3F9E2D2C1DA8E911000305B8 /* BeautyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyCell.h; sourceTree = "<group>"; };
+		3F9E2D2D1DA8E911000305B8 /* BeautyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyCell.m; sourceTree = "<group>"; };
+		3F9E2D2E1DA8E911000305B8 /* BeautyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeautyCell.xib; sourceTree = "<group>"; };
+		3F9E2D311DA90EAD000305B8 /* waterFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterFlow.h; sourceTree = "<group>"; };
+		3F9E2D321DA90EAD000305B8 /* waterFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterFlow.m; sourceTree = "<group>"; };
+		3F9E2D341DA90FFD000305B8 /* imageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageModel.m; sourceTree = "<group>"; };
+		3F9E2D351DA90FFD000305B8 /* imageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageModel.h; sourceTree = "<group>"; };
+		3F9E2D361DA90FFD000305B8 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		3FA6ABA41D9D31FD009D5B67 /* NewsMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsMainTableViewCell.h; sourceTree = "<group>"; };
 		3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsMainTableViewCell.m; sourceTree = "<group>"; };
 		3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -234,6 +248,20 @@
 				2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F1F151E1DA9D15700ACFF18 /* PlayMain */ = {
+			isa = PBXGroup;
+			children = (
+				3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */,
+				3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */,
+				3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */,
+				3F45A8AE1D9BCA2600A83BB1 /* Vedio */,
+				3F45A8AD1D9BCA1400A83BB1 /* Radio */,
+				3F9E2D281DA8E052000305B8 /* Beauty */,
+				3F9E2D201DA89110000305B8 /* Picture */,
+			);
+			path = PlayMain;
 			sourceTree = "<group>";
 		};
 		3F2539361D9BF1BC0072831B /* Tool */ = {
@@ -419,9 +447,8 @@
 		3F45A8AB1D9BC9CF00A83BB1 /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				3F1F151E1DA9D15700ACFF18 /* PlayMain */,
 				3F2539441D9BF55F0072831B /* Show */,
-				3F45A8AE1D9BCA2600A83BB1 /* Vedio */,
-				3F45A8AD1D9BCA1400A83BB1 /* Radio */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -443,17 +470,19 @@
 				3F45A8B61D9BCB2F00A83BB1 /* Model */,
 				3F45A8B51D9BCB2300A83BB1 /* View */,
 			);
-			path = Radio;
+			name = Radio;
+			path = ../Radio;
 			sourceTree = "<group>";
 		};
 		3F45A8AE1D9BCA2600A83BB1 /* Vedio */ = {
 			isa = PBXGroup;
 			children = (
-				3F45A8B41D9BCB0D00A83BB1 /* Controller */,
-				3F45A8B31D9BCAFE00A83BB1 /* Model */,
-				3F45A8B21D9BCAEE00A83BB1 /* View */,
+				3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */,
+				3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */,
+				3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */,
 			);
-			path = Vedio;
+			name = Vedio;
+			path = ../Vedio;
 			sourceTree = "<group>";
 		};
 		3F45A8AF1D9BCA6100A83BB1 /* View */ = {
@@ -486,42 +515,6 @@
 				3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */,
 				3F7999BF1D9E1B2C009DAF97 /* NewsCommentController.h */,
 				3F7999C01D9E1B2C009DAF97 /* NewsCommentController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3F45A8B21D9BCAEE00A83BB1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3F45A8B31D9BCAFE00A83BB1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3F45A8B41D9BCB0D00A83BB1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3F45A8D31D9BE25800A83BB1 /* VedioMainController.h */,
-				3F45A8D41D9BE25800A83BB1 /* VedioMainController.m */,
-				3F45A8D51D9BE25800A83BB1 /* VedioMainController.xib */,
-				3F799A171D9E4F2C009DAF97 /* VedioPlayViewController.h */,
-				3F799A181D9E4F2C009DAF97 /* VedioPlayViewController.m */,
-				3F799A191D9E4F2C009DAF97 /* VedioPlayViewController.xib */,
-				3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */,
-				3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */,
-				3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */,
-				3F799A211D9E4F4C009DAF97 /* PictureViewController.h */,
-				3F799A221D9E4F4C009DAF97 /* PictureViewController.m */,
-				3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */,
-				3F799A261D9E4F57009DAF97 /* TextViewController.h */,
-				3F799A271D9E4F57009DAF97 /* TextViewController.m */,
-				3F799A281D9E4F57009DAF97 /* TextViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -649,6 +642,48 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		3F9E2D201DA89110000305B8 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				3F9E2D211DA89881000305B8 /* PopupOverlayer */,
+				3F799A211D9E4F4C009DAF97 /* PictureViewController.h */,
+				3F799A221D9E4F4C009DAF97 /* PictureViewController.m */,
+				3F799A231D9E4F4C009DAF97 /* PictureViewController.xib */,
+				3F9E2D251DA89986000305B8 /* POContentView.h */,
+				3F9E2D261DA89986000305B8 /* POContentView.m */,
+			);
+			name = Picture;
+			path = ../Vedio/Controller/Picture;
+			sourceTree = "<group>";
+		};
+		3F9E2D211DA89881000305B8 /* PopupOverlayer */ = {
+			isa = PBXGroup;
+			children = (
+				3F9E2D221DA89881000305B8 /* POPopupOverlayer.h */,
+				3F9E2D231DA89881000305B8 /* POPopupOverlayer.m */,
+			);
+			path = PopupOverlayer;
+			sourceTree = "<group>";
+		};
+		3F9E2D281DA8E052000305B8 /* Beauty */ = {
+			isa = PBXGroup;
+			children = (
+				3F9E2D341DA90FFD000305B8 /* imageModel.m */,
+				3F9E2D351DA90FFD000305B8 /* imageModel.h */,
+				3F9E2D361DA90FFD000305B8 /* Data.json */,
+				3F9E2D311DA90EAD000305B8 /* waterFlow.h */,
+				3F9E2D321DA90EAD000305B8 /* waterFlow.m */,
+				3F799A1C1D9E4F3E009DAF97 /* BeautyViewController.h */,
+				3F799A1D1D9E4F3E009DAF97 /* BeautyViewController.m */,
+				3F799A1E1D9E4F3E009DAF97 /* BeautyViewController.xib */,
+				3F9E2D2C1DA8E911000305B8 /* BeautyCell.h */,
+				3F9E2D2D1DA8E911000305B8 /* BeautyCell.m */,
+				3F9E2D2E1DA8E911000305B8 /* BeautyCell.xib */,
+			);
+			name = Beauty;
+			path = ../Vedio/Controller/Beauty;
+			sourceTree = "<group>";
+		};
 		8F838638800B8B98F8DB260C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
+				3F9E2D301DA8E911000305B8 /* BeautyCell.xib in Resources */,
 				3F799A1B1D9E4F2C009DAF97 /* VedioPlayViewController.xib in Resources */,
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
@@ -728,7 +764,6 @@
 				3F2539491D9BF5940072831B /* ShowViewController.xib in Resources */,
 				3F45A8D71D9BE25800A83BB1 /* VedioMainController.xib in Resources */,
 				3F2539541D9BFB460072831B /* 新闻.png in Resources */,
-				3F799A2A1D9E4F57009DAF97 /* TextViewController.xib in Resources */,
 				3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */,
 				3F799A301D9E51DA009DAF97 /* green.jpg in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
@@ -742,6 +777,7 @@
 				3F33C6FB1D9CBF8500621E92 /* RadioMainRightTableCell.xib in Resources */,
 				3F799A341D9E5286009DAF97 /* black.jpg in Resources */,
 				3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */,
+				3F9E2D381DA90FFD000305B8 /* Data.json in Resources */,
 				3F799A321D9E51DA009DAF97 /* red.jpg in Resources */,
 				3F33C7001D9CDFC800621E92 /* RedioDetailListCell.xib in Resources */,
 				3F33C7051D9CEA3100621E92 /* radioController.xib in Resources */,
@@ -816,8 +852,10 @@
 				3F45A8DB1D9BE27000A83BB1 /* RadioMainController.m in Sources */,
 				3F7999FB1D9E485B009DAF97 /* BaseClass.m in Sources */,
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
-				3F799A291D9E4F57009DAF97 /* TextViewController.m in Sources */,
 				3F33C7041D9CEA3100621E92 /* radioController.m in Sources */,
+				3F9E2D271DA89986000305B8 /* POContentView.m in Sources */,
+				3F9E2D241DA89881000305B8 /* POPopupOverlayer.m in Sources */,
+				3F9E2D371DA90FFD000305B8 /* imageModel.m in Sources */,
 				3F2539481D9BF5940072831B /* ShowViewController.m in Sources */,
 				3F799A1F1D9E4F3E009DAF97 /* BeautyViewController.m in Sources */,
 				3F33C6F51D9CBD3700621E92 /* RadioDetailListController.m in Sources */,
@@ -835,6 +873,8 @@
 				3F799A101D9E4864009DAF97 /* MainDetailBaseClass.m in Sources */,
 				3F33C6FA1D9CBF8500621E92 /* RadioMainRightTableCell.m in Sources */,
 				3F33C7111D9D2E6A00621E92 /* RadioMain.m in Sources */,
+				3F9E2D331DA90EAD000305B8 /* waterFlow.m in Sources */,
+				3F9E2D2F1DA8E911000305B8 /* BeautyCell.m in Sources */,
 				3F33C7381D9E403A00621E92 /* RadioDetailListList.m in Sources */,
 				3F45A8D61D9BE25800A83BB1 /* VedioMainController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,

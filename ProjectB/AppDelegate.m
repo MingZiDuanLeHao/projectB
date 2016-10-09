@@ -54,7 +54,8 @@
     
     
     //停留模块
-    ShowViewController *pause = [ShowViewController new];
+//    ShowViewController *pause = [ShowViewController new];
+    VedioMainController *pause = [VedioMainController new];
     UINavigationController *pausenav = [[UINavigationController alloc]initWithRootViewController:pause];
     pausenav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"视听" image:[[UIImage imageNamed:@"视频"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"视频2"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     

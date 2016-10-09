@@ -7,8 +7,11 @@
 //
 
 #import "PictureViewController.h"
+#import "POContentView.h"
+#import "AppDelegate.h"
 
 @interface PictureViewController ()
+@property (nonatomic, strong) POContentView *contentView;
 
 @end
 
@@ -16,12 +19,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+   // self.view.backgroundColor = [UIColor redColor];
+   
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+}
+-(void)loadView
+{
+    [super loadView];
+    [self.view addSubview:self.contentView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (POContentView *)contentView{
+    if (!_contentView) {
+        _contentView = [[POContentView alloc] initWithFrame:self.view.bounds];
+        _contentView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _contentView;
 }
 
 /*

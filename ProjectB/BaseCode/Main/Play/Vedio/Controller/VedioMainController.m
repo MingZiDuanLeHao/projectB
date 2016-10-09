@@ -8,9 +8,10 @@
 
 #import "VedioMainController.h"
 #import "BeautyViewController.h"
-#import "TextViewController.h"
 #import "PictureViewController.h"
 #import "VedioPlayViewController.h"
+#import "RadioMainController.h"
+#import "AppDelegate.h"
 
 @interface VedioMainController ()
 
@@ -22,25 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+   ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
 }
 -(void)initUI
 {
-    UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64 - 36)/2)];
+    UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64)/2)];
     img1.image = [UIImage imageNamed:@"blue.jpg"];
     img1.tag = 100;
     [self.view addSubview:img1];
     
-    UIImageView *img2 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, 64, SWidth/2, (SHeight - 64 - 36)/2)];
+    UIImageView *img2 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, 64, SWidth/2, (SHeight - 64)/2)];
         img2.tag = 101;
     img2.image = [UIImage imageNamed:@"black.jpg"];
     [self.view addSubview:img2];
     
-    UIImageView *img3 = [[UIImageView alloc]initWithFrame:CGRectMake(0, SHeight/2, SWidth/2, (SHeight - 64 - 36)/2)];
+    UIImageView *img3 = [[UIImageView alloc]initWithFrame:CGRectMake(0, SHeight/2, SWidth/2, (SHeight - 64)/2)];
             img3.tag = 103;
     img3.image = [UIImage imageNamed:@"hailan.jpeg"];
     [self.view addSubview:img3];
     
-    UIImageView *img4 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, SHeight/2, SWidth/2, (SHeight - 64 - 36)/2)];
+    UIImageView *img4 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, SHeight/2, SWidth/2, (SHeight - 64)/2)];
             img4.tag = 104;
     img4.image = [UIImage imageNamed:@"red.jpg"];
     [self.view addSubview:img4];
@@ -68,15 +74,15 @@
         BeautyViewController *beaVc = [BeautyViewController new];
         [self.navigationController pushViewController:beaVc animated:YES];
     }
-    else if (tap.view.tag == 102)
+    else if (tap.view.tag == 103)
     {
         PictureViewController *pinVC = [PictureViewController new];
         [self.navigationController pushViewController:pinVC animated:YES];
     }
     else
     {
-        TextViewController *textVC = [TextViewController new];
-        [self.navigationController pushViewController:textVC animated:YES];
+        RadioMainController *radioVC = [RadioMainController new];
+        [self.navigationController pushViewController:radioVC animated:YES];
     }
     
 }

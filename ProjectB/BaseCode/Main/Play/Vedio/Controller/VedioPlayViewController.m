@@ -7,6 +7,7 @@
 //
 
 #import "VedioPlayViewController.h"
+#import "AppDelegate.h"
 
 @interface VedioPlayViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

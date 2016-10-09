@@ -44,9 +44,9 @@
 
     
 
-      [self animationWithView:self.view WithAnimationTransition:UIViewAnimationTransitionCurlDown];
+//      [self animationWithView:self.view WithAnimationTransition:UIViewAnimationTransitionCurlDown];
     VedioMainController *vedioVC = [VedioMainController new];
-    //[self.navigationController pushViewController:vedioVC animated:YES];
+    [self.navigationController pushViewController:vedioVC animated:YES];
     
 }
 - (IBAction)RadioHandle:(UIButton *)sender {
