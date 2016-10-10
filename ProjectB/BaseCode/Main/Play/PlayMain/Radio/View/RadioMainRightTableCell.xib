@@ -63,7 +63,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-eb-p1v">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放red.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-eb-p1v">
                         <rect key="frame" x="85" y="68" width="12" height="12"/>
                         <animations/>
                         <constraints>
@@ -121,6 +121,6 @@
     </objects>
     <resources>
         <image name="剧集.png" width="16" height="16"/>
-        <image name="播放.png" width="16" height="16"/>
+        <image name="播放red.png" width="16" height="16"/>
     </resources>
 </document>
