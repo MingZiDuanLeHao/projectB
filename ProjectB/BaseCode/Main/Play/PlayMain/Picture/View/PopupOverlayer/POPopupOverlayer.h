@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReuseView.h"
 
 typedef NS_ENUM(NSInteger, POPopupOverlayerAnimationDirection) {
     POPopupOverlayerAnimationDirectionNone   = 0,
@@ -48,7 +49,7 @@ typedef NS_ENUM(NSInteger, POPopupOverlayerAnimationDirection) {
 - (BOOL)popupOverlayer:(POPopupOverlayer *)popupOverlayer canMoveItemViewAtIndex:(NSUInteger)nIndex;
 
 @required
-- (UIView *)popupOverlayer:(POPopupOverlayer *)popupOverlayer viewForItemAtIndex:(NSUInteger)nIndex reusingView:(UIView *)view;
+- (UIView *)popupOverlayer:(POPopupOverlayer *)popupOverlayer viewForItemAtIndex:(NSUInteger)nIndex reusingView:(ReuseView *)view;
 
 - (NSInteger)numberOfItemsInPopupOverlayerView:(POPopupOverlayer *)popupOverlayer;
 

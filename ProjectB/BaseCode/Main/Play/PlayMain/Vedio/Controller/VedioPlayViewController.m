@@ -8,8 +8,10 @@
 
 #import "VedioPlayViewController.h"
 #import "AppDelegate.h"
+#import "UIImageView+WebCache.h"
 
 @interface VedioPlayViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 
 @end
 
@@ -17,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {

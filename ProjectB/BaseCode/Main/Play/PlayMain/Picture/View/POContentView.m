@@ -8,18 +8,14 @@
 
 #import "POContentView.h"
 #import "POPopupOverlayer.h"
+#import "ReuseView.h"
+#import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
 
-@interface POContentView ()<POPopupOverlayerDelegate, POPopupOverlayerDataSource,UIScrollViewDelegate>
-
-@property (nonatomic, strong) POPopupOverlayer *popupOverlayer;
-
-
-@property (nonatomic, strong) UIButton *insertButton;
-@property (nonatomic, strong) UIButton *deleteButton;
-
-@property (nonatomic, strong) NSMutableArray *dataSource;
-@property (nonatomic, strong) UIScrollView *scroll;
-@property(nonatomic,strong) UIView *background;
+@interface POContentView ()<POPopupOverlayerDelegate, POPopupOverlayerDataSource>
+@property (nonatomic,assign) NSInteger page;
+@property (nonatomic,strong) NSString *updateTime;
+@property (nonatomic,strong) NSString *lastestView;
 
 @end
 
@@ -30,57 +26,119 @@
         
         [self _createSubviews];
         [self _configurateSubviewsDefault];
+        [self requestData];
+        self.lastestView = [self getCurrentTime];
+        self.updateTime = @"-1";
     }
+    
     return self;
 }
 
--(UIScrollView *)scroll
-{
-    if (!_scroll) {
-        _scroll = [[UIScrollView alloc]init];
-    }
-    return _scroll;
-}
 
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     
 
+    self.leftButton.frame = CGRectMake(24, SHeight - 60, 48, 48);
+    self.rightButton.frame = CGRectMake(CGRectGetWidth([self bounds]) - 24 - 48, SHeight - 60, 48, 48);
     
-    self.insertButton.frame = CGRectMake(24, 400, 48, 48);
-    self.deleteButton.frame = CGRectMake(CGRectGetWidth([self bounds]) - 24 - 48, 400, 48, 48);
+    self.GodReviewButton.frame = CGRectMake((SWidth - 48)/2, SHeight - 60, 48, 48);
     
     self.popupOverlayer.frame = CGRectMake(CGRectGetWidth([self bounds]) / 2. - 167/2., 150, 167, 167);
     self.popupOverlayer.userInteractionEnabled = YES;
+    
+    //文章介绍
+    self.labelContent.frame = CGRectMake(5, 410, SWidth - 10, SHeight - 420 - 60);
+    _labelContent.backgroundColor = [UIColor redColor];
+  
+    
     //增加图片点击放大手势
 //    [self.popupOverlayer addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)]];
-    self.scroll.frame = CGRectMake(0, SHeight, SWidth, SHeight);
-    self.scroll.delegate = self;
-    self.scroll.backgroundColor = [UIColor redColor];
-    _scroll.contentSize = CGSizeMake(SWidth, SHeight - 200);
+
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [_popupOverlayer addGestureRecognizer:tapGesture];
 }
 
+//获取当前时间的时间戳
+-(NSString *)getCurrentTime
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateTime = [formatter stringFromDate:[NSDate date]];
+        NSLog(@"时间戳%@",dateTime);
+    return dateTime;
+}
+
+#pragma mark请求数据
+-(void)requestData{
+    NSString *UrlStr = [NSString stringWithFormat:@"http://120.55.151.67/weibofun/weibo_list.php?apiver=20100&category=weibo_pics&page=%ld&page_size=20&max_timestamp=%@&latest_viewed_ts=%@&platform=iphone&appver=2.1&buildver=2010005&udid=3541CD2F-C590-4A66-A77D-44EB7616316C&sysver=9.3.3",self.page,self.updateTime,self.lastestView];
+    NSLog(@"!!!!!!!!!!!!%@",UrlStr);
+    //转化一下,不然返回的data无法解析
+    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            //   NSLog(@"dic======%@",dic);
+            self.PictureModel = [PictureModelPictureModel modelObjectWithDictionary:dic];
+        
+            
+                        //取出最后一个图片的时间戳,加载更多的时候需要
+                        PictureModelItems *model1 =  [self.PictureModel.items lastObject];
+                        self.updateTime = model1.updateTime;
+            
+               NSLog(@"<<<<<<<1&&& = %@",model1.updateTime);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[self popupOverlayer] reloadData];
+            });
+        }
+        
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self];
+}
+
 -(void)tapAction
 {
     //创建一个黑色背景scroll
+    self.background = [UIView new];
+    _background.frame = CGRectMake(0, 0, SWidth, SHeight);
+    _background.backgroundColor = [UIColor redColor];
     [self.scroll setBackgroundColor:[UIColor blackColor]];
-    [self addSubview:_scroll];
+    [_background addSubview:_scroll];
+    [self addSubview:_background];
     
     //创建显示图像的视图
-    //初始化要显示的图片内容的imageView（这里位置继续偷懒...没有计算）
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, SWidth, SHeight)];
+    //初始化要显示的图片内容的imageView
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SWidth, SHeight)];
     //要显示的图片，即要放大的图片
-    [imgView setImage:[UIImage imageNamed:@"列表"]];
-    [_scroll addSubview:imgView];
+    PictureModelItems *model1 =  self.PictureModel.items[self.index - 2];
+    //    if (model1.isGif) {
+    //        view.img.image = [UIImage sd_animatedGIFNamed:model1.wpicMiddle];
+    //    }else{
     
+  //  NSLog(@">>>>>>>>>>>%ld",self.index);
+    [imgView sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+
+    [_background addSubview:imgView];
     imgView.userInteractionEnabled = YES;
+    
+    //取得当前控制器,为了隐藏导航控制器
+    UIViewController *vc;
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[objc_getClass("UIViewController") class]] ) {
+            vc=(UIViewController*)nextResponder;
+            
+            vc.navigationController.navigationBar.hidden = YES;
+        }
+    }
+    
+
     //添加点击手势（即点击图片后退出全屏）
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeView)];
-    [imgView addGestureRecognizer:tapGesture];
+    [_background addGestureRecognizer:tapGesture];
     
     [self shakeToShow:(UIView *)_scroll];//放大过程中的动画
   
@@ -88,6 +146,16 @@
 
 -(void)closeView{
     [_background removeFromSuperview];
+    //取得当前控制器,为了再显示导航控制器
+    UIViewController *vc;
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[objc_getClass("UIViewController") class]] ) {
+            vc=(UIViewController*)nextResponder;
+            
+            vc.navigationController.navigationBar.hidden = NO;
+        }
+    }
 }
 //放大过程中出现的缓慢动画
 - (void) shakeToShow:(UIView*)aView{
@@ -105,43 +173,65 @@
 - (void)_createSubviews{
     
     self.popupOverlayer = [POPopupOverlayer new];
-    self.insertButton = [UIButton new];
-    self.deleteButton = [UIButton new];
-    
-    [self addSubview:[self insertButton]];
-    [self addSubview:[self deleteButton]];
+    self.leftButton = [UIButton new];
+    self.rightButton = [UIButton new];
+    self.GodReviewButton = [UIButton new];
+    self.labelContent = [UILabel new];
+ 
+    [self addSubview:[self leftButton]];
+    [self addSubview:[self rightButton]];
+    [self addSubview:[self GodReviewButton]];
+    [self addSubview:[self labelContent]];
+    self.labelContent.text = @"11111111111";
+    self.labelContent.numberOfLines = 0;
     [self addSubview:[self popupOverlayer]];
 }
 
 - (void)_configurateSubviewsDefault{
     
-    self.dataSource = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", @"", @"", @"", nil];
+    self.dataSource = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", @"", @"", @"",@"",@"", @"", @"", @"", @"", @"", @"",@"", @"", @"", @"",@"",nil];
     
     self.popupOverlayer.delegate = self;
     self.popupOverlayer.dataSource = self;
     self.popupOverlayer.maxTranslation = CGSizeMake(160, 160);
     self.popupOverlayer.itemViewRotateAngle = 5/180.f * M_PI;
     
+    //左滑消失
+    self.leftButton.titleLabel.font = [UIFont systemFontOfSize:24];
+    self.leftButton.layer.cornerRadius = 48/2.;
+    self.leftButton.layer.borderWidth = 1.f;
+    self.leftButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    [[self leftButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [[self leftButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    [[self leftButton] setTitle:@"L" forState:UIControlStateNormal];
+    [[self leftButton] addTarget:self action:@selector(didClickleft:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.insertButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    self.insertButton.layer.cornerRadius = 48/2.;
-    self.insertButton.layer.borderWidth = 1.f;
-    self.insertButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    [[self insertButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [[self insertButton] setTitle:@"神评" forState:UIControlStateNormal];
-    [[self insertButton] addTarget:self action:@selector(didClickInsert:) forControlEvents:UIControlEventTouchUpInside];
+    //右划消失
+    self.rightButton.titleLabel.font = [UIFont systemFontOfSize:24];
+    self.rightButton.layer.cornerRadius = 48/2.;
+    self.rightButton.layer.borderWidth = 1.f;
+    self.rightButton.layer.borderColor = [[UIColor redColor] CGColor];
+    [[self rightButton] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [[self rightButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    [[self rightButton] setTitle:@"R" forState:UIControlStateNormal];
+    [[self rightButton] addTarget:self action:@selector(didClickright:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //评论
+    self.GodReviewButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.GodReviewButton.layer.cornerRadius = 48/2.;
+    self.GodReviewButton.layer.borderWidth = 1.f;
+    self.GodReviewButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    [[self GodReviewButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [[self GodReviewButton] setTitle:@"神评" forState:UIControlStateNormal];
+    [[self GodReviewButton] addTarget:self action:@selector(didClickGodReview:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    self.deleteButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    self.deleteButton.layer.cornerRadius = 48/2.;
-    self.deleteButton.layer.borderWidth = 1.f;
-    self.deleteButton.layer.borderColor = [[UIColor redColor] CGColor];
-    [[self deleteButton] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [[self deleteButton] setTitle:@"更多" forState:UIControlStateNormal];
-    [[self deleteButton] addTarget:self action:@selector(didClickDelete:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [[self popupOverlayer] reloadData];
+//    [[self popupOverlayer] reloadData];
 }
+#pragma mark - 清理缓存
+
+
+
 
 #pragma mark - POPopupOverlayerDelegate, POPopupOverlayerDataSource
 
@@ -157,20 +247,75 @@
     return CGSizeMake(300, 300);
 }
 
-- (UIView *)popupOverlayer:(POPopupOverlayer *)popupOverlayer viewForItemAtIndex:(NSUInteger)nIndex reusingView:(UIView *)view;{
+- (UIView *)popupOverlayer:(POPopupOverlayer *)popupOverlayer viewForItemAtIndex:(NSUInteger)nIndex reusingView:(ReuseView *)view
+{
+    
+
+  
     if (!view) {
-        view = [UIView new];
+           view  = [[NSBundle mainBundle]loadNibNamed:@"ReuseView" owner:nil options:nil][0];
+
     }
+//    self.imgView.frame = CGRectMake(0, 0, 300, 300);
+//    self.imgView.backgroundColor = [UIColor redColor];
+//    [view addSubview:self.imgView];
     view.layer.cornerRadius = 4;
     view.layer.borderWidth = 2;
     view.layer.masksToBounds = YES;
     view.layer.borderColor = [[UIColor whiteColor] CGColor];
-    view.backgroundColor = [UIColor colorWithRed:(arc4random()%255)/255.f green:(arc4random()%255)/255.f blue:(arc4random()%255)/255.f alpha:1];
+
+
+        PictureModelItems *model1 =  self.PictureModel.items[nIndex];
+    //NSLog(@"=========%lu",(unsigned long)nIndex);
+    if (model1.isGif) {
+        CGFloat picH = [model1.wpicMHeight floatValue];
+        CGFloat picW = [model1.wpicMWidth floatValue];
+        if (picH/picW >= 1) {
+          //  view.frame = CGSizeMake(picW, picH);
+        }
+      [view.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+    }else{
+        
+    }
+
+    if (nIndex >= 2) {
+        PictureModelItems *model1 =  self.PictureModel.items[nIndex - 2];
+        self.labelContent.text = model1.wbody;
+    }
     
+    if (nIndex == 19) {
+        //最新
+        self.page ++;
+        self.lastestView = @"-1";
+        [self requestData];
+    }
+
+    
+//    if (self.index1 == 0) {
+//        view.backgroundColor = [UIColor redColor];
+//        self.index1 ++;
+//    }else if (self.index1 == 1){
+//        view.backgroundColor = [UIColor blueColor];
+//                self.index1 ++;
+//    }else if (self.index1 == 2){
+//        view.backgroundColor = [UIColor yellowColor];
+//                self.index1 ++;
+//    }
+    
+
+      //  NSLog(@"=========%@ %@",self.imgView.image,view1.img.image);
+
+    self.index = nIndex;
     
     return view;
 }
 
+- (void)popupOverlayer:(POPopupOverlayer *)popupOverlayer movingItemViewWithTranslation:(CGPoint)translation atIndex:(NSUInteger)nIndex;{
+    POPopupOverlayerAnimationDirection direction = [popupOverlayer directionAtTranslation:translation];
+    self.leftButton.highlighted = direction & POPopupOverlayerAnimationDirectionLeft;
+    self.rightButton.highlighted = direction & POPopupOverlayerAnimationDirectionRight;
+        self.index = nIndex;
+}
 - (BOOL)popupOverlayer:(POPopupOverlayer *)popupOverlayer shouldPopupOverItemView:(UIView *)itemView direction:(POPopupOverlayerAnimationDirection)direction atIndex:(NSUInteger)nIndex;{
     return YES;
 }
@@ -178,23 +323,35 @@
 
 
 - (void)popupOverlayer:(POPopupOverlayer *)popupOverlayer didMoveItemViewWithTranslation:(CGPoint)translation atIndex:(NSUInteger)nIndex;{
+    self.leftButton.highlighted = NO;
+    self.rightButton.highlighted = NO;
+        self.index = nIndex;
 
 }
 
 - (void)popupOverlayer:(POPopupOverlayer *)popupOverlayer didPopupOverItemViewOnDirection:(POPopupOverlayerAnimationDirection)direction atIndex:(NSUInteger)nIndex;{
+    
 }
 
 #pragma mark - actions
 
-- (IBAction)didClickInsert:(id)sender{
-    [[self dataSource] insertObject:@"" atIndex:1];
-    [[self popupOverlayer] insertItemAtIndex:1 animated:YES];
+- (IBAction)didClickGodReview:(id)sender{
+   NSUInteger size = [[SDImageCache sharedImageCache] getSize];
+    NSLog(@"缓存大小%fM",size/1000.0/1000);
+    if (150 < size) {
+        [[SDImageCache sharedImageCache]clearMemory];
+    }
+//    [[self dataSource] insertObject:@"" atIndex:1];
+//    [[self popupOverlayer] insertItemAtIndex:1 animated:YES];
 }
 
-- (IBAction)didClickDelete:(id)sender{
-    
-    [[self dataSource] removeObjectAtIndex:1];
-    [[self popupOverlayer] removeItemAtIndex:1 onDirection:POPopupOverlayerAnimationDirectionBottom animated:YES];
+
+- (IBAction)didClickleft:(id)sender{
+    [[self popupOverlayer] popOverTopItemViewOnDirection:POPopupOverlayerAnimationDirectionLeft animated:YES];
+}
+
+- (IBAction)didClickright:(id)sender{
+    [[self popupOverlayer] popOverTopItemViewOnDirection:POPopupOverlayerAnimationDirectionRight animated:YES];
 }
 
 

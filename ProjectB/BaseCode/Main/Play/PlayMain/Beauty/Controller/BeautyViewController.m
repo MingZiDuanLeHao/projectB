@@ -9,15 +9,19 @@
 #import "BeautyViewController.h"
 #import "waterFlow.h"
 #import "MJRefresh.h"
-#import "BeautyCell.h"
-#import "imageModel.h"
+#import "BeautyCell.h"
 #import "UIImageView+WebCache.h"
 #import "AppDelegate.h"
+#import "BeautyDataModels.h"
 
 @interface BeautyViewController ()<UICollectionViewDataSource, UICollectionViewDelegate,waterFlowDelegate>
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property(nonatomic,strong) NSMutableArray *muArr;
 @property(nonatomic,strong) UIView *background;
+@property(nonatomic,strong) BeautyModelBeautyModel *BeautyModel;
+@property (nonatomic,assign) NSInteger page;
+@property (nonatomic,strong) NSString *updateTime;
+@property (nonatomic,strong) NSString *lastestView;
 
 
 @end
@@ -28,34 +32,55 @@ static NSString * const BeautyId = @"beauty";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self loadData];
+    [self requestData];
+    [self initUI];
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+    self.lastestView = [self getCurrentTime];
+    self.updateTime = @"-1";
 }
-
-//加载数据
--(void)loadData{
-    //导入文件
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Data" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    
-    if (data != nil) {
-        //数组接收
-        NSArray *dataArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        //
-        for (NSDictionary *dic in dataArr)
-        {
-            imageModel *model = [[imageModel alloc]init];
-            [model setValuesForKeysWithDictionary:dic];
-            [self.muArr addObject:model];
+//获取当前时间
+-(NSString *)getCurrentTime
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateTime = [formatter stringFromDate:[NSDate date]];
+    return dateTime;
+}
+-(void)requestData
+{
+    NSString *UrlStr = [NSString stringWithFormat:@"http://120.55.151.67/weibofun/weibo_list.php?apiver=20100&category=weibo_girls&page=%ld&page_size=30&max_timestamp=%@&latest_viewed_ts=%@&platform=iphone&appver=2.1&buildver=2010005&udid=3541CD2F-C590-4A66-A77D-44EB7616316C&sysver=9.3.3",self.page,self.updateTime,self.lastestView];
+    //转化一下,不然返回的data无法解析
+    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            // NSLog(@"dic======%@",dic);
+            self.BeautyModel = [BeautyModelBeautyModel modelObjectWithDictionary:dic];
+            //取出最后一个图片的时间戳,加载更多的时候需要
+            BeautyModelItems *model1 =  [self.BeautyModel.items lastObject];
+            self.updateTime = model1.updateTime;
+            
+             //   NSLog(@"<<<<<<<1&&& = %ld",self.BeautyModel.items.count);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_collectionView reloadData];
+                [_collectionView.mj_footer endRefreshing];
+            });
         }
         
-    }
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
     
-    
+}
+
+
+//加载数据
+-(void)initUI{
+
     //创建flowLayout
     waterFlow *flowLayout = [[waterFlow alloc]init];
     
@@ -66,38 +91,68 @@ static NSString * const BeautyId = @"beauty";
     //显示列数
     flowLayout.numberOfcolums = 3 ;
     //创建collectView
-    UICollectionView *collectView = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:flowLayout];
+    UICollectionView *collectView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SWidth, SHeight - 64) collectionViewLayout:flowLayout];
     collectView.dataSource = self;
     collectView.delegate = self;
     flowLayout.delegate = self;
     [self.view addSubview:collectView];
-    collectView.backgroundColor = [UIColor lightGrayColor];
+    collectView.backgroundColor = [UIColor blackColor];
     
     UINib *nib = [UINib nibWithNibName:@"BeautyCell" bundle:[NSBundle mainBundle]];
     [collectView registerNib:nib forCellWithReuseIdentifier:BeautyId];
+    self.collectionView = collectView;
+    
+    //上提加载更多
+    _collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //最新
+        self.page ++;
+        self.lastestView = @"-1";
+        [self requestData];
+    }];
     
 }
 -(CGFloat)heightForIndex:(NSIndexPath *)indexpath
 {
-    imageModel *model1 =  self.muArr[indexpath.item];
+    BeautyModelItems *model1 =  self.BeautyModel.items[indexpath.row];
     CGFloat currentW = (SWidth - 40)/3;
-    CGFloat currentH = model1.height/model1.width *currentW;
-    return currentH;
+    CGFloat picH = [model1.wpicMHeight floatValue];
+    CGFloat picW = [model1.wpicMWidth floatValue];
+    if (picW != 0) {
+        CGFloat currentH = picH/picW *currentW;
+        return currentH;
+    }
+
+    return 0;
 }
 
 //cell个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
-    NSLog(@"&&& = %ld",_muArr.count);
-    return _muArr.count;
+
+    return _BeautyModel.items.count;
     
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     BeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BeautyId forIndexPath:indexPath];
-    cell.model = self.muArr[indexPath.row];
+    BeautyModelItems *model1 =  self.BeautyModel.items[indexPath.row];
+    [cell.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+//        [cell.img sd_setImageWithURL:[NSURL URLWithString:@"http://ww2.sinaimg.cn/large/42b97fafgw1f8kr1nwz1sg20cs070x6t.gif"]];
+    
+    
+//    //时间戳
+//    NSTimeInterval time=[model1.updateTime doubleValue]+28800;//因为时差问题要加8小时 == 28800 sec
+//    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+//    NSLog(@"date:%@",[detaildate description]);
+//    //实例化一个NSDateFormatter对象
+//    NSDateFormatter*dateFormatter = [[NSDateFormatter alloc]init];
+//    //设定时间格式,这里可以设置成自己需要的格式
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+//    NSString*currentDateStr = [dateFormatter stringFromDate:detaildate];
+//    //    NSLog(@"date:%@",dateFormatter);
+
     return cell;
 }
 
@@ -112,8 +167,10 @@ static NSString * const BeautyId = @"beauty";
     
     //创建显示图像的视图
  
-    imageModel *model = self.muArr[indexPath.row];
-    CGFloat hight = SWidth / model.width * model.height;
+    BeautyModelItems *model1 =  self.BeautyModel.items[indexPath.row];
+    CGFloat picH = [model1.wpicMHeight floatValue];
+    CGFloat picW = [model1.wpicMWidth floatValue];
+    CGFloat hight = SWidth / picW * picH;
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (SHeight - hight)/2 - 32, SWidth, hight)];
     
 
@@ -121,7 +178,7 @@ static NSString * const BeautyId = @"beauty";
     //要显示的图片，即要放大的图片
 
 
-    [imgView sd_setImageWithURL:[NSURL URLWithString:model.thumbURL]];
+    [imgView sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
     [bgView addSubview:imgView];
     
     //下载按钮
