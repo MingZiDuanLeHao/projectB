@@ -31,41 +31,69 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-Cm-re0">
-                        <rect key="frame" x="80" y="44" width="100" height="30"/>
+                        <rect key="frame" x="97" y="54" width="40" height="20"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="6mS-a2-bOi"/>
-                            <constraint firstAttribute="height" constant="30" id="NYf-v2-f8h"/>
+                            <constraint firstAttribute="height" constant="20" id="VBq-Ch-gjh"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="lj8-5B-pL5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRt-V8-8Le">
-                        <rect key="frame" x="185" y="44" width="100" height="30"/>
+                        <rect key="frame" x="159" y="54" width="37" height="20"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="1gP-ES-Uws"/>
-                            <constraint firstAttribute="height" constant="30" id="JI4-vT-hPd"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Pb0-jy-3rT"/>
+                            <constraint firstAttribute="height" constant="20" id="rxK-1H-Q7B"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-vY-H03">
+                        <rect key="frame" x="80" y="56" width="15" height="15"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Ksp-Te-G6O"/>
+                            <constraint firstAttribute="height" constant="15" id="k1j-ip-Ubq"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="时钟.png" translatesAutoresizingMaskIntoConstraints="NO" id="3WO-IM-Ggy">
+                        <rect key="frame" x="142" y="56" width="15" height="15"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="h5N-NQ-AD0"/>
+                            <constraint firstAttribute="width" constant="15" id="iML-nV-Q4T"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="x3n-Cm-re0" secondAttribute="bottom" constant="5" id="GXh-mz-i1V"/>
+                    <constraint firstItem="x3n-Cm-re0" firstAttribute="leading" secondItem="kQA-vY-H03" secondAttribute="trailing" constant="2" id="3tc-j0-Vlo"/>
+                    <constraint firstItem="fRt-V8-8Le" firstAttribute="leading" secondItem="3WO-IM-Ggy" secondAttribute="trailing" constant="2" id="5Tc-LJ-URV"/>
+                    <constraint firstAttribute="bottom" secondItem="fRt-V8-8Le" secondAttribute="bottom" constant="5" id="7uf-0Y-q0b"/>
                     <constraint firstItem="Yau-LA-YUG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Jap-T0-Nay"/>
+                    <constraint firstItem="3WO-IM-Ggy" firstAttribute="leading" secondItem="x3n-Cm-re0" secondAttribute="trailing" constant="5" id="MeU-eZ-Wcf"/>
                     <constraint firstItem="tDu-uO-XI2" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="WpF-3r-5Fz"/>
                     <constraint firstItem="fRt-V8-8Le" firstAttribute="leading" secondItem="x3n-Cm-re0" secondAttribute="trailing" constant="5" id="XFS-W2-KYY"/>
                     <constraint firstItem="tDu-uO-XI2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fmN-i8-U0n"/>
                     <constraint firstAttribute="bottom" secondItem="Yau-LA-YUG" secondAttribute="bottom" constant="5" id="gdz-AB-OKX"/>
                     <constraint firstItem="Yau-LA-YUG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="iF7-Ws-N51"/>
+                    <constraint firstAttribute="bottom" secondItem="kQA-vY-H03" secondAttribute="bottom" constant="8" id="lSG-pC-ksC"/>
+                    <constraint firstItem="kQA-vY-H03" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="nJa-5y-TIp"/>
                     <constraint firstItem="x3n-Cm-re0" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="nSo-XI-PAb"/>
+                    <constraint firstAttribute="bottom" secondItem="x3n-Cm-re0" secondAttribute="bottom" constant="5" id="qLK-5a-VhE"/>
                     <constraint firstAttribute="trailing" secondItem="tDu-uO-XI2" secondAttribute="trailing" constant="5" id="rpI-lW-vBC"/>
-                    <constraint firstAttribute="bottom" secondItem="fRt-V8-8Le" secondAttribute="bottom" constant="5" id="sIX-ID-8nF"/>
+                    <constraint firstAttribute="bottom" secondItem="3WO-IM-Ggy" secondAttribute="bottom" constant="8" id="z3p-Yb-Hm3"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="nSo-XI-PAb"/>
+                        <exclude reference="XFS-W2-KYY"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
@@ -77,4 +105,8 @@
             <point key="canvasLocation" x="243.5" y="423"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="播放orange.png" width="16" height="16"/>
+        <image name="时钟.png" width="16" height="16"/>
+    </resources>
 </document>

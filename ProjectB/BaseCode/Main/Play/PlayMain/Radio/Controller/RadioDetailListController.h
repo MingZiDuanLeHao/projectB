@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RadioDetailListController : UIViewController
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segMent;
+
 /**albumId*/
 @property(nonatomic,strong) NSString *albumId;
 /**statModule*/
@@ -19,9 +19,6 @@
 /**主播*/
 @property(nonatomic,strong) NSString *titleID;
 
-@property (weak, nonatomic) IBOutlet UIImageView *avatar;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *playCount;
+
 
 @end

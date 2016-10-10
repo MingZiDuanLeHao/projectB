@@ -8,17 +8,24 @@
 
 #import "RadioDetailListController.h"
 #import "RedioDetailListCell.h"
-
+#import "RadioPlayViewController.h"
 #import "NetWorkRequest.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 #import "RadioDetailListDataModels.h"
 #import "MJRefresh.h"
+#import "RadiodetailHeaderView.h"
+#import "RadiodetailCellHeaderView.h"
+
+
 
 @interface RadioDetailListController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *listTab;
-@property (nonatomic,strong) UIScrollView *ScrollView;
 @property (nonatomic,strong) RadioDetailListRadioDetailList *detailList;
+@property(nonatomic,strong)RadiodetailHeaderView *topView;
+@property(nonatomic,strong)RadiodetailCellHeaderView *headerView;
+
+
 
 @end
 static NSString *detailListCell = @"detailListCell";
@@ -26,32 +33,36 @@ static NSString *detailListCell = @"detailListCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initUI];
+
     [self requestData];
-    [self initUIData];
+    [self initUI];
+
 }
 
 -(void)initUI
 {
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = @"专辑详情";
-    //scrollview
-    self.ScrollView.frame = CGRectMake(0, 250, SWidth, SHeight - 260);
-    _ScrollView.contentSize = CGSizeMake(SWidth * 2, 0);
-    _ScrollView.pagingEnabled = YES;
-    _ScrollView.delegate = self;
-    _ScrollView.tag = 100;
-    [self.view addSubview:_ScrollView];
+    
+    //topView
+    _topView = [[NSBundle mainBundle]loadNibNamed:@"RadiodetailHeaderView" owner:nil options:nil][0];
+    _topView.frame = CGRectMake(0, 0, SWidth, 134);
+    [_topView.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
+    _topView.titleLabel.text = self.titleID;
+    _topView.playCount.text = [NSString stringWithFormat:@"播放次数:%.0f",_detailList.data.album.playTimes];
+    NSLog(@"______%@",_detailList.data.user);
+    _topView.nameLabel.text =[NSString stringWithFormat:@"作者:%@", _detailList.data.user.nickname];
     
     //listtable
-    self.listTab.frame = CGRectMake(SWidth, 0, SWidth, SHeight -260);
-    [_listTab registerNib:[UINib nibWithNibName:@"RedioDetailListCell" bundle:nil] forCellReuseIdentifier:detailListCell];
+    [self.listTab registerNib:[UINib nibWithNibName:@"RedioDetailListCell" bundle:nil] forCellReuseIdentifier:detailListCell];
     _listTab.showsVerticalScrollIndicator = NO;
     _listTab.delegate = self;
     _listTab.dataSource = self;
-    _listTab.separatorColor = [UIColor blueColor];
-    
-    [_ScrollView addSubview:_listTab];
-    
+//    _listTab.bounces = NO;
+    _listTab.tableHeaderView = _topView;
+    [self.view addSubview:_listTab];
+  
     //上提加载更多
     _listTab.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
@@ -74,10 +85,7 @@ static NSString *detailListCell = @"detailListCell";
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 [_listTab reloadData];
-               [self.avatar sd_setImageWithURL:[NSURL URLWithString:_detailList.data.album.coverLarge]];
-                self.titleLabel.text = self.titleID;
-                self.playCount.text = [NSString stringWithFormat:@"播放次数:%.0f",_detailList.data.album.playTimes];
-                self.nameLabel.text =[NSString stringWithFormat:@"作者:%@", _detailList.data.user.nickname];
+               
                 
             });
         }
@@ -88,33 +96,25 @@ static NSString *detailListCell = @"detailListCell";
 
 }
 
-
--(void)initUIData
-{
-    
- 
-    
-}
 #pragma marks- 懒加载
-//scroll
--(UIScrollView *)ScrollView
-{
-    if (!_ScrollView) {
-        _ScrollView = [[UIScrollView alloc]init];
-    }
-    return _ScrollView;
-}
 
-//列表
+
 -(UITableView *)listTab
 {
     if (!_listTab) {
-        _listTab = [[UITableView alloc]init];
+        _listTab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SWidth, SHeight) style:UITableViewStylePlain];
     }
     return _listTab;
 }
 
+
+
 #pragma mark - UITableViewDelegate DataSource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 10;
@@ -136,40 +136,53 @@ static NSString *detailListCell = @"detailListCell";
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    radioController *vc = [radioController new];
+    RadioPlayViewController *vc = [RadioPlayViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - segmentHandle
-- (IBAction)segHandle:(UISegmentedControl *)sender {
-    if (sender.selectedSegmentIndex == 0) {
-      [_ScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-    }else
-    {
-      [_ScrollView setContentOffset:CGPointMake(SWidth, 0) animated:YES];
-    }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    _headerView = [[NSBundle mainBundle]loadNibNamed:@"RadiodetailCellHeaderView" owner:nil options:nil][0];
+    _headerView.frame = CGRectMake(0, 0, SWidth, 25);
+        
+    return _headerView;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 25;
+}
+
+
 #pragma mark - SCrollViewDelegate
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    //因为tableView继承scrollView所以滑动tableView也会执行scrollViewDidEndDecelerating代理方法
-    if (scrollView.tag == 100) {
-        NSInteger index = scrollView.contentOffset.x / SWidth;
-        _segMent.selectedSegmentIndex = index;
-    }
-    
 
 
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+////    NSLog(@"%.f",scrollView.contentOffset.y);
+//    if (scrollView.contentOffset.y >= 135 ) {
+//        if (_topView.frame.origin.y == -135) {
+//            return;
+//        }
+//        else
+//        {
+//            CGRect rect = CGRectMake(0, -250, SWidth, 165);
+//            _changeView = [[NSBundle mainBundle]loadNibNamed:@"RadiodetailHeaderView" owner:nil options:nil][0];
+//            _changeView = _topView;
+//            _changeView.frame = rect;
+//            [self.view addSubview:_changeView];
+//        }
+//    }
+//    else
+//    {
+//        if ([self.view.subviews containsObject:_changeView]) {
+//            [_changeView removeFromSuperview];
+//            _listTab.tableHeaderView = _topView;
+//        }
+//        
+//    }
+//}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

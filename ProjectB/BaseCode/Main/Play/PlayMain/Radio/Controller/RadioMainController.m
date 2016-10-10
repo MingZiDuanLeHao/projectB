@@ -44,13 +44,19 @@ static NSString *rightCell = @"rightCell";
 {
     //左table
     self.leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
+    
+    [_leftTable setSeparatorInset:UIEdgeInsetsZero];
+    [_leftTable setLayoutMargins:UIEdgeInsetsZero];
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    [_leftTable setTableFooterView:v];
+    
     [_leftTable registerClass:[UITableViewCell class] forCellReuseIdentifier:leftCell];
     _leftTable.delegate = self;
     _leftTable.dataSource = self;
     [self.view addSubview:_leftTable];
     
     //右table
-    self.rightTable.frame = CGRectMake(50, 64, SWidth - 60, SHeight - 64);
+    self.rightTable.frame = CGRectMake(50, 64, SWidth - 50, SHeight - 64);
     [_rightTable registerNib:[UINib nibWithNibName:@"RadioMainRightTableCell" bundle:nil] forCellReuseIdentifier:rightCell];
     _rightTable.delegate = self;
     _rightTable.dataSource = self;
@@ -77,23 +83,20 @@ static NSString *rightCell = @"rightCell";
 -(void)listHandle
 {
     if (_HideList == NO) {
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             _leftTable.frame = CGRectMake(0, 0, 50, -SHeight);
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
             _rightTable.frame = CGRectMake(0, 64, SWidth, SHeight - 64);
-            }];
+        } completion:^(BOOL finished) {
 
         }];
         _HideList = YES;
     }else
     {
-        [UIView animateWithDuration:1 animations:^{
-          _rightTable.frame = CGRectMake(50, 64, SWidth - 60, SHeight - 64);
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
+          _rightTable.frame = CGRectMake(50, 64, SWidth - 50, SHeight - 64);
             _leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
-            }];
+        } completion:^(BOOL finished) {
+        
         }];
         _HideList = NO;
     }
@@ -140,6 +143,7 @@ static NSString *rightCell = @"rightCell";
 {
     if (!_leftTable) {
         _leftTable = [[UITableView alloc]init];
+        
     }
     return _leftTable;
 }
@@ -149,6 +153,8 @@ static NSString *rightCell = @"rightCell";
 {
     if (!_rightTable) {
         _rightTable = [[UITableView alloc]init];
+        [_rightTable setSeparatorInset:UIEdgeInsetsZero];
+//        [_rightTable setLayoutMargins:UIEdgeInsetsZero];
     }
     return _rightTable;
 }
@@ -190,8 +196,10 @@ static NSString *rightCell = @"rightCell";
 
             cell.textLabel.textColor = [UIColor redColor];
         }
-        //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+  
+        //分割线顶着左边
+         [cell setSeparatorInset:UIEdgeInsetsZero];
+        [cell setLayoutMargins:UIEdgeInsetsZero];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
@@ -203,6 +211,9 @@ static NSString *rightCell = @"rightCell";
         //        XMGCategory *c = self.categories[self.categoryTableView.indexPathForSelectedRow.row];
         List *list = _radioMain.list[indexPath.row];
         [cell setDataWithModel:list];
+        
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 80, 0, 0)];
+        [cell setLayoutMargins:UIEdgeInsetsZero];
         return cell;
     }
 }
@@ -214,7 +225,7 @@ static NSString *rightCell = @"rightCell";
     }
     else
     {
-        return 85;
+        return 90;
     }
 }
 
