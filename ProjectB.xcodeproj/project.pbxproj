@@ -74,6 +74,8 @@
 		3F4B2A811DABB8DD00E07143 /* RadioPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A7F1DABB8DD00E07143 /* RadioPlayViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F4B2A861DABBB2100E07143 /* BeautyModelBeautyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A851DABBB2100E07143 /* BeautyModelBeautyModel.m */; };
 		3F4B2A881DABBBFF00E07143 /* RadiodetailCellHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */; };
+		3F4B2A8B1DABBE8900E07143 /* 播放red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A891DABBE8900E07143 /* 播放red.png */; settings = {ASSET_TAGS = (); }; };
+		3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A8A1DABBE8900E07143 /* 时钟.png */; settings = {ASSET_TAGS = (); }; };
 		3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F7999C11D9E1B2C009DAF97 /* NewsCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999C01D9E1B2C009DAF97 /* NewsCommentController.m */; settings = {ASSET_TAGS = (); }; };
@@ -211,15 +213,15 @@
 		3F4B2A701DAB35C700E07143 /* RadiodetailCellHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiodetailCellHeaderView.h; sourceTree = "<group>"; };
 		3F4B2A711DAB35C700E07143 /* RadiodetailCellHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiodetailCellHeaderView.m; sourceTree = "<group>"; };
 		3F4B2A731DAB35D100E07143 /* RadiodetailCellHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiodetailCellHeaderView.xib; sourceTree = "<group>"; };
-		3F4B2A751DAB40FF00E07143 /* 播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放.png"; sourceTree = "<group>"; };
 		3F4B2A761DAB40FF00E07143 /* 剧集.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "剧集.png"; sourceTree = "<group>"; };
 		3F4B2A791DAB48AE00E07143 /* 播放orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放orange.png"; sourceTree = "<group>"; };
-		3F4B2A7B1DAB49EB00E07143 /* 时钟.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时钟.png"; sourceTree = "<group>"; };
 		3F4B2A7D1DABB8DD00E07143 /* RadioPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioPlayViewController.h; sourceTree = "<group>"; };
 		3F4B2A7E1DABB8DD00E07143 /* RadioPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioPlayViewController.m; sourceTree = "<group>"; };
 		3F4B2A7F1DABB8DD00E07143 /* RadioPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioPlayViewController.xib; sourceTree = "<group>"; };
 		3F4B2A851DABBB2100E07143 /* BeautyModelBeautyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeautyModelBeautyModel.m; sourceTree = "<group>"; };
-		3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RadiodetailCellHeaderView.m; path = ProjectB/BaseCode/Main/Play/PlayMain/Radio/View/RadiodetailCellHeaderView.m; sourceTree = "<group>"; };
+		3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadiodetailCellHeaderView.m; sourceTree = "<group>"; };
+		3F4B2A891DABBE8900E07143 /* 播放red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放red.png"; sourceTree = "<group>"; };
+		3F4B2A8A1DABBE8900E07143 /* 时钟.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时钟.png"; sourceTree = "<group>"; };
 		3F79999F1D9E0AF1009DAF97 /* NewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
 		3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */,
 				3F9C0FA51DA9EFD700794EA0 /* RadiodetailHeaderView.xib */,
 				3F4B2A701DAB35C700E07143 /* RadiodetailCellHeaderView.h */,
+				3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */,
 				3F4B2A711DAB35C700E07143 /* RadiodetailCellHeaderView.m */,
 				3F4B2A731DAB35D100E07143 /* RadiodetailCellHeaderView.xib */,
 				3F1F15611DA9E06F00ACFF18 /* RedioDetailListCell.h */,
@@ -559,17 +562,17 @@
 				3F25394B1D9BFB460072831B /* 视频2.png */,
 				3F4B2A791DAB48AE00E07143 /* 播放orange.png */,
 				3F25394C1D9BFB460072831B /* 外卖.png */,
-				3F4B2A7B1DAB49EB00E07143 /* 时钟.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F25394E1D9BFB460072831B /* 新闻.png */,
 				3F25394F1D9BFB460072831B /* 新闻2.png */,
+				3F4B2A891DABBE8900E07143 /* 播放red.png */,
+				3F4B2A8A1DABBE8900E07143 /* 时钟.png */,
 				3F799A331D9E5286009DAF97 /* black.jpg */,
 				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
 				3F799A2E1D9E51DA009DAF97 /* red.jpg */,
 				3F799A351D9E53E0009DAF97 /* 4.jpg */,
-				3F4B2A751DAB40FF00E07143 /* 播放.png */,
 				3F4B2A761DAB40FF00E07143 /* 剧集.png */,
 			);
 			path = Images;
@@ -587,7 +590,6 @@
 		3F45A8391D9BA7FD00A83BB1 = {
 			isa = PBXGroup;
 			children = (
-				3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */,
 				3F45A8441D9BA7FD00A83BB1 /* ProjectB */,
 				3F45A8431D9BA7FD00A83BB1 /* Products */,
 				32C7BCD665F333BAE43D0A8C /* Pods */,
@@ -916,6 +918,7 @@
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
 				3F9C0FA61DA9EFD700794EA0 /* RadiodetailHeaderView.xib in Resources */,
 				3F799A341D9E5286009DAF97 /* black.jpg in Resources */,
+				3F4B2A8B1DABBE8900E07143 /* 播放red.png in Resources */,
 				3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */,
 				3F799A321D9E51DA009DAF97 /* red.jpg in Resources */,
 				3F4B2A781DAB40FF00E07143 /* 剧集.png in Resources */,
@@ -924,6 +927,7 @@
 				3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */,
 				3F1F15651DA9E06F00ACFF18 /* RadioMainRightTableCell.xib in Resources */,
 				3F1F15411DA9DE8000ACFF18 /* RadioMainController.xib in Resources */,
+				3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
