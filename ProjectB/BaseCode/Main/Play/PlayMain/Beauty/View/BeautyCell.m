@@ -15,9 +15,5 @@
     // Initialization code
 }
 
--(void)setModel:(imageModel *)model
-{
-    [self.img sd_setImageWithURL:[NSURL URLWithString:model.thumbURL]];
-}
 
 @end

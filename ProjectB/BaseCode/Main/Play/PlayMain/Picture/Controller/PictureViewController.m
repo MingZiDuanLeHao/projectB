@@ -9,9 +9,15 @@
 #import "PictureViewController.h"
 #import "POContentView.h"
 #import "AppDelegate.h"
+#import "POPopupOverlayer.h"
+#import "PictureDataModels.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface PictureViewController ()
+
 @property (nonatomic, strong) POContentView *contentView;
+@property (nonatomic, strong) PictureModelPictureModel *PictureModel;
 
 @end
 
@@ -20,17 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.view.backgroundColor = [UIColor redColor];
-   
+    
+       [self.view addSubview:self.contentView];
 }
--(void)viewWillAppear:(BOOL)animated
-{
+-(void)viewWillAppear:(BOOL)animated{
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
 }
--(void)loadView
-{
-    [super loadView];
-    [self.view addSubview:self.contentView];
-}
+//-(void)loadView{
+//    [super loadView];
+// 
+//}
 
 - (POContentView *)contentView{
     if (!_contentView) {
@@ -39,6 +44,8 @@
     }
     return _contentView;
 }
+
+
 
 /*
 #pragma mark - Navigation
