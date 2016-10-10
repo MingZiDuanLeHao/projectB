@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RadiodetailCellHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K82-0A-KPM">
+                    <rect key="frame" x="0.0" y="0.0" width="160" height="25"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="0.84330655430000001" blue="0.35191992480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="u7y-Vr-X8b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-SK-hJp">
+                    <rect key="frame" x="160" y="0.0" width="160" height="25"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="0.84330655429136103" blue="0.35191992478140199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="EV7-9h-8pa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="K82-0A-KPM" firstAttribute="width" secondItem="Sfg-SK-hJp" secondAttribute="width" id="JWR-Ta-zjB"/>
+                <constraint firstItem="K82-0A-KPM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="La0-ZH-8U3"/>
+                <constraint firstItem="Sfg-SK-hJp" firstAttribute="leading" secondItem="K82-0A-KPM" secondAttribute="trailing" id="WwP-Gz-jnh"/>
+                <constraint firstItem="K82-0A-KPM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hEc-1Q-Df5"/>
+                <constraint firstItem="Sfg-SK-hJp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="m6V-RW-dno"/>
+                <constraint firstAttribute="trailing" secondItem="Sfg-SK-hJp" secondAttribute="trailing" id="zKI-oE-Rz6"/>
+            </constraints>
+            <point key="canvasLocation" x="178" y="241"/>
+        </view>
+    </objects>
+</document>

@@ -19,8 +19,16 @@
 {
     [self.img sd_setImageWithURL:[NSURL URLWithString:model.coverMiddle]];
     self.titleLabel.text = model.title;
-    self.time.text = [NSString stringWithFormat:@"时长:%.0f:%ld",model.duration/60,(long)model.duration%60];
-    self.playCount.text = [NSString stringWithFormat:@"播放次数:%.0f",model.playtimes];
+    long seconds = (long)model.duration%60;
+    if (seconds < 10) {
+        self.time.text = [NSString stringWithFormat:@"%.0f:0%ld",model.duration/60,seconds];
+    }
+    else
+    {
+        self.time.text = [NSString stringWithFormat:@"%.0f:%ld",model.duration/60,seconds];
+    }
+    
+    self.playCount.text = [NSString stringWithFormat:@"%.0f",model.playtimes];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -42,10 +42,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbJ-NG-5ds">
-                        <rect key="frame" x="85" y="68" width="71" height="12"/>
+                        <rect key="frame" x="99" y="68" width="31" height="12"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="Eud-fy-pMh"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Eud-fy-pMh"/>
                             <constraint firstAttribute="height" constant="12" id="pNf-gB-Hgz"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -53,32 +53,60 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRk-5c-oNc">
-                        <rect key="frame" x="169" y="68" width="38" height="12"/>
+                        <rect key="frame" x="154" y="68" width="38" height="12"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="Bkn-Jv-rAp"/>
-                            <constraint firstAttribute="height" constant="12" id="nLp-No-3H5"/>
+                            <constraint firstAttribute="height" constant="12" id="5ux-VF-rnC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="yKe-oD-Yqr"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-eb-p1v">
+                        <rect key="frame" x="85" y="68" width="12" height="12"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="EcI-S1-uhn"/>
+                            <constraint firstAttribute="height" constant="12" id="c22-nR-K9k"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="剧集.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5L-8J-ht7">
+                        <rect key="frame" x="140" y="68" width="12" height="12"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="ce3-sq-bwu"/>
+                            <constraint firstAttribute="height" constant="12" id="d8n-R1-K2P"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="GRk-5c-oNc" firstAttribute="leading" secondItem="WbJ-NG-5ds" secondAttribute="trailing" constant="13" id="3dr-9t-fj2"/>
+                    <constraint firstItem="Sty-eb-p1v" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="42L-wP-jFl"/>
                     <constraint firstItem="aP7-KN-E4g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="JG3-3i-2Em"/>
+                    <constraint firstItem="WbJ-NG-5ds" firstAttribute="top" secondItem="ykx-GD-iBO" secondAttribute="bottom" constant="13" id="P19-n2-Zwo"/>
                     <constraint firstItem="48T-bf-dm9" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="RLa-Fz-3de"/>
                     <constraint firstItem="ykx-GD-iBO" firstAttribute="top" secondItem="48T-bf-dm9" secondAttribute="bottom" constant="5" id="TdG-sC-CVc"/>
+                    <constraint firstItem="WbJ-NG-5ds" firstAttribute="leading" secondItem="Sty-eb-p1v" secondAttribute="trailing" constant="2" id="VNE-tZ-xwy"/>
                     <constraint firstItem="48T-bf-dm9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="biU-oo-Sno"/>
                     <constraint firstAttribute="trailing" secondItem="ykx-GD-iBO" secondAttribute="trailing" constant="5" id="dH5-UL-0b7"/>
-                    <constraint firstItem="WbJ-NG-5ds" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="qGh-l3-P2A"/>
+                    <constraint firstItem="N5L-8J-ht7" firstAttribute="top" secondItem="ykx-GD-iBO" secondAttribute="bottom" constant="13" id="i7I-s0-ERV"/>
+                    <constraint firstItem="GRk-5c-oNc" firstAttribute="top" secondItem="ykx-GD-iBO" secondAttribute="bottom" constant="13" id="nnb-aQ-WR9"/>
+                    <constraint firstItem="WbJ-NG-5ds" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="30" id="qGh-l3-P2A"/>
+                    <constraint firstItem="Sty-eb-p1v" firstAttribute="top" secondItem="ykx-GD-iBO" secondAttribute="bottom" constant="13" id="qJr-J5-xB0"/>
                     <constraint firstAttribute="trailing" secondItem="48T-bf-dm9" secondAttribute="trailing" constant="5" id="qiy-Fh-6vm"/>
+                    <constraint firstItem="N5L-8J-ht7" firstAttribute="leading" secondItem="WbJ-NG-5ds" secondAttribute="trailing" constant="10" id="skY-FZ-oJZ"/>
                     <constraint firstItem="WbJ-NG-5ds" firstAttribute="bottom" secondItem="aP7-KN-E4g" secondAttribute="bottom" id="ugH-3e-qZS"/>
                     <constraint firstItem="aP7-KN-E4g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wXW-Cf-5CT"/>
+                    <constraint firstItem="GRk-5c-oNc" firstAttribute="leading" secondItem="N5L-8J-ht7" secondAttribute="trailing" constant="2" id="wln-a5-GpP"/>
                     <constraint firstItem="ykx-GD-iBO" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="xZj-HQ-Jct"/>
-                    <constraint firstItem="GRk-5c-oNc" firstAttribute="bottom" secondItem="WbJ-NG-5ds" secondAttribute="bottom" id="yNp-25-nFf"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="qGh-l3-P2A"/>
+                        <exclude reference="ugH-3e-qZS"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
@@ -91,4 +119,8 @@
             <point key="canvasLocation" x="478" y="450.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="剧集.png" width="16" height="16"/>
+        <image name="播放.png" width="16" height="16"/>
+    </resources>
 </document>
