@@ -29,6 +29,15 @@
     }
     
     self.playCount.text = [NSString stringWithFormat:@"%.0f",model.playtimes];
+    
+    //图片效果
+    self.img.layer.borderWidth = 0.3;
+    self.img.layer.borderColor =[[UIColor grayColor]CGColor];
+    self.img.layer.shadowOffset = CGSizeMake(-3, 3);
+    self.img.layer.shadowColor =[[UIColor blackColor]CGColor];
+    self.img.layer.shadowOpacity = 0.5;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

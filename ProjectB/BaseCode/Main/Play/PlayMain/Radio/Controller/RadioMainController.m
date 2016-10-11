@@ -212,7 +212,7 @@ static NSString *rightCell = @"rightCell";
         List *list = _radioMain.list[indexPath.row];
         [cell setDataWithModel:list];
         
-        [cell setSeparatorInset:UIEdgeInsetsMake(0, 80, 0, 0)];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 90, 0, 0)];
         [cell setLayoutMargins:UIEdgeInsetsZero];
         return cell;
     }

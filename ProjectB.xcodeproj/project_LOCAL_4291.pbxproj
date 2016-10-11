@@ -82,17 +82,6 @@
 		3F4B2A881DABBBFF00E07143 /* RadiodetailCellHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */; };
 		3F4B2A8B1DABBE8900E07143 /* 播放red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A891DABBE8900E07143 /* 播放red.png */; settings = {ASSET_TAGS = (); }; };
 		3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A8A1DABBE8900E07143 /* 时钟.png */; settings = {ASSET_TAGS = (); }; };
-		3F4B2A901DABCAE800E07143 /* RadioOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A8E1DABCAE800E07143 /* RadioOneCell.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2A911DABCAE800E07143 /* RadioOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A8F1DABCAE800E07143 /* RadioOneCell.xib */; settings = {ASSET_TAGS = (); }; };
-		3F4B2A9F1DABD2E800E07143 /* RadioTwoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A931DABD2E800E07143 /* RadioTwoBaseClass.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A951DABD2E800E07143 /* RadioTwoData.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA11DABD2E800E07143 /* RadioTwoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A981DABD2E800E07143 /* RadioTwoDetail.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA21DABD2E800E07143 /* RadioTwoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A9A1DABD2E800E07143 /* RadioTwoList.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA31DABD2E800E07143 /* RadioTwoRecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A9C1DABD2E800E07143 /* RadioTwoRecs.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA41DABD2E800E07143 /* RadioTwoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2A9E1DABD2E800E07143 /* RadioTwoUser.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA81DABD72000E07143 /* RadioTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2AA61DABD72000E07143 /* RadioTwoCell.m */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AA71DABD72000E07143 /* RadioTwoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		3F4B2AAB1DAC9C2600E07143 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AAA1DAC9C2600E07143 /* red.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F7999C11D9E1B2C009DAF97 /* NewsCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999C01D9E1B2C009DAF97 /* NewsCommentController.m */; settings = {ASSET_TAGS = (); }; };
@@ -110,7 +99,7 @@
 		3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2B1D9E51DA009DAF97 /* blue.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A301D9E51DA009DAF97 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2C1D9E51DA009DAF97 /* green.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */; settings = {ASSET_TAGS = (); }; };
-		3F799A321D9E51DA009DAF97 /* rednavi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F799A321D9E51DA009DAF97 /* red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2E1D9E51DA009DAF97 /* red.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A341D9E5286009DAF97 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A331D9E5286009DAF97 /* black.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A351D9E53E0009DAF97 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */; settings = {ASSET_TAGS = (); }; };
@@ -250,26 +239,6 @@
 		3F4B2A871DABBBFF00E07143 /* RadiodetailCellHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadiodetailCellHeaderView.m; sourceTree = "<group>"; };
 		3F4B2A891DABBE8900E07143 /* 播放red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放red.png"; sourceTree = "<group>"; };
 		3F4B2A8A1DABBE8900E07143 /* 时钟.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时钟.png"; sourceTree = "<group>"; };
-		3F4B2A8D1DABCAE800E07143 /* RadioOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioOneCell.h; sourceTree = "<group>"; };
-		3F4B2A8E1DABCAE800E07143 /* RadioOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioOneCell.m; sourceTree = "<group>"; };
-		3F4B2A8F1DABCAE800E07143 /* RadioOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioOneCell.xib; sourceTree = "<group>"; };
-		3F4B2A921DABD2E800E07143 /* RadioTwoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoBaseClass.h; sourceTree = "<group>"; };
-		3F4B2A931DABD2E800E07143 /* RadioTwoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoBaseClass.m; sourceTree = "<group>"; };
-		3F4B2A941DABD2E800E07143 /* RadioTwoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoData.h; sourceTree = "<group>"; };
-		3F4B2A951DABD2E800E07143 /* RadioTwoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoData.m; sourceTree = "<group>"; };
-		3F4B2A961DABD2E800E07143 /* RadioTwoDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoDataModels.h; sourceTree = "<group>"; };
-		3F4B2A971DABD2E800E07143 /* RadioTwoDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoDetail.h; sourceTree = "<group>"; };
-		3F4B2A981DABD2E800E07143 /* RadioTwoDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoDetail.m; sourceTree = "<group>"; };
-		3F4B2A991DABD2E800E07143 /* RadioTwoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoList.h; sourceTree = "<group>"; };
-		3F4B2A9A1DABD2E800E07143 /* RadioTwoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoList.m; sourceTree = "<group>"; };
-		3F4B2A9B1DABD2E800E07143 /* RadioTwoRecs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoRecs.h; sourceTree = "<group>"; };
-		3F4B2A9C1DABD2E800E07143 /* RadioTwoRecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoRecs.m; sourceTree = "<group>"; };
-		3F4B2A9D1DABD2E800E07143 /* RadioTwoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoUser.h; sourceTree = "<group>"; };
-		3F4B2A9E1DABD2E800E07143 /* RadioTwoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoUser.m; sourceTree = "<group>"; };
-		3F4B2AA51DABD72000E07143 /* RadioTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioTwoCell.h; sourceTree = "<group>"; };
-		3F4B2AA61DABD72000E07143 /* RadioTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioTwoCell.m; sourceTree = "<group>"; };
-		3F4B2AA71DABD72000E07143 /* RadioTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioTwoCell.xib; sourceTree = "<group>"; };
-		3F4B2AAA1DAC9C2600E07143 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
 		3F79999F1D9E0AF1009DAF97 /* NewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
 		3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
@@ -302,7 +271,7 @@
 		3F799A2B1D9E51DA009DAF97 /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
 		3F799A2C1D9E51DA009DAF97 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
 		3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hailan.jpeg; sourceTree = "<group>"; };
-		3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rednavi.jpg; sourceTree = "<group>"; };
+		3F799A2E1D9E51DA009DAF97 /* red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpg; sourceTree = "<group>"; };
 		3F799A331D9E5286009DAF97 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		3F799A351D9E53E0009DAF97 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		3F9C0FA21DA9EFB200794EA0 /* RadiodetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiodetailHeaderView.h; sourceTree = "<group>"; };
@@ -538,12 +507,6 @@
 				3F1F15611DA9E06F00ACFF18 /* RedioDetailListCell.h */,
 				3F1F15621DA9E06F00ACFF18 /* RedioDetailListCell.m */,
 				3F1F15631DA9E06F00ACFF18 /* RedioDetailListCell.xib */,
-				3F4B2A8D1DABCAE800E07143 /* RadioOneCell.h */,
-				3F4B2A8E1DABCAE800E07143 /* RadioOneCell.m */,
-				3F4B2A8F1DABCAE800E07143 /* RadioOneCell.xib */,
-				3F4B2AA51DABD72000E07143 /* RadioTwoCell.h */,
-				3F4B2AA61DABD72000E07143 /* RadioTwoCell.m */,
-				3F4B2AA71DABD72000E07143 /* RadioTwoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,19 +527,6 @@
 				3F1F154D1DA9E04E00ACFF18 /* RadioDetailListTracks.m */,
 				3F1F154E1DA9E04E00ACFF18 /* RadioDetailListUser.h */,
 				3F1F154F1DA9E04E00ACFF18 /* RadioDetailListUser.m */,
-				3F4B2A921DABD2E800E07143 /* RadioTwoBaseClass.h */,
-				3F4B2A931DABD2E800E07143 /* RadioTwoBaseClass.m */,
-				3F4B2A941DABD2E800E07143 /* RadioTwoData.h */,
-				3F4B2A951DABD2E800E07143 /* RadioTwoData.m */,
-				3F4B2A961DABD2E800E07143 /* RadioTwoDataModels.h */,
-				3F4B2A971DABD2E800E07143 /* RadioTwoDetail.h */,
-				3F4B2A981DABD2E800E07143 /* RadioTwoDetail.m */,
-				3F4B2A991DABD2E800E07143 /* RadioTwoList.h */,
-				3F4B2A9A1DABD2E800E07143 /* RadioTwoList.m */,
-				3F4B2A9B1DABD2E800E07143 /* RadioTwoRecs.h */,
-				3F4B2A9C1DABD2E800E07143 /* RadioTwoRecs.m */,
-				3F4B2A9D1DABD2E800E07143 /* RadioTwoUser.h */,
-				3F4B2A9E1DABD2E800E07143 /* RadioTwoUser.m */,
 			);
 			path = RadioDetailList;
 			sourceTree = "<group>";
@@ -653,12 +603,11 @@
 				3F4B2A891DABBE8900E07143 /* 播放red.png */,
 				3F4B2A8A1DABBE8900E07143 /* 时钟.png */,
 				3F799A331D9E5286009DAF97 /* black.jpg */,
-				3F4B2AAA1DAC9C2600E07143 /* red.jpg */,
 				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
 				3F1EBA321DAC94EB00C842D1 /* 占位图.png */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
-				3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */,
+				3F799A2E1D9E51DA009DAF97 /* red.jpg */,
 				3F799A351D9E53E0009DAF97 /* 4.jpg */,
 				3F4B2A761DAB40FF00E07143 /* 剧集.png */,
 			);
@@ -1008,21 +957,18 @@
 				3F799A341D9E5286009DAF97 /* black.jpg in Resources */,
 				3F4B2A8B1DABBE8900E07143 /* 播放red.png in Resources */,
 				3F799A2F1D9E51DA009DAF97 /* blue.jpg in Resources */,
-				3F799A321D9E51DA009DAF97 /* rednavi.jpg in Resources */,
+				3F799A321D9E51DA009DAF97 /* red.jpg in Resources */,
 				3F4B2A781DAB40FF00E07143 /* 剧集.png in Resources */,
 				3F2539531D9BFB460072831B /* 外卖2.png in Resources */,
 				3F1F156C1DA9E08600ACFF18 /* BeautyViewController.xib in Resources */,
 				3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */,
 				3F1F15651DA9E06F00ACFF18 /* RadioMainRightTableCell.xib in Resources */,
-				3F4B2A911DABCAE800E07143 /* RadioOneCell.xib in Resources */,
 				3F1F15411DA9DE8000ACFF18 /* RadioMainController.xib in Resources */,
 				3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
-				3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
 				3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */,
-				3F4B2AAB1DAC9C2600E07143 /* red.jpg in Resources */,
 				3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */,
 				3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */,
 			);
@@ -1094,7 +1040,6 @@
 				3F1F158E1DA9E39400ACFF18 /* VedioMainController.m in Sources */,
 				3F1F15D91DAA61E500ACFF18 /* PictureModelPictureModel.m in Sources */,
 				3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */,
-				3F4B2A9F1DABD2E800E07143 /* RadioTwoBaseClass.m in Sources */,
 				3F7999FB1D9E485B009DAF97 /* BaseClass.m in Sources */,
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
 				3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */,
@@ -1108,12 +1053,8 @@
 				3F7999FC1D9E485B009DAF97 /* LiveInfo.m in Sources */,
 				3F799A121D9E4864009DAF97 /* MainDetailHuati.m in Sources */,
 				3F799A111D9E4864009DAF97 /* MainDetailC20N3VJE000146BE.m in Sources */,
-				3F4B2AA11DABD2E800E07143 /* RadioTwoDetail.m in Sources */,
 				3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */,
-				3F4B2A901DABCAE800E07143 /* RadioOneCell.m in Sources */,
 				3F1F15891DA9E36F00ACFF18 /* VedioPlayViewController.m in Sources */,
-				3F4B2AA31DABD2E800E07143 /* RadioTwoRecs.m in Sources */,
-				3F4B2AA21DABD2E800E07143 /* RadioTwoList.m in Sources */,
 				3F1F15791DA9E09B00ACFF18 /* waterFlow.m in Sources */,
 				3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */,
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
@@ -1121,13 +1062,10 @@
 				3F799A101D9E4864009DAF97 /* MainDetailBaseClass.m in Sources */,
 				3F1F157D1DA9E0AD00ACFF18 /* PictureViewController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
-				3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */,
 				3F1F15401DA9DE8000ACFF18 /* RadioMainController.m in Sources */,
 				3F1EBA2C1DAC848600C842D1 /* VedioModelVedioModel.m in Sources */,
-				3F4B2AA81DABD72000E07143 /* RadioTwoCell.m in Sources */,
 				3F799A151D9E4864009DAF97 /* MainDetailTopiclistNews.m in Sources */,
 				3F1F15DC1DAA778F00ACFF18 /* ReuseView.m in Sources */,
-				3F4B2AA41DABD2E800E07143 /* RadioTwoUser.m in Sources */,
 				3F1F15D81DAA61E500ACFF18 /* PictureModelLuaVersions.m in Sources */,
 				3F1F159D1DAA033500ACFF18 /* BeautyModelItems.m in Sources */,
 				3F1F15591DA9E04E00ACFF18 /* RadioDetailListRadioDetailList.m in Sources */,

@@ -13,7 +13,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K82-0A-KPM">
                     <rect key="frame" x="0.0" y="0.0" width="160" height="25"/>
                     <animations/>
-                    <color key="backgroundColor" red="1" green="0.84330655430000001" blue="0.35191992480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="u7y-Vr-X8b"/>
                     </constraints>
@@ -24,7 +23,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-SK-hJp">
                     <rect key="frame" x="160" y="0.0" width="160" height="25"/>
                     <animations/>
-                    <color key="backgroundColor" red="1" green="0.84330655429136103" blue="0.35191992478140199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="EV7-9h-8pa"/>
                     </constraints>
@@ -32,17 +30,32 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2M-U4-JoR">
+                    <rect key="frame" x="0.0" y="26" width="320" height="1"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.80392156859999997" green="0.82352941180000006" blue="0.84705882349999995" alpha="0.26612311239127517" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iG6-qK-cBD"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="q2M-U4-JoR" firstAttribute="top" secondItem="Sfg-SK-hJp" secondAttribute="bottom" constant="1" id="Ehf-GM-6mF"/>
                 <constraint firstItem="K82-0A-KPM" firstAttribute="width" secondItem="Sfg-SK-hJp" secondAttribute="width" id="JWR-Ta-zjB"/>
                 <constraint firstItem="K82-0A-KPM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="La0-ZH-8U3"/>
+                <constraint firstItem="q2M-U4-JoR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SDt-3b-9RX"/>
                 <constraint firstItem="Sfg-SK-hJp" firstAttribute="leading" secondItem="K82-0A-KPM" secondAttribute="trailing" id="WwP-Gz-jnh"/>
                 <constraint firstItem="K82-0A-KPM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hEc-1Q-Df5"/>
                 <constraint firstItem="Sfg-SK-hJp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="m6V-RW-dno"/>
+                <constraint firstAttribute="trailing" secondItem="q2M-U4-JoR" secondAttribute="trailing" id="x4p-7T-Nas"/>
                 <constraint firstAttribute="trailing" secondItem="Sfg-SK-hJp" secondAttribute="trailing" id="zKI-oE-Rz6"/>
             </constraints>
+            <connections>
+                <outlet property="detailLabel" destination="K82-0A-KPM" id="NiW-QP-wLK"/>
+                <outlet property="listLabel" destination="Sfg-SK-hJp" id="fRy-AK-0T4"/>
+            </connections>
             <point key="canvasLocation" x="178" y="241"/>
         </view>
     </objects>

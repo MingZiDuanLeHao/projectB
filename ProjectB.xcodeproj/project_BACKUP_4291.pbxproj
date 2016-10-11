@@ -1021,8 +1021,11 @@
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
+<<<<<<< HEAD
 				3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */,
+=======
 				3F4B2AAB1DAC9C2600E07143 /* red.jpg in Resources */,
+>>>>>>> e04545906d4b24c5127eb1ea26f714c6ce4a8673
 				3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */,
 				3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */,
 			);
@@ -1123,8 +1126,11 @@
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */,
 				3F1F15401DA9DE8000ACFF18 /* RadioMainController.m in Sources */,
+<<<<<<< HEAD
 				3F1EBA2C1DAC848600C842D1 /* VedioModelVedioModel.m in Sources */,
+=======
 				3F4B2AA81DABD72000E07143 /* RadioTwoCell.m in Sources */,
+>>>>>>> e04545906d4b24c5127eb1ea26f714c6ce4a8673
 				3F799A151D9E4864009DAF97 /* MainDetailTopiclistNews.m in Sources */,
 				3F1F15DC1DAA778F00ACFF18 /* ReuseView.m in Sources */,
 				3F4B2AA41DABD2E800E07143 /* RadioTwoUser.m in Sources */,

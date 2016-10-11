@@ -14,14 +14,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yau-LA-YUG">
-                        <rect key="frame" x="5" y="5" width="70" height="69"/>
+                        <rect key="frame" x="10" y="5" width="70" height="70"/>
                         <animations/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="70" id="Yx4-a6-TrS"/>
                             <constraint firstAttribute="width" constant="70" id="p1b-3x-VsI"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDu-uO-XI2">
-                        <rect key="frame" x="80" y="5" width="306" height="30"/>
+                        <rect key="frame" x="85" y="5" width="301" height="30"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="eae-Qt-KMm"/>
@@ -31,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-Cm-re0">
-                        <rect key="frame" x="97" y="54" width="40" height="20"/>
+                        <rect key="frame" x="102" y="54" width="40" height="20"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="VBq-Ch-gjh"/>
@@ -42,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRt-V8-8Le">
-                        <rect key="frame" x="159" y="54" width="37" height="20"/>
+                        <rect key="frame" x="166" y="54" width="37" height="20"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Pb0-jy-3rT"/>
@@ -53,7 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-vY-H03">
-                        <rect key="frame" x="80" y="56" width="15" height="15"/>
+                        <rect key="frame" x="85" y="56" width="15" height="15"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="Ksp-Te-G6O"/>
@@ -61,7 +62,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="时钟.png" translatesAutoresizingMaskIntoConstraints="NO" id="3WO-IM-Ggy">
-                        <rect key="frame" x="142" y="56" width="15" height="15"/>
+                        <rect key="frame" x="147" y="56" width="15" height="15"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="h5N-NQ-AD0"/>
@@ -72,26 +73,30 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="x3n-Cm-re0" firstAttribute="leading" secondItem="kQA-vY-H03" secondAttribute="trailing" constant="2" id="3tc-j0-Vlo"/>
-                    <constraint firstItem="fRt-V8-8Le" firstAttribute="leading" secondItem="3WO-IM-Ggy" secondAttribute="trailing" constant="2" id="5Tc-LJ-URV"/>
+                    <constraint firstItem="fRt-V8-8Le" firstAttribute="leading" secondItem="3WO-IM-Ggy" secondAttribute="trailing" constant="4" id="5Tc-LJ-URV"/>
                     <constraint firstAttribute="bottom" secondItem="fRt-V8-8Le" secondAttribute="bottom" constant="5" id="7uf-0Y-q0b"/>
                     <constraint firstItem="Yau-LA-YUG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Jap-T0-Nay"/>
                     <constraint firstItem="3WO-IM-Ggy" firstAttribute="leading" secondItem="x3n-Cm-re0" secondAttribute="trailing" constant="5" id="MeU-eZ-Wcf"/>
                     <constraint firstItem="tDu-uO-XI2" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="WpF-3r-5Fz"/>
                     <constraint firstItem="fRt-V8-8Le" firstAttribute="leading" secondItem="x3n-Cm-re0" secondAttribute="trailing" constant="5" id="XFS-W2-KYY"/>
                     <constraint firstItem="tDu-uO-XI2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fmN-i8-U0n"/>
-                    <constraint firstAttribute="bottom" secondItem="Yau-LA-YUG" secondAttribute="bottom" constant="5" id="gdz-AB-OKX"/>
-                    <constraint firstItem="Yau-LA-YUG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="iF7-Ws-N51"/>
+                    <constraint firstAttribute="bottom" secondItem="Yau-LA-YUG" secondAttribute="bottom" constant="4" id="gdz-AB-OKX"/>
+                    <constraint firstItem="Yau-LA-YUG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="iF7-Ws-N51"/>
+                    <constraint firstAttribute="trailing" secondItem="fRt-V8-8Le" secondAttribute="trailing" constant="193" id="j6b-KP-ZHJ"/>
                     <constraint firstAttribute="bottom" secondItem="kQA-vY-H03" secondAttribute="bottom" constant="8" id="lSG-pC-ksC"/>
                     <constraint firstItem="kQA-vY-H03" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="nJa-5y-TIp"/>
                     <constraint firstItem="x3n-Cm-re0" firstAttribute="leading" secondItem="Yau-LA-YUG" secondAttribute="trailing" constant="5" id="nSo-XI-PAb"/>
                     <constraint firstAttribute="bottom" secondItem="x3n-Cm-re0" secondAttribute="bottom" constant="5" id="qLK-5a-VhE"/>
                     <constraint firstAttribute="trailing" secondItem="tDu-uO-XI2" secondAttribute="trailing" constant="5" id="rpI-lW-vBC"/>
+                    <constraint firstItem="fRt-V8-8Le" firstAttribute="top" secondItem="tDu-uO-XI2" secondAttribute="bottom" constant="19" id="tAK-NN-dkg"/>
                     <constraint firstAttribute="bottom" secondItem="3WO-IM-Ggy" secondAttribute="bottom" constant="8" id="z3p-Yb-Hm3"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="nSo-XI-PAb"/>
                         <exclude reference="XFS-W2-KYY"/>
+                        <exclude reference="j6b-KP-ZHJ"/>
+                        <exclude reference="tAK-NN-dkg"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

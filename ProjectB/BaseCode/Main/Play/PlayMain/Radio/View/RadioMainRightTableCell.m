@@ -23,7 +23,7 @@
     [self.img sd_setImageWithURL:[NSURL URLWithString:model.coverSmall]];
     self.img.layer.borderWidth = 0.3;
     self.img.layer.borderColor =[[UIColor grayColor]CGColor];
-    self.img.layer.shadowOffset = CGSizeMake(0, 0);
+    self.img.layer.shadowOffset = CGSizeMake(-3, 3);
     self.img.layer.shadowColor =[[UIColor blackColor]CGColor];
     self.img.layer.shadowOpacity = 0.5;
 }

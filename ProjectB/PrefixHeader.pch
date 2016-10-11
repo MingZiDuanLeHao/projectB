@@ -21,6 +21,7 @@
 #import <WebKit/WebKit.h>
 #import "NetWorkRequest.h"
 #import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
 
 
 #endif /* PrefixHeader_pch */
