@@ -7,4 +7,5 @@ target 'ProjectB’ do
    pod 'MMDrawerController', '~> 0.6'
    pod 'MJRefresh', '~> 3.1'
    pod 'AFNetworking', '~> 3.1'
+   pod 'Masonry', '~> 1.0'
 end

@@ -38,12 +38,13 @@ static NSString *rightCell = @"rightCell";
     self.keywordId = 113;
     [self requestData];
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+    
 }
 
 -(void)initUI
 {
     //左table
-    self.leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
+    self.leftTable.frame = CGRectMake(0, 64, 50, SHeight - 44);
     
     [_leftTable setSeparatorInset:UIEdgeInsetsZero];
     [_leftTable setLayoutMargins:UIEdgeInsetsZero];
@@ -53,6 +54,7 @@ static NSString *rightCell = @"rightCell";
     [_leftTable registerClass:[UITableViewCell class] forCellReuseIdentifier:leftCell];
     _leftTable.delegate = self;
     _leftTable.dataSource = self;
+    _leftTable.bounces = NO;
     [self.view addSubview:_leftTable];
     
     //右table
@@ -78,6 +80,26 @@ static NSString *rightCell = @"rightCell";
     }];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"列表"] style:UIBarButtonItemStylePlain target:self action:@selector(listHandle)];
+    
+    //使导航栏透明
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    
+    //毛玻璃
+    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rednavi.jpg"]];
+    imageview.userInteractionEnabled = YES;
+    imageview.contentMode = UIViewContentModeScaleAspectFit;
+    imageview.frame = CGRectMake(0, 0,SWidth, 64);
+    [self.view insertSubview:imageview belowSubview:_leftTable];
+    
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    
+    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+    
+    effectview.frame = [UIScreen mainScreen].bounds;
+    
+    [self.view insertSubview:effectview aboveSubview:imageview];
+
     
 }
 -(void)listHandle

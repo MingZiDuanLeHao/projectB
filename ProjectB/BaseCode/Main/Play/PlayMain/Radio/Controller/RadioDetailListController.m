@@ -48,6 +48,11 @@ static NSString *detailListCell = @"detailListCell";
 
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+
+}
+
 
 -(void)initUI
 {
@@ -73,14 +78,13 @@ static NSString *detailListCell = @"detailListCell";
     _listTab.showsVerticalScrollIndicator = NO;
     _listTab.delegate = self;
     _listTab.dataSource = self;
-//    _listTab.bounces = NO;
     _listTab.tableHeaderView = _topView;
     [self.view addSubview:_listTab];
     _listTab.estimatedRowHeight = 80;
     _listTab.rowHeight = UITableViewAutomaticDimension;
-    _listTab.backgroundColor = [UIColor clearColor];
-//    _listTab.backgroundColor = [UIColor colorWithRed:205.0/255 green:210.0/255 blue:216.0/255 alpha:0.43];
-//    self.view.backgroundColor = [UIColor colorWithRed:205.0/255 green:210.0/255 blue:216.0/255 alpha:0.43];
+
+
+
     
     //headerForView
     _headerView = [[NSBundle mainBundle]loadNibNamed:@"RadiodetailCellHeaderView" owner:nil options:nil][0];
@@ -97,7 +101,7 @@ static NSString *detailListCell = @"detailListCell";
     UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     [_listTab setTableFooterView:v];
     
-    //毛玻璃
+//    毛玻璃
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rednavi.jpg"]];
     imageview.userInteractionEnabled = YES;
     imageview.contentMode = UIViewContentModeScaleAspectFit;
@@ -241,7 +245,7 @@ static NSString *detailListCell = @"detailListCell";
     if ([_showTable isEqualToString:@"详情"]) {
         if (indexPath.section == 0 ) {
             RadioOneCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RadioOneCell"];
-            cell.introLabel.text = [NSString stringWithFormat:@"\t\t\t\t\t\t\t%@",_detailList.data.album.intro];;
+            cell.introLabel.text = [NSString stringWithFormat:@"%@",_detailList.data.album.intro];;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.backgroundColor = [UIColor clearColor];
             return cell;
@@ -274,9 +278,12 @@ static NSString *detailListCell = @"detailListCell";
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if ([_showTable isEqualToString:@"列表"]) {
         RadioPlayViewController *vc = [RadioPlayViewController new];
-        [self.navigationController pushViewController:vc animated:YES];
+        UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+        [self presentViewController:navi animated:YES completion:nil];
+      
     }
     
 }

@@ -17,6 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initUI];
+    
+}
+
+-(void)initUI
+{
+    //设置返回按钮
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [button setBackgroundImage:[UIImage imageNamed:@"下"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(PressDown) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = item;
+    
+    
+    
+    
+}
+
+-(void)PressDown
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

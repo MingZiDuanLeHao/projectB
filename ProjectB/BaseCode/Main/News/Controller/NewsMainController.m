@@ -152,6 +152,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    
     NewsMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsMainTableViewCell"];
     T1441074311424 *model =  _base.t1441074311424[indexPath.row];
     [cell.coverimg sd_setImageWithURL:[NSURL URLWithString:model.imgsrc]];
@@ -159,12 +160,14 @@
     cell.subTitle.text = model.digest;
     cell.From.text = model.source;
     cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NewsDetailController *detailVC = [NewsDetailController new];
     T1441074311424 *model =  _base.t1441074311424[indexPath.row];
     detailVC.postid = model.postid;

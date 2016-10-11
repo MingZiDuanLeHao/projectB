@@ -19,7 +19,7 @@
     [_smallLogo sd_setImageWithURL:[NSURL URLWithString:model.smallLogo]];
     _nickName.text = model.nickname;
     _follower.text = [NSString stringWithFormat:@"已被%.0f人关注",model.followers];
-    _signature.text = [NSString stringWithFormat:@"\t\t\t\t\t\t\t%@",model.personalSignature];
+    _signature.text = [NSString stringWithFormat:@"%@",model.personalSignature];
     
     //图片效果
     _smallLogo.layer.borderWidth = 0.3;
