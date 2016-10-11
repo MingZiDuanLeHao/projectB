@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aP7-KN-E4g">
-                        <rect key="frame" x="5" y="5" width="75" height="75"/>
+                        <rect key="frame" x="10" y="5" width="75" height="75"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="9Hw-KS-ZLW"/>
@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48T-bf-dm9">
-                        <rect key="frame" x="85" y="5" width="304" height="20"/>
+                        <rect key="frame" x="90" y="5" width="299" height="20"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Cob-bi-emP"/>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykx-GD-iBO">
-                        <rect key="frame" x="85" y="30" width="304" height="25"/>
+                        <rect key="frame" x="90" y="30" width="299" height="25"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="vh7-lw-dL4"/>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbJ-NG-5ds">
-                        <rect key="frame" x="99" y="68" width="31" height="12"/>
+                        <rect key="frame" x="104" y="68" width="31" height="12"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Eud-fy-pMh"/>
@@ -53,7 +53,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRk-5c-oNc">
-                        <rect key="frame" x="154" y="68" width="38" height="12"/>
+                        <rect key="frame" x="159" y="68" width="38" height="12"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="5ux-VF-rnC"/>
@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="播放red.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sty-eb-p1v">
-                        <rect key="frame" x="85" y="68" width="12" height="12"/>
+                        <rect key="frame" x="90" y="68" width="12" height="12"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="EcI-S1-uhn"/>
@@ -72,7 +72,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="剧集.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5L-8J-ht7">
-                        <rect key="frame" x="140" y="68" width="12" height="12"/>
+                        <rect key="frame" x="145" y="68" width="12" height="12"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="12" id="ce3-sq-bwu"/>
@@ -83,7 +83,7 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="Sty-eb-p1v" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="42L-wP-jFl"/>
-                    <constraint firstItem="aP7-KN-E4g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="JG3-3i-2Em"/>
+                    <constraint firstItem="aP7-KN-E4g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="JG3-3i-2Em"/>
                     <constraint firstItem="WbJ-NG-5ds" firstAttribute="top" secondItem="ykx-GD-iBO" secondAttribute="bottom" constant="13" id="P19-n2-Zwo"/>
                     <constraint firstItem="48T-bf-dm9" firstAttribute="leading" secondItem="aP7-KN-E4g" secondAttribute="trailing" constant="5" id="RLa-Fz-3de"/>
                     <constraint firstItem="ykx-GD-iBO" firstAttribute="top" secondItem="48T-bf-dm9" secondAttribute="bottom" constant="5" id="TdG-sC-CVc"/>

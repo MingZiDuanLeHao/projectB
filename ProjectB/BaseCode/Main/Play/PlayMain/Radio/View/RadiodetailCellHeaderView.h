@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RadiodetailCellHeaderView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *listLabel;
 
 @end
