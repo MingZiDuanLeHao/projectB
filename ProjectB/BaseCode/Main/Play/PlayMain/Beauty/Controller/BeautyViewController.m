@@ -32,6 +32,7 @@ static NSString * const BeautyId = @"beauty";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"美女";
     [self requestData];
     [self initUI];
 
@@ -159,7 +160,7 @@ static NSString * const BeautyId = @"beauty";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //创建一个黑色背景
-    //初始化一个用来当做背景的View。我这里为了省时间计算，宽高直接用的5s的尺寸
+    //初始化一个用来当做背景的View。
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, SWidth, SHeight - 64)];
     self.background = bgView;
     [bgView setBackgroundColor:[UIColor blackColor]];

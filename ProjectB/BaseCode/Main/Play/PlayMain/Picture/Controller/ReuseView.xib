@@ -10,18 +10,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ey6-qX-hmM">
-                    <rect key="frame" x="3" y="3" width="314" height="562"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位图.png" translatesAutoresizingMaskIntoConstraints="NO" id="ey6-qX-hmM">
+                    <rect key="frame" x="2" y="2" width="316" height="564"/>
                     <animations/>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ey6-qX-hmM" secondAttribute="trailing" constant="3" id="9Ju-Ul-K8b"/>
-                <constraint firstItem="ey6-qX-hmM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="ECE-DF-HuO"/>
-                <constraint firstItem="ey6-qX-hmM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="Fd3-xa-IUH"/>
-                <constraint firstAttribute="bottom" secondItem="ey6-qX-hmM" secondAttribute="bottom" constant="3" id="Kbq-Fq-Hnr"/>
+                <constraint firstAttribute="trailing" secondItem="ey6-qX-hmM" secondAttribute="trailing" constant="2" id="D1e-Xp-huG"/>
+                <constraint firstAttribute="bottom" secondItem="ey6-qX-hmM" secondAttribute="bottom" constant="2" id="Pj0-4s-t8l"/>
+                <constraint firstItem="ey6-qX-hmM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="Xym-tn-inW"/>
+                <constraint firstItem="ey6-qX-hmM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="hCG-Cf-HbW"/>
             </constraints>
             <connections>
                 <outlet property="img" destination="ey6-qX-hmM" id="c1F-lq-4d6"/>
@@ -29,4 +29,7 @@
             <point key="canvasLocation" x="415" y="280"/>
         </view>
     </objects>
+    <resources>
+        <image name="占位图.png" width="32" height="32"/>
+    </resources>
 </document>

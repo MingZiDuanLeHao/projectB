@@ -53,7 +53,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _array = @[@"主页",@"本地", @"清理缓存", @"设置",@"关于"];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"sugar"];
     self.tableView.delegate = self;

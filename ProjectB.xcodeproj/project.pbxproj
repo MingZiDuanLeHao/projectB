@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1EBA2A1DAC848600C842D1 /* VedioModelItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA251DAC848600C842D1 /* VedioModelItems.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA2B1DAC848600C842D1 /* VedioModelLuaVersions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA271DAC848600C842D1 /* VedioModelLuaVersions.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA2C1DAC848600C842D1 /* VedioModelVedioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA291DAC848600C842D1 /* VedioModelVedioModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA331DAC94EB00C842D1 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA321DAC94EB00C842D1 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
 		3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15301DA9DE8000ACFF18 /* 视频.pdf */; settings = {ASSET_TAGS = (); }; };
 		3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
@@ -107,6 +113,17 @@
 /* Begin PBXFileReference section */
 		29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.release.xcconfig"; sourceTree = "<group>"; };
+		3F1EBA231DAC848600C842D1 /* VedioDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioDataModels.h; sourceTree = "<group>"; };
+		3F1EBA241DAC848600C842D1 /* VedioModelItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelItems.h; sourceTree = "<group>"; };
+		3F1EBA251DAC848600C842D1 /* VedioModelItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelItems.m; sourceTree = "<group>"; };
+		3F1EBA261DAC848600C842D1 /* VedioModelLuaVersions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelLuaVersions.h; sourceTree = "<group>"; };
+		3F1EBA271DAC848600C842D1 /* VedioModelLuaVersions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelLuaVersions.m; sourceTree = "<group>"; };
+		3F1EBA281DAC848600C842D1 /* VedioModelVedioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelVedioModel.h; sourceTree = "<group>"; };
+		3F1EBA291DAC848600C842D1 /* VedioModelVedioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelVedioModel.m; sourceTree = "<group>"; };
+		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
+		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
+		3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayCell.xib; sourceTree = "<group>"; };
+		3F1EBA321DAC94EB00C842D1 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位图.png"; sourceTree = "<group>"; };
 		3F1F152F1DA9DE8000ACFF18 /* 列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "列表.png"; sourceTree = "<group>"; };
 		3F1F15301DA9DE8000ACFF18 /* 视频.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "视频.pdf"; sourceTree = "<group>"; };
 		3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
@@ -289,6 +306,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3F1EBA221DAC848600C842D1 /* VedioModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EBA231DAC848600C842D1 /* VedioDataModels.h */,
+				3F1EBA241DAC848600C842D1 /* VedioModelItems.h */,
+				3F1EBA251DAC848600C842D1 /* VedioModelItems.m */,
+				3F1EBA261DAC848600C842D1 /* VedioModelLuaVersions.h */,
+				3F1EBA271DAC848600C842D1 /* VedioModelLuaVersions.m */,
+				3F1EBA281DAC848600C842D1 /* VedioModelVedioModel.h */,
+				3F1EBA291DAC848600C842D1 /* VedioModelVedioModel.m */,
+			);
+			path = VedioModel;
+			sourceTree = "<group>";
+		};
 		3F1F151E1DA9D15700ACFF18 /* PlayMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +446,7 @@
 		3F1F15291DA9DDFB00ACFF18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1EBA221DAC848600C842D1 /* VedioModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,6 +484,9 @@
 		3F1F152D1DA9DE3000ACFF18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */,
+				3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */,
+				3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -569,6 +604,7 @@
 				3F4B2A8A1DABBE8900E07143 /* 时钟.png */,
 				3F799A331D9E5286009DAF97 /* black.jpg */,
 				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
+				3F1EBA321DAC94EB00C842D1 /* 占位图.png */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
 				3F799A2E1D9E51DA009DAF97 /* red.jpg */,
@@ -892,6 +928,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1EBA331DAC94EB00C842D1 /* 占位图.png in Resources */,
 				3F4B2A811DABB8DD00E07143 /* RadioPlayViewController.xib in Resources */,
 				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
 				3F1F15711DA9E09200ACFF18 /* BeautyCell.xib in Resources */,
@@ -931,6 +968,7 @@
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
+				3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */,
 				3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */,
 				3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */,
 			);
@@ -992,6 +1030,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F4B2A881DABBBFF00E07143 /* RadiodetailCellHeaderView.m in Sources */,
+				3F1EBA2B1DAC848600C842D1 /* VedioModelLuaVersions.m in Sources */,
 				3F4B2A861DABBB2100E07143 /* BeautyModelBeautyModel.m in Sources */,
 				3F4B2A801DABB8DD00E07143 /* RadioPlayViewController.m in Sources */,
 				3F1F153F1DA9DE8000ACFF18 /* RadioDetailListController.m in Sources */,
@@ -1005,6 +1044,7 @@
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
 				3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */,
 				3F1F15661DA9E06F00ACFF18 /* RedioDetailListCell.m in Sources */,
+				3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */,
 				3F1F155B1DA9E04E00ACFF18 /* RadioDetailListUser.m in Sources */,
 				3F1F15851DA9E0C500ACFF18 /* POPopupOverlayer.m in Sources */,
 				3F7999FD1D9E485B009DAF97 /* T1441074311424.m in Sources */,
@@ -1023,6 +1063,7 @@
 				3F1F157D1DA9E0AD00ACFF18 /* PictureViewController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F1F15401DA9DE8000ACFF18 /* RadioMainController.m in Sources */,
+				3F1EBA2C1DAC848600C842D1 /* VedioModelVedioModel.m in Sources */,
 				3F799A151D9E4864009DAF97 /* MainDetailTopiclistNews.m in Sources */,
 				3F1F15DC1DAA778F00ACFF18 /* ReuseView.m in Sources */,
 				3F1F15D81DAA61E500ACFF18 /* PictureModelLuaVersions.m in Sources */,
@@ -1034,6 +1075,7 @@
 				3F1F15811DA9E0BA00ACFF18 /* POContentView.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F1F159E1DAA033500ACFF18 /* BeautyModelLuaVersions.m in Sources */,
+				3F1EBA2A1DAC848600C842D1 /* VedioModelItems.m in Sources */,
 				3F799A131D9E4864009DAF97 /* MainDetailLink.m in Sources */,
 				3F1F156B1DA9E08600ACFF18 /* BeautyViewController.m in Sources */,
 				3F1F155D1DA9E04E00ACFF18 /* RadioMain.m in Sources */,

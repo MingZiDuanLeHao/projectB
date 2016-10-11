@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.view.backgroundColor = [UIColor redColor];
-    
+    self.title = @"图片";
        [self.view addSubview:self.contentView];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -39,7 +39,7 @@
 
 - (POContentView *)contentView{
     if (!_contentView) {
-        _contentView = [[POContentView alloc] initWithFrame:self.view.bounds];
+        _contentView = [[POContentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _contentView.backgroundColor = [UIColor lightGrayColor];
     }
     return _contentView;
