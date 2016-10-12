@@ -12,6 +12,25 @@
 		3F1EBA331DAC94EB00C842D1 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA321DAC94EB00C842D1 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA371DAD0B4800C842D1 /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA341DAD0B4800C842D1 /* WMPlayer.bundle */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA381DAD0B4800C842D1 /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA361DAD0B4800C842D1 /* WMPlayer.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA441DADC84100C842D1 /* NHBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA431DADC84100C842D1 /* NHBaseImageView.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA471DADC8E300C842D1 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA461DADC8E300C842D1 /* UIImage+Addition.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBA4D1DADC95D00C842D1 /* NHDownloadImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA4B1DADC95D00C842D1 /* NHDownloadImageManager.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB31DADDCDB00C842D1 /* VedioModelActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA941DADDCDB00C842D1 /* VedioModelActivity.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB41DADDCDB00C842D1 /* VedioModelAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA961DADDCDB00C842D1 /* VedioModelAd.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB51DADDCDB00C842D1 /* VedioModelComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA981DADDCDB00C842D1 /* VedioModelComments.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB61DADDCDB00C842D1 /* VedioModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA9A1DADDCDB00C842D1 /* VedioModelData.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB71DADDCDB00C842D1 /* VedioModelDislikeReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA9C1DADDCDB00C842D1 /* VedioModelDislikeReason.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB81DADDCDB00C842D1 /* VedioModelGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA9E1DADDCDB00C842D1 /* VedioModelGroup.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAB91DADDCDB00C842D1 /* VedioModelLargeCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAA01DADDCDB00C842D1 /* VedioModelLargeCover.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABA1DADDCDB00C842D1 /* VedioModelLogExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAA21DADDCDB00C842D1 /* VedioModelLogExtra.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABB1DADDCDB00C842D1 /* VedioModelMediumCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAA41DADDCDB00C842D1 /* VedioModelMediumCover.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABC1DADDCDB00C842D1 /* VedioModelNeihanHotLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAA61DADDCDB00C842D1 /* VedioModelNeihanHotLink.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABD1DADDCDB00C842D1 /* VedioModelOriginVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAA81DADDCDB00C842D1 /* VedioModelOriginVideo.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABE1DADDCDB00C842D1 /* VedioModelSTZpVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAAA1DADDCDB00C842D1 /* VedioModelSTZpVideo.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBABF1DADDCDB00C842D1 /* VedioModelUrlList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAAC1DADDCDB00C842D1 /* VedioModelUrlList.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAC01DADDCDB00C842D1 /* VedioModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAAE1DADDCDB00C842D1 /* VedioModelUser.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAC11DADDCDB00C842D1 /* VedioModelVedioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAB01DADDCDB00C842D1 /* VedioModelVedioModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F1EBAC21DADDCDB00C842D1 /* VedioModelVideoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBAB21DADDCDB00C842D1 /* VedioModelVideoInfo.m */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
 		3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15301DA9DE8000ACFF18 /* 视频.pdf */; settings = {ASSET_TAGS = (); }; };
 		3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
@@ -139,6 +158,45 @@
 		3F1EBA341DAD0B4800C842D1 /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
 		3F1EBA351DAD0B4800C842D1 /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
 		3F1EBA361DAD0B4800C842D1 /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
+		3F1EBA421DADC84100C842D1 /* NHBaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHBaseImageView.h; sourceTree = "<group>"; };
+		3F1EBA431DADC84100C842D1 /* NHBaseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHBaseImageView.m; sourceTree = "<group>"; };
+		3F1EBA451DADC8E300C842D1 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
+		3F1EBA461DADC8E300C842D1 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
+		3F1EBA4B1DADC95D00C842D1 /* NHDownloadImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHDownloadImageManager.m; sourceTree = "<group>"; };
+		3F1EBA4C1DADC95D00C842D1 /* NHDownloadImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHDownloadImageManager.h; sourceTree = "<group>"; };
+		3F1EBA921DADDCDB00C842D1 /* vedioDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vedioDataModels.h; sourceTree = "<group>"; };
+		3F1EBA931DADDCDB00C842D1 /* VedioModelActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelActivity.h; sourceTree = "<group>"; };
+		3F1EBA941DADDCDB00C842D1 /* VedioModelActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelActivity.m; sourceTree = "<group>"; };
+		3F1EBA951DADDCDB00C842D1 /* VedioModelAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelAd.h; sourceTree = "<group>"; };
+		3F1EBA961DADDCDB00C842D1 /* VedioModelAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelAd.m; sourceTree = "<group>"; };
+		3F1EBA971DADDCDB00C842D1 /* VedioModelComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelComments.h; sourceTree = "<group>"; };
+		3F1EBA981DADDCDB00C842D1 /* VedioModelComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelComments.m; sourceTree = "<group>"; };
+		3F1EBA991DADDCDB00C842D1 /* VedioModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelData.h; sourceTree = "<group>"; };
+		3F1EBA9A1DADDCDB00C842D1 /* VedioModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelData.m; sourceTree = "<group>"; };
+		3F1EBA9B1DADDCDB00C842D1 /* VedioModelDislikeReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelDislikeReason.h; sourceTree = "<group>"; };
+		3F1EBA9C1DADDCDB00C842D1 /* VedioModelDislikeReason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelDislikeReason.m; sourceTree = "<group>"; };
+		3F1EBA9D1DADDCDB00C842D1 /* VedioModelGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelGroup.h; sourceTree = "<group>"; };
+		3F1EBA9E1DADDCDB00C842D1 /* VedioModelGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelGroup.m; sourceTree = "<group>"; };
+		3F1EBA9F1DADDCDB00C842D1 /* VedioModelLargeCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelLargeCover.h; sourceTree = "<group>"; };
+		3F1EBAA01DADDCDB00C842D1 /* VedioModelLargeCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelLargeCover.m; sourceTree = "<group>"; };
+		3F1EBAA11DADDCDB00C842D1 /* VedioModelLogExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelLogExtra.h; sourceTree = "<group>"; };
+		3F1EBAA21DADDCDB00C842D1 /* VedioModelLogExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelLogExtra.m; sourceTree = "<group>"; };
+		3F1EBAA31DADDCDB00C842D1 /* VedioModelMediumCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelMediumCover.h; sourceTree = "<group>"; };
+		3F1EBAA41DADDCDB00C842D1 /* VedioModelMediumCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelMediumCover.m; sourceTree = "<group>"; };
+		3F1EBAA51DADDCDB00C842D1 /* VedioModelNeihanHotLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelNeihanHotLink.h; sourceTree = "<group>"; };
+		3F1EBAA61DADDCDB00C842D1 /* VedioModelNeihanHotLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelNeihanHotLink.m; sourceTree = "<group>"; };
+		3F1EBAA71DADDCDB00C842D1 /* VedioModelOriginVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelOriginVideo.h; sourceTree = "<group>"; };
+		3F1EBAA81DADDCDB00C842D1 /* VedioModelOriginVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelOriginVideo.m; sourceTree = "<group>"; };
+		3F1EBAA91DADDCDB00C842D1 /* VedioModelSTZpVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelSTZpVideo.h; sourceTree = "<group>"; };
+		3F1EBAAA1DADDCDB00C842D1 /* VedioModelSTZpVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelSTZpVideo.m; sourceTree = "<group>"; };
+		3F1EBAAB1DADDCDB00C842D1 /* VedioModelUrlList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelUrlList.h; sourceTree = "<group>"; };
+		3F1EBAAC1DADDCDB00C842D1 /* VedioModelUrlList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelUrlList.m; sourceTree = "<group>"; };
+		3F1EBAAD1DADDCDB00C842D1 /* VedioModelUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelUser.h; sourceTree = "<group>"; };
+		3F1EBAAE1DADDCDB00C842D1 /* VedioModelUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelUser.m; sourceTree = "<group>"; };
+		3F1EBAAF1DADDCDB00C842D1 /* VedioModelVedioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelVedioModel.h; sourceTree = "<group>"; };
+		3F1EBAB01DADDCDB00C842D1 /* VedioModelVedioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelVedioModel.m; sourceTree = "<group>"; };
+		3F1EBAB11DADDCDB00C842D1 /* VedioModelVideoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelVideoInfo.h; sourceTree = "<group>"; };
+		3F1EBAB21DADDCDB00C842D1 /* VedioModelVideoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelVideoInfo.m; sourceTree = "<group>"; };
 		3F1F152F1DA9DE8000ACFF18 /* 列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "列表.png"; sourceTree = "<group>"; };
 		3F1F15301DA9DE8000ACFF18 /* 视频.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "视频.pdf"; sourceTree = "<group>"; };
 		3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
@@ -353,6 +411,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3F1EBA911DADDCDB00C842D1 /* VedioModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EBA921DADDCDB00C842D1 /* vedioDataModels.h */,
+				3F1EBA931DADDCDB00C842D1 /* VedioModelActivity.h */,
+				3F1EBA941DADDCDB00C842D1 /* VedioModelActivity.m */,
+				3F1EBA951DADDCDB00C842D1 /* VedioModelAd.h */,
+				3F1EBA961DADDCDB00C842D1 /* VedioModelAd.m */,
+				3F1EBA971DADDCDB00C842D1 /* VedioModelComments.h */,
+				3F1EBA981DADDCDB00C842D1 /* VedioModelComments.m */,
+				3F1EBA991DADDCDB00C842D1 /* VedioModelData.h */,
+				3F1EBA9A1DADDCDB00C842D1 /* VedioModelData.m */,
+				3F1EBA9B1DADDCDB00C842D1 /* VedioModelDislikeReason.h */,
+				3F1EBA9C1DADDCDB00C842D1 /* VedioModelDislikeReason.m */,
+				3F1EBA9D1DADDCDB00C842D1 /* VedioModelGroup.h */,
+				3F1EBA9E1DADDCDB00C842D1 /* VedioModelGroup.m */,
+				3F1EBA9F1DADDCDB00C842D1 /* VedioModelLargeCover.h */,
+				3F1EBAA01DADDCDB00C842D1 /* VedioModelLargeCover.m */,
+				3F1EBAA11DADDCDB00C842D1 /* VedioModelLogExtra.h */,
+				3F1EBAA21DADDCDB00C842D1 /* VedioModelLogExtra.m */,
+				3F1EBAA31DADDCDB00C842D1 /* VedioModelMediumCover.h */,
+				3F1EBAA41DADDCDB00C842D1 /* VedioModelMediumCover.m */,
+				3F1EBAA51DADDCDB00C842D1 /* VedioModelNeihanHotLink.h */,
+				3F1EBAA61DADDCDB00C842D1 /* VedioModelNeihanHotLink.m */,
+				3F1EBAA71DADDCDB00C842D1 /* VedioModelOriginVideo.h */,
+				3F1EBAA81DADDCDB00C842D1 /* VedioModelOriginVideo.m */,
+				3F1EBAA91DADDCDB00C842D1 /* VedioModelSTZpVideo.h */,
+				3F1EBAAA1DADDCDB00C842D1 /* VedioModelSTZpVideo.m */,
+				3F1EBAAB1DADDCDB00C842D1 /* VedioModelUrlList.h */,
+				3F1EBAAC1DADDCDB00C842D1 /* VedioModelUrlList.m */,
+				3F1EBAAD1DADDCDB00C842D1 /* VedioModelUser.h */,
+				3F1EBAAE1DADDCDB00C842D1 /* VedioModelUser.m */,
+				3F1EBAAF1DADDCDB00C842D1 /* VedioModelVedioModel.h */,
+				3F1EBAB01DADDCDB00C842D1 /* VedioModelVedioModel.m */,
+				3F1EBAB11DADDCDB00C842D1 /* VedioModelVideoInfo.h */,
+				3F1EBAB21DADDCDB00C842D1 /* VedioModelVideoInfo.m */,
+			);
+			path = VedioModel;
+			sourceTree = "<group>";
+		};
 		3F1F151E1DA9D15700ACFF18 /* PlayMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +577,13 @@
 		3F1F15291DA9DDFB00ACFF18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1EBA911DADDCDB00C842D1 /* VedioModel */,
+				3F1EBA4B1DADC95D00C842D1 /* NHDownloadImageManager.m */,
+				3F1EBA4C1DADC95D00C842D1 /* NHDownloadImageManager.h */,
+				3F1EBA451DADC8E300C842D1 /* UIImage+Addition.h */,
+				3F1EBA461DADC8E300C842D1 /* UIImage+Addition.m */,
+				3F1EBA421DADC84100C842D1 /* NHBaseImageView.h */,
+				3F1EBA431DADC84100C842D1 /* NHBaseImageView.m */,
 				3F1EBA341DAD0B4800C842D1 /* WMPlayer.bundle */,
 				3F1EBA351DAD0B4800C842D1 /* WMPlayer.h */,
 				3F1EBA361DAD0B4800C842D1 /* WMPlayer.m */,
@@ -1111,58 +1216,77 @@
 				3F4B2A801DABB8DD00E07143 /* RadioPlayViewController.m in Sources */,
 				3F1F153F1DA9DE8000ACFF18 /* RadioDetailListController.m in Sources */,
 				3F1F15571DA9E04E00ACFF18 /* RadioDetailListData.m in Sources */,
+				3F1EBABB1DADDCDB00C842D1 /* VedioModelMediumCover.m in Sources */,
 				3F799A0F1D9E4864009DAF97 /* MainDetailAskbar.m in Sources */,
+				3F1EBAC11DADDCDB00C842D1 /* VedioModelVedioModel.m in Sources */,
+				3F1EBABF1DADDCDB00C842D1 /* VedioModelUrlList.m in Sources */,
 				3F1F15561DA9E04E00ACFF18 /* RadioDetailListAlbum.m in Sources */,
 				3F1F158E1DA9E39400ACFF18 /* VedioMainController.m in Sources */,
 				3F1F15D91DAA61E500ACFF18 /* PictureModelPictureModel.m in Sources */,
 				3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */,
 				3F4B2A9F1DABD2E800E07143 /* RadioTwoBaseClass.m in Sources */,
 				3F7999FB1D9E485B009DAF97 /* BaseClass.m in Sources */,
+				3F1EBAC01DADDCDB00C842D1 /* VedioModelUser.m in Sources */,
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
 				3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */,
 				3F1F15661DA9E06F00ACFF18 /* RedioDetailListCell.m in Sources */,
 				3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */,
+				3F1EBA471DADC8E300C842D1 /* UIImage+Addition.m in Sources */,
 				3F1F155B1DA9E04E00ACFF18 /* RadioDetailListUser.m in Sources */,
 				3F1F15851DA9E0C500ACFF18 /* POPopupOverlayer.m in Sources */,
+				3F1EBABC1DADDCDB00C842D1 /* VedioModelNeihanHotLink.m in Sources */,
+				3F1EBA4D1DADC95D00C842D1 /* NHDownloadImageManager.m in Sources */,
 				3F4B2AB01DACEA9300E07143 /* BarButtomViewController.m in Sources */,
+				3F1EBABA1DADDCDB00C842D1 /* VedioModelLogExtra.m in Sources */,
 				3F7999FD1D9E485B009DAF97 /* T1441074311424.m in Sources */,
 				3F1F155A1DA9E04E00ACFF18 /* RadioDetailListTracks.m in Sources */,
 				3F45A84A1D9BA7FD00A83BB1 /* AppDelegate.m in Sources */,
 				3F7999FC1D9E485B009DAF97 /* LiveInfo.m in Sources */,
+				3F1EBAC21DADDCDB00C842D1 /* VedioModelVideoInfo.m in Sources */,
 				3F799A121D9E4864009DAF97 /* MainDetailHuati.m in Sources */,
 				3F799A111D9E4864009DAF97 /* MainDetailC20N3VJE000146BE.m in Sources */,
+				3F1EBAB81DADDCDB00C842D1 /* VedioModelGroup.m in Sources */,
 				3F4B2AA11DABD2E800E07143 /* RadioTwoDetail.m in Sources */,
 				3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */,
+				3F1EBAB51DADDCDB00C842D1 /* VedioModelComments.m in Sources */,
 				3F4B2A901DABCAE800E07143 /* RadioOneCell.m in Sources */,
 				3F1F15891DA9E36F00ACFF18 /* VedioPlayViewController.m in Sources */,
 				3F4B2AA31DABD2E800E07143 /* RadioTwoRecs.m in Sources */,
 				3F4B2AA21DABD2E800E07143 /* RadioTwoList.m in Sources */,
+				3F1EBA441DADC84100C842D1 /* NHBaseImageView.m in Sources */,
+				3F1EBAB71DADDCDB00C842D1 /* VedioModelDislikeReason.m in Sources */,
 				3F1F15791DA9E09B00ACFF18 /* waterFlow.m in Sources */,
 				3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */,
 				3F45A8CA1D9BDB7D00A83BB1 /* LeftSettingController.m in Sources */,
 				3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */,
 				3F799A101D9E4864009DAF97 /* MainDetailBaseClass.m in Sources */,
+				3F1EBAB31DADDCDB00C842D1 /* VedioModelActivity.m in Sources */,
 				3F1F157D1DA9E0AD00ACFF18 /* PictureViewController.m in Sources */,
 				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */,
 				3F1F15401DA9DE8000ACFF18 /* RadioMainController.m in Sources */,
+				3F1EBAB41DADDCDB00C842D1 /* VedioModelAd.m in Sources */,
 				3F4B2AA81DABD72000E07143 /* RadioTwoCell.m in Sources */,
 				3F799A151D9E4864009DAF97 /* MainDetailTopiclistNews.m in Sources */,
 				3F1F15DC1DAA778F00ACFF18 /* ReuseView.m in Sources */,
 				3F4B2AA41DABD2E800E07143 /* RadioTwoUser.m in Sources */,
 				3F1F15D81DAA61E500ACFF18 /* PictureModelLuaVersions.m in Sources */,
 				3F1F159D1DAA033500ACFF18 /* BeautyModelItems.m in Sources */,
+				3F1EBABD1DADDCDB00C842D1 /* VedioModelOriginVideo.m in Sources */,
 				3F1F15591DA9E04E00ACFF18 /* RadioDetailListRadioDetailList.m in Sources */,
+				3F1EBAB61DADDCDB00C842D1 /* VedioModelData.m in Sources */,
 				3F7999C11D9E1B2C009DAF97 /* NewsCommentController.m in Sources */,
 				3F1F15581DA9E04E00ACFF18 /* RadioDetailListList.m in Sources */,
 				3F799A141D9E4864009DAF97 /* MainDetailRelativeSys.m in Sources */,
 				3F1F15811DA9E0BA00ACFF18 /* POContentView.m in Sources */,
+				3F1EBABE1DADDCDB00C842D1 /* VedioModelSTZpVideo.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F4B2ACE1DAD19B500E07143 /* RadioPlayerManager.m in Sources */,
 				3F1F159E1DAA033500ACFF18 /* BeautyModelLuaVersions.m in Sources */,
 				3F799A131D9E4864009DAF97 /* MainDetailLink.m in Sources */,
 				3F1EBA381DAD0B4800C842D1 /* WMPlayer.m in Sources */,
 				3F1F156B1DA9E08600ACFF18 /* BeautyViewController.m in Sources */,
+				3F1EBAB91DADDCDB00C842D1 /* VedioModelLargeCover.m in Sources */,
 				3F1F155D1DA9E04E00ACFF18 /* RadioMain.m in Sources */,
 				3F1F155C1DA9E04E00ACFF18 /* List.m in Sources */,
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,

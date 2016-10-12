@@ -14,15 +14,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MSJ-st-rgG">
-                        <rect key="frame" x="35" y="17" width="240" height="128"/>
+                        <rect key="frame" x="10" y="17" width="303" height="128"/>
                         <animations/>
                     </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="MSJ-st-rgG" secondAttribute="trailing" constant="48" id="JBF-IE-dzE"/>
+                    <constraint firstAttribute="trailing" secondItem="MSJ-st-rgG" secondAttribute="trailing" constant="10" id="JBF-IE-dzE"/>
                     <constraint firstAttribute="bottom" secondItem="MSJ-st-rgG" secondAttribute="bottom" constant="34" id="RXY-aP-vQp"/>
-                    <constraint firstItem="MSJ-st-rgG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="opv-jk-7jt"/>
+                    <constraint firstItem="MSJ-st-rgG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="opv-jk-7jt"/>
                     <constraint firstItem="MSJ-st-rgG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="vo3-x1-4Gy"/>
                 </constraints>
             </tableViewCellContentView>

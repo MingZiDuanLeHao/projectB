@@ -12,6 +12,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "WMPlayer.h"
 #import "VedioPlayCell.h"
+#import "NHBaseImageView.h"
+#import "vedioDataModels.h"
+
 static NSString *cellID = @"playCell";
 @interface VedioPlayViewController ()<WMPlayerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) WMPlayer *wmPlayer;
@@ -21,6 +24,8 @@ static NSString *cellID = @"playCell";
 
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, strong) NSMutableArray *cellFrameArray;
+@property (nonatomic, weak) NHBaseImageView *imageView;
+@property (nonatomic, strong) VedioModelVedioModel *modelData;
 /** 提示视图*/
 /** 是否显示提示视图*/
 @property (nonatomic, assign) BOOL showTopTipViewFlag;
@@ -33,6 +38,8 @@ static NSString *cellID = @"playCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initUI];
+    [self requestData];
  
 }
 
@@ -43,6 +50,55 @@ static NSString *cellID = @"playCell";
     _tableV.dataSource = self;
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
+}
+-(void)requestData
+{
+    NSString *UrlStr = [NSString stringWithFormat:@"http://ic.snssdk.com/neihan/stream/mix/v1/?content_type=-104&iid=5593387628&os_version=9.3.3&os_api=18&app_name=joke_essay&channel=App%@Store&device_platform=iphone&idfa=9DE12873-6A67-4C26-8675-F2541AF47FB3&live_sdk_version=130&vid=4006D19B-01F8-4B64-9674-B9BC2016B99C&openudid=d6f8422354888bc5e7ca31764c250955439497ec&device_type=iPhone%@S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=3115037754&aid=7&content_type=-104&count=30&min_time=1475026801",@"20",@"205"];
+    //    NSLog(@"!!!!!!!!!!!!%@",UrlStr);
+    //转化一下,不然返回的data无法解析
+    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.modelData = [VedioModelVedioModel modelObjectWithDictionary:dic];
+       
+            NSArray *dataArr = self.modelData.data.data;
+
+            //!!!!!为了去除广告 麻蛋
+            for (NSDictionary *dicGroup in dataArr) {
+                NSArray *arr = [dicGroup allKeys];
+                if ([arr containsObject:@"ad"]) {
+                   // [newArr delete:dicGroup];
+                }else
+                {
+                    [self.dataArray addObject:dicGroup];
+                }
+            }
+    
+            
+            for (NSDictionary *dicGroup in self.dataArray) {
+                double W = [dicGroup[@"group"][@"video_width"] doubleValue];
+                double H = [dicGroup[@"group"][@"video_height"] doubleValue];
+                NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)dataArr.count);
+                if (W != 0) {
+                    [self.hightArray addObject:@(H * SWidth /W) ];
+                }
+               
+              
+            }
+//
+//            //取出最后一个图片的时间戳,加载更多的时候需要
+//            PictureModelItems *model1 =  [self.PictureModel.items lastObject];
+//            self.updateTime = model1.updateTime;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableV reloadData];
+            });
+        }
+        
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
 }
 
 
@@ -80,20 +136,37 @@ static NSString *cellID = @"playCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.dataArray.count;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+//    return [self.hightArray[indexPath.row] doubleValue];
+   // NSArray *dataArr = self.modelData.data.data;
+    if (!self.hightArray[indexPath.row] ) {
+        return 100;
+    }else
+    return [self.hightArray[indexPath.row] floatValue];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    VedioPlayCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+   // VedioModelComments *model = self.modelData.data.data[indexPath.row];
+
+    NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
+    NSDictionary *large_coverDic = dic[@"large_cover"];
+    NSArray *url_listArr = large_coverDic[@"url_list"];
+    //VedioModelGroup *group = [VedioModelGroup modelObjectWithDictionary:dic];
+
+    //if (self.dataArray.count != 0) {
+        [cell.img sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]];
+   // }
+
     return cell;
 }
+
 
 //- (NHBaseTableViewCell *)nh_cellAtIndexPath:(NSIndexPath *)indexPath {
 //    // 1. 创建cell
@@ -142,8 +215,8 @@ static NSString *cellID = @"playCell";
         _wmPlayer.transform = CGAffineTransformIdentity;
        // _wmPlayer.frame = self.imageView.bounds;
         _wmPlayer.playerLayer.frame =  _wmPlayer.bounds;
-        [self.imageView addSubview:wmPlayer];
-        [self.imageView bringSubviewToFront:wmPlayer];
+        [self.imageView addSubview:_wmPlayer];
+        [self.imageView bringSubviewToFront:_wmPlayer];
         [_wmPlayer.bottomView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_wmPlayer).with.offset(0);
             make.right.equalTo(_wmPlayer).with.offset(0);
