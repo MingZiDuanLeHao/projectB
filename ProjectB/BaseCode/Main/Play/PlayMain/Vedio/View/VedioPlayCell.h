@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface VedioPlayCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 
 @end

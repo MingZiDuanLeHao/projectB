@@ -347,9 +347,10 @@
     NSLog(@"缓存大小%fM",size/1000.0/1000);
     if (150 < size) {
         [[SDImageCache sharedImageCache]clearMemory];
+        [[SDImageCache sharedImageCache]cleanDisk];
     }
-    [[self dataSource] insertObject:@"0" atIndex:0];
-    [[self popupOverlayer] insertItemAtIndex:0 animated:YES];
+//    [[self dataSource] insertObject:@"0" atIndex:0];
+//    [[self popupOverlayer] insertItemAtIndex:0 animated:YES];
 }
 
 
