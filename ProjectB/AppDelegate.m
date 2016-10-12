@@ -10,7 +10,7 @@
 #import "NewsMainController.h"
 #import "RightWeatherController.h"
 #import "NewsMainController.h"
-#import "BuyMainController.h"
+
 #import "RadioMainController.h"
 #import "VedioMainController.h"
 #import "MMNavigationController.h"
@@ -60,20 +60,22 @@
     UINavigationController *pausenav = [[UINavigationController alloc]initWithRootViewController:pause];
     pausenav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"视听" image:[[UIImage imageNamed:@"视频"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"视频2"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    //团购模块
-    BuyMainController *deal = [BuyMainController new];
-    UINavigationController *dealnav = [[UINavigationController alloc]initWithRootViewController:deal];
-    dealnav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"团购" image:[[UIImage imageNamed:@"外卖"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"外卖2"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
     
     
     
     //tabbar
-    mainTab.viewControllers = @[newNav,pausenav,dealnav];
+    mainTab.viewControllers = @[newNav,pausenav];
     mainTab.tabBar.tintColor = [UIColor orangeColor];
     
     [self.drawerController setCenterViewController:mainTab withCloseAnimation:YES completion:nil];
     
     _mainTabble = mainTab;
+    
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SWidth, 49)];
+    backView.backgroundColor = [UIColor whiteColor];
+    [mainTab.tabBar insertSubview:backView atIndex:0];
+    mainTab.tabBar.opaque = YES;
     
 //    [mainTab setRestorationIdentifier:@"center"];
     
@@ -83,6 +85,10 @@
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
+    //导航栏颜色
+//    UINavigationBar *bar=[UINavigationBar appearance];
+//    [bar setBackgroundImage:[UIImage imageNamed:@"rednavi.jpg"] forBarMetrics:UIBarMetricsDefault];
+    //    [bar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"rednavi.jpg"]]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

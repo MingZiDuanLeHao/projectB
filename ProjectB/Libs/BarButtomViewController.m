@@ -31,8 +31,8 @@
 }
 -(void)setbackBarItem
 {
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-    [button setBackgroundImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [button setBackgroundImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(backHandle) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = item;

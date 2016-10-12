@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface NewsDetailController : UIViewController
+@interface NewsDetailController : BarButtomViewController
 @property(nonatomic,strong)NSString *postid;
 @end

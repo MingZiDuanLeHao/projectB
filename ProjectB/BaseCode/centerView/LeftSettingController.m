@@ -63,6 +63,31 @@
     
     _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
     self.tableView.tableFooterView = [UIView new];
+    
+    //毛玻璃
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    
+    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"red.jpg"]];
+    imageview.userInteractionEnabled = YES;
+    imageview.contentMode = UIViewContentModeScaleAspectFit;
+    imageview.frame = [UIScreen mainScreen].bounds;
+    [self.view insertSubview:imageview belowSubview:_tableView];
+    
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    
+    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+    
+    effectview.frame = [UIScreen mainScreen].bounds;
+    
+    [self.view insertSubview:effectview aboveSubview:imageview];
+    //把tableView和cell改透明
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorColor = [UIColor whiteColor];
+    
+    [_tableView setSeparatorInset:UIEdgeInsetsZero];
+    [_tableView setLayoutMargins:UIEdgeInsetsZero];
+    
 }
 
 
@@ -81,8 +106,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sugar" forIndexPath:indexPath];
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:_array[indexPath.row]];
     
-    cell.textLabel.text = _array[indexPath.row];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, str.length)];
+    
+    cell.textLabel.attributedText = str;
+    
+    
+    cell.backgroundColor = [UIColor clearColor];
+   
+    [cell setSeparatorInset:UIEdgeInsetsZero];
+    [cell setLayoutMargins:UIEdgeInsetsZero];
+
     
     return cell; 
 }

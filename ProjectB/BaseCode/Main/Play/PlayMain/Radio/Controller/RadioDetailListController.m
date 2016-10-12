@@ -22,6 +22,7 @@
 
 
 
+
 @interface RadioDetailListController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *listTab;
 @property (nonatomic,strong) RadioDetailListRadioDetailList *detailList;
@@ -291,6 +292,7 @@ static NSString *detailListCell = @"detailListCell";
 //        vc.playURL = list.playUrl64;
         vc.selectIndex = indexPath.row;
         vc.musicArray = [NSMutableArray arrayWithArray:_detailList.data.tracks.list];
+        vc.album = _detailList.data.album;
         [self presentViewController:navi animated:YES completion:nil];
       
     }

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface RadioMainController : UIViewController
+@interface RadioMainController : BarButtomViewController
 
 @end

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RadioDetailListAlbum.h"
+#import "BarButtomViewController.h"
 
-@interface RadioPlayViewController : UIViewController
+@interface RadioPlayViewController : BarButtomViewController
 //@property(nonatomic,strong)NSString *trackID;
 //@property(nonatomic,strong)NSString *nickName;
 //@property(nonatomic,strong)NSString *smallLogo;
@@ -16,4 +18,5 @@
 //@property(nonatomic,strong)NSString *playURL;
 @property(nonatomic,assign)NSInteger selectIndex;
 @property(nonatomic,strong)NSMutableArray *musicArray;
+@property(nonatomic,strong)RadioDetailListAlbum *album;
 @end
