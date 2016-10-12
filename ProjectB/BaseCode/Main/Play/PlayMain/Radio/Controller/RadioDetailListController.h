@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface RadioDetailListController : UIViewController
+@interface RadioDetailListController : BarButtomViewController
 
 /**albumId*/
 @property(nonatomic,strong) NSString *albumId;

@@ -11,6 +11,7 @@
 #import "DataModels.h"
 #import "UIImageView+WebCache.h"
 #import "NewsDetailController.h"
+#import "UINavigationBar+Other.h"
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
@@ -34,6 +35,12 @@
     [self someSet];
     [self setupContent];
     [self askData];
+    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:234.0/255 green:38.0/255 blue:38.0/255 alpha:1.0]];
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+  
     
 }
 
@@ -74,6 +81,8 @@
     _cateNumArr =[@[@"T1429173683626",@"T1441074311424",@"T1348654105308",@"T1348650593803",@"T1348654204705",@"T1348648037603"]mutableCopy];
     _cateNumStr = _cateNumArr[0];
     _tableTag = 200;
+    
+    
 }
 
 

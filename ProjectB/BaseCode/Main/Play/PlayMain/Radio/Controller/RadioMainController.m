@@ -38,6 +38,8 @@ static NSString *rightCell = @"rightCell";
     self.keywordId = 113;
     [self requestData];
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
 }
 
@@ -79,7 +81,13 @@ static NSString *rightCell = @"rightCell";
         [self requestData];
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"列表"] style:UIBarButtonItemStylePlain target:self action:@selector(listHandle)];
+    //右barButton
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [button setBackgroundImage:[UIImage imageNamed:@"全屏"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(listHandle) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = item;
+    
     
     //使导航栏透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
@@ -106,7 +114,7 @@ static NSString *rightCell = @"rightCell";
 {
     if (_HideList == NO) {
         [UIView animateWithDuration:0.5 animations:^{
-            _leftTable.frame = CGRectMake(0, 0, 50, -SHeight);
+            _leftTable.frame = CGRectMake(-50, 64, 50, SHeight-44);
             _rightTable.frame = CGRectMake(0, 64, SWidth, SHeight - 64);
         } completion:^(BOOL finished) {
 
@@ -116,7 +124,7 @@ static NSString *rightCell = @"rightCell";
     {
         [UIView animateWithDuration:0.5 animations:^{
           _rightTable.frame = CGRectMake(50, 64, SWidth - 50, SHeight - 64);
-            _leftTable.frame = CGRectMake(0, 0, 50, SHeight - 44);
+            _leftTable.frame = CGRectMake(0, 64, 50, SHeight - 44);
         } completion:^(BOOL finished) {
         
         }];

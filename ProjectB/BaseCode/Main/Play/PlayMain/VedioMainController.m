@@ -31,6 +31,7 @@
 }
 -(void)initUI
 {
+    self.title = @"视听";
     UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64)/2)];
     img1.image = [UIImage imageNamed:@"blue.jpg"];
     img1.tag = 100;

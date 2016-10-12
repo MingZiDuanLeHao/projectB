@@ -71,8 +71,6 @@
 		3F45A8CB1D9BDB7D00A83BB1 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8C91D9BDB7D00A83BB1 /* MMNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E01D9BE28E00A83BB1 /* NewsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8DE1D9BE28E00A83BB1 /* NewsMainController.m */; settings = {ASSET_TAGS = (); }; };
 		3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8DF1D9BE28E00A83BB1 /* NewsMainController.xib */; settings = {ASSET_TAGS = (); }; };
-		3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */; settings = {ASSET_TAGS = (); }; };
-		3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F4B2A741DAB35D100E07143 /* RadiodetailCellHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A731DAB35D100E07143 /* RadiodetailCellHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
 		3F4B2A781DAB40FF00E07143 /* 剧集.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A761DAB40FF00E07143 /* 剧集.png */; settings = {ASSET_TAGS = (); }; };
 		3F4B2A7A1DAB48AE00E07143 /* 播放orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2A791DAB48AE00E07143 /* 播放orange.png */; settings = {ASSET_TAGS = (); }; };
@@ -103,6 +101,11 @@
 		3F4B2ACB1DAD09CA00E07143 /* 暂停.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AC91DAD09CA00E07143 /* 暂停.png */; settings = {ASSET_TAGS = (); }; };
 		3F4B2ACE1DAD19B500E07143 /* RadioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2ACD1DAD19B500E07143 /* RadioPlayerManager.m */; settings = {ASSET_TAGS = (); }; };
 		3F4B2AD41DAD302300E07143 /* icon-slider.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AD31DAD302300E07143 /* icon-slider.png */; settings = {ASSET_TAGS = (); }; };
+		3F4B2AD61DADE0F600E07143 /* 粉.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AD51DADE0F600E07143 /* 粉.jpeg */; settings = {ASSET_TAGS = (); }; };
+		3F4B2AD81DADE19200E07143 /* 粉1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2AD71DADE19200E07143 /* 粉1.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F4B2AFE1DAE38DB00E07143 /* UINavigationBar+Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B2AFD1DAE38DB00E07143 /* UINavigationBar+Other.m */; settings = {ASSET_TAGS = (); }; };
+		3F4B2B041DAE3C9600E07143 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2B031DAE3C9600E07143 /* 返回.png */; settings = {ASSET_TAGS = (); }; };
+		3F4B2B061DAE40C300E07143 /* 全屏.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4B2B051DAE40C300E07143 /* 全屏.png */; settings = {ASSET_TAGS = (); }; };
 		3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		3F7999A31D9E0AF1009DAF97 /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F7999C11D9E1B2C009DAF97 /* NewsCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7999C01D9E1B2C009DAF97 /* NewsCommentController.m */; settings = {ASSET_TAGS = (); }; };
@@ -245,9 +248,6 @@
 		3F45A8DD1D9BE28E00A83BB1 /* NewsMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsMainController.h; sourceTree = "<group>"; };
 		3F45A8DE1D9BE28E00A83BB1 /* NewsMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsMainController.m; sourceTree = "<group>"; };
 		3F45A8DF1D9BE28E00A83BB1 /* NewsMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsMainController.xib; sourceTree = "<group>"; };
-		3F45A8E21D9BE2B500A83BB1 /* BuyMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyMainController.h; sourceTree = "<group>"; };
-		3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyMainController.m; sourceTree = "<group>"; };
-		3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyMainController.xib; sourceTree = "<group>"; };
 		3F4B2A701DAB35C700E07143 /* RadiodetailCellHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiodetailCellHeaderView.h; sourceTree = "<group>"; };
 		3F4B2A711DAB35C700E07143 /* RadiodetailCellHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiodetailCellHeaderView.m; sourceTree = "<group>"; };
 		3F4B2A731DAB35D100E07143 /* RadiodetailCellHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiodetailCellHeaderView.xib; sourceTree = "<group>"; };
@@ -293,6 +293,12 @@
 		3F4B2ACC1DAD19B500E07143 /* RadioPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioPlayerManager.h; sourceTree = "<group>"; };
 		3F4B2ACD1DAD19B500E07143 /* RadioPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioPlayerManager.m; sourceTree = "<group>"; };
 		3F4B2AD31DAD302300E07143 /* icon-slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-slider.png"; sourceTree = "<group>"; };
+		3F4B2AD51DADE0F600E07143 /* 粉.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "粉.jpeg"; sourceTree = "<group>"; };
+		3F4B2AD71DADE19200E07143 /* 粉1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "粉1.jpg"; sourceTree = "<group>"; };
+		3F4B2AFC1DAE38DB00E07143 /* UINavigationBar+Other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Other.h"; sourceTree = "<group>"; };
+		3F4B2AFD1DAE38DB00E07143 /* UINavigationBar+Other.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Other.m"; sourceTree = "<group>"; };
+		3F4B2B031DAE3C9600E07143 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
+		3F4B2B051DAE40C300E07143 /* 全屏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "全屏.png"; sourceTree = "<group>"; };
 		3F79999F1D9E0AF1009DAF97 /* NewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
 		3F7999A01D9E0AF1009DAF97 /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
@@ -674,12 +680,14 @@
 				3F4B2A791DAB48AE00E07143 /* 播放orange.png */,
 				3F4B2AD31DAD302300E07143 /* icon-slider.png */,
 				3F25394C1D9BFB460072831B /* 外卖.png */,
+				3F4B2B051DAE40C300E07143 /* 全屏.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F4B2AC81DAD09CA00E07143 /* 播放.png */,
 				3F4B2AC91DAD09CA00E07143 /* 暂停.png */,
 				3F4B2AC21DAD072400E07143 /* 下一首.png */,
 				3F4B2AC61DAD07C900E07143 /* 上首 .png */,
 				3F25394E1D9BFB460072831B /* 新闻.png */,
+				3F4B2B031DAE3C9600E07143 /* 返回.png */,
 				3F4B2AB31DACECE200E07143 /* 下.png */,
 				3F25394F1D9BFB460072831B /* 新闻2.png */,
 				3F4B2A891DABBE8900E07143 /* 播放red.png */,
@@ -687,6 +695,8 @@
 				3F799A331D9E5286009DAF97 /* black.jpg */,
 				3F4B2AAA1DAC9C2600E07143 /* red.jpg */,
 				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
+				3F4B2AD71DADE19200E07143 /* 粉1.jpg */,
+				3F4B2AD51DADE0F600E07143 /* 粉.jpeg */,
 				3F1EBA321DAC94EB00C842D1 /* 占位图.png */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
@@ -759,6 +769,8 @@
 				3F4B2AAF1DACEA9300E07143 /* BarButtomViewController.m */,
 				3F4B2ACC1DAD19B500E07143 /* RadioPlayerManager.h */,
 				3F4B2ACD1DAD19B500E07143 /* RadioPlayerManager.m */,
+				3F4B2AFC1DAE38DB00E07143 /* UINavigationBar+Other.h */,
+				3F4B2AFD1DAE38DB00E07143 /* UINavigationBar+Other.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -795,7 +807,6 @@
 			children = (
 				3F45A8AA1D9BC9B900A83BB1 /* News */,
 				3F45A8AB1D9BC9CF00A83BB1 /* Play */,
-				3F45A8AC1D9BC9E600A83BB1 /* Buy */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -816,16 +827,6 @@
 				3F1F151E1DA9D15700ACFF18 /* PlayMain */,
 			);
 			path = Play;
-			sourceTree = "<group>";
-		};
-		3F45A8AC1D9BC9E600A83BB1 /* Buy */ = {
-			isa = PBXGroup;
-			children = (
-				3F45A8BA1D9BCB6F00A83BB1 /* Controller */,
-				3F45A8B91D9BCB6000A83BB1 /* Model */,
-				3F45A8B81D9BCB4D00A83BB1 /* View */,
-			);
-			path = Buy;
 			sourceTree = "<group>";
 		};
 		3F45A8AF1D9BCA6100A83BB1 /* View */ = {
@@ -858,30 +859,6 @@
 				3F7999A11D9E0AF1009DAF97 /* NewsDetailController.xib */,
 				3F7999BF1D9E1B2C009DAF97 /* NewsCommentController.h */,
 				3F7999C01D9E1B2C009DAF97 /* NewsCommentController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3F45A8B81D9BCB4D00A83BB1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3F45A8B91D9BCB6000A83BB1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3F45A8BA1D9BCB6F00A83BB1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3F45A8E21D9BE2B500A83BB1 /* BuyMainController.h */,
-				3F45A8E31D9BE2B500A83BB1 /* BuyMainController.m */,
-				3F45A8E41D9BE2B500A83BB1 /* BuyMainController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1023,6 +1000,7 @@
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F1F158A1DA9E36F00ACFF18 /* VedioPlayViewController.xib in Resources */,
 				3F2539501D9BFB460072831B /* 视频.png in Resources */,
+				3F4B2B061DAE40C300E07143 /* 全屏.png in Resources */,
 				3F2539541D9BFB460072831B /* 新闻.png in Resources */,
 				3F1F158F1DA9E39400ACFF18 /* VedioMainController.xib in Resources */,
 				3F4B2AC71DAD07C900E07143 /* 上首 .png in Resources */,
@@ -1032,7 +1010,6 @@
 				3F799A301D9E51DA009DAF97 /* green.jpg in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F1F15DE1DAA77A800ACFF18 /* ReuseView.xib in Resources */,
-				3F45A8E61D9BE2B500A83BB1 /* BuyMainController.xib in Resources */,
 				3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */,
 				3F1F15671DA9E06F00ACFF18 /* RedioDetailListCell.xib in Resources */,
 				3F33C7091D9D0D5E00621E92 /* 1.jpg in Resources */,
@@ -1040,6 +1017,8 @@
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
 				3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */,
 				3F4B2A741DAB35D100E07143 /* RadiodetailCellHeaderView.xib in Resources */,
+				3F4B2AD81DADE19200E07143 /* 粉1.jpg in Resources */,
+				3F4B2B041DAE3C9600E07143 /* 返回.png in Resources */,
 				3F4B2AC31DAD072400E07143 /* 下一首.png in Resources */,
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
 				3F9C0FA61DA9EFD700794EA0 /* RadiodetailHeaderView.xib in Resources */,
@@ -1060,6 +1039,7 @@
 				3F1F15411DA9DE8000ACFF18 /* RadioMainController.xib in Resources */,
 				3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
+				3F4B2AD61DADE0F600E07143 /* 粉.jpeg in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
@@ -1128,6 +1108,7 @@
 			files = (
 				3F4B2A881DABBBFF00E07143 /* RadiodetailCellHeaderView.m in Sources */,
 				3F1EBA2B1DAC848600C842D1 /* VedioModelLuaVersions.m in Sources */,
+				3F4B2AFE1DAE38DB00E07143 /* UINavigationBar+Other.m in Sources */,
 				3F4B2A861DABBB2100E07143 /* BeautyModelBeautyModel.m in Sources */,
 				3F4B2A801DABB8DD00E07143 /* RadioPlayViewController.m in Sources */,
 				3F1F153F1DA9DE8000ACFF18 /* RadioDetailListController.m in Sources */,
@@ -1190,7 +1171,6 @@
 				3F45A8471D9BA7FD00A83BB1 /* main.m in Sources */,
 				3F1F15701DA9E09200ACFF18 /* BeautyCell.m in Sources */,
 				3F1F15641DA9E06F00ACFF18 /* RadioMainRightTableCell.m in Sources */,
-				3F45A8E51D9BE2B500A83BB1 /* BuyMainController.m in Sources */,
 				3F1F15D71DAA61E500ACFF18 /* PictureModelItems.m in Sources */,
 				3F4B2AB71DACEF7B00E07143 /* RadioPlayHeaderView.m in Sources */,
 			);
