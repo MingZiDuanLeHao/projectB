@@ -13,7 +13,7 @@
 #import "WMPlayer.h"
 #import "VedioPlayCell.h"
 #import "NHBaseImageView.h"
-#import "vedioDataModels.h"
+#import "VedioDataModels.h"
 
 static NSString *cellID = @"playCell";
 @interface VedioPlayViewController ()<WMPlayerDelegate,UITableViewDataSource,UITableViewDelegate>
