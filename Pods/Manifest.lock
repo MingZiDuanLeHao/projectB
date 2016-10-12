@@ -35,6 +35,13 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - YYCache (1.0.3)
+  - YYImage (1.0.3):
+    - YYImage/Core (= 1.0.3)
+  - YYImage/Core (1.0.3)
+  - YYWebImage (1.0.4):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
@@ -44,6 +51,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1)
   - MMDrawerController (~> 0.6)
   - SDWebImage (~> 3.8)
+  - YYWebImage (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -53,7 +61,10 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
+  YYImage: 362f44ffba1fc498f2152060f3bb54ed84600981
+  YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
 
-PODFILE CHECKSUM: f099b496d80745eff6313912259193d7a11528bf
+PODFILE CHECKSUM: ee1189c2f2090d29a0ca68aca8fcc625e5642298
 
 COCOAPODS: 1.0.0

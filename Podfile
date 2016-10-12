@@ -8,4 +8,5 @@ target 'ProjectB’ do
    pod 'MJRefresh', '~> 3.1'
    pod 'AFNetworking', '~> 3.1'
    pod 'Masonry', '~> 1.0'
+   pod 'YYWebImage', '~> 1.0'
 end
