@@ -279,9 +279,18 @@ static NSString *detailListCell = @"detailListCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if ([_showTable isEqualToString:@"列表"]) {
         RadioPlayViewController *vc = [RadioPlayViewController new];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+//        RadioDetailListList *list = _detailList.data.tracks.list[indexPath.row];
+//        vc.trackID = [NSString stringWithFormat:@"%.0f",list.trackId];
+//        vc.nickName = list.nickname;
+//        vc.smallLogo = list.smallLogo;
+//        vc.coverURL = list.coverLarge;
+//        vc.playURL = list.playUrl64;
+        vc.selectIndex = indexPath.row;
+        vc.musicArray = [NSMutableArray arrayWithArray:_detailList.data.tracks.list];
         [self presentViewController:navi animated:YES completion:nil];
       
     }
