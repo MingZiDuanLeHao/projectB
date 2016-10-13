@@ -33,8 +33,12 @@
 
 @property(nonatomic,strong)WeatherBaseClass *base;
 @property(nonatomic,strong)NSArray *dailyArr;
+@property(nonatomic,strong)CLLocation *location;
 //定位管理器
 @property(nonatomic,strong)CLLocationManager *manager;
+//编码与反编码
+@property(nonatomic,strong)CLGeocoder *geo;
+@property(nonatomic,strong)NSString *placeName;
 
 @end
 
@@ -72,6 +76,14 @@
 
 }
 
+-(CLGeocoder *)geo
+{
+    if (!_geo) {
+        _geo = [[CLGeocoder alloc]init];
+    }
+    return _geo;
+}
+
 -(CLLocationManager *)manager
 {
     if (!_manager) {
@@ -86,15 +98,41 @@
     return _manager;
 }
 
+//定位失败
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"失败");
+}
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     //取出最后一次位置
     //CLLocation里包含位置信息
-    CLLocation *location = locations.lastObject;
-    
-    NSLog(@"经度:%f,纬度:%f,海拔:%f,航向:%f,行走速度:%f",location.coordinate.longitude,location.coordinate.latitude,location.altitude,location.course,location.speed);
+    _location = locations.lastObject;
+    [self regeocoordinate:CLLocationCoordinate2DMake(_location.coordinate.longitude, _location.coordinate.longitude)];
+//
     [self.manager stopUpdatingLocation];
     
+}
+
+//把经纬度转化为CLLlocation位置信息  反编码
+-(void)regeocoordinate:(CLLocationCoordinate2D)coor
+{
+    
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:coor.latitude longitude:coor.longitude];
+    [self.geo reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        //如果有错误
+        if (error) {
+            NSLog(@"line = %d,error = %@",__LINE__,error);
+            //退出
+            return ;
+        }
+        //没有错误,取出一个位置坐标
+        CLPlacemark *placemark = placemarks.firstObject;
+        //遍历其属性addressDictionary这个字典
+        _placeName =  [placemark.addressDictionary objectForKey:@"City"];
+        
+    }];
 }
 
 
@@ -102,7 +140,7 @@
 -(void)requestData
 {
     
-    NSString *city = @"guangzhou" ;
+    NSString *city = _placeName ;
     NSString *apikey = @"c184575a002af5fb6dee57adc1cca85c";
     
     //实例化一个回调，处理请求的返回值
