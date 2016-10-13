@@ -17,7 +17,7 @@ NSString *const kWeatherNowHum = @"hum";
 NSString *const kWeatherNowVis = @"vis";
 NSString *const kWeatherNowCond = @"cond";
 NSString *const kWeatherNowPcpn = @"pcpn";
-NSString *const kWeatherNowTmp = @"tmp";
+NSString *const kWeatherNowtmp = @"tmp";
 
 
 @interface WeatherNow ()
@@ -57,7 +57,7 @@ NSString *const kWeatherNowTmp = @"tmp";
             self.vis = [self objectOrNilForKey:kWeatherNowVis fromDictionary:dict];
             self.cond = [WeatherCond modelObjectWithDictionary:[dict objectForKey:kWeatherNowCond]];
             self.pcpn = [self objectOrNilForKey:kWeatherNowPcpn fromDictionary:dict];
-            self.tmp = [self objectOrNilForKey:kWeatherNowTmp fromDictionary:dict];
+            self.tmp = [self objectOrNilForKey:kWeatherNowtmp fromDictionary:dict];
 
     }
     
@@ -75,7 +75,7 @@ NSString *const kWeatherNowTmp = @"tmp";
     [mutableDict setValue:self.vis forKey:kWeatherNowVis];
     [mutableDict setValue:[self.cond dictionaryRepresentation] forKey:kWeatherNowCond];
     [mutableDict setValue:self.pcpn forKey:kWeatherNowPcpn];
-    [mutableDict setValue:self.tmp forKey:kWeatherNowTmp];
+    [mutableDict setValue:self.tmp forKey:kWeatherNowtmp];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
@@ -106,7 +106,7 @@ NSString *const kWeatherNowTmp = @"tmp";
     self.vis = [aDecoder decodeObjectForKey:kWeatherNowVis];
     self.cond = [aDecoder decodeObjectForKey:kWeatherNowCond];
     self.pcpn = [aDecoder decodeObjectForKey:kWeatherNowPcpn];
-    self.tmp = [aDecoder decodeObjectForKey:kWeatherNowTmp];
+    self.tmp = [aDecoder decodeObjectForKey:kWeatherNowtmp];
     return self;
 }
 
@@ -120,7 +120,7 @@ NSString *const kWeatherNowTmp = @"tmp";
     [aCoder encodeObject:_vis forKey:kWeatherNowVis];
     [aCoder encodeObject:_cond forKey:kWeatherNowCond];
     [aCoder encodeObject:_pcpn forKey:kWeatherNowPcpn];
-    [aCoder encodeObject:_tmp forKey:kWeatherNowTmp];
+    [aCoder encodeObject:_tmp forKey:kWeatherNowtmp];
 }
 
 - (id)copyWithZone:(NSZone *)zone

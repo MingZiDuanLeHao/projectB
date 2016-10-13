@@ -11,7 +11,7 @@
 @interface NetWorkRequest : NSObject
 
 //枚举
-typedef NS_ENUM(NSInteger, RequestType) {
+typedef NS_ENUM(NSInteger,RequestType) {
     GET = 0,
     POST = 1
 };

@@ -12,7 +12,7 @@
 NSString *const kWeatherHourlyForecastPop = @"pop";
 NSString *const kWeatherHourlyForecastWind = @"wind";
 NSString *const kWeatherHourlyForecastHum = @"hum";
-NSString *const kWeatherHourlyForecastTmp = @"tmp";
+NSString *const kWeatherHourlyForecasttmp1 = @"tmp1";
 NSString *const kWeatherHourlyForecastPres = @"pres";
 NSString *const kWeatherHourlyForecastDate = @"date";
 
@@ -28,7 +28,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
 @synthesize pop = _pop;
 @synthesize wind = _wind;
 @synthesize hum = _hum;
-@synthesize tmp = _tmp;
+@synthesize tmp1 = _tmp1;
 @synthesize pres = _pres;
 @synthesize date = _date;
 
@@ -48,7 +48,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
             self.pop = [self objectOrNilForKey:kWeatherHourlyForecastPop fromDictionary:dict];
             self.wind = [WeatherWind modelObjectWithDictionary:[dict objectForKey:kWeatherHourlyForecastWind]];
             self.hum = [self objectOrNilForKey:kWeatherHourlyForecastHum fromDictionary:dict];
-            self.tmp = [self objectOrNilForKey:kWeatherHourlyForecastTmp fromDictionary:dict];
+            self.tmp1 = [self objectOrNilForKey:kWeatherHourlyForecasttmp1 fromDictionary:dict];
             self.pres = [self objectOrNilForKey:kWeatherHourlyForecastPres fromDictionary:dict];
             self.date = [self objectOrNilForKey:kWeatherHourlyForecastDate fromDictionary:dict];
 
@@ -64,7 +64,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
     [mutableDict setValue:self.pop forKey:kWeatherHourlyForecastPop];
     [mutableDict setValue:[self.wind dictionaryRepresentation] forKey:kWeatherHourlyForecastWind];
     [mutableDict setValue:self.hum forKey:kWeatherHourlyForecastHum];
-    [mutableDict setValue:self.tmp forKey:kWeatherHourlyForecastTmp];
+    [mutableDict setValue:self.tmp1 forKey:kWeatherHourlyForecasttmp1];
     [mutableDict setValue:self.pres forKey:kWeatherHourlyForecastPres];
     [mutableDict setValue:self.date forKey:kWeatherHourlyForecastDate];
 
@@ -93,7 +93,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
     self.pop = [aDecoder decodeObjectForKey:kWeatherHourlyForecastPop];
     self.wind = [aDecoder decodeObjectForKey:kWeatherHourlyForecastWind];
     self.hum = [aDecoder decodeObjectForKey:kWeatherHourlyForecastHum];
-    self.tmp = [aDecoder decodeObjectForKey:kWeatherHourlyForecastTmp];
+    self.tmp1 = [aDecoder decodeObjectForKey:kWeatherHourlyForecasttmp1];
     self.pres = [aDecoder decodeObjectForKey:kWeatherHourlyForecastPres];
     self.date = [aDecoder decodeObjectForKey:kWeatherHourlyForecastDate];
     return self;
@@ -105,7 +105,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
     [aCoder encodeObject:_pop forKey:kWeatherHourlyForecastPop];
     [aCoder encodeObject:_wind forKey:kWeatherHourlyForecastWind];
     [aCoder encodeObject:_hum forKey:kWeatherHourlyForecastHum];
-    [aCoder encodeObject:_tmp forKey:kWeatherHourlyForecastTmp];
+    [aCoder encodeObject:_tmp1 forKey:kWeatherHourlyForecasttmp1];
     [aCoder encodeObject:_pres forKey:kWeatherHourlyForecastPres];
     [aCoder encodeObject:_date forKey:kWeatherHourlyForecastDate];
 }
@@ -119,7 +119,7 @@ NSString *const kWeatherHourlyForecastDate = @"date";
         copy.pop = [self.pop copyWithZone:zone];
         copy.wind = [self.wind copyWithZone:zone];
         copy.hum = [self.hum copyWithZone:zone];
-        copy.tmp = [self.tmp copyWithZone:zone];
+        copy.tmp1 = [self.tmp1 copyWithZone:zone];
         copy.pres = [self.pres copyWithZone:zone];
         copy.date = [self.date copyWithZone:zone];
     }

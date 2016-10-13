@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *pop;
 @property (nonatomic, strong) WeatherWind *wind;
 @property (nonatomic, strong) NSString *hum;
-@property (nonatomic, strong) NSString *tmp;
+@property (nonatomic, strong) NSString *tmp1;
 @property (nonatomic, strong) NSString *pres;
 @property (nonatomic, strong) NSString *date;
 

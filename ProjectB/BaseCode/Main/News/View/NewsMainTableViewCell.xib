@@ -45,7 +45,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECm-U4-x9j">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="ECm-U4-x9j">
                         <rect key="frame" x="8" y="8" width="117" height="94"/>
                         <animations/>
                         <constraints>
@@ -117,4 +117,7 @@
             <point key="canvasLocation" x="309.5" y="278.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="占位.png" width="109" height="106"/>
+    </resources>
 </document>

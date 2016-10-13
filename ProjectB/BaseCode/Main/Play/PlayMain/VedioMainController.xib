@@ -14,7 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <animations/>
-            <color key="backgroundColor" red="0.76862745098039209" green="0.22486758232116699" blue="0.2018735408782959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="298" y="400"/>
         </view>
     </objects>
