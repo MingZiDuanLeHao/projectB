@@ -14,6 +14,7 @@
 #import "VedioPlayCell.h"
 #import "NHBaseImageView.h"
 #import "VedioDataModels.h"
+#import "MJRefresh.h"
 
 static NSString *cellID = @"playCell";
 @interface VedioPlayViewController ()<WMPlayerDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -30,7 +31,7 @@ static NSString *cellID = @"playCell";
 /** 是否显示提示视图*/
 @property (nonatomic, assign) BOOL showTopTipViewFlag;
 @property (nonatomic, strong) NSIndexPath *indexPath;
-@property (nonatomic, assign) BOOL isSmallScreen;
+@property (nonatomic, assign) BOOL isFirstEnter;
 
 @end
 
@@ -45,11 +46,23 @@ static NSString *cellID = @"playCell";
 
 -(void)initUI
 {
-    self.tableV.frame = [UIScreen mainScreen].bounds;
+   // self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
     _tableV.delegate = self;
     _tableV.dataSource = self;
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
+    
+    //上提加载更多
+    _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //最新
+//        self.page ++;
+//        self.lastestView = @"-1";
+           [self requestData];
+    }];
+    
+ 
 }
 -(void)requestData
 {
@@ -67,34 +80,49 @@ static NSString *cellID = @"playCell";
             //!!!!!为了去除广告 麻蛋
             for (NSDictionary *dicGroup in dataArr) {
                 NSArray *arr = [dicGroup allKeys];
-                if ([arr containsObject:@"ad"]) {
-                   // [newArr delete:dicGroup];
+                int W = [dicGroup[@"group"][@"video_width"] intValue];
+                int H = [dicGroup[@"group"][@"video_height"] intValue];
+                if ([arr containsObject:@"ad"]&& W == 0) {
+                    // NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                 }else
                 {
-                    [self.dataArray addObject:dicGroup];
+                //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+                   [self.dataArray addObject:dicGroup];
+                   [self.hightArray addObject:@(H * SWidth /W) ];
                 }
             }
+            NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
     
             
-            for (NSDictionary *dicGroup in self.dataArray) {
-                double W = [dicGroup[@"group"][@"video_width"] doubleValue];
-                double H = [dicGroup[@"group"][@"video_height"] doubleValue];
-                NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)dataArr.count);
-                if (W != 0) {
-                    [self.hightArray addObject:@(H * SWidth /W) ];
-                }
-               
-              
-            }
+//            for (NSDictionary *dicGroup1 in self.dataArray) {
+//                double W = [dicGroup1[@"group"][@"video_width"] doubleValue];
+//                double H = [dicGroup1[@"group"][@"video_height"] doubleValue];
+//               NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+//                if (W != 0) {
+//                    [self.hightArray addObject:@(H * SWidth /W) ];
+//                }else{
+//                    [self.dataArray removeObject:dicGroup1];
+//                    NSLog( @">>>>>>%lu",(unsigned long)dataArr.count);
+//                }
+//               
+//              
+//            }
+            
+            
 //
 //            //取出最后一个图片的时间戳,加载更多的时候需要
 //            PictureModelItems *model1 =  [self.PictureModel.items lastObject];
 //            self.updateTime = model1.updateTime;
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_tableV reloadData];
-            });
-        }
+         //   if (self.hightArray.count != 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [_tableV reloadData];
+                    [_tableV.mj_footer endRefreshing];
+                });
+            }
+         //   }
+            
+
         
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
@@ -104,6 +132,7 @@ static NSString *cellID = @"playCell";
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.isFirstEnter = YES;
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
 }
 - (void)viewDidDisappear:(BOOL)animated {
@@ -136,18 +165,21 @@ static NSString *cellID = @"playCell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
     return self.dataArray.count;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    return [self.hightArray[indexPath.row] doubleValue];
-   // NSArray *dataArr = self.modelData.data.data;
-    if (!self.hightArray[indexPath.row] ) {
-        return 100;
-    }else
-    return [self.hightArray[indexPath.row] floatValue];
+   // return 200;
+    NSLog(@"self.hightArray.count___%@",self.hightArray[indexPath.row]);
+    if ([self.hightArray[indexPath.row] integerValue] == 0  ) {
+        return 0;
+    }
+   // VedioPlayCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+   // CGFloat contentH = cell.context.frame.size.height;
+    return [self.hightArray[indexPath.row] intValue] + 100 + 30;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,15 +190,74 @@ static NSString *cellID = @"playCell";
     NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
     NSDictionary *large_coverDic = dic[@"large_cover"];
     NSArray *url_listArr = large_coverDic[@"url_list"];
-    //VedioModelGroup *group = [VedioModelGroup modelObjectWithDictionary:dic];
 
-    //if (self.dataArray.count != 0) {
-        [cell.img sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]];
-   // }
+    cell.context.text = dic[@"text"];
+    if (self.dataArray.count != 0) {
+        [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
+    }
+
+    for (UIView *view in cell.img.subviews) {
+        if ([view isKindOfClass:[WMPlayer class]]) {
+            [view removeFromSuperview];
+        }
+    }
+//    cell.playBtn.tag = indexPath.row + 100;
+//    [cell.playBtn addTarget:self action:@selector(playOrPause:) forControlEvents:UIControlEventTouchUpInside];
+
+   // UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playOrPause)];
+   // [cell.screenView addGestureRecognizer:tapGesture];
 
     return cell;
 }
+-(void)playOrPause:(UIButton*)sender
+{
+   // sender.tag  - 100
+}
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    [self setIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+-(void)setIndexPath:(NSIndexPath *)indexPath{
+
+    if (self.isFirstEnter) {
+        VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
+        CGRect frame = cell.img.frame;
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        [cell.img addSubview:self.wmPlayer];
+        self.wmPlayer.delegate = self;
+        NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
+        NSDictionary *Vedio720Dic = dic[@"720p_video"];
+        NSArray *vedioList = Vedio720Dic[@"url_list"];
+        self.wmPlayer.URLString =vedioList[0][@"url"];
+        [self.wmPlayer.player play];
+        _indexPath = indexPath;
+        self.isFirstEnter = NO;
+    }else{
+        if (_indexPath.row!= indexPath.row) {
+            [self releaseWMPlayer];
+            VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
+            CGRect frame = cell.img.frame;
+            self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(frame.origin.x, 41, frame.size.width, frame.size.height)];
+            [cell addSubview:self.wmPlayer];
+            self.wmPlayer.delegate = self;
+            NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
+            NSDictionary *Vedio720Dic = dic[@"720p_video"];
+            NSArray *vedioList = Vedio720Dic[@"url_list"];
+            self.wmPlayer.URLString =vedioList[0][@"url"];
+            [self.wmPlayer.player play];
+            _indexPath = indexPath;
+        }else
+        {
+            
+        }
+    }
+
+    
+}
 
 //- (NHBaseTableViewCell *)nh_cellAtIndexPath:(NSIndexPath *)indexPath {
 //    // 1. 创建cell
@@ -249,7 +340,7 @@ static NSString *cellID = @"playCell";
     }completion:^(BOOL finished) {
         _wmPlayer.isFullscreen = NO;
         [self setNeedsStatusBarAppearanceUpdate];
-        self.isSmallScreen = NO;
+    //    self.isSmallScreen = NO;
         _wmPlayer.fullScreenBtn.selected = NO;
         
     }];
@@ -359,7 +450,7 @@ static NSString *cellID = @"playCell";
         _wmPlayer.isFullscreen = NO;
         [self setNeedsStatusBarAppearanceUpdate];
         _wmPlayer.fullScreenBtn.selected = NO;
-        self.isSmallScreen = YES;
+   //     self.isSmallScreen = YES;
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_wmPlayer];
     }];
 }
@@ -380,12 +471,12 @@ static NSString *cellID = @"playCell";
         [self setNeedsStatusBarAppearanceUpdate];
         [self toFullScreenWithInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
     } else {
-        if (self.isSmallScreen) {
-            // 放widow上,小屏显示
-            [self toSmallScreen];
-        } else {
-            [self toCell];
-        }
+//        if (self.isSmallScreen) {
+//            // 放widow上,小屏显示
+//            [self toSmallScreen];
+//        } else {
+//            [self toCell];
+//        }
     }
 }
 

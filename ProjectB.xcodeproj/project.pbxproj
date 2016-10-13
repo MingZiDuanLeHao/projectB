@@ -28,9 +28,9 @@
 		3F1644B21DAE58C3006A3FCF /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F1644AC1DAE58C3006A3FCF /* WMPlayer.bundle */; settings = {ASSET_TAGS = (); }; };
 		3F1644B31DAE58C3006A3FCF /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1644AE1DAE58C3006A3FCF /* WMPlayer.m */; settings = {ASSET_TAGS = (); }; };
 		3F1644B71DAE59FA006A3FCF /* VedioModelVedioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1644B61DAE59FA006A3FCF /* VedioModelVedioModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62A81DAF311B008779A0 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
-		3F1EBA331DAC94EB00C842D1 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA321DAC94EB00C842D1 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
 		3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15301DA9DE8000ACFF18 /* 视频.pdf */; settings = {ASSET_TAGS = (); }; };
 		3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */; settings = {ASSET_TAGS = (); }; };
@@ -219,10 +219,10 @@
 		3F1644B41DAE591B006A3FCF /* VedioDataModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VedioDataModels.h; sourceTree = "<group>"; };
 		3F1644B51DAE59FA006A3FCF /* VedioModelVedioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelVedioModel.h; sourceTree = "<group>"; };
 		3F1644B61DAE59FA006A3FCF /* VedioModelVedioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelVedioModel.m; sourceTree = "<group>"; };
+		3F1C62A81DAF311B008779A0 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位图.png"; sourceTree = "<group>"; };
 		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
 		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
 		3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayCell.xib; sourceTree = "<group>"; };
-		3F1EBA321DAC94EB00C842D1 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位图.png"; sourceTree = "<group>"; };
 		3F1F152F1DA9DE8000ACFF18 /* 列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "列表.png"; sourceTree = "<group>"; };
 		3F1F15301DA9DE8000ACFF18 /* 视频.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "视频.pdf"; sourceTree = "<group>"; };
 		3F1F15341DA9DE8000ACFF18 /* RadioDetailList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioDetailList.xib; sourceTree = "<group>"; };
@@ -854,7 +854,7 @@
 				3F799A2B1D9E51DA009DAF97 /* blue.jpg */,
 				3F4B2AD71DADE19200E07143 /* 粉1.jpg */,
 				3F4B2AD51DADE0F600E07143 /* 粉.jpeg */,
-				3F1EBA321DAC94EB00C842D1 /* 占位图.png */,
+				3F1C62A81DAF311B008779A0 /* 占位图.png */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
 				3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */,
@@ -1226,7 +1226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1EBA331DAC94EB00C842D1 /* 占位图.png in Resources */,
 				3F4B2A811DABB8DD00E07143 /* RadioPlayViewController.xib in Resources */,
 				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
 				3F1F15711DA9E09200ACFF18 /* BeautyCell.xib in Resources */,
@@ -1273,6 +1272,7 @@
 				3F4B2A911DABCAE800E07143 /* RadioOneCell.xib in Resources */,
 				3F1F15411DA9DE8000ACFF18 /* RadioMainController.xib in Resources */,
 				3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */,
+				3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F4B2AD61DADE0F600E07143 /* 粉.jpeg in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,

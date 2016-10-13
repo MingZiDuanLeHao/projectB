@@ -273,20 +273,9 @@
  
 
         PictureModelItems *model1 =  self.PictureModel.items[nIndex];
-    //NSLog(@"=========%lu",(unsigned long)nIndex);
-//    CGFloat picH = [model1.wpicMHeight floatValue];
-//    CGFloat picW = [model1.wpicMWidth floatValue];
-//    NSLog(@"=========%f,%f",picW,picH);
-//    if (model1.isGif) {
-//
-//        if (picH/picW <= 1) {
-//            CGFloat currentH = picH * 300 / picW;
-//            view.img.frame = CGRectMake(0, (300 - currentH)/2, 300, currentH);
-//            NSLog(@">>>>>>>%f,%f",view.img.frame.size.width,view.img.frame.size.height);
-//        }
-//
-//    }
-      [view.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+
+    [view.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:model1.wpicMiddle] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
+     
     if (nIndex >= 2) {
         PictureModelItems *model1 =  self.PictureModel.items[nIndex - 2];
         self.labelContent.text = model1.wbody;
@@ -298,6 +287,14 @@
         self.lastestView = @"-1";
         [self requestData];
     }
+    
+    NSUInteger size = [[SDImageCache sharedImageCache] getSize];
+
+   // if (150 < size/1000.0/1000) {
+        NSLog(@"缓存大小%fM",size/1000.0/1000);
+        [[SDImageCache sharedImageCache]clearMemory];
+       // [[SDImageCache sharedImageCache]clearDisk];
+   // }
 
     
 //    if (self.index1 == 0) {
@@ -343,12 +340,7 @@
 #pragma mark - actions
 
 - (IBAction)didClickGodReview:(id)sender{
-   NSUInteger size = [[SDImageCache sharedImageCache] getSize];
-    NSLog(@"缓存大小%fM",size/1000.0/1000);
-    if (150 < size) {
-        [[SDImageCache sharedImageCache]clearMemory];
-        [[SDImageCache sharedImageCache]cleanDisk];
-    }
+
 //    [[self dataSource] insertObject:@"0" atIndex:0];
 //    [[self popupOverlayer] insertItemAtIndex:0 animated:YES];
 }

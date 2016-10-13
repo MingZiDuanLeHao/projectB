@@ -64,7 +64,7 @@ static NSString * const BeautyId = @"beauty";
             //取出最后一个图片的时间戳,加载更多的时候需要
             BeautyModelItems *model1 =  [self.BeautyModel.items lastObject];
             self.updateTime = model1.updateTime;
-            
+            [self.muArr addObjectsFromArray:self.BeautyModel.items];
              //   NSLog(@"<<<<<<<1&&& = %ld",self.BeautyModel.items.count);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_collectionView reloadData];
@@ -115,7 +115,7 @@ static NSString * const BeautyId = @"beauty";
 }
 -(CGFloat)heightForIndex:(NSIndexPath *)indexpath
 {
-    BeautyModelItems *model1 =  self.BeautyModel.items[indexpath.row];
+    BeautyModelItems *model1 =  self.muArr[indexpath.row];
     CGFloat currentW = (SWidth - 40)/3;
     CGFloat picH = [model1.wpicMHeight floatValue];
     CGFloat picW = [model1.wpicMWidth floatValue];
@@ -131,18 +131,21 @@ static NSString * const BeautyId = @"beauty";
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
 
-    return _BeautyModel.items.count;
+    return self.muArr.count;
     
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     BeautyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BeautyId forIndexPath:indexPath];
-    BeautyModelItems *model1 =  self.BeautyModel.items[indexPath.row];
-    [cell.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
-//        [cell.img sd_setImageWithURL:[NSURL URLWithString:@"http://ww2.sinaimg.cn/large/42b97fafgw1f8kr1nwz1sg20cs070x6t.gif"]];
-    
-    
+    BeautyModelItems *model1 =  self.muArr[indexPath.row];
+    cell.img.layer.cornerRadius = 4;
+    cell.img.layer.borderWidth = 2;
+    cell.img.layer.masksToBounds = YES;
+    cell.img.layer.borderColor = [[UIColor whiteColor] CGColor];
+    [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:model1.wpicMiddle] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
+    //[cell.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+   
 //    //时间戳
 //    NSTimeInterval time=[model1.updateTime doubleValue]+28800;//因为时差问题要加8小时 == 28800 sec
 //    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time];
@@ -165,10 +168,10 @@ static NSString * const BeautyId = @"beauty";
     self.background = bgView;
     [bgView setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:bgView];
-    
+
     //创建显示图像的视图
  
-    BeautyModelItems *model1 =  self.BeautyModel.items[indexPath.row];
+    BeautyModelItems *model1 =  self.muArr[indexPath.row];
     CGFloat picH = [model1.wpicMHeight floatValue];
     CGFloat picW = [model1.wpicMWidth floatValue];
     CGFloat hight = SWidth / picW * picH;
