@@ -89,8 +89,6 @@
 		3F1F15D91DAA61E500ACFF18 /* PictureModelPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F15D61DAA61E500ACFF18 /* PictureModelPictureModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F1F15DC1DAA778F00ACFF18 /* ReuseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F15DB1DAA778F00ACFF18 /* ReuseView.m */; settings = {ASSET_TAGS = (); }; };
 		3F1F15DE1DAA77A800ACFF18 /* ReuseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F15DD1DAA77A800ACFF18 /* ReuseView.xib */; settings = {ASSET_TAGS = (); }; };
-		3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2539251D9BEA400072831B /* RightWeatherController.m */; settings = {ASSET_TAGS = (); }; };
-		3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2539261D9BEA400072831B /* RightWeatherController.xib */; settings = {ASSET_TAGS = (); }; };
 		3F2539501D9BFB460072831B /* 视频.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394A1D9BFB460072831B /* 视频.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539511D9BFB460072831B /* 视频2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394B1D9BFB460072831B /* 视频2.png */; settings = {ASSET_TAGS = (); }; };
 		3F2539521D9BFB460072831B /* 外卖.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F25394C1D9BFB460072831B /* 外卖.png */; settings = {ASSET_TAGS = (); }; };
@@ -334,9 +332,6 @@
 		3F1F15DA1DAA778F00ACFF18 /* ReuseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReuseView.h; sourceTree = "<group>"; };
 		3F1F15DB1DAA778F00ACFF18 /* ReuseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReuseView.m; sourceTree = "<group>"; };
 		3F1F15DD1DAA77A800ACFF18 /* ReuseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReuseView.xib; sourceTree = "<group>"; };
-		3F2539241D9BEA400072831B /* RightWeatherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightWeatherController.h; path = ../RightWeatherController.h; sourceTree = "<group>"; };
-		3F2539251D9BEA400072831B /* RightWeatherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightWeatherController.m; path = ../RightWeatherController.m; sourceTree = "<group>"; };
-		3F2539261D9BEA400072831B /* RightWeatherController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightWeatherController.xib; path = ../RightWeatherController.xib; sourceTree = "<group>"; };
 		3F25394A1D9BFB460072831B /* 视频.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频.png"; sourceTree = "<group>"; };
 		3F25394B1D9BFB460072831B /* 视频2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频2.png"; sourceTree = "<group>"; };
 		3F25394C1D9BFB460072831B /* 外卖.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "外卖.png"; sourceTree = "<group>"; };
@@ -1150,9 +1145,6 @@
 		3FA2244E1DAF2EB60035099A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3F2539241D9BEA400072831B /* RightWeatherController.h */,
-				3F2539251D9BEA400072831B /* RightWeatherController.m */,
-				3F2539261D9BEA400072831B /* RightWeatherController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1315,7 +1307,6 @@
 				3F1F15671DA9E06F00ACFF18 /* RedioDetailListCell.xib in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
-				3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */,
 				3F4B2A741DAB35D100E07143 /* RadiodetailCellHeaderView.xib in Resources */,
 				3F1C62EB1DAFC5F4008779A0 /* 便便.png in Resources */,
 				3FA224231DAE726F0035099A /* 占位.png in Resources */,
@@ -1483,7 +1474,6 @@
 				3F799A101D9E4864009DAF97 /* MainDetailBaseClass.m in Sources */,
 				3FA224801DAF2F130035099A /* WeatherCity.m in Sources */,
 				3F1F157D1DA9E0AD00ACFF18 /* PictureViewController.m in Sources */,
-				3F2539271D9BEA400072831B /* RightWeatherController.m in Sources */,
 				3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */,
 				3FA224861DAF2F130035099A /* WeatherFlu.m in Sources */,
 				3FA2248A1DAF2F130035099A /* WeatherSport.m in Sources */,
