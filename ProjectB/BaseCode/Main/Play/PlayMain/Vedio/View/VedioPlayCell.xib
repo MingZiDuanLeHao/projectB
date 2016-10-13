@@ -14,44 +14,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k85-xB-kt6">
-                        <rect key="frame" x="0.0" y="41" width="323" height="153"/>
+                        <rect key="frame" x="5" y="41" width="313" height="143"/>
                         <animations/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-aJ-HOd">
-                        <rect key="frame" x="8" y="199" width="46" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-aJ-HOd">
+                        <rect key="frame" x="30" y="189" width="60" height="60"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="V3N-NP-X26"/>
-                            <constraint firstAttribute="height" constant="30" id="aLw-Zm-T3B"/>
+                            <constraint firstAttribute="width" constant="60" id="V3N-NP-X26"/>
+                            <constraint firstAttribute="height" constant="60" id="aLw-Zm-T3B"/>
                         </constraints>
-                        <state key="normal" title="点赞"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="-30" minY="30" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="15" minY="10" maxX="0.0" maxY="30"/>
+                        <state key="normal" title="点赞" image="鼓掌.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="disabled" image="鼓掌2.png"/>
+                        <state key="selected" image="鼓掌2.png"/>
+                        <state key="highlighted" image="鼓掌2.png"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPi-5i-lFT">
-                        <rect key="frame" x="92" y="199" width="46" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-gb-026">
+                        <rect key="frame" x="233" y="189" width="60" height="60"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="cM8-y8-NWe"/>
-                            <constraint firstAttribute="width" constant="46" id="pzG-M1-RaN"/>
+                            <constraint firstAttribute="width" constant="60" id="4K8-Z9-Hji"/>
+                            <constraint firstAttribute="height" constant="60" id="L4Z-bh-9cI"/>
                         </constraints>
-                        <state key="normal" title="踩"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-gb-026">
-                        <rect key="frame" x="181" y="199" width="46" height="30"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="46" id="4K8-Z9-Hji"/>
-                            <constraint firstAttribute="height" constant="30" id="L4Z-bh-9cI"/>
-                        </constraints>
-                        <state key="normal" title="神评"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0x-BJ-3bU">
-                        <rect key="frame" x="269" y="199" width="46" height="30"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="46" id="Ahv-4H-EIR"/>
-                            <constraint firstAttribute="height" constant="30" id="N4y-8K-idS"/>
-                        </constraints>
-                        <state key="normal" title="转发"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="-30" minY="30" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="15" minY="10" maxX="0.0" maxY="30"/>
+                        <state key="normal" title="神评" image="评论.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-py-N5H" userLabel="分割view">
                         <rect key="frame" x="-10" y="254" width="343" height="10"/>
@@ -71,36 +66,51 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPi-5i-lFT">
+                        <rect key="frame" x="131" y="189" width="60" height="60"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="cM8-y8-NWe"/>
+                            <constraint firstAttribute="width" constant="60" id="pzG-M1-RaN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="-30" minY="30" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="15" minY="10" maxX="0.0" maxY="30"/>
+                        <state key="normal" title="踩踩" image="便便.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="k85-xB-kt6" secondAttribute="trailing" id="0DS-yv-xKR"/>
                     <constraint firstAttribute="bottom" secondItem="MGb-py-N5H" secondAttribute="bottom" id="66a-Lz-0GL"/>
                     <constraint firstItem="MGb-py-N5H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-10" id="7af-MT-Jgk"/>
-                    <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="Wrz-aJ-HOd" secondAttribute="bottom" constant="25" id="9Zp-M4-z6N"/>
+                    <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="Wrz-aJ-HOd" secondAttribute="bottom" constant="5" id="9Zp-M4-z6N"/>
+                    <constraint firstAttribute="trailing" secondItem="Xs1-gb-026" secondAttribute="trailing" constant="30" id="EWb-u0-iOj"/>
                     <constraint firstItem="k85-xB-kt6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="IJ1-19-0Rq"/>
                     <constraint firstAttribute="trailing" secondItem="MGb-py-N5H" secondAttribute="trailing" constant="-10" id="JDO-WL-c8S"/>
                     <constraint firstItem="MGb-py-N5H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-10" id="LRy-xO-lBl"/>
-                    <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="V0x-BJ-3bU" secondAttribute="bottom" constant="25" id="NOG-5f-DcT"/>
                     <constraint firstItem="k85-xB-kt6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vi6-cn-xuK"/>
                     <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="EPi-5i-lFT" secondAttribute="bottom" constant="25" id="YZg-yZ-efP"/>
+                    <constraint firstItem="k85-xB-kt6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="a39-a3-b4V"/>
                     <constraint firstItem="kAl-hx-F19" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ae8-A6-i49"/>
                     <constraint firstAttribute="trailing" secondItem="kAl-hx-F19" secondAttribute="trailing" constant="5" id="agw-0R-jce"/>
                     <constraint firstItem="kAl-hx-F19" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="bK7-9i-XsU"/>
                     <constraint firstItem="EPi-5i-lFT" firstAttribute="leading" secondItem="Wrz-aJ-HOd" secondAttribute="trailing" constant="38" id="bTO-FM-nBx"/>
-                    <constraint firstItem="Wrz-aJ-HOd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="cet-f1-zA1"/>
-                    <constraint firstAttribute="trailing" secondItem="V0x-BJ-3bU" secondAttribute="trailing" constant="8" id="frL-zL-cbb"/>
-                    <constraint firstItem="V0x-BJ-3bU" firstAttribute="top" secondItem="k85-xB-kt6" secondAttribute="bottom" constant="5" id="g8D-5P-Aj8"/>
+                    <constraint firstItem="Wrz-aJ-HOd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="cet-f1-zA1"/>
                     <constraint firstAttribute="trailing" secondItem="k85-xB-kt6" secondAttribute="trailing" id="gpT-94-UMv"/>
                     <constraint firstItem="kAl-hx-F19" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hHx-RO-cfB"/>
+                    <constraint firstItem="EPi-5i-lFT" firstAttribute="centerY" secondItem="Wrz-aJ-HOd" secondAttribute="centerY" id="hq9-FS-2sK"/>
                     <constraint firstAttribute="trailing" secondItem="kAl-hx-F19" secondAttribute="trailing" constant="5" id="iDO-7z-nTm"/>
                     <constraint firstItem="k85-xB-kt6" firstAttribute="top" secondItem="kAl-hx-F19" secondAttribute="bottom" constant="6" id="nrS-E7-Anw"/>
+                    <constraint firstItem="Wrz-aJ-HOd" firstAttribute="top" secondItem="k85-xB-kt6" secondAttribute="bottom" constant="5" id="pWm-wJ-nxO"/>
                     <constraint firstItem="kAl-hx-F19" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qVg-dY-WP1"/>
                     <constraint firstAttribute="trailing" secondItem="MGb-py-N5H" secondAttribute="trailing" constant="-10" id="sp8-ie-QSk"/>
-                    <constraint firstItem="V0x-BJ-3bU" firstAttribute="leading" secondItem="Xs1-gb-026" secondAttribute="trailing" constant="42" id="tuS-5V-aCD"/>
-                    <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="Xs1-gb-026" secondAttribute="bottom" constant="25" id="vyJ-4H-K5A"/>
+                    <constraint firstItem="EPi-5i-lFT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="vUr-YC-vab"/>
+                    <constraint firstItem="MGb-py-N5H" firstAttribute="top" secondItem="Xs1-gb-026" secondAttribute="bottom" constant="5" id="vyJ-4H-K5A"/>
+                    <constraint firstAttribute="trailing" secondItem="k85-xB-kt6" secondAttribute="trailing" constant="5" id="wvD-zr-m5w"/>
                     <constraint firstItem="k85-xB-kt6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xqJ-DF-UKj"/>
-                    <constraint firstItem="V0x-BJ-3bU" firstAttribute="top" secondItem="k85-xB-kt6" secondAttribute="bottom" constant="5" id="y4h-q7-R3q"/>
                     <constraint firstItem="k85-xB-kt6" firstAttribute="top" secondItem="kAl-hx-F19" secondAttribute="bottom" constant="5" id="yh6-dS-Oy7"/>
                 </constraints>
                 <variation key="default">
@@ -108,22 +118,34 @@
                         <exclude reference="agw-0R-jce"/>
                         <exclude reference="bK7-9i-XsU"/>
                         <exclude reference="qVg-dY-WP1"/>
+                        <exclude reference="0DS-yv-xKR"/>
                         <exclude reference="IJ1-19-0Rq"/>
                         <exclude reference="Vi6-cn-xuK"/>
                         <exclude reference="gpT-94-UMv"/>
+                        <exclude reference="xqJ-DF-UKj"/>
                         <exclude reference="yh6-dS-Oy7"/>
+                        <exclude reference="bTO-FM-nBx"/>
                         <exclude reference="LRy-xO-lBl"/>
+                        <exclude reference="YZg-yZ-efP"/>
                         <exclude reference="sp8-ie-QSk"/>
-                        <exclude reference="y4h-q7-R3q"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="caiBtn" destination="EPi-5i-lFT" id="oHP-Ki-Wwq"/>
+                <outlet property="commentBtn" destination="Xs1-gb-026" id="jgD-Rx-7PN"/>
                 <outlet property="context" destination="kAl-hx-F19" id="Zj4-bc-YhX"/>
+                <outlet property="dingBtn" destination="Wrz-aJ-HOd" id="sll-dg-UcO"/>
                 <outlet property="img" destination="k85-xB-kt6" id="GXO-Am-FIY"/>
             </connections>
-            <point key="canvasLocation" x="408.5" y="305.5"/>
+            <point key="canvasLocation" x="523.5" y="304.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="便便.png" width="32" height="32"/>
+        <image name="评论.png" width="32" height="32"/>
+        <image name="鼓掌.png" width="32" height="32"/>
+        <image name="鼓掌2.png" width="128" height="128"/>
+    </resources>
 </document>

@@ -49,12 +49,13 @@ static NSString *cellID = @"playCell";
 -(void)initUI
 {
    // self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
+    self.tableV.frame = CGRectMake(0, 0, SWidth, SHeight +64);
     _tableV.delegate = self;
     _tableV.dataSource = self;
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
     
+    _tableV.showsVerticalScrollIndicator = NO;
     //上提加载更多
     _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
@@ -101,7 +102,7 @@ static NSString *cellID = @"playCell";
                 {
                 //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                    [self.dataArray addObject:dicGroup];
-                   [self.hightArray addObject:@(H * SWidth /W + tmpRect.size.height + 80) ];
+                   [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 80) ];
                 }
             }
           //  NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
@@ -205,10 +206,14 @@ static NSString *cellID = @"playCell";
     NSArray *url_listArr = large_coverDic[@"url_list"];
 
     cell.context.text = dic[@"text"];
-    
-    
-    
-    
+    NSLog(@"!!!!!!!!!1%@",dic[@"digg_count"]);
+  //  [cell.dingBtn setTitle:dic[@"digg_count"] forState:UIControlStateNormal];
+    //cell.dingBtn.titleLabel.text = dic[@"digg_count"];
+ 
+    cell.img.layer.cornerRadius = 4;
+    cell.img.layer.borderWidth = 2;
+    cell.img.layer.masksToBounds = YES;
+    cell.img.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     __block UIProgressView *pv;
     pv.backgroundColor = [UIColor grayColor];
@@ -217,7 +222,7 @@ static NSString *cellID = @"playCell";
     __weak UIImageView *weakImageView = cell.img;
     
     [cell.img sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]
-                placeholderImage:nil
+                placeholderImage:[UIImage imageNamed:@"占位图"]
                          options:SDWebImageCacheMemoryOnly
                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                             if (!pv) {
@@ -226,7 +231,7 @@ static NSString *cellID = @"playCell";
                                 [weakImageView addSubview:pv = [UIProgressView.alloc initWithProgressViewStyle:UIProgressViewStyleDefault]];
                                 pv.frame = CGRectMake(0, 0, 100, 20);
                                 [pv setProgress:receivedSize/expectedSize animated:YES];
-                                NSLog(@"=======%f,%ld,%ld",showProgress,receivedSize,expectedSize);
+                                //NSLog(@"=======%f,%ld,%ld",showProgress,receivedSize,expectedSize);
                             } 
                         } 
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) { 
