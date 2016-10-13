@@ -12,7 +12,6 @@
 
 @interface POContentView : UIView
 @property (nonatomic, strong) POPopupOverlayer *popupOverlayer;
-@property (nonatomic, strong) UIButton *GodReviewButton;
 
 @property (nonatomic, strong) UIButton *leftButton;
 @property (nonatomic, strong) UIButton *rightButton;

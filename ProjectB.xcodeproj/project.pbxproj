@@ -1570,7 +1570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5c1c38a8-8b6d-4414-b6c9-9c63343531ce";
+				PROVISIONING_PROFILE = "bae8161b-19ee-4844-bc68-5240c0188ea1";
 			};
 			name = Debug;
 		};
@@ -1591,7 +1591,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5c1c38a8-8b6d-4414-b6c9-9c63343531ce";
+				PROVISIONING_PROFILE = "bae8161b-19ee-4844-bc68-5240c0188ea1";
 			};
 			name = Release;
 		};
