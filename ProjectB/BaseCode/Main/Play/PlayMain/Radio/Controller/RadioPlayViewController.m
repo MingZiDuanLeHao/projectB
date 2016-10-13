@@ -172,13 +172,17 @@
         scrollViewText.tag = K_MAIN_VIEW_SCROLL_TEXT_TAG;
         [scrollViewText setBackgroundColor:[UIColor clearColor]];
         
+        
+        
+        //添加到当前视图
+        [self.view addSubview:scrollViewText];
+    }
+    else
+    {
         //清除子控件
         for (UIView *view in [scrollViewText subviews]) {
             [view removeFromSuperview];
         }
-        
-        //添加到当前视图
-        [self.view addSubview:scrollViewText];
     }
     
     
@@ -282,7 +286,7 @@
         [[RadioPlayerManager defaultManager]lastMusic];
         [weakself changeLook];
         //移除原来滚动的label
-        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [weakself initView];
         
         
@@ -303,7 +307,7 @@
     _headerView.nextBlock = ^(){
         [[RadioPlayerManager defaultManager]nextNusic];
         [weakself changeLook];
-        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [weakself initView];
     };
     
