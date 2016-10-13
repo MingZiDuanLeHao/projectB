@@ -32,6 +32,7 @@
 {
    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
 //    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
+
 }
 
 -(void)initUI
