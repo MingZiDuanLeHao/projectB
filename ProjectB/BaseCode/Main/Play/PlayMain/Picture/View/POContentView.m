@@ -43,7 +43,6 @@
     self.leftButton.frame = CGRectMake(24, SHeight - 60, 48, 48);
     self.rightButton.frame = CGRectMake(CGRectGetWidth([self bounds]) - 24 - 48, SHeight - 60, 48, 48);
     
-    self.GodReviewButton.frame = CGRectMake((SWidth - 48)/2, SHeight - 60, 48, 48);
     
     self.popupOverlayer.frame = CGRectMake(CGRectGetWidth([self bounds]) / 2. - 167/2., 150, 167, 167);
     self.popupOverlayer.userInteractionEnabled = YES;
@@ -186,12 +185,10 @@
     self.popupOverlayer = [POPopupOverlayer new];
     self.leftButton = [UIButton new];
     self.rightButton = [UIButton new];
-    self.GodReviewButton = [UIButton new];
     self.labelContent = [UILabel new];
  
     [self addSubview:[self leftButton]];
     [self addSubview:[self rightButton]];
-    [self addSubview:[self GodReviewButton]];
     [self addSubview:[self labelContent]];
     self.labelContent.numberOfLines = 0;
     [self addSubview:[self popupOverlayer]];
@@ -226,14 +223,6 @@
     [[self rightButton] setTitle:@"R" forState:UIControlStateNormal];
     [[self rightButton] addTarget:self action:@selector(didClickright:) forControlEvents:UIControlEventTouchUpInside];
     
-    //评论
-    self.GodReviewButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    self.GodReviewButton.layer.cornerRadius = 48/2.;
-    self.GodReviewButton.layer.borderWidth = 1.f;
-    self.GodReviewButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    [[self GodReviewButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [[self GodReviewButton] setTitle:@"神评" forState:UIControlStateNormal];
-    [[self GodReviewButton] addTarget:self action:@selector(didClickGodReview:) forControlEvents:UIControlEventTouchUpInside];
     
     
 //    [[self popupOverlayer] reloadData];
@@ -273,9 +262,33 @@
  
 
         PictureModelItems *model1 =  self.PictureModel.items[nIndex];
+    
+    //带进度条的img
+    __block UIProgressView *pv;
+    pv.backgroundColor = [UIColor grayColor];
+    pv.progressTintColor = [UIColor greenColor];
+    pv.trackTintColor = [UIColor redColor];
+    __weak UIImageView *weakImageView = view.img;
+    
+    [view.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]
+                placeholderImage:nil
+                         options:SDWebImageCacheMemoryOnly
+                        progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                            if (!pv) {
+                                float showProgress = (float)receivedSize/(float)expectedSize;
+                                [pv setProgress:showProgress];
+                                [weakImageView addSubview:pv = [UIProgressView.alloc initWithProgressViewStyle:UIProgressViewStyleDefault]];
+                                pv.frame = CGRectMake(0, pv.superview.frame.size.height - 20, pv.superview.frame.size.width, 40);
+                                [pv setProgress:receivedSize/expectedSize animated:YES];
+                            }
+                        }
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           [pv removeFromSuperview];
+                           pv = nil;
+                       }];
 
-    [view.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:model1.wpicMiddle] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
-     
+//    [view.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:model1.wpicMiddle] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
+    
     if (nIndex >= 2) {
         PictureModelItems *model1 =  self.PictureModel.items[nIndex - 2];
         self.labelContent.text = model1.wbody;

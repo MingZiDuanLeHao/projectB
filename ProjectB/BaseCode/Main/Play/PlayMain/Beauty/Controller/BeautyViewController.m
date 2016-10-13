@@ -186,9 +186,12 @@ static NSString * const BeautyId = @"beauty";
     [bgView addSubview:imgView];
     
     //下载按钮
-    UIButton *download = [[UIButton alloc]initWithFrame:CGRectMake(40, SHeight - 150, 50, 80)];
-    [download setTitle:@"下载" forState:UIControlStateNormal];
-    [download addTarget:self action:@selector(downloadHandle) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *download = [[UIButton alloc]initWithFrame:CGRectMake(40, SHeight - 150, 80, 50)];
+    //download.
+    [download setImage:[UIImage imageNamed:@"下载1"] forState:UIControlStateNormal];
+    [download setImage:[UIImage imageNamed:@"下载2"] forState:UIControlStateHighlighted];
+    download.tag = 10000 + indexPath.row;
+    [download addTarget:self action:@selector(downloadHandle:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:download];
     
     imgView.userInteractionEnabled = YES;
@@ -214,9 +217,40 @@ static NSString * const BeautyId = @"beauty";
     [aView.layer addAnimation:animation forKey:nil];
 }
 
--(void)downloadHandle
+//下载图片
+-(void)downloadHandle:(UIButton *)sender
 {
+    BeautyModelItems *model1 =  self.muArr[sender.tag - 10000];
+//   UIImageWriteToSavedPhotosAlbum([UIImage imageNamed:model1.wpicMiddle], self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
     
+    UIImageView *gtp = [[UIImageView alloc] init];
+//    ZGLPhotoModel *model = _modelArr[_currentPage];
+//    **重点内容**
+    [gtp sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
+    
+    UIImageWriteToSavedPhotosAlbum(gtp.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+// 指定回调方法
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSString *msg = nil ;
+    if(error != NULL){
+        msg = @"保存图片失败" ;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel  =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:^{
+        }];
+        
+    }else{
+        msg = @"保存成功" ;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel  =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:^{
+        }];
+    }
 }
 
 //懒加载

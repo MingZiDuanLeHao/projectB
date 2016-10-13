@@ -32,6 +32,8 @@ static NSString *cellID = @"playCell";
 @property (nonatomic, assign) BOOL showTopTipViewFlag;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, assign) BOOL isFirstEnter;
+@property (nonatomic, assign) BOOL isSmallScreen;
+@property (nonatomic, assign) BOOL isFinish;
 
 @end
 
@@ -47,12 +49,13 @@ static NSString *cellID = @"playCell";
 -(void)initUI
 {
    // self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
+    self.tableV.frame = CGRectMake(0, 0, SWidth, SHeight +64);
     _tableV.delegate = self;
     _tableV.dataSource = self;
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
     
+    _tableV.showsVerticalScrollIndicator = NO;
     //上提加载更多
     _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
@@ -82,16 +85,27 @@ static NSString *cellID = @"playCell";
                 NSArray *arr = [dicGroup allKeys];
                 int W = [dicGroup[@"group"][@"video_width"] intValue];
                 int H = [dicGroup[@"group"][@"video_height"] intValue];
+                 //求出字体的高度,也加在高度上
+                UILabel *label = [[UILabel alloc]init];
+                label.text = dicGroup[@"group"][@"text"];
+              //  NSLog(@"===========%@",label.text);
+                // label的字体 HelveticaNeue  Courier
+                UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
+                label.font = fnt;
+                label.numberOfLines = 0;
+                label.lineBreakMode = NSLineBreakByWordWrapping;
+
+                CGRect tmpRect = [label.text boundingRectWithSize:CGSizeMake(SWidth - 10, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil] context:nil];
                 if ([arr containsObject:@"ad"]&& W == 0) {
                     // NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                 }else
                 {
                 //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                    [self.dataArray addObject:dicGroup];
-                   [self.hightArray addObject:@(H * SWidth /W) ];
+                   [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 80) ];
                 }
             }
-            NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
+          //  NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
     
             
 //            for (NSDictionary *dicGroup1 in self.dataArray) {
@@ -173,13 +187,13 @@ static NSString *cellID = @"playCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    // return 200;
-    NSLog(@"self.hightArray.count___%@",self.hightArray[indexPath.row]);
+   // NSLog(@"self.hightArray.count___%@",self.hightArray[indexPath.row]);
     if ([self.hightArray[indexPath.row] integerValue] == 0  ) {
         return 0;
     }
    // VedioPlayCell *cell = [tableView cellForRowAtIndexPath:indexPath];
    // CGFloat contentH = cell.context.frame.size.height;
-    return [self.hightArray[indexPath.row] intValue] + 100 + 30;
+    return [self.hightArray[indexPath.row] intValue] ;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,11 +206,46 @@ static NSString *cellID = @"playCell";
     NSArray *url_listArr = large_coverDic[@"url_list"];
 
     cell.context.text = dic[@"text"];
-    if (self.dataArray.count != 0) {
-        [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
-    }
+    NSLog(@"!!!!!!!!!1%@",dic[@"digg_count"]);
+  //  [cell.dingBtn setTitle:dic[@"digg_count"] forState:UIControlStateNormal];
+    //cell.dingBtn.titleLabel.text = dic[@"digg_count"];
+ 
+    cell.img.layer.cornerRadius = 4;
+    cell.img.layer.borderWidth = 2;
+    cell.img.layer.masksToBounds = YES;
+    cell.img.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    __block UIProgressView *pv;
+    pv.backgroundColor = [UIColor grayColor];
+    pv.progressTintColor = [UIColor greenColor];
+    pv.trackTintColor = [UIColor redColor];
+    __weak UIImageView *weakImageView = cell.img;
+    
+    [cell.img sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]
+                placeholderImage:[UIImage imageNamed:@"占位图"]
+                         options:SDWebImageCacheMemoryOnly
+                        progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                            if (!pv) {
+                                float showProgress = (float)receivedSize/(float)expectedSize;
+                                [pv setProgress:showProgress];
+                                [weakImageView addSubview:pv = [UIProgressView.alloc initWithProgressViewStyle:UIProgressViewStyleDefault]];
+                                pv.frame = CGRectMake(0, 0, 100, 20);
+                                [pv setProgress:receivedSize/expectedSize animated:YES];
+                                //NSLog(@"=======%f,%ld,%ld",showProgress,receivedSize,expectedSize);
+                            } 
+                        } 
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) { 
+                           [pv removeFromSuperview]; 
+                           pv = nil; 
+                       }];
+    
+    
+    
+    
+    
+//        [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
 
-    for (UIView *view in cell.img.subviews) {
+    for (UIView *view in cell.subviews) {
         if ([view isKindOfClass:[WMPlayer class]]) {
             [view removeFromSuperview];
         }
@@ -226,8 +275,8 @@ static NSString *cellID = @"playCell";
     if (self.isFirstEnter) {
         VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
         CGRect frame = cell.img.frame;
-        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        [cell.img addSubview:self.wmPlayer];
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
+        [cell addSubview:self.wmPlayer];
         self.wmPlayer.delegate = self;
         NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
         NSDictionary *Vedio720Dic = dic[@"720p_video"];
@@ -241,7 +290,7 @@ static NSString *cellID = @"playCell";
             [self releaseWMPlayer];
             VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
             CGRect frame = cell.img.frame;
-            self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(frame.origin.x, 41, frame.size.width, frame.size.height)];
+            self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
             [cell addSubview:self.wmPlayer];
             self.wmPlayer.delegate = self;
             NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
@@ -252,12 +301,25 @@ static NSString *cellID = @"playCell";
             _indexPath = indexPath;
         }else
         {
-            
+            if (self.isFinish) {
+            VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
+            CGRect frame = cell.img.frame;
+            self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)];
+            [cell addSubview:self.wmPlayer];
+            self.wmPlayer.delegate = self;
+            NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
+            NSDictionary *Vedio720Dic = dic[@"720p_video"];
+            NSArray *vedioList = Vedio720Dic[@"url_list"];
+            self.wmPlayer.URLString =vedioList[0][@"url"];
+            [self.wmPlayer.player play];
+            _indexPath = indexPath;
+            }
         }
     }
-
-    
+   
 }
+
+
 
 //- (NHBaseTableViewCell *)nh_cellAtIndexPath:(NSIndexPath *)indexPath {
 //    // 1. 创建cell
@@ -340,7 +402,7 @@ static NSString *cellID = @"playCell";
     }completion:^(BOOL finished) {
         _wmPlayer.isFullscreen = NO;
         [self setNeedsStatusBarAppearanceUpdate];
-    //    self.isSmallScreen = NO;
+        self.isSmallScreen = NO;
         _wmPlayer.fullScreenBtn.selected = NO;
         
     }];
@@ -450,7 +512,7 @@ static NSString *cellID = @"playCell";
         _wmPlayer.isFullscreen = NO;
         [self setNeedsStatusBarAppearanceUpdate];
         _wmPlayer.fullScreenBtn.selected = NO;
-   //     self.isSmallScreen = YES;
+        self.isSmallScreen = YES;
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:_wmPlayer];
     }];
 }
@@ -471,12 +533,12 @@ static NSString *cellID = @"playCell";
         [self setNeedsStatusBarAppearanceUpdate];
         [self toFullScreenWithInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
     } else {
-//        if (self.isSmallScreen) {
-//            // 放widow上,小屏显示
-//            [self toSmallScreen];
-//        } else {
-//            [self toCell];
-//        }
+        if (self.isSmallScreen) {
+            // 放widow上,小屏显示
+            [self toSmallScreen];
+        } else {
+            [self toCell];
+        }
     }
 }
 
@@ -498,6 +560,7 @@ static NSString *cellID = @"playCell";
 
 - (void)wmplayerFinishedPlay:(WMPlayer *)wmplayer {
     [self releaseWMPlayer];
+    self.isFinish = YES;
 }
 
 - (void)releaseWMPlayer {
