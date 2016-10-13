@@ -35,7 +35,7 @@
     [self someSet];
     [self setupContent];
     [self askData];
-    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:234.0/255 green:38.0/255 blue:38.0/255 alpha:1.0]];
+    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
     
 }
 -(void)viewWillAppear:(BOOL)animated

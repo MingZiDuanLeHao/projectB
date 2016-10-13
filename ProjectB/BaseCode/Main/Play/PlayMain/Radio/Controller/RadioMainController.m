@@ -32,6 +32,7 @@ static NSString *rightCell = @"rightCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"电台";
     [self initUI];
     self.pageId = 1;
@@ -45,6 +46,7 @@ static NSString *rightCell = @"rightCell";
 
 -(void)initUI
 {
+    [self.navigationController.navigationBar setValue:nil forKey:@"backgroundView"];
     //左table
     self.leftTable.frame = CGRectMake(0, 64, 50, SHeight - 44);
     
@@ -92,7 +94,7 @@ static NSString *rightCell = @"rightCell";
     //使导航栏透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
     self.navigationController.navigationBar.shadowImage=[UIImage new];
-    
+//
     //毛玻璃
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rednavi.jpg"]];
     imageview.userInteractionEnabled = YES;
@@ -293,7 +295,7 @@ static NSString *rightCell = @"rightCell";
         listVC.albumId = [NSString stringWithFormat:@"%.0f",list.albumId];
         listVC.titleID = list.title;
         listVC.statEvent = [NSString stringWithFormat:@"40%@",listVC.albumId];
-        NSLog(@"albumID %@   statEvent %@",listVC.albumId,listVC.statEvent);
+    
         if (self.selectIndex == 0) {
             listVC.statModule = @"%E7%94%B5%E5%8F%B0_%E7%BB%BC%E5%90%88%E5%8F%B0";
         }else if (self.selectIndex == 1){

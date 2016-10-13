@@ -19,7 +19,7 @@
 #define K_MAIN_VIEW_SCROLLER_LABLE_WIDTH  320  //字体宽度
 #define K_MAIN_VIEW_SCROLLER_LABLE_MARGIN 70   //前后间隔距离
 
-@interface RadioPlayViewController ()<UITableViewDelegate,UITableViewDataSource,MusicEnd>
+@interface RadioPlayViewController ()<UITableViewDelegate,UITableViewDataSource,MusicEnd,UIScrollViewDelegate>
 {
     NSTimer *timer;
     NSTimer           *textTimer;
@@ -54,6 +54,7 @@
 {
     //干掉定时器
     [timer invalidate];
+    [textTimer invalidate];
     //干掉通知
     [[RadioPlayerManager defaultManager] pause];
     
@@ -102,17 +103,17 @@
     //    毛玻璃
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"粉1.jpg"]];
     imageview.userInteractionEnabled = YES;
-    imageview.contentMode = UIViewContentModeScaleAspectFit;
+//    imageview.contentMode = UIViewContentModeScaleAspectFit;
     imageview.frame = [UIScreen mainScreen].bounds;
     [self.view insertSubview:imageview belowSubview:_PlaytableView];
     
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    
-    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
-    
-    effectview.frame = [UIScreen mainScreen].bounds;
-    
-    [self.view insertSubview:effectview aboveSubview:imageview];
+//    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    
+//    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+//    
+//    effectview.frame = [UIScreen mainScreen].bounds;
+//    
+//    [self.view insertSubview:effectview aboveSubview:imageview];
     
     
   
@@ -129,7 +130,7 @@
 
 -(void)loadData
 {
-    NSLog(@"__%ld",_selectIndex);
+    
     [RadioPlayerManager defaultManager].selectedIndex = _selectIndex;
     [RadioPlayerManager defaultManager].musicDataArray = _musicArray;
     [[RadioPlayerManager defaultManager] play];
@@ -275,10 +276,16 @@
 {
     typeof(self) __weak weakself = self;
     typeof(_headerView) __weak weakHeaderView = _headerView;
-    
+     typeof(scrollViewText) __weak weakScrollView =  scrollViewText;
+   
     _headerView.lastBlock = ^(){
         [[RadioPlayerManager defaultManager]lastMusic];
         [weakself changeLook];
+        //移除原来滚动的label
+        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        [weakself initView];
+        
+        
     };
     
     _headerView.pauseBlock = ^(){
@@ -296,6 +303,8 @@
     _headerView.nextBlock = ^(){
         [[RadioPlayerManager defaultManager]nextNusic];
         [weakself changeLook];
+        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        [weakself initView];
     };
     
     _headerView.dragBlock = ^(){
@@ -344,6 +353,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
     return cell;
+}
+
+//下拉退出controller
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (scrollView.contentOffset.y <= -64) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

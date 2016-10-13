@@ -145,6 +145,7 @@
 		3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A351D9E53E0009DAF97 /* 4.jpg */; settings = {ASSET_TAGS = (); }; };
 		3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		3F9C0FA61DA9EFD700794EA0 /* RadiodetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C0FA51DA9EFD700794EA0 /* RadiodetailHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		3FA224231DAE726F0035099A /* 占位.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA224221DAE726F0035099A /* 占位.png */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA71D9D31FD009D5B67 /* NewsMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABA81D9D31FD009D5B67 /* NewsMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */; };
@@ -388,6 +389,7 @@
 		3F9C0FA21DA9EFB200794EA0 /* RadiodetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiodetailHeaderView.h; sourceTree = "<group>"; };
 		3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiodetailHeaderView.m; sourceTree = "<group>"; };
 		3F9C0FA51DA9EFD700794EA0 /* RadiodetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiodetailHeaderView.xib; sourceTree = "<group>"; };
+		3FA224221DAE726F0035099A /* 占位.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位.png"; sourceTree = "<group>"; };
 		3FA6ABA41D9D31FD009D5B67 /* NewsMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsMainTableViewCell.h; sourceTree = "<group>"; };
 		3FA6ABA51D9D31FD009D5B67 /* NewsMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsMainTableViewCell.m; sourceTree = "<group>"; };
 		3FA6ABA61D9D31FD009D5B67 /* NewsMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 				3F4B2B051DAE40C300E07143 /* 全屏.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F4B2AC81DAD09CA00E07143 /* 播放.png */,
+				3FA224221DAE726F0035099A /* 占位.png */,
 				3F4B2AC91DAD09CA00E07143 /* 暂停.png */,
 				3F4B2AC21DAD072400E07143 /* 下一首.png */,
 				3F4B2AC61DAD07C900E07143 /* 上首 .png */,
@@ -1051,6 +1054,7 @@
 				TargetAttributes = {
 					3F45A8411D9BA7FD00A83BB1 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = R7HP382G52;
 					};
 				};
 			};
@@ -1101,6 +1105,7 @@
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
 				3F2539281D9BEA400072831B /* RightWeatherController.xib in Resources */,
 				3F4B2A741DAB35D100E07143 /* RadiodetailCellHeaderView.xib in Resources */,
+				3FA224231DAE726F0035099A /* 占位.png in Resources */,
 				3F4B2AD81DADE19200E07143 /* 粉1.jpg in Resources */,
 				3F4B2B041DAE3C9600E07143 /* 返回.png in Resources */,
 				3F4B2AC31DAD072400E07143 /* 下一首.png in Resources */,
@@ -1387,12 +1392,15 @@
 			baseConfigurationReference = E5B94A3F61DF1F0EFDA62FC5 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/PrefixHeader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = llll.ProjectB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5c1c38a8-8b6d-4414-b6c9-9c63343531ce";
 			};
 			name = Debug;
 		};
@@ -1401,12 +1409,15 @@
 			baseConfigurationReference = 2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/PrefixHeader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = llll.ProjectB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5c1c38a8-8b6d-4414-b6c9-9c63343531ce";
 			};
 			name = Release;
 		};

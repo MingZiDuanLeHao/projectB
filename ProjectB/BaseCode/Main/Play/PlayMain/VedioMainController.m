@@ -12,6 +12,7 @@
 #import "VedioPlayViewController.h"
 #import "RadioMainController.h"
 #import "AppDelegate.h"
+#import "UINavigationBar+Other.h"
 
 @interface VedioMainController ()
 
@@ -25,13 +26,18 @@
     [self initUI];
 
 }
+
+//UI设置
 -(void)viewWillAppear:(BOOL)animated
 {
    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
 }
+
 -(void)initUI
 {
     self.title = @"视听";
+    
     UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64)/2)];
     img1.image = [UIImage imageNamed:@"blue.jpg"];
     img1.tag = 100;

@@ -11,14 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-gH-Ecf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-gH-Ecf">
                     <rect key="frame" x="0.0" y="45" width="320" height="320"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="lC1-gH-Ecf" secondAttribute="height" multiplier="1:1" id="DoX-Ue-Fux"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JbH-gP-BKp">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="JbH-gP-BKp">
                     <rect key="frame" x="15" y="7" width="30" height="30"/>
                     <animations/>
                     <constraints>
@@ -165,9 +165,9 @@
         </view>
     </objects>
     <resources>
-        <image name="1.jpg" width="510" height="510"/>
         <image name="上首 .png" width="64" height="64"/>
         <image name="下一首.png" width="64" height="64"/>
+        <image name="占位.png" width="109" height="106"/>
         <image name="暂停.png" width="64" height="64"/>
     </resources>
 </document>
