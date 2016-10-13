@@ -148,9 +148,10 @@
 //初始化数据
 -(void) initView{
     
-    if (!self.arrData) {
-        self.arrData = @[_list.title,_list.title,_list.title];
-    }
+    
+    self.arrData = @[_list.title,_list.title,_list.title];
+    NSLog(@"_____%@",_list.title);
+
     
     //文字滚动
     [self initScrollText];

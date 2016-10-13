@@ -59,9 +59,9 @@ static NSString *detailListCell = @"detailListCell";
 {
     //    导航栏变为透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    //    让黑线消失的方法
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
-    
+//    //    让黑线消失的方法
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+//    
     //设置导航栏透明度
     
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
