@@ -30,6 +30,14 @@
 		3F1644B71DAE59FA006A3FCF /* VedioModelVedioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1644B61DAE59FA006A3FCF /* VedioModelVedioModel.m */; settings = {ASSET_TAGS = (); }; };
 		3F18D69D1DAF7A810081E40D /* WeherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D69B1DAF7A810081E40D /* WeherCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F18D69E1DAF7A810081E40D /* WeherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D69C1DAF7A810081E40D /* WeherCollectionViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F18D6A31DAFAA4A0081E40D /* 多云.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D69F1DAFAA4A0081E40D /* 多云.png */; settings = {ASSET_TAGS = (); }; };
+		3F18D6A51DAFAA4A0081E40D /* 晴.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6A11DAFAA4A0081E40D /* 晴.png */; settings = {ASSET_TAGS = (); }; };
+		3F18D6A61DAFAA4A0081E40D /* 雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6A21DAFAA4A0081E40D /* 雨.png */; settings = {ASSET_TAGS = (); }; };
+		3F18D6A81DAFAFD10081E40D /* 蓝天.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6A71DAFAFD10081E40D /* 蓝天.jpg */; settings = {ASSET_TAGS = (); }; };
+		3F18D6AA1DAFBC190081E40D /* 阴.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6A91DAFBC190081E40D /* 阴.png */; settings = {ASSET_TAGS = (); }; };
+		3F18D6AD1DAFC2530081E40D /* GetxingqiDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D6AC1DAFC2530081E40D /* GetxingqiDay.m */; settings = {ASSET_TAGS = (); }; };
+		3F18D6AF1DAFC9B00081E40D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D6AE1DAFC9B00081E40D /* CoreLocation.framework */; };
+		3F18D6B11DAFC9B60081E40D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D6B01DAFC9B60081E40D /* MapKit.framework */; };
 		3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62A81DAF311B008779A0 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -224,6 +232,15 @@
 		3F18D69A1DAF7A810081E40D /* WeherCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeherCollectionViewCell.h; sourceTree = "<group>"; };
 		3F18D69B1DAF7A810081E40D /* WeherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeherCollectionViewCell.m; sourceTree = "<group>"; };
 		3F18D69C1DAF7A810081E40D /* WeherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeherCollectionViewCell.xib; sourceTree = "<group>"; };
+		3F18D69F1DAFAA4A0081E40D /* 多云.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "多云.png"; sourceTree = "<group>"; };
+		3F18D6A11DAFAA4A0081E40D /* 晴.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "晴.png"; sourceTree = "<group>"; };
+		3F18D6A21DAFAA4A0081E40D /* 雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "雨.png"; sourceTree = "<group>"; };
+		3F18D6A71DAFAFD10081E40D /* 蓝天.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "蓝天.jpg"; sourceTree = "<group>"; };
+		3F18D6A91DAFBC190081E40D /* 阴.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阴.png"; sourceTree = "<group>"; };
+		3F18D6AB1DAFC2530081E40D /* GetxingqiDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetxingqiDay.h; sourceTree = "<group>"; };
+		3F18D6AC1DAFC2530081E40D /* GetxingqiDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetxingqiDay.m; sourceTree = "<group>"; };
+		3F18D6AE1DAFC9B00081E40D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3F18D6B01DAFC9B60081E40D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3F1C62A81DAF311B008779A0 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位图.png"; sourceTree = "<group>"; };
 		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
 		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
@@ -474,6 +491,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F18D6B11DAFC9B60081E40D /* MapKit.framework in Frameworks */,
+				3F18D6AF1DAFC9B00081E40D /* CoreLocation.framework in Frameworks */,
 				3FA2244D1DAF29690035099A /* libAPIStoreSDK.a in Frameworks */,
 				3FA6ABAD1D9D3BB4009D5B67 /* WebKit.framework in Frameworks */,
 				403D4CABCEF43A9B1EBAB6A1 /* libPods-ProjectB.a in Frameworks */,
@@ -844,6 +863,10 @@
 				3F4B2B051DAE40C300E07143 /* 全屏.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F4B2AC81DAD09CA00E07143 /* 播放.png */,
+				3F18D69F1DAFAA4A0081E40D /* 多云.png */,
+				3F18D6A11DAFAA4A0081E40D /* 晴.png */,
+				3F18D6A21DAFAA4A0081E40D /* 雨.png */,
+				3F18D6A91DAFBC190081E40D /* 阴.png */,
 				3FA224221DAE726F0035099A /* 占位.png */,
 				3F4B2AC91DAD09CA00E07143 /* 暂停.png */,
 				3F4B2AC21DAD072400E07143 /* 下一首.png */,
@@ -861,6 +884,7 @@
 				3F4B2AD51DADE0F600E07143 /* 粉.jpeg */,
 				3F1C62A81DAF311B008779A0 /* 占位图.png */,
 				3F799A2C1D9E51DA009DAF97 /* green.jpg */,
+				3F18D6A71DAFAFD10081E40D /* 蓝天.jpg */,
 				3F799A2D1D9E51DA009DAF97 /* hailan.jpeg */,
 				3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */,
 				3F799A351D9E53E0009DAF97 /* 4.jpg */,
@@ -933,6 +957,8 @@
 				3F4B2ACD1DAD19B500E07143 /* RadioPlayerManager.m */,
 				3F4B2AFC1DAE38DB00E07143 /* UINavigationBar+Other.h */,
 				3F4B2AFD1DAE38DB00E07143 /* UINavigationBar+Other.m */,
+				3F18D6AB1DAFC2530081E40D /* GetxingqiDay.h */,
+				3F18D6AC1DAFC2530081E40D /* GetxingqiDay.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -1167,6 +1193,8 @@
 		8F838638800B8B98F8DB260C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F18D6B01DAFC9B60081E40D /* MapKit.framework */,
+				3F18D6AE1DAFC9B00081E40D /* CoreLocation.framework */,
 				3FA6ABAC1D9D3BB4009D5B67 /* WebKit.framework */,
 				29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */,
 			);
@@ -1234,6 +1262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F18D6A81DAFAFD10081E40D /* 蓝天.jpg in Resources */,
 				3F4B2A811DABB8DD00E07143 /* RadioPlayViewController.xib in Resources */,
 				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
 				3F1F15711DA9E09200ACFF18 /* BeautyCell.xib in Resources */,
@@ -1245,8 +1274,11 @@
 				3F2539541D9BFB460072831B /* 新闻.png in Resources */,
 				3F1F158F1DA9E39400ACFF18 /* VedioMainController.xib in Resources */,
 				3F4B2AC71DAD07C900E07143 /* 上首 .png in Resources */,
+				3F18D6A51DAFAA4A0081E40D /* 晴.png in Resources */,
 				3F1F157E1DA9E0AD00ACFF18 /* PictureViewController.xib in Resources */,
 				3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */,
+				3F18D6AA1DAFBC190081E40D /* 阴.png in Resources */,
+				3F18D6A61DAFAA4A0081E40D /* 雨.png in Resources */,
 				3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */,
 				3F799A301D9E51DA009DAF97 /* green.jpg in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
@@ -1284,6 +1316,7 @@
 				3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F4B2AD61DADE0F600E07143 /* 粉.jpeg in Resources */,
+				3F18D6A31DAFAA4A0081E40D /* 多云.png in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */,
 				3F1F15911DA9F21800ACFF18 /* POContentView.xib in Resources */,
@@ -1386,6 +1419,7 @@
 				3F1644981DAE5817006A3FCF /* VedioModelAd.m in Sources */,
 				3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */,
 				3F1F155B1DA9E04E00ACFF18 /* RadioDetailListUser.m in Sources */,
+				3F18D6AD1DAFC2530081E40D /* GetxingqiDay.m in Sources */,
 				3F1F15851DA9E0C500ACFF18 /* POPopupOverlayer.m in Sources */,
 				3F4B2AB01DACEA9300E07143 /* BarButtomViewController.m in Sources */,
 				3F7999FD1D9E485B009DAF97 /* T1441074311424.m in Sources */,

@@ -10,9 +10,13 @@
 #import "ApiStoreSDK.h"
 #import "WeatherDataModels.h"
 #import "WeherCollectionViewCell.h"
+#import "GetxingqiDay.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 
-@interface RightWeatherController ()
+
+@interface RightWeatherController ()<CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *temLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -29,6 +33,8 @@
 
 @property(nonatomic,strong)WeatherBaseClass *base;
 @property(nonatomic,strong)NSArray *dailyArr;
+//定位管理器
+@property(nonatomic,strong)CLLocationManager *manager;
 
 @end
 
@@ -39,11 +45,58 @@
     // Do any additional setup after loading the view from its nib.
     
     //1.定位
+    [self locate];
     //2.请求数据显示UI
-    [self requestData];
     [self initUI];
+    [self requestData];
+    
+    
     
 }
+
+#pragma mark 定位
+-(void)locate
+{
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
+        return;
+    }
+    //如果没有授权则请求用户授权
+    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+        [self.manager requestWhenInUseAuthorization];
+        
+    }
+    //开启定位
+    [self.manager startUpdatingLocation];
+
+}
+
+-(CLLocationManager *)manager
+{
+    if (!_manager) {
+        _manager = [[CLLocationManager alloc]init];
+        //更新最小距离
+        _manager.distanceFilter = 100;
+        //精度
+        _manager.desiredAccuracy = kCLLocationAccuracyBest;
+        //设置代理
+        _manager.delegate = self;
+    }
+    return _manager;
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    //取出最后一次位置
+    //CLLocation里包含位置信息
+    CLLocation *location = locations.lastObject;
+    
+    NSLog(@"经度:%f,纬度:%f,海拔:%f,航向:%f,行走速度:%f",location.coordinate.longitude,location.coordinate.latitude,location.altitude,location.course,location.speed);
+    [self.manager stopUpdatingLocation];
+    
+}
+
 
 #pragma mark 请求数据
 -(void)requestData
@@ -89,9 +142,17 @@
 -(void)initUI
 {
     //背景图片
-//    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hailan.jpeg"]];
-//    imageview.frame = [UIScreen mainScreen].bounds;
-//    [self.view insertSubview:imageview atIndex:0];
+    UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"蓝天.jpg"]];
+    imageview.frame = [UIScreen mainScreen].bounds;
+    [self.view insertSubview:imageview atIndex:0];
+    
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    
+    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+    
+    effectview.frame = [UIScreen mainScreen].bounds;
+    
+    [self.view insertSubview:effectview atIndex:1];
     
     //collectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
@@ -112,7 +173,8 @@
   
     _sevenDayCollView.collectionViewLayout = flowLayout;
     [_sevenDayCollView registerNib:[UINib nibWithNibName:@"WeherCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"WeherCollectionViewCell"];
-    _sevenDayCollView.backgroundColor = [UIColor redColor];
+    _sevenDayCollView.backgroundColor = [UIColor clearColor];
+    
     
 }
 
@@ -121,22 +183,46 @@
     WeatherHeWeatherDataService30 *service = _base.heWeatherDataService30[0];
     self.dailyArr = service.dailyForecast;
     
-    _temLabel.text = service.now.tmp;
+    _temLabel.text = [NSString stringWithFormat:@"%@°",service.now.tmp];
     _locLabel.text = service.basic.city;
-    _timeLabel.text = service.basic.update.loc;
-//    _coverImg
-    _stateLabel.text = service.now.cond.txt;
     
+    //星期
+    NSString *time = [service.basic.update.loc substringToIndex:9];
+    NSString *day =  [[GetxingqiDay defaultDay] featureWeekdayWithDate:time];
+    _timeLabel.text = day;
+    
+     _stateLabel.text = service.now.cond.txt;
     WeatherDailyForecast *daily = service.dailyForecast[0];
-    _HighLowTemLabel.text = [NSString stringWithFormat:@"%@/%@",daily.tmp.max,daily.tmp.min];
+    _HighLowTemLabel.text = [NSString stringWithFormat:@"%@°/%@°",daily.tmp.max,daily.tmp.min];
     _PMLabel.text = [NSString stringWithFormat:@"PM2.5 %@ %@",service.aqi.city.pm25,service.aqi.city.qlty];
     _windLabel.text = service.now.wind.dir;
-//    _sevenDayCollView
+    //    _sevenDayCollView
     _wearingLabel.text = [NSString stringWithFormat:@"穿衣指数: %@",service.suggestion.drsg.brf];
     _wearingDetailLabel.text = service.suggestion.drsg.txt;
     _coughLabel.text = [NSString stringWithFormat:@"感冒指数: %@",service.suggestion.flu.brf];
     _coughDetailLabel.text = service.suggestion.flu.txt;
     
+//    _coverImg
+    if ([service.now.cond.txt isEqualToString: @"多云"] )
+    {
+        _coverImg.image = [UIImage imageNamed:@"多云"];
+        return;
+    }
+    if ([service.now.cond.txt isEqualToString: @"霾"] || [service.now.cond.txt isEqualToString: @"阴"]) {
+        _coverImg.image = [UIImage imageNamed:@"阴"];
+        return;
+    }
+    if ([service.now.cond.txt isEqualToString: @"大雨"] ||[service.now.cond.txt isEqualToString: @"中雨"] ||[service.now.cond.txt isEqualToString: @"小雨"]  )
+    {
+        _coverImg.image = [UIImage imageNamed:@"雨"];
+        return;
+    }
+    if ([service.now.cond.txt isEqualToString: @"晴"]) {
+        _coverImg.image = [UIImage imageNamed:@"晴"];
+        return;
+    }
+    
+
 }
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
@@ -174,7 +260,7 @@
 {
     WeherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"WeherCollectionViewCell" forIndexPath:indexPath];
     cell.model = _dailyArr[indexPath.row + 1];
-    
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
@@ -193,6 +279,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
