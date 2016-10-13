@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yau-LA-YUG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yau-LA-YUG">
                         <rect key="frame" x="10" y="5" width="70" height="70"/>
                         <animations/>
                         <constraints>
@@ -111,6 +111,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="占位.png" width="109" height="106"/>
         <image name="播放orange.png" width="16" height="16"/>
         <image name="时钟.png" width="16" height="16"/>
     </resources>

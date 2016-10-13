@@ -8,6 +8,7 @@
 
 #import "LeftSettingController.h"
 #import "AppDelegate.h"
+#import "SDImageCache.h"
 
 
 
@@ -51,9 +52,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _array = @[@"主页",@"本地", @"清理缓存", @"设置",@"关于"];
+    _array = @[@"主页",@"清理缓存",@"关于"];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"sugar"];
     self.tableView.delegate = self;
@@ -70,17 +71,17 @@
     
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"red.jpg"]];
     imageview.userInteractionEnabled = YES;
-    imageview.contentMode = UIViewContentModeScaleAspectFit;
+//    imageview.contentMode = UIViewContentModeScaleAspectFit;
     imageview.frame = [UIScreen mainScreen].bounds;
     [self.view insertSubview:imageview belowSubview:_tableView];
     
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    
-    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
-    
-    effectview.frame = [UIScreen mainScreen].bounds;
-    
-    [self.view insertSubview:effectview aboveSubview:imageview];
+//    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    
+//    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+//    
+//    effectview.frame = [UIScreen mainScreen].bounds;
+//    
+//    [self.view insertSubview:effectview aboveSubview:imageview];
     //把tableView和cell改透明
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.separatorColor = [UIColor whiteColor];
@@ -100,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 5;
+    return 3;
 }
 
 
@@ -137,20 +138,62 @@
             break;
         case 1://电台
         {
-           // vc = [RadioViewController new];
+            CGFloat cacheM = [[SDImageCache sharedImageCache]getSize]/1024/1024.0;
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.label.text = NSLocalizedString(@"清理中...", @"HUD loading title");
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [hud hideAnimated:YES];
+                
+            
+            [[SDImageCache sharedImageCache]clearDisk];
+            //推出警告框
+           
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"已为你清理%.2fM缓存",cacheM]  preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
+            
+        //UIAlertControllerStyleAlert 是居中显示的文本框
+        UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
+            //UIAlertActionStyleDestructive 红色
+            //UIAlertActionStyleDefault 蓝色
+            //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
+            //是点击确定时的操作
+            
+        }];
+        [alertVC addAction:queren];
+        
+        
+        //推出警告框
+        [self presentViewController:alertVC animated:YES completion:nil];
+        });
+            
+            
         }
             break;
         case 2://话题
         {
             //vc =  [TopicViewController new];
-        }
-            break;
-        case 3://良品
-        {
-           // vc = [GoodsViewController new];
-        }
-            break;
+            //推出警告框
             
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"关于" message:[NSString stringWithFormat:@"来自瓶子和蠢欢,么么哒😘"]  preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
+            
+            //UIAlertControllerStyleAlert 是居中显示的文本框
+            UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
+                //UIAlertActionStyleDestructive 红色
+                //UIAlertActionStyleDefault 蓝色
+                //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
+                //是点击确定时的操作
+                
+            }];
+            [alertVC addAction:queren];
+            
+            
+            //推出警告框
+            [self presentViewController:alertVC animated:YES completion:nil];
+        }
+            break;
+        
         default:
             break;
     }

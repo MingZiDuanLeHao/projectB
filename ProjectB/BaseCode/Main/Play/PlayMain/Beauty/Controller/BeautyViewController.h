@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface BeautyViewController : UIViewController
+@interface BeautyViewController : BarButtomViewController
 
 @end

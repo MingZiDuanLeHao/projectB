@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="394" height="106"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aP7-KN-E4g">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="aP7-KN-E4g">
                         <rect key="frame" x="10" y="5" width="75" height="75"/>
                         <animations/>
                         <constraints>
@@ -121,6 +121,7 @@
     </objects>
     <resources>
         <image name="剧集.png" width="16" height="16"/>
+        <image name="占位.png" width="109" height="106"/>
         <image name="播放red.png" width="16" height="16"/>
     </resources>
 </document>

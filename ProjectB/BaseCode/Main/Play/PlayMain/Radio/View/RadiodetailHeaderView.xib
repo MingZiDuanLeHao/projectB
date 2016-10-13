@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-88-dZ3">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位.png" translatesAutoresizingMaskIntoConstraints="NO" id="uOz-88-dZ3">
                     <rect key="frame" x="10" y="10" width="100" height="100"/>
                     <animations/>
                     <constraints>
@@ -86,6 +86,6 @@
         </view>
     </objects>
     <resources>
-        <image name="1.jpg" width="510" height="510"/>
+        <image name="占位.png" width="109" height="106"/>
     </resources>
 </document>

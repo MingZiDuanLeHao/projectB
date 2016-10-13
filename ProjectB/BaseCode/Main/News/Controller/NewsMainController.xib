@@ -26,6 +26,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-Fc-wpX">
                     <rect key="frame" x="0.0" y="40" width="320" height="528"/>
                     <animations/>
+                    <color key="backgroundColor" red="0.84614139795303345" green="0.29619252681732178" blue="0.26857846975326538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </scrollView>
             </subviews>
             <animations/>

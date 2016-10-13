@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface PictureViewController : UIViewController
+@interface PictureViewController : BarButtomViewController
 
 @end
