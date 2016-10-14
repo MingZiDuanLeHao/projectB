@@ -210,7 +210,7 @@
     flowLayout.minimumInteritemSpacing = 200;
     
     //设置每个Item的行间距(默认是10)
-    flowLayout.minimumLineSpacing = (SWidth*3/4 - 60*3 - 50)/2 ;
+    flowLayout.minimumLineSpacing = (280 - 60*3 - 50)/2 ;
     
     //设置collection的Item距离屏幕上左下右间距
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);

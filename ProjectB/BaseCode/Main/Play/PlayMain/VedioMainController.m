@@ -43,22 +43,22 @@
 {
     self.title = @"视听";
     
-    UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64-44)/2)];
+    UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64-46)/2)];
     img1.image = [UIImage imageNamed:@"blue.jpg"];
     img1.tag = 100;
     [self.view addSubview:img1];
     
-    UIImageView *img2 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, 64, SWidth/2, (SHeight - 64 - 44)/2)];
+    UIImageView *img2 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, 64, SWidth/2, (SHeight - 64 - 46)/2)];
         img2.tag = 101;
     img2.image = [UIImage imageNamed:@"black.jpg"];
     [self.view addSubview:img2];
     
-    UIImageView *img3 = [[UIImageView alloc]initWithFrame:CGRectMake(0, (SHeight - 64)/2 +64-22, SWidth/2, (SHeight - 64 - 44)/2)];
+    UIImageView *img3 = [[UIImageView alloc]initWithFrame:CGRectMake(0, (SHeight - 64)/2 +64-23, SWidth/2, (SHeight - 64 - 46)/2)];
             img3.tag = 103;
     img3.image = [UIImage imageNamed:@"hailan.jpeg"];
     [self.view addSubview:img3];
     
-    UIImageView *img4 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, (SHeight - 64)/2 +64-22, SWidth/2, (SHeight - 64-44)/2)];
+    UIImageView *img4 = [[UIImageView alloc]initWithFrame:CGRectMake(SWidth/2, (SHeight - 64)/2 +64-23, SWidth/2, (SHeight - 64-46)/2)];
             img4.tag = 104;
     img4.image = [UIImage imageNamed:@"red.jpg"];
     [self.view addSubview:img4];
@@ -72,25 +72,36 @@
     img3.userInteractionEnabled = YES;
     img4.userInteractionEnabled = YES;
     
-    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64)/4)-40, 80, 80)];
-    label1.font = [UIFont systemFontOfSize:30];
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64-46)/4)-40, 80, 80)];
     label1.textAlignment = NSTextAlignmentCenter;
     label1.textColor = [UIColor redColor];
+    label1.font = [UIFont systemFontOfSize:30];
     label1.text = @"视频";
+//    NSString *str = @"视频";
+//    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString: str];
+    
+//    [attributedStr addAttribute: NSFontAttributeName value: [UIFont fontWithName: @"Zapfino" size:50] range: NSMakeRange(0, label1.text.length)];
+//    label1.attributedText = attributedStr;
     [img1 addSubview:label1];
-    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64)/4)-40, 80, 80)];
+    
+    
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64-46)/4)-40, 80, 80)];
     label2.font = [UIFont systemFontOfSize:30];
     label2.textAlignment = NSTextAlignmentCenter;
-    label2.text = @"尤物";
+    label2.text = @"可人";
     label2.textColor = [UIColor whiteColor];
     [img2 addSubview:label2];
-    UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64) /4)-40, 80, 80)];
+    
+    
+    UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64-46) /4)-40, 80, 80)];
     label3.font = [UIFont systemFontOfSize:30];
     label3.textAlignment = NSTextAlignmentCenter;
     label3.textColor = [UIColor blueColor];
     label3.text = @"搞笑";
     [img3 addSubview:label3];
-    UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64)/4)-40, 80, 80)];
+    
+    
+    UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 40, ((SHeight - 64-46)/4)-40, 80, 80)];
     label4.font = [UIFont systemFontOfSize:30];
     label4.textAlignment = NSTextAlignmentCenter;
     label4.text = @"电台";

@@ -207,9 +207,9 @@
     self.leftButton.titleLabel.font = [UIFont systemFontOfSize:24];
     self.leftButton.layer.cornerRadius = 48/2.;
     self.leftButton.layer.borderWidth = 1.f;
-    self.leftButton.layer.borderColor = [[UIColor redColor] CGColor];
-    [[self leftButton] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [[self leftButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    self.leftButton.layer.borderColor = [[UIColor blackColor] CGColor];
+    [[self leftButton] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [[self leftButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [[self leftButton] setTitle:@"L" forState:UIControlStateNormal];
     [[self leftButton] addTarget:self action:@selector(didClickleft:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -217,9 +217,9 @@
     self.rightButton.titleLabel.font = [UIFont systemFontOfSize:24];
     self.rightButton.layer.cornerRadius = 48/2.;
     self.rightButton.layer.borderWidth = 1.f;
-    self.rightButton.layer.borderColor = [[UIColor redColor] CGColor];
-    [[self rightButton] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [[self rightButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
+    self.rightButton.layer.borderColor = [[UIColor blackColor] CGColor];
+    [[self rightButton] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [[self rightButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [[self rightButton] setTitle:@"R" forState:UIControlStateNormal];
     [[self rightButton] addTarget:self action:@selector(didClickright:) forControlEvents:UIControlEventTouchUpInside];
     
