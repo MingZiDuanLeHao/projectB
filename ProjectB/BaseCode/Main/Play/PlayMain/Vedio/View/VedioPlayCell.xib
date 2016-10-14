@@ -68,7 +68,9 @@
                         <state key="normal" title="111" image="鼓掌.png">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <state key="highlighted" image="鼓掌2.png"/>
+                        <state key="highlighted" title="qqq">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                     </button>
                 </subviews>
                 <animations/>
@@ -132,6 +134,5 @@
         <image name="便便.png" width="32" height="32"/>
         <image name="评论.png" width="32" height="32"/>
         <image name="鼓掌.png" width="32" height="32"/>
-        <image name="鼓掌2.png" width="128" height="128"/>
     </resources>
 </document>
