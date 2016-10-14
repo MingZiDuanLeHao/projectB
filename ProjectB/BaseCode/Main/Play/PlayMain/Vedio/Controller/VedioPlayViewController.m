@@ -35,6 +35,7 @@ static NSString *cellID = @"playCell";
 @property (nonatomic, assign) BOOL isFirstEnter;
 @property (nonatomic, assign) BOOL isSmallScreen;
 @property (nonatomic, assign) BOOL isFinish;
+@property (nonatomic, strong) NSString *groupID;
 
 @end
 
@@ -224,6 +225,7 @@ static NSString *cellID = @"playCell";
     //赞  踩  评论
     NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
     NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+        self.groupID = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
     NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
 
     cell.zanBtn.layer.cornerRadius = 4;
@@ -313,7 +315,11 @@ static NSString *cellID = @"playCell";
     VedioDetailController *detailVC = [VedioDetailController new];
     detailVC.index = index;
     detailVC.dataArray = self.dataArray;
+   // NSDictionary *dic = self.dataArray[index][@"group"];
 
+
+//    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
+    detailVC.groupID = self.groupID;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

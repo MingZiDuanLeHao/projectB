@@ -14,6 +14,7 @@
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @property(nonatomic,strong) NSMutableArray *hightArray;
 @property(nonatomic,strong) NSString *vedioUrl;
+@property(nonatomic,strong) NSString *groupID;
 
 
 @end
