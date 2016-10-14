@@ -13,6 +13,7 @@
 #import "GetxingqiDay.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "NSString+Utils.h"
 
 
 
@@ -48,11 +49,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    //1.定位
-//    [self locate];
-//    //2.请求数据显示UI
-//    [self initUI];
-//    [self requestData];
+    //1.定位
+    [self locate];
+    //2.请求数据显示UI
+    [self initUI];
+    
     
     
     
@@ -109,16 +110,18 @@
     //取出最后一次位置
     //CLLocation里包含位置信息
     _location = locations.lastObject;
-    [self regeocoordinate:CLLocationCoordinate2DMake(_location.coordinate.longitude, _location.coordinate.longitude)];
+    [self regeocoordinate:CLLocationCoordinate2DMake(_location.coordinate.longitude, _location.coordinate.latitude)];
+//    [self regeocoordinate:CLLocationCoordinate2DMake(23.177464, 113.340540)];
+
 //
     [self.manager stopUpdatingLocation];
+    NSLog(@"定位成功");
     
 }
 
 //把经纬度转化为CLLlocation位置信息  反编码
 -(void)regeocoordinate:(CLLocationCoordinate2D)coor
 {
-    
     CLLocation *location = [[CLLocation alloc]initWithLatitude:coor.latitude longitude:coor.longitude];
     [self.geo reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         //如果有错误
@@ -131,6 +134,10 @@
         CLPlacemark *placemark = placemarks.firstObject;
         //遍历其属性addressDictionary这个字典
         _placeName =  [placemark.addressDictionary objectForKey:@"City"];
+        _placeName = [_placeName pinyin];
+        _placeName = [_placeName substringToIndex:_placeName.length-3];
+        [self requestData];
+       
         
     }];
 }
@@ -198,20 +205,23 @@
     flowLayout.itemSize = CGSizeMake(60, 89);
     
     //设置每个Item的间距(默认是10)
-    flowLayout.minimumInteritemSpacing = (SWidth - 350)/2;
+    flowLayout.minimumInteritemSpacing = 200;
     
     //设置每个Item的行间距(默认是10)
-    flowLayout.minimumLineSpacing = 10.0;
+    flowLayout.minimumLineSpacing = (SWidth*3/4 - 60*3 - 50)/2 ;
     
     //设置collection的Item距离屏幕上左下右间距
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);
     
     //滑动方向
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal ;
   
     _sevenDayCollView.collectionViewLayout = flowLayout;
     [_sevenDayCollView registerNib:[UINib nibWithNibName:@"WeherCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"WeherCollectionViewCell"];
     _sevenDayCollView.backgroundColor = [UIColor clearColor];
+    
+    
+    _sevenDayCollView.showsHorizontalScrollIndicator = NO;
     
     
 }
