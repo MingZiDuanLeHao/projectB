@@ -53,6 +53,13 @@ static NSString *cellID = @"playCell";
         self.navigationController.navigationBar.shadowImage=[UIImage new];
    
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.isFirstEnter = YES;
+    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=nil;
+}
 
 
 -(void)initUI
@@ -159,13 +166,7 @@ static NSString *cellID = @"playCell";
 }
 
 
--(void)viewWillAppear:(BOOL)animated
-{
-    self.isFirstEnter = YES;
-    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
-        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
-        self.navigationController.navigationBar.shadowImage=nil;
-}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self releaseWMPlayer];

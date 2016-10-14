@@ -39,14 +39,13 @@ static NSString *rightCell = @"rightCell";
     self.keywordId = 113;
     [self requestData];
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     
 }
 
 -(void)initUI
 {
-    [self.navigationController.navigationBar setValue:nil forKey:@"backgroundView"];
+    
     //左table
     self.leftTable.frame = CGRectMake(0, 64, 50, SHeight - 44);
     
@@ -90,11 +89,7 @@ static NSString *rightCell = @"rightCell";
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = item;
     
-    
-    //使导航栏透明
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
-//
+
     //毛玻璃
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rednavi.jpg"]];
     imageview.userInteractionEnabled = YES;
@@ -155,7 +150,7 @@ static NSString *rightCell = @"rightCell";
     [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
         if (data) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-           // NSLog(@"dic======%@",dic);
+           
             self.radioMain = [RadioMain modelObjectWithDictionary:dic];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_rightTable reloadData];
@@ -206,14 +201,7 @@ static NSString *rightCell = @"rightCell";
     }
     
 }
-//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (tableView == _leftTable) {
-//        cell.textLabel.textColor = [UIColor grayColor];
-//        
-//      
-//    }
-//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // 左边表格
    
@@ -239,8 +227,6 @@ static NSString *rightCell = @"rightCell";
         
         RadioMainRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightCell];
         
-        // 获得左边表格被选中的模型
-        //        XMGCategory *c = self.categories[self.categoryTableView.indexPathForSelectedRow.row];
         List *list = _radioMain.list[indexPath.row];
         [cell setDataWithModel:list];
         
@@ -265,7 +251,6 @@ static NSString *rightCell = @"rightCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-   // [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == _leftTable) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.textLabel.textColor = [UIColor redColor];

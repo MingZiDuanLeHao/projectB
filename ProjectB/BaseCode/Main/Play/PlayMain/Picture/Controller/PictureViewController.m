@@ -30,7 +30,7 @@
     self.navigationController.navigationBar.shadowImage=[UIImage new];
     self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"图片";
     
     _contentView.alpha = 0.5;
@@ -42,6 +42,10 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
+    
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=nil;
+    
 }
 //-(void)loadView{
 //    [super loadView];
