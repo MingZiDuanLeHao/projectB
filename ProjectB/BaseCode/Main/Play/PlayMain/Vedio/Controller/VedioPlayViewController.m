@@ -207,8 +207,9 @@ static NSString *cellID = @"playCell";
 
     cell.context.text = dic[@"text"];
     NSLog(@"!!!!!!!!!1%@",dic[@"digg_count"]);
-  //  [cell.dingBtn setTitle:dic[@"digg_count"] forState:UIControlStateNormal];
+//    [cell.zanBtn setTitle:dic[@"digg_count"] forState:UIControlStateNormal];
     //cell.dingBtn.titleLabel.text = dic[@"digg_count"];
+   
  
     cell.img.layer.cornerRadius = 4;
     cell.img.layer.borderWidth = 2;
@@ -257,6 +258,13 @@ static NSString *cellID = @"playCell";
    // [cell.screenView addGestureRecognizer:tapGesture];
 
     return cell;
+}
+
+//自定义button的方法
+-(void)initButton:(UIButton*)btn{
+    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
+    [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.imageView.frame.size.height ,-btn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0,0.0, -btn.titleLabel.bounds.size.width)];//图片距离右边框距离减少图片的宽度，其它不边
 }
 -(void)playOrPause:(UIButton*)sender
 {

@@ -55,7 +55,7 @@
     self.labelContent.layer.masksToBounds = YES;
     self.labelContent.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.labelContent.textAlignment = NSTextAlignmentCenter;
-    self.labelContent.backgroundColor = [UIColor grayColor];
+    self.labelContent.backgroundColor = [UIColor lightGrayColor];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [_popupOverlayer addGestureRecognizer:tapGesture];
@@ -207,8 +207,8 @@
     self.leftButton.titleLabel.font = [UIFont systemFontOfSize:24];
     self.leftButton.layer.cornerRadius = 48/2.;
     self.leftButton.layer.borderWidth = 1.f;
-    self.leftButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    [[self leftButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.leftButton.layer.borderColor = [[UIColor redColor] CGColor];
+    [[self leftButton] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [[self leftButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     [[self leftButton] setTitle:@"L" forState:UIControlStateNormal];
     [[self leftButton] addTarget:self action:@selector(didClickleft:) forControlEvents:UIControlEventTouchUpInside];
@@ -254,6 +254,7 @@
 
     }
 
+    view.backgroundColor = [UIColor lightGrayColor];
     //图片的边角
     view.layer.cornerRadius = 4;
     view.layer.borderWidth = 2;
@@ -309,20 +310,6 @@
        // [[SDImageCache sharedImageCache]clearDisk];
    // }
 
-    
-//    if (self.index1 == 0) {
-//        view.backgroundColor = [UIColor redColor];
-//        self.index1 ++;
-//    }else if (self.index1 == 1){
-//        view.backgroundColor = [UIColor blueColor];
-//                self.index1 ++;
-//    }else if (self.index1 == 2){
-//        view.backgroundColor = [UIColor yellowColor];
-//                self.index1 ++;
-//    }
-    
-
-      //  NSLog(@"=========%@ %@",self.imgView.image,view1.img.image);
 
     self.index = nIndex;
     

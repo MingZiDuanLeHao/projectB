@@ -27,7 +27,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"图片";
-       [self.view addSubview:self.contentView];
+    
+    _contentView.alpha = 0.5;
+    UIImageView *imaheV = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    imaheV.image = [UIImage imageNamed:@"蓝天.jpg"];
+    [self.view addSubview:self.contentView];
+   // [imaheV addSubview:self.contentView];
 }
 -(void)viewWillAppear:(BOOL)animated{
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
@@ -40,7 +45,7 @@
 - (POContentView *)contentView{
     if (!_contentView) {
         _contentView = [[POContentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _contentView.backgroundColor = [UIColor lightGrayColor];
+        _contentView.backgroundColor = [UIColor clearColor];
     }
     return _contentView;
 }

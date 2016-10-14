@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *context;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIView *screenView;
+@property (strong, nonatomic)  UIButton *zanBtn;
+@property (strong, nonatomic)  UIButton *caiBtn;
+@property (strong, nonatomic)  UIButton *commentBtn;
 
 @end

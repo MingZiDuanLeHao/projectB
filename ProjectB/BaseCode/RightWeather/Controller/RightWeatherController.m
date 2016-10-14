@@ -48,11 +48,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //1.定位
-    [self locate];
-    //2.请求数据显示UI
-    [self initUI];
-    [self requestData];
+//    //1.定位
+//    [self locate];
+//    //2.请求数据显示UI
+//    [self initUI];
+//    [self requestData];
     
     
     
