@@ -15,6 +15,7 @@
 #import "NHBaseImageView.h"
 #import "VedioDataModels.h"
 #import "MJRefresh.h"
+#import "VedioDetailController.h"
 
 static NSString *cellID = @"playCell";
 @interface VedioPlayViewController ()<WMPlayerDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -45,13 +46,25 @@ static NSString *cellID = @"playCell";
     [self requestData];
  
 }
+-(void)viewWillDisappear:(BOOL)animated
+{
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+   
+}
+
 
 -(void)initUI
 {
+//    [self.navigationController.navigationBar setColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor lightGrayColor]];
+    self.title = @"视频";
+    self.view.backgroundColor = [UIColor lightGrayColor];
    // self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableV.frame = CGRectMake(0, 0, SWidth, SHeight +64);
+    self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
     _tableV.delegate = self;
     _tableV.dataSource = self;
+    _tableV.backgroundColor = [UIColor whiteColor];
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
     
@@ -102,7 +115,7 @@ static NSString *cellID = @"playCell";
                 {
                 //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                    [self.dataArray addObject:dicGroup];
-                   [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 80) ];
+                   [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 90) ];
                 }
             }
           //  NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
@@ -135,8 +148,9 @@ static NSString *cellID = @"playCell";
                 });
             }
          //   }
-            
+        _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
 
+        
         
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
@@ -206,11 +220,39 @@ static NSString *cellID = @"playCell";
     NSArray *url_listArr = large_coverDic[@"url_list"];
 
     cell.context.text = dic[@"text"];
-    NSLog(@"!!!!!!!!!1%@",dic[@"digg_count"]);
-//    [cell.zanBtn setTitle:dic[@"digg_count"] forState:UIControlStateNormal];
-    //cell.dingBtn.titleLabel.text = dic[@"digg_count"];
-   
- 
+    
+    //赞  踩  评论
+    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
+    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+    NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
+
+    cell.zanBtn.layer.cornerRadius = 4;
+    cell.zanBtn.layer.borderWidth = 2;
+    cell.zanBtn.layer.masksToBounds = YES;
+    cell.zanBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    cell.caiBtn.layer.cornerRadius = 4;
+    cell.caiBtn.layer.borderWidth = 2;
+    cell.caiBtn.layer.masksToBounds = YES;
+    cell.caiBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    cell.commentBtn.layer.cornerRadius = 4;
+    cell.commentBtn.layer.borderWidth = 2;
+    cell.commentBtn.layer.masksToBounds = YES;
+    cell.commentBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    [cell.zanBtn setTitle:zan forState:UIControlStateNormal];
+    cell.caiBtn.tag = 1000000+indexPath.row;
+    cell.commentBtn.tag = 1100000+indexPath.row;
+    cell.zanBtn.tag = 1200000+indexPath.row;
+    [cell.zanBtn setImage:[UIImage imageNamed:@"鼓掌2"] forState:UIControlStateHighlighted];
+    [cell.caiBtn setTitle:cai forState:UIControlStateNormal];
+    [cell.commentBtn setTitle:comment forState:UIControlStateNormal];
+    
+    [cell.zanBtn addTarget:self action:@selector(ZanbuttonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.commentBtn addTarget:self action:@selector(commentbuttonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    
+ //图片设置边角
     cell.img.layer.cornerRadius = 4;
     cell.img.layer.borderWidth = 2;
     cell.img.layer.masksToBounds = YES;
@@ -259,13 +301,22 @@ static NSString *cellID = @"playCell";
 
     return cell;
 }
-
-//自定义button的方法
--(void)initButton:(UIButton*)btn{
-    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
-    [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.imageView.frame.size.height ,-btn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0,0.0, -btn.titleLabel.bounds.size.width)];//图片距离右边框距离减少图片的宽度，其它不边
+//点赞
+-(void)ZanbuttonHandle :(UIButton *)sender
+{
+    
 }
+//评论
+-(void)commentbuttonHandle :(UIButton *)sender
+{
+    NSInteger index =  sender.tag - 1200000;
+    VedioDetailController *detailVC = [VedioDetailController new];
+    detailVC.index = index;
+    detailVC.dataArray = self.dataArray;
+
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 -(void)playOrPause:(UIButton*)sender
 {
    // sender.tag  - 100

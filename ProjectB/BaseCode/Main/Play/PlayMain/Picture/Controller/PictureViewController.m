@@ -25,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"图片";
     
@@ -33,6 +38,7 @@
     imaheV.image = [UIImage imageNamed:@"蓝天.jpg"];
     [self.view addSubview:self.contentView];
    // [imaheV addSubview:self.contentView];
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;

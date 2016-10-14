@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BarButtomViewController.h"
 
-@interface VedioPlayViewController : UIViewController
+@interface VedioPlayViewController : BarButtomViewController
 
 @end

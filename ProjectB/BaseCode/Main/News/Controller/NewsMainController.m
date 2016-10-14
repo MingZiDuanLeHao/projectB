@@ -107,6 +107,8 @@
         [table registerNib:myNib forCellReuseIdentifier:@"NewsMainTableViewCell"];
         table.estimatedRowHeight = 70;
         table.rowHeight = UITableViewAutomaticDimension;
+        [table setSeparatorInset:UIEdgeInsetsZero];
+        [table setLayoutMargins:UIEdgeInsetsZero];
         table.tag = i + 200;
         [self.contentScrollView addSubview:table];
         
@@ -170,6 +172,9 @@
     cell.From.text = model.source;
     cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [cell setSeparatorInset:UIEdgeInsetsZero];
+    [cell setLayoutMargins:UIEdgeInsetsZero];
     
     return cell;
 }

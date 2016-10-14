@@ -92,7 +92,7 @@ static NSString *rightCell = @"rightCell";
     
     
     //使导航栏透明
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
     self.navigationController.navigationBar.shadowImage=[UIImage new];
 //
     //毛玻璃

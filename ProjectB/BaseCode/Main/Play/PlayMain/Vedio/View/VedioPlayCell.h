@@ -11,10 +11,13 @@
 @interface VedioPlayCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *context;
-@property (weak, nonatomic) IBOutlet UIButton *playBtn;
-@property (weak, nonatomic) IBOutlet UIView *screenView;
-@property (strong, nonatomic)  UIButton *zanBtn;
-@property (strong, nonatomic)  UIButton *caiBtn;
-@property (strong, nonatomic)  UIButton *commentBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *zanBtn;
+@property (weak, nonatomic) IBOutlet UIButton *caiBtn;
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+
+
+
+
 
 @end

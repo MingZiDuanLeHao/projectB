@@ -53,6 +53,8 @@
     [self locate];
     //2.请求数据显示UI
     [self initUI];
+    [self requestData];
+    
     
     
     
@@ -136,7 +138,7 @@
         _placeName =  [placemark.addressDictionary objectForKey:@"City"];
         _placeName = [_placeName pinyin];
         _placeName = [_placeName substringToIndex:_placeName.length-3];
-        [self requestData];
+        
        
         
     }];
@@ -147,7 +149,7 @@
 -(void)requestData
 {
     
-    NSString *city = _placeName ;
+    NSString *city = @"guangzhou" ;
     NSString *apikey = @"c184575a002af5fb6dee57adc1cca85c";
     
     //实例化一个回调，处理请求的返回值
