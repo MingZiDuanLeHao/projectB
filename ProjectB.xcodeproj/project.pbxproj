@@ -46,15 +46,19 @@
 		3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62A81DAF311B008779A0 /* 占位图.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62D81DAFB317008779A0 /* 下载1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62D61DAFB317008779A0 /* 下载1.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62D91DAFB317008779A0 /* 下载2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62D71DAFB317008779A0 /* 下载2.png */; settings = {ASSET_TAGS = (); }; };
-		3F1C62DE1DAFBC46008779A0 /* 鼓掌2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62DC1DAFBC46008779A0 /* 鼓掌2.png */; settings = {ASSET_TAGS = (); }; };
-		3F1C62DF1DAFBC46008779A0 /* 鼓掌1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62DD1DAFBC46008779A0 /* 鼓掌1.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62E11DAFBED9008779A0 /* 鼓掌.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62E01DAFBED9008779A0 /* 鼓掌.png */; settings = {ASSET_TAGS = (); }; };
-		3F1C62E41DAFC51B008779A0 /* 便便2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62E21DAFC51B008779A0 /* 便便2.png */; settings = {ASSET_TAGS = (); }; };
-		3F1C62E81DAFC528008779A0 /* 评论2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62E61DAFC528008779A0 /* 评论2.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62F31DB07B3A008779A0 /* 便便.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62F21DB07B3A008779A0 /* 便便.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62F51DB09CB9008779A0 /* 评论.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62F41DB09CB9008779A0 /* 评论.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C62F91DB0A221008779A0 /* VedioDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C62F71DB0A221008779A0 /* VedioDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		3F1C62FA1DB0A221008779A0 /* VedioDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C62F81DB0A221008779A0 /* VedioDetailController.xib */; settings = {ASSET_TAGS = (); }; };
+		3F1C63071DB0BB41008779A0 /* VedioConmmentModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C62FD1DB0BB41008779A0 /* VedioConmmentModelData.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C63081DB0BB41008779A0 /* VedioConmmentModelRecentComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63001DB0BB41008779A0 /* VedioConmmentModelRecentComments.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C63091DB0BB41008779A0 /* VedioConmmentModelReplyComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63021DB0BB41008779A0 /* VedioConmmentModelReplyComments.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C630A1DB0BB41008779A0 /* VedioConmmentModelTopComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63041DB0BB41008779A0 /* VedioConmmentModelTopComments.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C630B1DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63061DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C630F1DB0BC7B008779A0 /* 便便2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630C1DB0BC7A008779A0 /* 便便2.png */; settings = {ASSET_TAGS = (); }; };
+		3F1C63101DB0BC7B008779A0 /* 鼓掌2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */; settings = {ASSET_TAGS = (); }; };
+		3F1C63111DB0BC7B008779A0 /* 评论2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630E1DB0BC7B008779A0 /* 评论2.png */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
@@ -267,16 +271,26 @@
 		3F1C62A81DAF311B008779A0 /* 占位图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "占位图.png"; sourceTree = "<group>"; };
 		3F1C62D61DAFB317008779A0 /* 下载1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下载1.png"; sourceTree = "<group>"; };
 		3F1C62D71DAFB317008779A0 /* 下载2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下载2.png"; sourceTree = "<group>"; };
-		3F1C62DC1DAFBC46008779A0 /* 鼓掌2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鼓掌2.png"; sourceTree = "<group>"; };
-		3F1C62DD1DAFBC46008779A0 /* 鼓掌1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鼓掌1.png"; sourceTree = "<group>"; };
 		3F1C62E01DAFBED9008779A0 /* 鼓掌.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鼓掌.png"; sourceTree = "<group>"; };
-		3F1C62E21DAFC51B008779A0 /* 便便2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "便便2.png"; sourceTree = "<group>"; };
-		3F1C62E61DAFC528008779A0 /* 评论2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论2.png"; sourceTree = "<group>"; };
 		3F1C62F21DB07B3A008779A0 /* 便便.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "便便.png"; sourceTree = "<group>"; };
 		3F1C62F41DB09CB9008779A0 /* 评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论.png"; sourceTree = "<group>"; };
 		3F1C62F61DB0A221008779A0 /* VedioDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioDetailController.h; sourceTree = "<group>"; };
 		3F1C62F71DB0A221008779A0 /* VedioDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioDetailController.m; sourceTree = "<group>"; };
 		3F1C62F81DB0A221008779A0 /* VedioDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioDetailController.xib; sourceTree = "<group>"; };
+		3F1C62FC1DB0BB41008779A0 /* VedioConmmentModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelData.h; sourceTree = "<group>"; };
+		3F1C62FD1DB0BB41008779A0 /* VedioConmmentModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioConmmentModelData.m; sourceTree = "<group>"; };
+		3F1C62FE1DB0BB41008779A0 /* VedioConmmentModelDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelDataModels.h; sourceTree = "<group>"; };
+		3F1C62FF1DB0BB41008779A0 /* VedioConmmentModelRecentComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelRecentComments.h; sourceTree = "<group>"; };
+		3F1C63001DB0BB41008779A0 /* VedioConmmentModelRecentComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioConmmentModelRecentComments.m; sourceTree = "<group>"; };
+		3F1C63011DB0BB41008779A0 /* VedioConmmentModelReplyComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelReplyComments.h; sourceTree = "<group>"; };
+		3F1C63021DB0BB41008779A0 /* VedioConmmentModelReplyComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioConmmentModelReplyComments.m; sourceTree = "<group>"; };
+		3F1C63031DB0BB41008779A0 /* VedioConmmentModelTopComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelTopComments.h; sourceTree = "<group>"; };
+		3F1C63041DB0BB41008779A0 /* VedioConmmentModelTopComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioConmmentModelTopComments.m; sourceTree = "<group>"; };
+		3F1C63051DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioConmmentModelVedioConmmentModel.h; sourceTree = "<group>"; };
+		3F1C63061DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioConmmentModelVedioConmmentModel.m; sourceTree = "<group>"; };
+		3F1C630C1DB0BC7A008779A0 /* 便便2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "便便2.png"; sourceTree = "<group>"; };
+		3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鼓掌2.png"; sourceTree = "<group>"; };
+		3F1C630E1DB0BC7B008779A0 /* 评论2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论2.png"; sourceTree = "<group>"; };
 		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
 		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
 		3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayCell.xib; sourceTree = "<group>"; };
@@ -546,6 +560,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3F1C62FB1DB0BB41008779A0 /* VedioCommentModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F1C62FC1DB0BB41008779A0 /* VedioConmmentModelData.h */,
+				3F1C62FD1DB0BB41008779A0 /* VedioConmmentModelData.m */,
+				3F1C62FE1DB0BB41008779A0 /* VedioConmmentModelDataModels.h */,
+				3F1C62FF1DB0BB41008779A0 /* VedioConmmentModelRecentComments.h */,
+				3F1C63001DB0BB41008779A0 /* VedioConmmentModelRecentComments.m */,
+				3F1C63011DB0BB41008779A0 /* VedioConmmentModelReplyComments.h */,
+				3F1C63021DB0BB41008779A0 /* VedioConmmentModelReplyComments.m */,
+				3F1C63031DB0BB41008779A0 /* VedioConmmentModelTopComments.h */,
+				3F1C63041DB0BB41008779A0 /* VedioConmmentModelTopComments.m */,
+				3F1C63051DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.h */,
+				3F1C63061DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.m */,
+			);
+			path = VedioCommentModel;
+			sourceTree = "<group>";
+		};
 		3F1EBA221DAC848600C842D1 /* VedioModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +747,7 @@
 		3F1F15291DA9DDFB00ACFF18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F1C62FB1DB0BB41008779A0 /* VedioCommentModel */,
 				3F1644A61DAE58C3006A3FCF /* NHBaseImageView.h */,
 				3F1644A71DAE58C3006A3FCF /* NHBaseImageView.m */,
 				3F1644A81DAE58C3006A3FCF /* NHDownloadImageManager.h */,
@@ -904,12 +937,11 @@
 				3F25394C1D9BFB460072831B /* 外卖.png */,
 				3F4B2B051DAE40C300E07143 /* 全屏.png */,
 				3F1C62F21DB07B3A008779A0 /* 便便.png */,
-				3F1C62DC1DAFBC46008779A0 /* 鼓掌2.png */,
-				3F1C62DD1DAFBC46008779A0 /* 鼓掌1.png */,
 				3F1C62E01DAFBED9008779A0 /* 鼓掌.png */,
-				3F1C62E21DAFC51B008779A0 /* 便便2.png */,
-				3F1C62E61DAFC528008779A0 /* 评论2.png */,
 				3F1C62F41DB09CB9008779A0 /* 评论.png */,
+				3F1C630C1DB0BC7A008779A0 /* 便便2.png */,
+				3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */,
+				3F1C630E1DB0BC7B008779A0 /* 评论2.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
 				3F4B2AC81DAD09CA00E07143 /* 播放.png */,
 				3F18D69F1DAFAA4A0081E40D /* 多云.png */,
@@ -1339,12 +1371,13 @@
 				3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */,
 				3F18D6AA1DAFBC190081E40D /* 阴.png in Resources */,
 				3F18D6A61DAFAA4A0081E40D /* 雨.png in Resources */,
+				3F1C630F1DB0BC7B008779A0 /* 便便2.png in Resources */,
 				3F45A8E11D9BE28E00A83BB1 /* NewsMainController.xib in Resources */,
+				3F1C63111DB0BC7B008779A0 /* 评论2.png in Resources */,
 				3F799A301D9E51DA009DAF97 /* green.jpg in Resources */,
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F1F15DE1DAA77A800ACFF18 /* ReuseView.xib in Resources */,
 				3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */,
-				3F1C62DF1DAFBC46008779A0 /* 鼓掌1.png in Resources */,
 				3F1F15671DA9E06F00ACFF18 /* RedioDetailListCell.xib in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
@@ -1353,11 +1386,11 @@
 				3F18D6BA1DB070220081E40D /* 壁纸.jpg in Resources */,
 				3F4B2AD81DADE19200E07143 /* 粉1.jpg in Resources */,
 				3F1C62FA1DB0A221008779A0 /* VedioDetailController.xib in Resources */,
+				3F1C63101DB0BC7B008779A0 /* 鼓掌2.png in Resources */,
 				3F4B2B041DAE3C9600E07143 /* 返回.png in Resources */,
 				3F4B2AC31DAD072400E07143 /* 下一首.png in Resources */,
 				3F1C62E11DAFBED9008779A0 /* 鼓掌.png in Resources */,
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
-				3F1C62E81DAFC528008779A0 /* 评论2.png in Resources */,
 				3F9C0FA61DA9EFD700794EA0 /* RadiodetailHeaderView.xib in Resources */,
 				3F799A341D9E5286009DAF97 /* black.jpg in Resources */,
 				3F4B2A8B1DABBE8900E07143 /* 播放red.png in Resources */,
@@ -1365,12 +1398,10 @@
 				3F799A321D9E51DA009DAF97 /* rednavi.jpg in Resources */,
 				3F4B2ACA1DAD09CA00E07143 /* 播放.png in Resources */,
 				3F4B2A781DAB40FF00E07143 /* 剧集.png in Resources */,
-				3F1C62DE1DAFBC46008779A0 /* 鼓掌2.png in Resources */,
 				3F2539531D9BFB460072831B /* 外卖2.png in Resources */,
 				3F18D69E1DAF7A810081E40D /* WeherCollectionViewCell.xib in Resources */,
 				3F1F156C1DA9E08600ACFF18 /* BeautyViewController.xib in Resources */,
 				3F4B2AB91DACEF8600E07143 /* RadioPlayHeaderView.xib in Resources */,
-				3F1C62E41DAFC51B008779A0 /* 便便2.png in Resources */,
 				3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */,
 				3F1F15651DA9E06F00ACFF18 /* RadioMainRightTableCell.xib in Resources */,
 				3F4B2ACB1DAD09CA00E07143 /* 暂停.png in Resources */,
@@ -1476,17 +1507,20 @@
 				3F799A0F1D9E4864009DAF97 /* MainDetailAskbar.m in Sources */,
 				3F1644AF1DAE58C3006A3FCF /* NHBaseImageView.m in Sources */,
 				3F1F15561DA9E04E00ACFF18 /* RadioDetailListAlbum.m in Sources */,
+				3F1C63091DB0BB41008779A0 /* VedioConmmentModelReplyComments.m in Sources */,
 				3F1F158E1DA9E39400ACFF18 /* VedioMainController.m in Sources */,
 				3F1F15D91DAA61E500ACFF18 /* PictureModelPictureModel.m in Sources */,
 				3F7999A21D9E0AF1009DAF97 /* NewsDetailController.m in Sources */,
 				3F16449E1DAE5817006A3FCF /* VedioModelLogExtra.m in Sources */,
 				3FA2247F1DAF2F130035099A /* WeatherBasic.m in Sources */,
 				3F4B2A9F1DABD2E800E07143 /* RadioTwoBaseClass.m in Sources */,
+				3F1C630A1DB0BB41008779A0 /* VedioConmmentModelTopComments.m in Sources */,
 				3F7999FB1D9E485B009DAF97 /* BaseClass.m in Sources */,
 				3F16449A1DAE5817006A3FCF /* VedioModelData.m in Sources */,
 				3FA224831DAF2F130035099A /* WeatherCw.m in Sources */,
 				3F799A161D9E4864009DAF97 /* MainDetailVideo.m in Sources */,
 				3F1644991DAE5817006A3FCF /* VedioModelComments.m in Sources */,
+				3F1C63071DB0BB41008779A0 /* VedioConmmentModelData.m in Sources */,
 				3F18D6BD1DB074180081E40D /* NSString+Utils.m in Sources */,
 				3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */,
 				3F1F15661DA9E06F00ACFF18 /* RedioDetailListCell.m in Sources */,
@@ -1523,6 +1557,7 @@
 				3F1F157D1DA9E0AD00ACFF18 /* PictureViewController.m in Sources */,
 				3F4B2AA01DABD2E800E07143 /* RadioTwoData.m in Sources */,
 				3FA224861DAF2F130035099A /* WeatherFlu.m in Sources */,
+				3F1C63081DB0BB41008779A0 /* VedioConmmentModelRecentComments.m in Sources */,
 				3FA2248A1DAF2F130035099A /* WeatherSport.m in Sources */,
 				3F1F15401DA9DE8000ACFF18 /* RadioMainController.m in Sources */,
 				3F4B2AA81DABD72000E07143 /* RadioTwoCell.m in Sources */,
@@ -1543,6 +1578,7 @@
 				3F1644B31DAE58C3006A3FCF /* WMPlayer.m in Sources */,
 				3F1F15581DA9E04E00ACFF18 /* RadioDetailListList.m in Sources */,
 				3F799A141D9E4864009DAF97 /* MainDetailRelativeSys.m in Sources */,
+				3F1C630B1DB0BB41008779A0 /* VedioConmmentModelVedioConmmentModel.m in Sources */,
 				3F1F15811DA9E0BA00ACFF18 /* POContentView.m in Sources */,
 				3F25395F1D9CB3820072831B /* NetWorkRequest.m in Sources */,
 				3F4B2ACE1DAD19B500E07143 /* RadioPlayerManager.m in Sources */,

@@ -71,7 +71,59 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 -(void)requestData
 {
-    
+    NSString *UrlStr = [NSString stringWithFormat:@"http://isub.snssdk.com/neihan/comments/?iid=5593387628&os_version=9.3.3&os_api=18&app_name=joke_essay&channel=App%@Store&device_platform=iphone&idfa=9DE12873-6A67-4C26-8675-F2541AF47FB3&live_sdk_version=130&vid=4006D19B-01F8-4B64-9674-B9BC2016B99C&openudid=d6f8422354888bc5e7ca31764c250955439497ec&device_type=iPhone%@S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=3115037754&aid=7&count=20&device_id=3115037754&group_id=%@&offset=0&sort=hot&tag=joke",@"%20",@"%205",self.groupID];
+    //    NSLog(@"!!!!!!!!!!!!%@",UrlStr);
+    //转化一下,不然返回的data无法解析
+    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:GET URL:UrlStr para:nil success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+            NSLog(@"===========%@",dic);
+            NSArray *dataArr;
+            
+            //!!!!!为了去除广告 麻蛋
+            for (NSDictionary *dicGroup in dataArr) {
+                NSArray *arr = [dicGroup allKeys];
+                int W = [dicGroup[@"group"][@"video_width"] intValue];
+                int H = [dicGroup[@"group"][@"video_height"] intValue];
+                //求出字体的高度,也加在高度上
+                UILabel *label = [[UILabel alloc]init];
+                label.text = dicGroup[@"group"][@"text"];
+                //  NSLog(@"===========%@",label.text);
+                // label的字体 HelveticaNeue  Courier
+                UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
+                label.font = fnt;
+                label.numberOfLines = 0;
+                label.lineBreakMode = NSLineBreakByWordWrapping;
+                
+                CGRect tmpRect = [label.text boundingRectWithSize:CGSizeMake(SWidth - 10, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil] context:nil];
+//                if ([arr containsObject:@"ad"]&& W == 0) {
+//                    // NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+//                }else
+//                {
+//                    //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+//                    [self.dataArray addObject:dicGroup];
+//                    [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 90) ];
+//                }
+            }
+
+            
+            //   if (self.hightArray.count != 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_tableV reloadData];
+                [_tableV.mj_footer endRefreshing];
+            });
+        }
+        //   }
+        _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        
+        
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
+
 }
 
 #pragma mark - 懒加载
@@ -121,17 +173,17 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:vedioDetailCell];
     // VedioModelComments *model = self.modelData.data.data[indexPath.row];
-    
-    NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
-    NSDictionary *large_coverDic = dic[@"large_cover"];
-    NSArray *url_listArr = large_coverDic[@"url_list"];
-    
-    //cell.context.text = dic[@"text"];
-    
-    //赞  踩  评论
-    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
-    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
-    NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
+//    
+//    NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
+//    NSDictionary *large_coverDic = dic[@"large_cover"];
+//    NSArray *url_listArr = large_coverDic[@"url_list"];
+//    
+//    //cell.context.text = dic[@"text"];
+//    
+//    //赞  踩  评论
+//    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
+//    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+//    NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
     
 
     

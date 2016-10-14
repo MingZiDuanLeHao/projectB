@@ -35,6 +35,7 @@ static NSString *cellID = @"playCell";
 @property (nonatomic, assign) BOOL isFirstEnter;
 @property (nonatomic, assign) BOOL isSmallScreen;
 @property (nonatomic, assign) BOOL isFinish;
+@property (nonatomic, strong) NSString *groupID;
 
 @end
 
@@ -226,8 +227,13 @@ static NSString *cellID = @"playCell";
     
     //赞  踩  评论
     NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
+    NSString *zan_select = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"]  integerValue] + 1];
+    
     NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+    NSString *cai_select = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue] + 1];
+
     NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
+
 
     cell.zanBtn.layer.cornerRadius = 4;
     cell.zanBtn.layer.borderWidth = 2;
@@ -245,15 +251,21 @@ static NSString *cellID = @"playCell";
     cell.commentBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     [cell.zanBtn setTitle:zan forState:UIControlStateNormal];
-    cell.caiBtn.tag = 1000000+indexPath.row;
-    cell.commentBtn.tag = 1100000+indexPath.row;
-    cell.zanBtn.tag = 1200000+indexPath.row;
+    cell.caiBtn.tag = 1100000+indexPath.row;
+    cell.commentBtn.tag = 1200000+indexPath.row;
+    cell.zanBtn.tag = 1000000+indexPath.row;
     [cell.zanBtn setImage:[UIImage imageNamed:@"鼓掌2"] forState:UIControlStateHighlighted];
     [cell.caiBtn setTitle:cai forState:UIControlStateNormal];
     [cell.commentBtn setTitle:comment forState:UIControlStateNormal];
     
     [cell.zanBtn addTarget:self action:@selector(ZanbuttonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.caiBtn addTarget:self action:@selector(caibuttonHandle:) forControlEvents:UIControlEventTouchUpInside];
     [cell.commentBtn addTarget:self action:@selector(commentbuttonHandle:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [cell.zanBtn setTitle:zan_select forState:UIControlStateSelected];
+    [cell.zanBtn setImage:[UIImage imageNamed:@"鼓掌2"] forState:UIControlStateSelected];
+    [cell.caiBtn setTitle:cai_select forState:UIControlStateSelected];
+    [cell.caiBtn setImage:[UIImage imageNamed:@"便便2"] forState:UIControlStateSelected];
     
  //图片设置边角
     cell.img.layer.cornerRadius = 4;
@@ -307,7 +319,20 @@ static NSString *cellID = @"playCell";
 //点赞
 -(void)ZanbuttonHandle :(UIButton *)sender
 {
+    sender.selected = !sender.selected;
     
+    //赞  踩  评论
+//    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
+//    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+//    self.groupID = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+}
+
+//踩
+
+-(void)caibuttonHandle:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+
 }
 //评论
 -(void)commentbuttonHandle :(UIButton *)sender
@@ -316,7 +341,11 @@ static NSString *cellID = @"playCell";
     VedioDetailController *detailVC = [VedioDetailController new];
     detailVC.index = index;
     detailVC.dataArray = self.dataArray;
+    NSDictionary *dic = self.dataArray[index][@"group"];
 
+
+    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
+    detailVC.groupID = zan;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -329,7 +358,7 @@ static NSString *cellID = @"playCell";
 {
 
     [self setIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+ //   [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
