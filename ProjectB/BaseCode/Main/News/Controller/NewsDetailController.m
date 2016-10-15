@@ -8,6 +8,7 @@
 
 #import "NewsDetailController.h"
 #import "MainDetailDataModels.h"
+#import "AppDelegate.h"
 
 @interface NewsDetailController ()
 @property(nonatomic,strong)WKWebView *WebView;
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     [self initUI];
     [self requestData];
     
@@ -26,8 +28,9 @@
 
 -(void)initUI
 {
+    ((AppDelegate *)[UIApplication sharedApplication].delegate).mainTabble.tabBar.hidden = YES;
     self.title = @"文章详情";
-    _WebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, SWidth, SHeight+64)];
+    _WebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, SWidth, SHeight+100)];
     [self.view addSubview:_WebView];
 //    UIBarButtonItem *comment = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(commentAction)];
 //    UIBarButtonItem *share = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareAction)];

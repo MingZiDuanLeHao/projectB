@@ -17,7 +17,7 @@
 #define K_MAIN_VIEW_TEME_INTERVAL 0.35         //计时器间隔时间(单位秒)
 #define K_MAIN_VIEW_SCROLLER_SPACE 20          //每次移动的距离
 #define K_MAIN_VIEW_SCROLLER_LABLE_WIDTH  320  //字体宽度
-#define K_MAIN_VIEW_SCROLLER_LABLE_MARGIN 70   //前后间隔距离
+#define K_MAIN_VIEW_SCROLLER_LABLE_MARGIN 50   //前后间隔距离
 
 @interface RadioPlayViewController ()<UITableViewDelegate,UITableViewDataSource,MusicEnd,UIScrollViewDelegate>
 {
@@ -30,6 +30,7 @@
 @property(nonatomic,strong)RadioDetailListList *list;
 @property (nonatomic ,strong) NSArray *arrData;
 @property(nonatomic,strong)UILabel *labText;
+@property(nonatomic,assign)CGFloat width;
 
 @end
 
@@ -172,6 +173,7 @@
         scrollViewText.showsVerticalScrollIndicator = NO;     //隐藏垂直滚动条
         scrollViewText.tag = K_MAIN_VIEW_SCROLL_TEXT_TAG;
         [scrollViewText setBackgroundColor:[UIColor clearColor]];
+        scrollViewText.delegate = self;
         
         
         
@@ -192,20 +194,23 @@
         CGFloat offsetX = 0 ,i = 0, h = 30;
         
         //设置滚动文字
-        UILabel *labText = nil;
+        UILabel *labText = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+        [labText setFont:[UIFont systemFontOfSize:18]];
+        [labText setTextColor:[UIColor redColor]];
+        labText.text = self.arrData[0];
+        [labText sizeToFit];
+        _width = labText.frame.size.width;
+        
+        UILabel *textLab = nil;
         for (NSString *str in self.arrData) {
-            labText = [[UILabel alloc] initWithFrame:CGRectMake(
-                                                                i * (K_MAIN_VIEW_SCROLLER_LABLE_WIDTH + K_MAIN_VIEW_SCROLLER_LABLE_MARGIN),
-                                                                (K_MAIN_VIEW_SCROLL_HEIGHT - h) / 2,
-                                                                K_MAIN_VIEW_SCROLLER_LABLE_WIDTH,
-                                                                h)];
-            [labText setFont:[UIFont systemFontOfSize:18]];
-            [labText setTextColor:[UIColor redColor]];
-            labText.text = str;
-            offsetX = labText.frame.origin.x;
+            textLab = [[UILabel alloc]initWithFrame:CGRectMake( i * (_width + K_MAIN_VIEW_SCROLLER_LABLE_MARGIN),(K_MAIN_VIEW_SCROLL_HEIGHT - h) / 2, _width,h)];
+
+        offsetX = textLab.frame.origin.x;
+            textLab.text = str;
+
             
-            //添加到滚动视图
-            [scrollViewText addSubview:labText];
+        //添加到滚动视图
+        [scrollViewText addSubview:textLab];
             
             i++;
         }
@@ -239,7 +244,7 @@
             
             rect = lab.frame;
             offsetX = rect.origin.x - K_MAIN_VIEW_SCROLLER_SPACE;
-            if (offsetX < -K_MAIN_VIEW_SCROLLER_LABLE_WIDTH - K_MAIN_VIEW_SCROLLER_LABLE_MARGIN )
+            if (offsetX < -_width - K_MAIN_VIEW_SCROLLER_LABLE_MARGIN )
             {
                 offsetX = startX;
             }
@@ -251,6 +256,35 @@
     }];
     
 }
+
+//-(void) setScrollText{
+//    [UIView animateWithDuration:K_MAIN_VIEW_TEME_INTERVAL * 6 animations:^{
+//        CGPoint point = scrollViewText.contentOffset;
+//        point.x += K_MAIN_VIEW_SCROLLER_SPACE;
+//        scrollViewText.contentOffset = point;
+//    }];
+//
+//}
+
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    if (scrollView == scrollViewText) {
+//        if (scrollViewText.contentOffset.x >= 2*(_width + K_MAIN_VIEW_SCROLLER_LABLE_MARGIN)- (SWidth-100))
+//        {
+//            [scrollViewText setContentOffset:CGPointMake(0, 0)];
+//        }
+//    }
+//}
+
+//下拉退出controller
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (scrollView.contentOffset.y <= -64) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+}
+
 
 
 
@@ -360,13 +394,7 @@
     return cell;
 }
 
-//下拉退出controller
--(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
-{
-    if (scrollView.contentOffset.y <= -64) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
+
 
 
 - (void)didReceiveMemoryWarning {
