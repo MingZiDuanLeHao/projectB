@@ -61,6 +61,8 @@
 		3F1C63111DB0BC7B008779A0 /* 评论2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630E1DB0BC7B008779A0 /* 评论2.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C63151DB0F650008779A0 /* VedioCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63131DB0F650008779A0 /* VedioCommentCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1C63161DB0F650008779A0 /* VedioCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C63141DB0F650008779A0 /* VedioCommentCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F1C63191DB1F737008779A0 /* 最新.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C63171DB1F737008779A0 /* 最新.png */; settings = {ASSET_TAGS = (); }; };
+		3F1C631A1DB1F737008779A0 /* 热门.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C63181DB1F737008779A0 /* 热门.png */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
@@ -296,6 +298,8 @@
 		3F1C63121DB0F650008779A0 /* VedioCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioCommentCell.h; sourceTree = "<group>"; };
 		3F1C63131DB0F650008779A0 /* VedioCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioCommentCell.m; sourceTree = "<group>"; };
 		3F1C63141DB0F650008779A0 /* VedioCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioCommentCell.xib; sourceTree = "<group>"; };
+		3F1C63171DB1F737008779A0 /* 最新.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "最新.png"; sourceTree = "<group>"; };
+		3F1C63181DB1F737008779A0 /* 热门.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门.png"; sourceTree = "<group>"; };
 		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
 		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
 		3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayCell.xib; sourceTree = "<group>"; };
@@ -934,6 +938,8 @@
 		3F2539371D9BF1F40072831B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F1C63171DB1F737008779A0 /* 最新.png */,
+				3F1C63181DB1F737008779A0 /* 热门.png */,
 				3F18D6B91DB070220081E40D /* 壁纸.jpg */,
 				3F1C62D61DAFB317008779A0 /* 下载1.png */,
 				3F1C62D71DAFB317008779A0 /* 下载2.png */,
@@ -1374,6 +1380,7 @@
 				3F1F158F1DA9E39400ACFF18 /* VedioMainController.xib in Resources */,
 				3F4B2AC71DAD07C900E07143 /* 上首 .png in Resources */,
 				3F18D6A51DAFAA4A0081E40D /* 晴.png in Resources */,
+				3F1C63191DB1F737008779A0 /* 最新.png in Resources */,
 				3F1C62F31DB07B3A008779A0 /* 便便.png in Resources */,
 				3F1F157E1DA9E0AD00ACFF18 /* PictureViewController.xib in Resources */,
 				3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */,
@@ -1386,6 +1393,7 @@
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F1F15DE1DAA77A800ACFF18 /* ReuseView.xib in Resources */,
 				3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */,
+				3F1C631A1DB1F737008779A0 /* 热门.png in Resources */,
 				3F1C63161DB0F650008779A0 /* VedioCommentCell.xib in Resources */,
 				3F1F15671DA9E06F00ACFF18 /* RedioDetailListCell.xib in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
