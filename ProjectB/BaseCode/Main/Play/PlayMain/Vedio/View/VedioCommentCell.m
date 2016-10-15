@@ -17,7 +17,7 @@
 
     self.avatar.layer.masksToBounds = YES;
     self.avatar.clipsToBounds = YES;
-    self.avatar.layer.cornerRadius = 60/2.;
+    self.avatar.layer.cornerRadius = 40/2.;
    // self.avatar.layer.borderWidth = 1.f;
 }
 

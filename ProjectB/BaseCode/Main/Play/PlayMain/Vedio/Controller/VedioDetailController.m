@@ -96,7 +96,7 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
     UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(5, 400, SWidth - 10, 100)];
     _tableV.tableHeaderView = contentView;
-    contentView.backgroundColor = [UIColor grayColor];
+    contentView.backgroundColor = [UIColor colorWithRed:231.0/255 green:242.0/255 blue:253.0/255 alpha:1.0];
     UILabel *contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 5, SWidth - 10, 100)];
     contentLabel.text = self.content;
     contentLabel.numberOfLines = 0;
@@ -113,6 +113,9 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     }];
     
 
+    _tableV.estimatedRowHeight = 200;
+    
+    _tableV.rowHeight = UITableViewAutomaticDimension;
     
 }
 
@@ -199,16 +202,7 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 }
 
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-     return 200;
 
-//    if ([self.hightArray[indexPath.row] integerValue] == 0  ) {
-//        return 0;
-//    }
-//
-//    return [self.hightArray[indexPath.row] intValue] ;
-}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -265,8 +259,9 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    
     UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SWidth, 50)];
-    headerV.backgroundColor = [UIColor whiteColor];
+    headerV.backgroundColor = [UIColor colorWithRed:45.0/255 green:77.0/255 blue:217.0/255 alpha:1.0];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SWidth, 50)];
     [headerV addSubview:label];
     label.textAlignment = NSTextAlignmentCenter;

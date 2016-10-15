@@ -52,8 +52,9 @@ static NSString *cellID = @"playCell";
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
-        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-        self.navigationController.navigationBar.shadowImage=[UIImage new];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    [self.wmPlayer resetWMPlayer];
    
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -247,6 +248,7 @@ static NSString *cellID = @"playCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //[self releaseWMPlayer];
     VedioPlayCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
    // VedioModelComments *model = self.modelData.data.data[indexPath.row];
 
@@ -257,9 +259,18 @@ static NSString *cellID = @"playCell";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.context.text = dic[@"text"];
     
-    //赞  踩  评论
-    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
-    NSString *zan_select = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"]  integerValue] + 1];
+        //赞  踩  评论
+    NSString *zan;
+    NSString *zan_select;
+
+    if ([dic[@"digg_count"] integerValue] >= 10000) {
+        zan = [NSString stringWithFormat:@"%.1f万",[dic[@"digg_count"] integerValue]/10000 *1.0];
+        zan_select = [NSString stringWithFormat:@"%.1f万",([dic[@"digg_count"]  integerValue] + 1)/10000 *1.0];
+    }else{
+        zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
+        zan_select = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"]  integerValue] + 1];
+    }
+
     
     NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
     NSString *cai_select = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue] + 1];
@@ -338,6 +349,7 @@ static NSString *cellID = @"playCell";
 
     for (UIView *view in cell.subviews) {
         if ([view isKindOfClass:[WMPlayer class]]) {
+            [(WMPlayer*)view resetWMPlayer];
             [view removeFromSuperview];
         }
     }
@@ -352,8 +364,8 @@ static NSString *cellID = @"playCell";
     NSDictionary *dic = self.dataArray[_QindexPath.row][@"group"];
     
     //groupID
-    NSString *group = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
-    [self zanRequestDataWithGroupID:group];
+  //  NSString *group = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
+  //  [self zanRequestDataWithGroupID:group];
     sender.selected = !sender.selected;
 
 }
@@ -461,6 +473,11 @@ static NSString *cellID = @"playCell";
    
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+}
+
 
 
 //- (NHBaseTableViewCell *)nh_cellAtIndexPath:(NSIndexPath *)indexPath {
@@ -488,6 +505,8 @@ static NSString *cellID = @"playCell";
 //    NHHomeTableViewCellFrame *cellFrame = self.cellFrameArray[indexPath.row];
 //    return cellFrame.cellHeight;
 //}
+#pragma mark - 支持横屏
+
 
 
 
