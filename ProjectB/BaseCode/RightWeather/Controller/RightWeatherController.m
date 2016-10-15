@@ -52,9 +52,12 @@
     
     //1.如果此contro生成比获取定位慢
     //获取model刷新表格
-    _base = ((AppDelegate *)[UIApplication sharedApplication].delegate).base;
-    [self initAsynUI];
-    [_headerView.sevenDayCollView reloadData];
+    if (((AppDelegate *)[UIApplication sharedApplication].delegate).base) {
+        _base = ((AppDelegate *)[UIApplication sharedApplication].delegate).base;
+        [self initAsynUI];
+        [_headerView.sevenDayCollView reloadData];
+    };
+    
     
     
     //2.如果此contro生成比获取定位快
@@ -154,7 +157,7 @@
         _headerView.coverImg.image = [UIImage imageNamed:@"阴"];
         return;
     }
-    if ([service.now.cond.txt isEqualToString: @"大雨"] ||[service.now.cond.txt isEqualToString: @"中雨"] ||[service.now.cond.txt isEqualToString: @"小雨"]  )
+    if ([service.now.cond.txt isEqualToString: @"大雨"] ||[service.now.cond.txt isEqualToString: @"中雨"] ||[service.now.cond.txt isEqualToString: @"小雨"] || [service.now.cond.txt isEqualToString: @"阵雨"] )
     {
         _headerView.coverImg.image = [UIImage imageNamed:@"雨"];
         return;

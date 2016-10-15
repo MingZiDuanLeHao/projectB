@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "NewsDetailController.h"
 #import "UINavigationBar+Other.h"
+#import "AppDelegate.h"
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
@@ -31,17 +32,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     [self setupTitle];
     [self someSet];
     [self setupContent];
     [self askData];
     [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout =UIRectEdgeBottom;
     
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-  
-    
+  ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
 }
 
 #pragma mark initUI
@@ -63,7 +66,12 @@
     }
     self.titleScrollView.contentSize = CGSizeMake(6 * labelW, 0);
     self.contentScrollView.contentSize = CGSizeMake(6* self.contentScrollView.frame.size.width * Ratio, 0);
-    
+
+    //    导航栏变为透明
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    //    //    让黑线消失的方法
+//        self.navigationController.navigationBar.shadowImage=[UIImage new];
+//    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
     
 }
 
@@ -71,6 +79,7 @@
 {
     self.title = @"新闻";
     self.titleScrollView.showsHorizontalScrollIndicator = NO;
+    self.titleScrollView.backgroundColor  = [UIColor whiteColor];
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.delegate = self;
@@ -82,6 +91,7 @@
     _cateNumArr =[@[@"T1429173683626",@"T1441074311424",@"T1348654105308",@"T1348650593803",@"T1348654204705",@"T1348648037603"]mutableCopy];
     _cateNumStr = _cateNumArr[0];
     _tableTag = 200;
+    
     
     
 }

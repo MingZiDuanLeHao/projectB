@@ -39,7 +39,7 @@ static NSString *rightCell = @"rightCell";
     self.keywordId = 113;
     [self requestData];
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
-
+    
     
 }
 
