@@ -239,14 +239,13 @@
         //        NSString *street = placemark.thoroughfare;
         _placeName = placemark.locality;
         
-        _placeName =  [placemark.addressDictionary objectForKey:@"City"];
+//        _placeName =  [placemark.addressDictionary objectForKey:@"City"];
         _placeName = [_placeName pinyin];
-        _placeName = [_placeName substringToIndex:_placeName.length-3];
+        
+//        _placeName = [_placeName substringToIndex:_placeName.length-3];
         
         [self requestData];
-        
-        
-        
+ 
     }];
 }
 
