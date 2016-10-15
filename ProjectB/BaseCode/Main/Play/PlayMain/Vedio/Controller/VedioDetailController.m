@@ -12,6 +12,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "WMPlayer.h"
 #import "NHBaseImageView.h"
+#import "VedioConmmentModelDataModels.h"
+#import "VedioCommentCell.h"
 
 static NSString *vedioDetailCell = @"vedioDetailCell";
 
@@ -20,15 +22,15 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 @property (strong,nonatomic) UIView *playView;
 
 @property (nonatomic,strong) WMPlayer *wmPlayer;
+@property (nonatomic,strong) VedioConmmentModelVedioConmmentModel *detailModel;
 
 
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, strong) NSMutableArray *cellFrameArray;
+@property (nonatomic, assign) NSInteger offset;
 
 /** 提示视图*/
 /** 是否显示提示视图*/
 @property (nonatomic, assign) BOOL showTopTipViewFlag;
-@property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, assign) BOOL isFirstEnter;
 @property (nonatomic, assign) BOOL isSmallScreen;
 @property (nonatomic, assign) BOOL isFinish;
@@ -43,35 +45,82 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     [super viewDidLoad];
     [self initUI];
     [self requestData];
+   // NSLog(@"==========%@,%@,%@,%@,%ld",self.content,self.vedioUrl,self.imgUrl,self.groupID,self.vedioHight);
 }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self releaseWMPlayer];
+}
+
 
 -(void)initUI
 {
-    self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
+
+    self.offset = 0;
+    
+    //视频背景
+    UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(5,5, SWidth - 10, 300)];
+    backgroundView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:backgroundView];
+    float vedioH = [self.hightDic[@"hight"] floatValue];
+    float vedioW = [self.hightDic[@"wight"] floatValue];
+
+    if (vedioW/vedioH >= (SWidth - 10)/300) {
+        CGFloat currentH = (SWidth - 10)*vedioH/vedioW;
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5, 5 , SWidth - 10, currentH)];
+        self.tableV.frame = CGRectMake(5, currentH +10, SWidth - 10, SHeight - 10 - currentH);
+    }else{
+        CGFloat currentW = 300 * vedioW / vedioH;
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5  + (SWidth - 10 - currentW)/2, 5 , currentW, 300)];
+        self.tableV.frame = CGRectMake(5, 10 + 300, SWidth - 10, SHeight - 10 - 300);
+    }
+     //播放器
+    
+    //self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5, 5, SWidth - 10, 300)];
+    
+    self.wmPlayer.delegate = self;
+    
+    self.wmPlayer.URLString = self.vedioUrl;
+    [self.view addSubview:self.wmPlayer];
+    [self.wmPlayer.player play];
+    
+    
+
     _tableV.delegate = self;
     _tableV.dataSource = self;
-    _tableV.backgroundColor = [UIColor whiteColor];
-//    [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
-    [self.tableV registerClass:[UITableViewCell class] forCellReuseIdentifier:vedioDetailCell];
+    _tableV.backgroundColor = [UIColor lightGrayColor];
+    [_tableV registerNib:[UINib nibWithNibName:@"VedioCommentCell" bundle:nil] forCellReuseIdentifier:vedioDetailCell];
+//    [self.tableV registerClass:[UITableViewCell class] forCellReuseIdentifier:vedioDetailCell];
     [self.view addSubview:_tableV];
-    UIView *aaa = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SWidth, 100)];
-    _tableV.tableHeaderView = aaa;
-    aaa.backgroundColor = [UIColor redColor];
-    
+
+    UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(5, 400, SWidth - 10, 100)];
+    _tableV.tableHeaderView = contentView;
+    contentView.backgroundColor = [UIColor grayColor];
+    UILabel *contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 5, SWidth - 10, 100)];
+    contentLabel.text = self.content;
+    contentLabel.numberOfLines = 0;
+    [contentView addSubview:contentLabel];
     _tableV.showsVerticalScrollIndicator = NO;
+    _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
     //上提加载更多
     _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         //最新
-        //        self.page ++;
+                self.offset ++;
         //        self.lastestView = @"-1";
         [self requestData];
     }];
+    
+
+    
 }
+
+
 
 -(void)requestData
 {
-    NSString *UrlStr = [NSString stringWithFormat:@"http://isub.snssdk.com/neihan/comments/?iid=5593387628&os_version=9.3.3&os_api=18&app_name=joke_essay&channel=App%@Store&device_platform=iphone&idfa=9DE12873-6A67-4C26-8675-F2541AF47FB3&live_sdk_version=130&vid=4006D19B-01F8-4B64-9674-B9BC2016B99C&openudid=d6f8422354888bc5e7ca31764c250955439497ec&device_type=iPhone%@S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=3115037754&aid=7&count=20&device_id=3115037754&group_id=%@&offset=0&sort=hot&tag=joke",@"%20",@"%205",self.groupID];
+    NSString *UrlStr = [NSString stringWithFormat:@"http://isub.snssdk.com/neihan/comments/?iid=5593387628&os_version=9.3.3&os_api=18&app_name=joke_essay&channel=App%@Store&device_platform=iphone&idfa=9DE12873-6A67-4C26-8675-F2541AF47FB3&live_sdk_version=130&vid=4006D19B-01F8-4B64-9674-B9BC2016B99C&openudid=d6f8422354888bc5e7ca31764c250955439497ec&device_type=iPhone%@S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=3115037754&aid=7&count=20&device_id=3115037754&group_id=%@&offset=%ld&sort=hot&tag=joke",@"%20",@"%205",self.groupID,self.offset];
     //    NSLog(@"!!!!!!!!!!!!%@",UrlStr);
     //转化一下,不然返回的data无法解析
     UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
@@ -79,46 +128,17 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
         if (data) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
-            NSLog(@"===========%@",dic);
-            NSArray *dataArr;
+          //  NSLog(@"===========%@",dic);
             
-            //!!!!!为了去除广告 麻蛋
-            for (NSDictionary *dicGroup in dataArr) {
-                NSArray *arr = [dicGroup allKeys];
-                int W = [dicGroup[@"group"][@"video_width"] intValue];
-                int H = [dicGroup[@"group"][@"video_height"] intValue];
-                //求出字体的高度,也加在高度上
-                UILabel *label = [[UILabel alloc]init];
-                label.text = dicGroup[@"group"][@"text"];
-                //  NSLog(@"===========%@",label.text);
-                // label的字体 HelveticaNeue  Courier
-                UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
-                label.font = fnt;
-                label.numberOfLines = 0;
-                label.lineBreakMode = NSLineBreakByWordWrapping;
-                
-                CGRect tmpRect = [label.text boundingRectWithSize:CGSizeMake(SWidth - 10, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil] context:nil];
-//                if ([arr containsObject:@"ad"]&& W == 0) {
-//                    // NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
-//                }else
-//                {
-//                    //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
-//                    [self.dataArray addObject:dicGroup];
-//                    [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 90) ];
-//                }
-            }
+            self.detailModel = [VedioConmmentModelVedioConmmentModel modelObjectWithDictionary:dic];
 
-            
-            //   if (self.hightArray.count != 0) {
+ 
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_tableV reloadData];
                 [_tableV.mj_footer endRefreshing];
             });
         }
-        //   }
-        _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
-        
+     
         
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
@@ -141,6 +161,13 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     }
     return _hightArray;
 }
+-(NSDictionary *)hightDic
+{
+    if (!_hightDic) {
+        _hightDic = [NSDictionary dictionary];
+    }
+    return _hightDic;
+}
 -(UITableView *)tableV
 {
     if (!_tableV) {
@@ -151,10 +178,24 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 #pragma mark - UITableViewDelegate
 
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return _detailModel.data.topComments.count;
+    }else if (section ==1)
+    {
+       return _detailModel.data.recentComments.count;
+    }else{
+        return 0;
+    }
+
     
-    return 10;
+    
 }
 
 
@@ -171,51 +212,76 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:vedioDetailCell];
-    // VedioModelComments *model = self.modelData.data.data[indexPath.row];
-//    
-//    NSDictionary *dic = self.dataArray[indexPath.row][@"group"];
-//    NSDictionary *large_coverDic = dic[@"large_cover"];
-//    NSArray *url_listArr = large_coverDic[@"url_list"];
-//    
-//    //cell.context.text = dic[@"text"];
-//    
-//    //赞  踩  评论
-//    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
-//    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
-//    NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
-    
-
-    
+    VedioCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:vedioDetailCell];
 
 
-    
-    
-    
-    
-    //        [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
-    
-    for (UIView *view in cell.subviews) {
-        if ([view isKindOfClass:[WMPlayer class]]) {
-            [view removeFromSuperview];
-        }
+    if (indexPath.section == 0) {
+        VedioConmmentModelTopComments *topicComment = self.detailModel.data.topComments[indexPath.row];
+       // [cell.avatar sd_setImageWithURL:[NSURL URLWithString:topicComment.avatarUrl]];
+        [cell.avatar sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:topicComment.avatarUrl] placeholderImage:[UIImage imageNamed:@"4.jpg"] options:0 progress:nil completed:nil];
+        cell.nameLabel.text = topicComment.userName;
+        cell.contemtLabel.text = topicComment.text;
+        cell.numZan.text = [NSString stringWithFormat:@"%.0f赞",topicComment.diggCount];
+        cell.timeLabel.text = [self timeTranformWithTime:topicComment.createTime];
+        
+    }else if(indexPath.section == 1){
+        VedioConmmentModelRecentComments *recentComment = self.detailModel.data.recentComments[indexPath.row];
+        [cell.avatar sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:recentComment.avatarUrl] placeholderImage:[UIImage imageNamed:@"4.jpg"] options:0 progress:nil completed:nil];
+       // [cell.avatar sd_setImageWithURL:[NSURL URLWithString:recentComment.avatarUrl]];
+        cell.nameLabel.text = recentComment.userName;
+        cell.contemtLabel.text = recentComment.text;
+        cell.numZan.text = [NSString stringWithFormat:@"%.0f赞",recentComment.diggCount];
+
+        cell.timeLabel.text = [self timeTranformWithTime:recentComment.createTime];
     }
-    //    cell.playBtn.tag = indexPath.row + 100;
-    //    [cell.playBtn addTarget:self action:@selector(playOrPause:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playOrPause)];
-    // [cell.screenView addGestureRecognizer:tapGesture];
-    
+//
+
+    cell.backView.layer.cornerRadius = 4;
+    cell.backView.layer.masksToBounds = YES;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
-
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+ //时间戳转化为时间
+-(NSString *)timeTranformWithTime:(CGFloat)timestamp
 {
-    UIView *aa = [[UIView alloc]initWithFrame:CGRectMake(0, 100, SWidth, 50)];
-    aa.backgroundColor = [UIColor redColor];
-    return aa;
+
+    NSString *str=[NSString stringWithFormat:@"%f",timestamp];//时间戳
+    NSTimeInterval time=[str doubleValue]+28800;//因为时差问题要加8小时 == 28800 sec
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    NSLog(@"date:%@",[detaildate description]);
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy年MM-dd HH:mm:ss"];
+    NSString *currentDateStr = [dateFormatter stringFromDate: detaildate];
+    return currentDateStr;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SWidth, 50)];
+    headerV.backgroundColor = [UIColor whiteColor];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SWidth, 50)];
+    [headerV addSubview:label];
+    label.textAlignment = NSTextAlignmentCenter;
+    headerV.layer.cornerRadius = 4;
+    headerV.layer.masksToBounds = YES;
+    if (section == 0) {
+        label.text = @"热门";
+    }else
+    {
+        label.text = @"最新";
+    }
+    
+    return headerV;
+}
+
 
 
 #pragma mark - WMPlayerDelegate
@@ -445,13 +511,6 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     _wmPlayer.playOrPauseBtn = nil;
     _wmPlayer.playerLayer = nil;
     _wmPlayer = nil;
-}
-
-- (NSMutableArray *)cellFrameArray {
-    if (!_cellFrameArray) {
-        _cellFrameArray = [NSMutableArray new];
-    }
-    return _cellFrameArray;
 }
 
 

@@ -22,7 +22,10 @@ static NSString *cellID = @"playCell";
 @property (nonatomic,strong) WMPlayer *wmPlayer;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) NSMutableArray *hightArray;
+@property (nonatomic,strong) NSMutableArray *hightArray2;
 @property (nonatomic,strong) UITableView *tableV;
+
+@property (nonatomic,strong) NSIndexPath *QindexPath;
 
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, strong) NSMutableArray *cellFrameArray;
@@ -75,7 +78,9 @@ static NSString *cellID = @"playCell";
     _tableV.backgroundColor = [UIColor whiteColor];
     [_tableV registerNib:[UINib nibWithNibName:@"VedioPlayCell" bundle:nil] forCellReuseIdentifier:cellID];
     [self.view addSubview:_tableV];
-    
+    //隐藏分割线
+    _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     _tableV.showsVerticalScrollIndicator = NO;
     //上提加载更多
     _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -123,6 +128,8 @@ static NSString *cellID = @"playCell";
                 {
                 //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
                    [self.dataArray addObject:dicGroup];
+                    NSDictionary *dicWH = @{@"wight": [NSString stringWithFormat:@"%d",W],@"hight":[NSString stringWithFormat:@"%d",H]};
+                    [self.hightArray2 addObject:dicWH];
                    [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 90) ];
                 }
             }
@@ -156,13 +163,32 @@ static NSString *cellID = @"playCell";
                 });
             }
          //   }
-        _tableV.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+   
         
         
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
     } view:self.view];
+}
+
+-(void)zanRequestDataWithGroupID:(NSString *)groupID
+{
+    NSDictionary *dic = @{@"action":@"digg",@"deviceid":@"3115037754",@"group_id":groupID,@"share":@"0",@"url":@"",@"tag":@"joke"};
+    NSString *UrlStr = [NSString stringWithFormat:@"http://isub.snssdk.com/2/data/item_action/?iid=5593387628&os_version=9.3.3&os_api=18&app_name=joke_essay&channel=App%@Store&device_platform=iphone&idfa=9DE12873-6A67-4C26-8675-F2541AF47FB3&live_sdk_version=130&vid=4006D19B-01F8-4B64-9674-B9BC2016B99C&openudid=d6f8422354888bc5e7ca31764c250955439497ec&device_type=iPhone%@S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=3115037754&aid=7",@"20",@"205"];
+    //    NSLog(@"!!!!!!!!!!!!%@",UrlStr);
+    //转化一下,不然返回的data无法解析
+    UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
+    [NetWorkRequest requestWithMethod:POST URL:UrlStr para:dic success:^(NSData *data) {
+        if (data) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"===================%@",dic);
+
+        }
+
+    } error:^(NSError *error) {
+        NSLog(@"error===%@",error);
+    } view:self.view];
+
 }
 
 
@@ -186,6 +212,13 @@ static NSString *cellID = @"playCell";
     }
     return _hightArray;
 }
+-(NSMutableArray *)hightArray2
+{
+    if (!_hightArray2) {
+        _hightArray2 = [NSMutableArray array];
+    }
+    return _hightArray2;
+}
 -(UITableView *)tableV
 {
     if (!_tableV) {
@@ -204,13 +237,11 @@ static NSString *cellID = @"playCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // return 200;
-   // NSLog(@"self.hightArray.count___%@",self.hightArray[indexPath.row]);
+
     if ([self.hightArray[indexPath.row] integerValue] == 0  ) {
         return 0;
     }
-   // VedioPlayCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-   // CGFloat contentH = cell.context.frame.size.height;
+
     return [self.hightArray[indexPath.row] intValue] ;
 }
 
@@ -223,6 +254,7 @@ static NSString *cellID = @"playCell";
     NSDictionary *large_coverDic = dic[@"large_cover"];
     NSArray *url_listArr = large_coverDic[@"url_list"];
 
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.context.text = dic[@"text"];
     
     //赞  踩  评论
@@ -249,6 +281,8 @@ static NSString *cellID = @"playCell";
     cell.commentBtn.layer.borderWidth = 2;
     cell.commentBtn.layer.masksToBounds = YES;
     cell.commentBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _QindexPath = [NSIndexPath new];
+    _QindexPath = indexPath;
     
     [cell.zanBtn setTitle:zan forState:UIControlStateNormal];
     cell.caiBtn.tag = 1100000+indexPath.row;
@@ -300,31 +334,28 @@ static NSString *cellID = @"playCell";
     
     
     
-    
-//        [cell.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     for (UIView *view in cell.subviews) {
         if ([view isKindOfClass:[WMPlayer class]]) {
             [view removeFromSuperview];
         }
     }
-//    cell.playBtn.tag = indexPath.row + 100;
-//    [cell.playBtn addTarget:self action:@selector(playOrPause:) forControlEvents:UIControlEventTouchUpInside];
 
-   // UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playOrPause)];
-   // [cell.screenView addGestureRecognizer:tapGesture];
 
     return cell;
 }
 //点赞
 -(void)ZanbuttonHandle :(UIButton *)sender
 {
-    sender.selected = !sender.selected;
+
+    NSDictionary *dic = self.dataArray[_QindexPath.row][@"group"];
     
-    //赞  踩  评论
-//    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"digg_count"] integerValue]];
-//    NSString *cai = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
-//    self.groupID = [NSString stringWithFormat:@"%ld",[dic[@"bury_count"] integerValue]];
+    //groupID
+    NSString *group = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
+    [self zanRequestDataWithGroupID:group];
+    sender.selected = !sender.selected;
+
 }
 
 //踩
@@ -340,12 +371,32 @@ static NSString *cellID = @"playCell";
     NSInteger index =  sender.tag - 1200000;
     VedioDetailController *detailVC = [VedioDetailController new];
     detailVC.index = index;
-    detailVC.dataArray = self.dataArray;
+
+   
+    VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:_QindexPath];
+
     NSDictionary *dic = self.dataArray[index][@"group"];
 
-
-    NSString *zan = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
-    detailVC.groupID = zan;
+    //groupID
+    NSString *group = [NSString stringWithFormat:@"%ld",[dic[@"id"] integerValue]];
+    detailVC.groupID = group;
+    //视频的高
+    detailVC.vedioHight = [self.hightArray[index] intValue];
+    //视频的内容
+    detailVC.content = dic[@"text"];
+    //图片url
+    NSDictionary *large_coverDic = dic[@"large_cover"];
+    NSArray *url_listArr = large_coverDic[@"url_list"];
+    detailVC.imgUrl = url_listArr[0][@"url"];
+    //视频Url
+    NSDictionary *Vedio720Dic = dic[@"720p_video"];
+    NSArray *vedioList = Vedio720Dic[@"url_list"]; 
+    detailVC.vedioUrl = vedioList[0][@"url"];
+    //内容的rect
+    detailVC.contentRect = cell.context.frame;
+    //图片的尺寸
+    detailVC.hightDic = self.hightArray2[index];
+    
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -358,7 +409,7 @@ static NSString *cellID = @"playCell";
 {
 
     [self setIndexPath:indexPath];
- //   [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{

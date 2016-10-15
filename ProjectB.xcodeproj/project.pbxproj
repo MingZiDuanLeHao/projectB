@@ -59,6 +59,8 @@
 		3F1C630F1DB0BC7B008779A0 /* 便便2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630C1DB0BC7A008779A0 /* 便便2.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C63101DB0BC7B008779A0 /* 鼓掌2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */; settings = {ASSET_TAGS = (); }; };
 		3F1C63111DB0BC7B008779A0 /* 评论2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C630E1DB0BC7B008779A0 /* 评论2.png */; settings = {ASSET_TAGS = (); }; };
+		3F1C63151DB0F650008779A0 /* VedioCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C63131DB0F650008779A0 /* VedioCommentCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F1C63161DB0F650008779A0 /* VedioCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1C63141DB0F650008779A0 /* VedioCommentCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA301DAC852700C842D1 /* VedioPlayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F1EBA311DAC852700C842D1 /* VedioPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3F1F153A1DA9DE8000ACFF18 /* 列表.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F152F1DA9DE8000ACFF18 /* 列表.png */; settings = {ASSET_TAGS = (); }; };
@@ -291,6 +293,9 @@
 		3F1C630C1DB0BC7A008779A0 /* 便便2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "便便2.png"; sourceTree = "<group>"; };
 		3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鼓掌2.png"; sourceTree = "<group>"; };
 		3F1C630E1DB0BC7B008779A0 /* 评论2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论2.png"; sourceTree = "<group>"; };
+		3F1C63121DB0F650008779A0 /* VedioCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioCommentCell.h; sourceTree = "<group>"; };
+		3F1C63131DB0F650008779A0 /* VedioCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioCommentCell.m; sourceTree = "<group>"; };
+		3F1C63141DB0F650008779A0 /* VedioCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioCommentCell.xib; sourceTree = "<group>"; };
 		3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayCell.h; sourceTree = "<group>"; };
 		3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayCell.m; sourceTree = "<group>"; };
 		3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VedioPlayCell.xib; sourceTree = "<group>"; };
@@ -798,6 +803,9 @@
 				3F1EBA2D1DAC852700C842D1 /* VedioPlayCell.h */,
 				3F1EBA2E1DAC852700C842D1 /* VedioPlayCell.m */,
 				3F1EBA2F1DAC852700C842D1 /* VedioPlayCell.xib */,
+				3F1C63121DB0F650008779A0 /* VedioCommentCell.h */,
+				3F1C63131DB0F650008779A0 /* VedioCommentCell.m */,
+				3F1C63141DB0F650008779A0 /* VedioCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1378,6 +1386,7 @@
 				3F45A8551D9BA7FD00A83BB1 /* LaunchScreen.storyboard in Resources */,
 				3F1F15DE1DAA77A800ACFF18 /* ReuseView.xib in Resources */,
 				3F799A311D9E51DA009DAF97 /* hailan.jpeg in Resources */,
+				3F1C63161DB0F650008779A0 /* VedioCommentCell.xib in Resources */,
 				3F1F15671DA9E06F00ACFF18 /* RedioDetailListCell.xib in Resources */,
 				3F45A8521D9BA7FD00A83BB1 /* Assets.xcassets in Resources */,
 				3F2539551D9BFB460072831B /* 新闻2.png in Resources */,
@@ -1586,6 +1595,7 @@
 				3FA224881DAF2F130035099A /* WeatherHourlyForecast.m in Sources */,
 				3F18D6B61DAFD09D0081E40D /* RightWeatherController.m in Sources */,
 				3F1F159E1DAA033500ACFF18 /* BeautyModelLuaVersions.m in Sources */,
+				3F1C63151DB0F650008779A0 /* VedioCommentCell.m in Sources */,
 				3F799A131D9E4864009DAF97 /* MainDetailLink.m in Sources */,
 				3F1F156B1DA9E08600ACFF18 /* BeautyViewController.m in Sources */,
 				3FA224811DAF2F130035099A /* WeatherComf.m in Sources */,
