@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarButtomViewController.h"
 
-@interface VedioDetailController : UIViewController
+
+@interface VedioDetailController : BarButtomViewController
 /**index*/
 @property(nonatomic,assign) NSInteger index;
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @property(nonatomic,strong) NSMutableArray *hightArray;
+@property(nonatomic,strong) NSDictionary *hightDic;
 @property(nonatomic,strong) NSString *vedioUrl;
+@property(nonatomic,strong) NSString *imgUrl;
 @property(nonatomic,strong) NSString *groupID;
-
+@property(nonatomic,assign) NSInteger vedioHight;
+@property(nonatomic,strong) NSString *content;
+@property(nonatomic,assign) CGRect contentRect;
 
 @end
