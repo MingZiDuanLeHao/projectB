@@ -1741,9 +1741,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Libs/APIStoreSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingziXiangGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a0461156-2bd5-4178-adf5-23d3050105bb";
+				PROVISIONING_PROFILE = "18836a71-a173-4772-99fe-0bd134cd7ccf";
 			};
 			name = Debug;
 		};
@@ -1762,9 +1762,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Libs/APIStoreSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingziXiangGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a0461156-2bd5-4178-adf5-23d3050105bb";
+				PROVISIONING_PROFILE = "18836a71-a173-4772-99fe-0bd134cd7ccf";
 			};
 			name = Release;
 		};

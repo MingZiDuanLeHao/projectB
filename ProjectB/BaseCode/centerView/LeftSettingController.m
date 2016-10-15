@@ -66,7 +66,7 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(130/2, 35, 150, 50)];
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:30];
-    label.text = @"香菇蓝瘦";
+    label.text = @"蓝瘦香菇";
     label.textColor = [UIColor whiteColor];
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 99, 280, 1)];
     view.backgroundColor = _tableView.separatorColor;

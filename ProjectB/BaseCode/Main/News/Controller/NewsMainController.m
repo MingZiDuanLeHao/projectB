@@ -111,7 +111,7 @@
 -(void)setupContent
 {
     for (NSInteger i = 0; i < 6; i++) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(i * self.contentScrollView.frame.size.width * Ratio, 0, self.contentScrollView.frame.size.width * Ratio, self.contentScrollView.frame.size.height) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(i * self.contentScrollView.frame.size.width * Ratio, 0, self.contentScrollView.frame.size.width * Ratio, self.contentScrollView.frame.size.height+64) style:UITableViewStylePlain];
         table.delegate = self;
         table.dataSource = self;
         UINib *myNib = [UINib nibWithNibName:@"NewsMainTableViewCell" bundle:nil];
