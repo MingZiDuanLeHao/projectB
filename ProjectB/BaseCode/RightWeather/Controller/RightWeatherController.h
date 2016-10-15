@@ -10,4 +10,5 @@
 
 @interface RightWeatherController : UIViewController
 
+
 @end

@@ -281,7 +281,7 @@
 {
     typeof(self) __weak weakself = self;
     typeof(_headerView) __weak weakHeaderView = _headerView;
-     typeof(scrollViewText) __weak weakScrollView =  scrollViewText;
+
    
     _headerView.lastBlock = ^(){
         [[RadioPlayerManager defaultManager]lastMusic];

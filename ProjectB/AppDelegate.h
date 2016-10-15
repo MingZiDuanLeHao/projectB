@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RightWeatherController.h"
+#import "WeatherDataModels.h"
 
+typedef void(^setUI)(WeatherBaseClass *);
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic,strong)UITabBarController *mainTabble;
+@property(nonatomic,strong)RightWeatherController *weather;
+@property(nonatomic,strong)WeatherBaseClass *base;
+@property(nonatomic,copy)setUI setUUUU;
 
 @end
 

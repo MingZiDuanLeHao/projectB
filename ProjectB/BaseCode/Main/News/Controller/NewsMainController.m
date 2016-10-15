@@ -64,6 +64,7 @@
     self.titleScrollView.contentSize = CGSizeMake(6 * labelW, 0);
     self.contentScrollView.contentSize = CGSizeMake(6* self.contentScrollView.frame.size.width * Ratio, 0);
     
+    
 }
 
 -(void)someSet
