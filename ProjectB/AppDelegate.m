@@ -243,8 +243,14 @@
         _placeName = [_placeName pinyin];
         
 //        _placeName = [_placeName substringToIndex:_placeName.length-3];
+        if (_placeName) {
+            [self requestData];
+        }
+        else
+        {
+            self.push();
+        }
         
-        [self requestData];
  
     }];
 }

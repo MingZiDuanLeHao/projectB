@@ -11,6 +11,7 @@
 #import "WeatherDataModels.h"
 
 typedef void(^setUI)(WeatherBaseClass *);
+typedef void(^pushFail)();
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -18,6 +19,7 @@ typedef void(^setUI)(WeatherBaseClass *);
 @property(nonatomic,strong)RightWeatherController *weather;
 @property(nonatomic,strong)WeatherBaseClass *base;
 @property(nonatomic,copy)setUI setUUUU;
+@property(nonatomic,copy)pushFail push;
 
 @end
 
