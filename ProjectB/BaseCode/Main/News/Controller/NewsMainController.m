@@ -14,6 +14,7 @@
 #import "UINavigationBar+Other.h"
 #import "AppDelegate.h"
 
+
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -40,6 +41,25 @@
     [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout =UIRectEdgeBottom;
+    
+    ((AppDelegate *)([UIApplication sharedApplication].delegate)).push = ^(){
+        //推出警告框
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位失败" preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
+        //UIAlertControllerStyleAlert 是居中显示的文本框
+    
+        UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
+            //UIAlertActionStyleDestructive 红色
+            //UIAlertActionStyleDefault 蓝色
+            //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
+            //是点击确定时的操作
+            
+            
+        }];
+        [alertVC addAction:queren];
+        
+        //推出警告框
+        [self presentViewController:alertVC animated:YES completion:nil];
+    };
     
 }
 -(void)viewWillAppear:(BOOL)animated

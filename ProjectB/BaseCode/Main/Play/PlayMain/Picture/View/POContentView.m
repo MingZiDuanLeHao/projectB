@@ -138,7 +138,7 @@
     UIViewController *vc;
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[objc_getClass("UIViewController") class]] ) {
+        if ([nextResponder isKindOfClass:[UIViewController class]] ) {
             vc=(UIViewController*)nextResponder;
             
             vc.navigationController.navigationBar.hidden = YES;
@@ -160,7 +160,7 @@
     UIViewController *vc;
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[objc_getClass("UIViewController") class]] ) {
+        if ([nextResponder isKindOfClass:[UIViewController class]] ) {
             vc=(UIViewController*)nextResponder;
             
             vc.navigationController.navigationBar.hidden = NO;
