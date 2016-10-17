@@ -1661,7 +1661,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Song (REJD3965ZK)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1705,8 +1706,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1732,12 +1733,14 @@
 			baseConfigurationReference = E5B94A3F61DF1F0EFDA62FC5 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Song (REJD3965ZK)";
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/PrefixHeader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1775,7 +1778,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingziXiangGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4120e229-6f5a-4755-bdf7-d49368b83e14";
+				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
+				PROVISIONING_PROFILE_SPECIFIER = HEHE;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1787,10 +1791,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Jian Song (S2CRPD33DC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/PrefixHeader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1828,7 +1834,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.pingziXiangGu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4120e229-6f5a-4755-bdf7-d49368b83e14";
+				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
+				PROVISIONING_PROFILE_SPECIFIER = HEHE;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
