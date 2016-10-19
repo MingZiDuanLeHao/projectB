@@ -34,7 +34,7 @@
         _coverImg.image = [UIImage imageNamed:@"阴"];
         return;
     }
-    if ([model.cond.txtD isEqualToString: @"大雨"] ||[model.cond.txtD isEqualToString: @"中雨"] ||[model.cond.txtD isEqualToString: @"小雨"] || [model.cond.txtD isEqualToString: @"阵雨"] )
+    if ([model.cond.txtD isEqualToString: @"大雨"] ||[model.cond.txtD isEqualToString: @"中雨"] ||[model.cond.txtD isEqualToString: @"小雨"] || [model.cond.txtD isEqualToString: @"阵雨"] || [model.cond.txtD isEqualToString: @"暴雨"])
     {
         _coverImg.image = [UIImage imageNamed:@"雨"];
         return;

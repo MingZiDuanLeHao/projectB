@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0578941DB6587F0098B0B6 /* 搞笑.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0578901DB6587F0098B0B6 /* 搞笑.jpeg */; };
+		3F0578951DB6587F0098B0B6 /* 视频.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0578911DB6587F0098B0B6 /* 视频.jpg */; };
+		3F0578961DB6587F0098B0B6 /* 电台.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0578921DB6587F0098B0B6 /* 电台.jpg */; };
+		3F0578971DB6587F0098B0B6 /* 美女.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0578931DB6587F0098B0B6 /* 美女.jpg */; };
 		3F1644971DAE5817006A3FCF /* VedioModelActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F16447A1DAE5817006A3FCF /* VedioModelActivity.m */; };
 		3F1644981DAE5817006A3FCF /* VedioModelAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F16447C1DAE5817006A3FCF /* VedioModelAd.m */; };
 		3F1644991DAE5817006A3FCF /* VedioModelComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F16447E1DAE5817006A3FCF /* VedioModelComments.m */; };
@@ -211,6 +215,10 @@
 /* Begin PBXFileReference section */
 		29BCBBB5C7E01C13AF603DA3 /* libPods-ProjectB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.release.xcconfig"; sourceTree = "<group>"; };
+		3F0578901DB6587F0098B0B6 /* 搞笑.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "搞笑.jpeg"; sourceTree = "<group>"; };
+		3F0578911DB6587F0098B0B6 /* 视频.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "视频.jpg"; sourceTree = "<group>"; };
+		3F0578921DB6587F0098B0B6 /* 电台.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电台.jpg"; sourceTree = "<group>"; };
+		3F0578931DB6587F0098B0B6 /* 美女.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "美女.jpg"; sourceTree = "<group>"; };
 		3F1644791DAE5817006A3FCF /* VedioModelActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelActivity.h; sourceTree = "<group>"; };
 		3F16447A1DAE5817006A3FCF /* VedioModelActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioModelActivity.m; sourceTree = "<group>"; };
 		3F16447B1DAE5817006A3FCF /* VedioModelAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioModelAd.h; sourceTree = "<group>"; };
@@ -957,6 +965,10 @@
 				3F1C630D1DB0BC7B008779A0 /* 鼓掌2.png */,
 				3F1C630E1DB0BC7B008779A0 /* 评论2.png */,
 				3F25394D1D9BFB460072831B /* 外卖2.png */,
+				3F0578901DB6587F0098B0B6 /* 搞笑.jpeg */,
+				3F0578911DB6587F0098B0B6 /* 视频.jpg */,
+				3F0578921DB6587F0098B0B6 /* 电台.jpg */,
+				3F0578931DB6587F0098B0B6 /* 美女.jpg */,
 				3F4B2AC81DAD09CA00E07143 /* 播放.png */,
 				3F18D69F1DAFAA4A0081E40D /* 多云.png */,
 				3F18D6A11DAFAA4A0081E40D /* 晴.png */,
@@ -1382,6 +1394,7 @@
 				3F18D6A51DAFAA4A0081E40D /* 晴.png in Resources */,
 				3F1C63191DB1F737008779A0 /* 最新.png in Resources */,
 				3F1C62F31DB07B3A008779A0 /* 便便.png in Resources */,
+				3F0578941DB6587F0098B0B6 /* 搞笑.jpeg in Resources */,
 				3F1F157E1DA9E0AD00ACFF18 /* PictureViewController.xib in Resources */,
 				3F1F153B1DA9DE8000ACFF18 /* 视频.pdf in Resources */,
 				3F18D6AA1DAFBC190081E40D /* 阴.png in Resources */,
@@ -1426,6 +1439,9 @@
 				3F18D6B51DAFD09D0081E40D /* RightWeatherController.xib in Resources */,
 				3F1644B21DAE58C3006A3FCF /* WMPlayer.bundle in Resources */,
 				3F4B2A911DABCAE800E07143 /* RadioOneCell.xib in Resources */,
+				3F0578971DB6587F0098B0B6 /* 美女.jpg in Resources */,
+				3F0578951DB6587F0098B0B6 /* 视频.jpg in Resources */,
+				3F0578961DB6587F0098B0B6 /* 电台.jpg in Resources */,
 				3F1F15411DA9DE8000ACFF18 /* RadioMainController.xib in Resources */,
 				3F4B2A8C1DABBE8900E07143 /* 时钟.png in Resources */,
 				3F1C62A91DAF311C008779A0 /* 占位图.png in Resources */,
