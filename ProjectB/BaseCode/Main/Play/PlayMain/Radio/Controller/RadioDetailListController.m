@@ -235,7 +235,8 @@ static NSString *detailListCell = @"detailListCell";
     }
     else
     {
-        return 10;
+        return _detailList.data.tracks.list.count;
+        
     }
     
 }

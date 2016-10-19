@@ -24,6 +24,8 @@
 @property (nonatomic,assign) NSInteger pageId;
 @property (nonatomic,strong) RadioMain  *radioMain;
 @property (nonatomic,assign) BOOL HideList;
+@property(nonatomic,strong)NSMutableArray *DataArr;
+@property(nonatomic,assign)BOOL isDrawnDown;
 @end
 
 static NSString *leftCell = @"leftCell";
@@ -74,11 +76,21 @@ static NSString *rightCell = @"rightCell";
     //左边列表
     self.leftRadioNameArr = @[@"综合台",@"文艺台",@"音乐台",@"新闻台",@"故事台"];
     
+    //下拉
+    _rightTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _isDrawnDown = YES;
+        if ([_rightTable.mj_header isRefreshing]) {
+            [_rightTable.mj_header beginRefreshing];
+            [self requestData];
+        }
+        
+        
+        
+    }];
     //上提加载更多
     _rightTable.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        //最新
         self.pageId ++;
+        [_rightTable.mj_footer beginRefreshing];
         [self requestData];
     }];
     
@@ -144,6 +156,12 @@ static NSString *rightCell = @"rightCell";
 
 -(void)requestData
 {
+    if (_isDrawnDown) {
+        _DataArr = nil;
+        _isDrawnDown = NO;
+       
+    }
+    
      NSString *UrlStr = [NSString stringWithFormat:@"http://mobile.ximalaya.com/mobile/discovery/v2/category/keyword/albums?calcDimension=hot&categoryId=17&device=iPad&keywordId=%ld&pageId=%ld&pageSize=20&statEvent=pageview%2Fcategory%40%E7%94%B5%E5%8F%B0&statModule=%E7%94%B5%E5%8F%B0&statPage=tab%40%E5%8F%91%E7%8E%B0_%E5%88%86%E7%B1%BB&status=0&version=5.4.27",(long)self.keywordId,self.pageId];
     //转化一下,不然返回的data无法解析
         UrlStr = [UrlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet];
@@ -152,9 +170,14 @@ static NSString *rightCell = @"rightCell";
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
            
             self.radioMain = [RadioMain modelObjectWithDictionary:dic];
+            NSArray *listArr= self.radioMain.list;
+            for (List *model in listArr) {
+                [self.DataArr addObject:model];
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_rightTable reloadData];
-
+                [_rightTable.mj_header endRefreshing];
+                [_rightTable.mj_footer endRefreshing];
             });
         }
        
@@ -180,7 +203,7 @@ static NSString *rightCell = @"rightCell";
 {
     if (!_rightTable) {
         _rightTable = [[UITableView alloc]init];
-        [_rightTable setSeparatorInset:UIEdgeInsetsZero];
+//        [_rightTable setSeparatorInset:UIEdgeInsetsZero];
 //        [_rightTable setLayoutMargins:UIEdgeInsetsZero];
     }
     return _rightTable;
@@ -197,7 +220,7 @@ static NSString *rightCell = @"rightCell";
     {
         // 右边表格
        
-        return _radioMain.list.count;
+        return _DataArr.count;
     }
     
 }
@@ -227,7 +250,7 @@ static NSString *rightCell = @"rightCell";
         
         RadioMainRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightCell];
         
-        List *list = _radioMain.list[indexPath.row];
+        List *list = _DataArr[indexPath.row];
         [cell setDataWithModel:list];
         
         [cell setSeparatorInset:UIEdgeInsetsMake(0, 90, 0, 0)];
@@ -255,6 +278,7 @@ static NSString *rightCell = @"rightCell";
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         cell.textLabel.textColor = [UIColor redColor];
             self.selectIndex = indexPath.row;
+        _isDrawnDown = YES;
         if (indexPath.row == 0) {
             self.keywordId = 113;
             [self requestData];
@@ -276,7 +300,7 @@ static NSString *rightCell = @"rightCell";
     }else{
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         RadioDetailListController *listVC = [RadioDetailListController new];
-        List *list = _radioMain.list[indexPath.row];
+        List *list = _DataArr[indexPath.row];
         listVC.albumId = [NSString stringWithFormat:@"%.0f",list.albumId];
         listVC.titleID = list.title;
         listVC.statEvent = [NSString stringWithFormat:@"40%@",listVC.albumId];
@@ -295,5 +319,12 @@ static NSString *rightCell = @"rightCell";
         [self.navigationController pushViewController:listVC animated:YES];
         
     }
+}
+-(NSMutableArray *)DataArr
+{
+    if (!_DataArr) {
+        _DataArr = [NSMutableArray array];
+    }
+    return _DataArr;
 }
 @end

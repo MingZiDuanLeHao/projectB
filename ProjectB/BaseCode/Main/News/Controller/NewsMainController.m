@@ -13,16 +13,21 @@
 #import "NewsDetailController.h"
 #import "UINavigationBar+Other.h"
 #import "AppDelegate.h"
+#import "MJRefresh.h"
+
 
 
 @interface NewsMainController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
+@property(nonatomic,strong)UIScrollView *titleScrollView;
+@property(nonatomic,strong)UIScrollView *contentScrollView;
 @property(nonatomic,assign)NSInteger titleIndex;
 @property(nonatomic,strong)NSString *cateNumStr;
 @property(nonatomic,assign)NSInteger tableTag;
 @property(nonatomic,strong)NSMutableArray *cateNumArr;
-
+@property(nonatomic,assign)NSInteger refreshCount;
+@property(nonatomic,strong)NSMutableArray *DataArr;
+@property(nonatomic,assign)BOOL isDrawnDown;
+@property(nonatomic,strong)UIColor *seperator;
 
 @property(nonatomic,strong)BaseClass *base;
 
@@ -39,21 +44,13 @@
     [self setupContent];
     [self askData];
     [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
-//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout =UIRectEdgeBottom;
     
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).push = ^(){
         //推出警告框
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"定位失败" preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
-        //UIAlertControllerStyleAlert 是居中显示的文本框
-    
         UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
-            //UIAlertActionStyleDestructive 红色
-            //UIAlertActionStyleDefault 蓝色
-            //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
-            //是点击确定时的操作
-            
-            
         }];
         [alertVC addAction:queren];
         
@@ -78,6 +75,10 @@
         UILabel *label = [[UILabel alloc]init];
         label.frame = CGRectMake(labelW * i, labelY, labelW, labelH);
         label.text = titleArr[i];
+//        label.textColor = [UIColor redColor];
+        if ([titleArr[i] isEqualToString:@"要闻"]) {
+            label.textColor = [UIColor redColor];
+        }
         label.textAlignment = NSTextAlignmentCenter;
         [label addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapTitle:)]];
         label.userInteractionEnabled = YES;
@@ -85,13 +86,12 @@
         [self.titleScrollView addSubview:label];
     }
     self.titleScrollView.contentSize = CGSizeMake(6 * labelW, 0);
-    self.contentScrollView.contentSize = CGSizeMake(6* self.contentScrollView.frame.size.width * Ratio, 0);
+    self.contentScrollView.contentSize = CGSizeMake(6* SWidth, 0);
+    _titleScrollView.delegate = self;
+    _contentScrollView.delegate = self;
 
-    //    导航栏变为透明
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-//    //    //    让黑线消失的方法
-//        self.navigationController.navigationBar.shadowImage=[UIImage new];
-//    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
+   
+    
     
 }
 
@@ -126,12 +126,13 @@
     self.titleIndex = index;
     _cateNumStr = _cateNumArr[index-100];
     _tableTag = 200 + index - 100;
+    _isDrawnDown = YES;
     [self askData];
 }
 -(void)setupContent
 {
     for (NSInteger i = 0; i < 6; i++) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(i * self.contentScrollView.frame.size.width * Ratio, 0, self.contentScrollView.frame.size.width * Ratio, self.contentScrollView.frame.size.height+64) style:UITableViewStylePlain];
+        UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(i * SWidth , 0, SWidth , self.contentScrollView.frame.size.height) style:UITableViewStylePlain];
         table.delegate = self;
         table.dataSource = self;
         UINib *myNib = [UINib nibWithNibName:@"NewsMainTableViewCell" bundle:nil];
@@ -141,9 +142,34 @@
         [table setSeparatorInset:UIEdgeInsetsZero];
         [table setLayoutMargins:UIEdgeInsetsZero];
         table.tag = i + 200;
+        
+        //下拉上拉
+        table.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            _isDrawnDown = YES;
+            if ([table.mj_header isRefreshing]) {
+                [table.mj_header beginRefreshing];
+                [self askData];
+            }
+            
+            
+            
+        }];
+        table.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            _refreshCount++;
+            [table.mj_footer beginRefreshing];
+            [self askData];
+            
+        }];
         [self.contentScrollView addSubview:table];
+        _seperator = table.separatorColor;
         
     }
+    UIView *view = [UIView new];
+    view.frame = CGRectMake(0, 40, SWidth, 1);
+    view.backgroundColor = _seperator;
+    [self.view addSubview:view];
+    [self.view addSubview:_contentScrollView];
+    [self.view addSubview:_titleScrollView];
     
 }
 -(void)setTitleIndex:(NSInteger)titleIndex
@@ -161,16 +187,28 @@
 #pragma mark handleData
 -(void)askData
 {
-    NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/list/%@/0-20.html",_cateNumStr];
+    if (_isDrawnDown) {
+        _DataArr = nil;
+        _isDrawnDown = NO;
+        _refreshCount = 0;
+    }
+    NSInteger refreshTime = _refreshCount*20;
+    NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/list/%@/%ld-%ld.html",_cateNumStr,(long)refreshTime,refreshTime+20];
     [NetWorkRequest requestWithMethod:GET URL:url para:nil success:^(NSData *data) {
         if (data) {
 
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             _base = [BaseClass modelObjectWithDictionary:dic key:_cateNumStr];
-            
+            NSArray *listArr = _base.t1441074311424;
+            for (T1441074311424 *model in listArr) {
+                [self.DataArr addObject:model];
+            }
             UITableView *table = (UITableView *)[self.view viewWithTag:_tableTag];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [table reloadData];
+                
+                [table.mj_header endRefreshing];
+                [table.mj_footer endRefreshing];
             });
         }
     } error:^(NSError *error) {
@@ -179,11 +217,13 @@
 
 }
 
+
+
 #pragma mark TableView代理
         
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _base.t1441074311424.count;
+    return _DataArr.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -196,7 +236,7 @@
     
     
     NewsMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsMainTableViewCell"];
-    T1441074311424 *model =  _base.t1441074311424[indexPath.row];
+    T1441074311424 *model =  _DataArr[indexPath.row];
     [cell.coverimg sd_setImageWithURL:[NSURL URLWithString:model.imgsrc]];
     cell.mainTitle.text = model.title;
     cell.subTitle.text = model.digest;
@@ -236,6 +276,7 @@
         //刷新UI
         _cateNumStr = _cateNumArr[index];
         _tableTag = 200 + index;
+        _isDrawnDown = YES;
         [self askData];
         
         // 让对应的顶部标题居中显示
@@ -256,7 +297,29 @@
     }
 }
 
+-(NSMutableArray *)DataArr
+{
+    if (!_DataArr) {
+        _DataArr = [NSMutableArray array];
+    }
+    return _DataArr;
+}
 
+-(UIScrollView *)titleScrollView
+{
+    if (!_titleScrollView) {
+        _titleScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SWidth, 40)];
+    }
+    return _titleScrollView;
+}
+
+-(UIScrollView *)contentScrollView
+{
+    if (!_contentScrollView) {
+        _contentScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 41, SWidth,SHeight-64-46-41)];
+    }
+    return _contentScrollView;
+}
 
 
 - (void)didReceiveMemoryWarning {

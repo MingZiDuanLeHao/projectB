@@ -157,7 +157,7 @@
         _headerView.coverImg.image = [UIImage imageNamed:@"阴"];
         return;
     }
-    if ([service.now.cond.txt isEqualToString: @"大雨"] ||[service.now.cond.txt isEqualToString: @"中雨"] ||[service.now.cond.txt isEqualToString: @"小雨"] || [service.now.cond.txt isEqualToString: @"阵雨"] )
+    if ([service.now.cond.txt isEqualToString: @"大雨"] ||[service.now.cond.txt isEqualToString: @"中雨"] ||[service.now.cond.txt isEqualToString: @"小雨"] || [service.now.cond.txt isEqualToString: @"阵雨"] ||[service.now.cond.txt isEqualToString: @"暴雨"] )
     {
         _headerView.coverImg.image = [UIImage imageNamed:@"雨"];
         return;

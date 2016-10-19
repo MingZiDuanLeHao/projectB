@@ -46,7 +46,10 @@
     [self doAction];
     [self changeLook];
     [self autoMove];
-    [self initView];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self initView];
+    });
+    
     
     
 }
@@ -72,7 +75,7 @@
     
     //头部
     _headerView = [[NSBundle mainBundle]loadNibNamed:@"RadioPlayHeaderView" owner:nil options:nil][0];
-    _headerView.frame = CGRectMake(0, 64, SWidth, SWidth+143);
+    _headerView.frame = CGRectMake(0, 0, SWidth, SWidth+143);
     _headerView.backgroundColor = [UIColor clearColor];
     [_headerView.progressSlider setThumbImage:[UIImage imageNamed:@"icon-slider"] forState:UIControlStateHighlighted];
     [_headerView.progressSlider setThumbImage:[UIImage imageNamed:@"icon-slider"] forState:UIControlStateNormal];
@@ -84,10 +87,7 @@
     
     _PlaytableView.tableHeaderView = headerView;
     [_PlaytableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"wes"];
-    
-    //多余cell分割线
-//    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
-//    [_PlaytableView setTableFooterView:v];
+
     
     [_PlaytableView registerNib:[UINib nibWithNibName:@"RadioMainRightTableCell" bundle:nil] forCellReuseIdentifier:@"RadioMainRightTableCell"];
     
@@ -98,8 +98,7 @@
     
     //    导航栏变为透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    //    让黑线消失的方法
-//    self.navigationController.navigationBar.shadowImage=[UIImage new];
+
     
     //    毛玻璃
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"粉1.jpg"]];
@@ -108,14 +107,7 @@
     imageview.frame = [UIScreen mainScreen].bounds;
     [self.view insertSubview:imageview belowSubview:_PlaytableView];
     
-//    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    
-//    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
-//    
-//    effectview.frame = [UIScreen mainScreen].bounds;
-//    
-//    [self.view insertSubview:effectview aboveSubview:imageview];
-    
+
     
   
     
@@ -251,30 +243,11 @@
             lab.frame = CGRectMake(offsetX, rect.origin.y, rect.size.width, rect.size.height);
         }
         
-        
-//        NSLog(@offsetX:%f,offsetX);
+
     }];
     
 }
 
-//-(void) setScrollText{
-//    [UIView animateWithDuration:K_MAIN_VIEW_TEME_INTERVAL * 6 animations:^{
-//        CGPoint point = scrollViewText.contentOffset;
-//        point.x += K_MAIN_VIEW_SCROLLER_SPACE;
-//        scrollViewText.contentOffset = point;
-//    }];
-//
-//}
-
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    if (scrollView == scrollViewText) {
-//        if (scrollViewText.contentOffset.x >= 2*(_width + K_MAIN_VIEW_SCROLLER_LABLE_MARGIN)- (SWidth-100))
-//        {
-//            [scrollViewText setContentOffset:CGPointMake(0, 0)];
-//        }
-//    }
-//}
 
 //下拉退出controller
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
@@ -319,10 +292,13 @@
    
     _headerView.lastBlock = ^(){
         [[RadioPlayerManager defaultManager]lastMusic];
+        
         [weakself changeLook];
-        //移除原来滚动的label
-//        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            //移除原来滚动的label
+            //        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [weakself initView];
+        
+        
         
         
     };
@@ -341,9 +317,12 @@
     
     _headerView.nextBlock = ^(){
         [[RadioPlayerManager defaultManager]nextNusic];
-        [weakself changeLook];
-//        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        [weakself initView];
+        
+            [weakself changeLook];
+            //        [weakScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            [weakself initView];
+        
+       
     };
     
     _headerView.dragBlock = ^(){
@@ -383,11 +362,11 @@
     cell.NumCount.text = [NSString stringWithFormat:@"%.0f",_album.tracks];
     cell.desc.text = [NSString stringWithFormat:@"by:%@",_album.nickname];;
     [cell.img sd_setImageWithURL:[NSURL URLWithString:_album.coverSmall]];
-    cell.img.layer.borderWidth = 0.3;
-    cell.img.layer.borderColor =[[UIColor grayColor]CGColor];
-    cell.img.layer.shadowOffset = CGSizeMake(-3, 3);
-    cell.img.layer.shadowColor =[[UIColor blackColor]CGColor];
-    cell.img.layer.shadowOpacity = 0.5;
+//    cell.img.layer.borderWidth = 0.3;
+//    cell.img.layer.borderColor =[[UIColor grayColor]CGColor];
+//    cell.img.layer.shadowOffset = CGSizeMake(-3, 3);
+//    cell.img.layer.shadowColor =[[UIColor blackColor]CGColor];
+//    cell.img.layer.shadowOpacity = 0.5;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor clearColor];
