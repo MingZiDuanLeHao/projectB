@@ -103,8 +103,37 @@
     
     [self.window setRootViewController:self.drawerController];
     
+    [self.window makeKeyAndVisible];
+    
+    UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
+    UIView *launchView = viewController.view;
+    
+    [self.window addSubview:launchView];
+    [self.window bringSubviewToFront:launchView];
+    
+    [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        launchView.alpha = 0.0f;
+        launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.5f, 1.5f, 1.0f);
+    } completion:^(BOOL finished) {
+        [launchView removeFromSuperview];
+    }];
+    
     return YES;
 }
+
+
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    [self.window makeKeyAndVisible];
+//    lunchView = [[NSBundle mainBundle ]loadNibNamed:@"LaunchScreen" owner:nil options:nil][0];
+//    lunchView.frame = CGRectMake(0, 0, self.window.screen.bounds.size.width, self.window.screen.bounds.size.height);
+//    [self.window addSubview:lunchView];
+//    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, 320, 300)];
+//    NSString *str = @"http://www.jerehedu.com/images/temp/logo.gif";
+//    [imageV sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"default1.jpg"]];
+//    [lunchView addSubview:imageV];
+//    [self.window bringSubviewToFront:lunchView];
+//    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(removeLun) userInfo:nil repeats:NO]; return YES; }
+//-(void)removeLun { [lunchView removeFromSuperview]; }
 
 //- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
 //{
@@ -122,7 +151,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self.window makeKeyAndVisible];
     
     
     return YES;
@@ -244,6 +272,10 @@
         
 //        _placeName = [_placeName substringToIndex:_placeName.length-3];
         if (_placeName) {
+            if ([_placeName hasSuffix:@"shi"]) {
+                _placeName = [_placeName substringToIndex:_placeName.length-3];
+                
+            }
             [self requestData];
         }
         else

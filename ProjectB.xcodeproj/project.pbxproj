@@ -1661,7 +1661,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Song (REJD3965ZK)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1705,8 +1706,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1777,8 +1778,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanouclass4.SHAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "991b4a6f-8ea6-4b0d-924f-759efafd81cc";
 				PROVISIONING_PROFILE_SPECIFIER = TaylorTest;
+=======
+				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
+				PROVISIONING_PROFILE_SPECIFIER = HEHE;
+>>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1788,8 +1794,13 @@
 			baseConfigurationReference = 2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Song (REJD3965ZK)";
+=======
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
+>>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				DEVELOPMENT_TEAM = S2CRPD33DC;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1833,8 +1844,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanouclass4.SHAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "991b4a6f-8ea6-4b0d-924f-759efafd81cc";
 				PROVISIONING_PROFILE_SPECIFIER = TaylorTest;
+=======
+				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
+				PROVISIONING_PROFILE_SPECIFIER = HEHE;
+>>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
