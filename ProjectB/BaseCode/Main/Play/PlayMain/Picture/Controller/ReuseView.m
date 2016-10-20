@@ -10,5 +10,10 @@
 
 @implementation ReuseView
 
-
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.img.image = [UIImage imageNamed:@"4.jpg"];
+    self.img.layer.cornerRadius = 1;
+}
 @end

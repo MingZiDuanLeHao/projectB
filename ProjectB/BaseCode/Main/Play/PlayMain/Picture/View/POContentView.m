@@ -86,10 +86,10 @@
             self.PictureModel = [PictureModelPictureModel modelObjectWithDictionary:dic];
         
             
-                        //取出最后一个图片的时间戳,加载更多的时候需要
-                        PictureModelItems *model1 =  [self.PictureModel.items lastObject];
-                        self.updateTime = model1.updateTime;
-            
+            //取出最后一个图片的时间戳,加载更多的时候需要
+            PictureModelItems *model1 =  [self.PictureModel.items lastObject];
+            self.updateTime = model1.updateTime;
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[self popupOverlayer] reloadData];
             });
@@ -144,7 +144,7 @@
             vc.navigationController.navigationBar.hidden = YES;
         }
     }
-    
+
 
     //添加点击手势（即点击图片后退出全屏）
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(closeView)];
@@ -207,9 +207,9 @@
     self.leftButton.titleLabel.font = [UIFont systemFontOfSize:24];
     self.leftButton.layer.cornerRadius = 48/2.;
     self.leftButton.layer.borderWidth = 1.f;
-    self.leftButton.layer.borderColor = [[UIColor blackColor] CGColor];
-    [[self leftButton] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [[self leftButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    self.leftButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    [[self leftButton] setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [[self leftButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     [[self leftButton] setTitle:@"L" forState:UIControlStateNormal];
     [[self leftButton] addTarget:self action:@selector(didClickleft:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -217,9 +217,9 @@
     self.rightButton.titleLabel.font = [UIFont systemFontOfSize:24];
     self.rightButton.layer.cornerRadius = 48/2.;
     self.rightButton.layer.borderWidth = 1.f;
-    self.rightButton.layer.borderColor = [[UIColor blackColor] CGColor];
-    [[self rightButton] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [[self rightButton] setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    self.rightButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    [[self rightButton] setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [[self rightButton] setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted];
     [[self rightButton] setTitle:@"R" forState:UIControlStateNormal];
     [[self rightButton] addTarget:self action:@selector(didClickright:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -227,9 +227,6 @@
     
 //    [[self popupOverlayer] reloadData];
 }
-#pragma mark - 清理缓存
-
-
 
 
 #pragma mark - POPopupOverlayerDelegate, POPopupOverlayerDataSource
@@ -261,34 +258,32 @@
     view.layer.masksToBounds = YES;
     view.layer.borderColor = [[UIColor whiteColor] CGColor];
  
+    PictureModelItems *model1 =  self.PictureModel.items[nIndex];
+    
 
-        PictureModelItems *model1 =  self.PictureModel.items[nIndex];
-    
     //带进度条的img
-    __block UIProgressView *pv;
-    pv.backgroundColor = [UIColor grayColor];
+    __block UIProgressView *pv = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
+    pv.backgroundColor = [UIColor lightGrayColor];
     pv.progressTintColor = [UIColor greenColor];
-    pv.trackTintColor = [UIColor redColor];
-    __weak UIImageView *weakImageView = view.img;
-    
-    [view.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]
+    __weak ReuseView *weakView = view;
+
+    [weakView.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]
                 placeholderImage:nil
                          options:SDWebImageCacheMemoryOnly
                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                            if (!pv) {
+                            if (pv) {
                                 float showProgress = (float)receivedSize/(float)expectedSize;
-                                [pv setProgress:showProgress];
-                                [weakImageView addSubview:pv = [UIProgressView.alloc initWithProgressViewStyle:UIProgressViewStyleDefault]];
-                                pv.frame = CGRectMake(0, pv.superview.frame.size.height - 20, pv.superview.frame.size.width, 40);
-                                [pv setProgress:receivedSize/expectedSize animated:YES];
+                               // [pv setProgress:showProgress];
+                                [weakView addSubview:pv ];
+                               
+                                pv.frame = CGRectMake(0, pv.superview.frame.size.height - 20, pv.superview.frame.size.width, 20);
+                                [pv setProgress:showProgress animated:YES];
                             }
                         }
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                            [pv removeFromSuperview];
                            pv = nil;
                        }];
-
-//    [view.img sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:model1.wpicMiddle] placeholderImage:[UIImage imageNamed:@"占位图"] options:0 progress:nil completed:nil];
     
     if (nIndex >= 2) {
         PictureModelItems *model1 =  self.PictureModel.items[nIndex - 2];
@@ -312,7 +307,7 @@
 
 
     self.index = nIndex;
-    
+
     return view;
 }
 

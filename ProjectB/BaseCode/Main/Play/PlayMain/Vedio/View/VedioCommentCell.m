@@ -12,13 +12,15 @@
 
 - (void)awakeFromNib {
     //图片切成圆形
-
+    [super awakeFromNib];
     self.avatar.backgroundColor = [UIColor lightGrayColor];
 
     self.avatar.layer.masksToBounds = YES;
     self.avatar.clipsToBounds = YES;
     self.avatar.layer.cornerRadius = 40/2.;
-   // self.avatar.layer.borderWidth = 1.f;
+
+    self.backView.layer.cornerRadius = 4;
+    self.backView.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

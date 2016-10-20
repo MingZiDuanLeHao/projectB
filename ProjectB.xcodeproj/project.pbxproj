@@ -181,6 +181,9 @@
 		3F799A321D9E51DA009DAF97 /* rednavi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */; };
 		3F799A341D9E5286009DAF97 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A331D9E5286009DAF97 /* black.jpg */; };
 		3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F799A351D9E53E0009DAF97 /* 4.jpg */; };
+		3F8062911DB7BA200072D549 /* 主页.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F80628E1DB7BA200072D549 /* 主页.png */; };
+		3F8062921DB7BA200072D549 /* 清理.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F80628F1DB7BA200072D549 /* 清理.png */; };
+		3F8062931DB7BA200072D549 /* 关于.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8062901DB7BA200072D549 /* 关于.png */; };
 		3F9C0FA41DA9EFB200794EA0 /* RadiodetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */; };
 		3F9C0FA61DA9EFD700794EA0 /* RadiodetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9C0FA51DA9EFD700794EA0 /* RadiodetailHeaderView.xib */; };
 		3FA224231DAE726F0035099A /* 占位.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA224221DAE726F0035099A /* 占位.png */; };
@@ -496,6 +499,9 @@
 		3F799A2E1D9E51DA009DAF97 /* rednavi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rednavi.jpg; sourceTree = "<group>"; };
 		3F799A331D9E5286009DAF97 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		3F799A351D9E53E0009DAF97 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		3F80628E1DB7BA200072D549 /* 主页.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主页.png"; sourceTree = "<group>"; };
+		3F80628F1DB7BA200072D549 /* 清理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清理.png"; sourceTree = "<group>"; };
+		3F8062901DB7BA200072D549 /* 关于.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关于.png"; sourceTree = "<group>"; };
 		3F9C0FA21DA9EFB200794EA0 /* RadiodetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiodetailHeaderView.h; sourceTree = "<group>"; };
 		3F9C0FA31DA9EFB200794EA0 /* RadiodetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiodetailHeaderView.m; sourceTree = "<group>"; };
 		3F9C0FA51DA9EFD700794EA0 /* RadiodetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiodetailHeaderView.xib; sourceTree = "<group>"; };
@@ -946,6 +952,9 @@
 		3F2539371D9BF1F40072831B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F80628E1DB7BA200072D549 /* 主页.png */,
+				3F80628F1DB7BA200072D549 /* 清理.png */,
+				3F8062901DB7BA200072D549 /* 关于.png */,
 				3F1C63171DB1F737008779A0 /* 最新.png */,
 				3F1C63181DB1F737008779A0 /* 热门.png */,
 				3F18D6B91DB070220081E40D /* 壁纸.jpg */,
@@ -1383,6 +1392,7 @@
 				3F4B2A811DABB8DD00E07143 /* RadioPlayViewController.xib in Resources */,
 				3F799A361D9E53E0009DAF97 /* 4.jpg in Resources */,
 				3F1F15711DA9E09200ACFF18 /* BeautyCell.xib in Resources */,
+				3F8062911DB7BA200072D549 /* 主页.png in Resources */,
 				3F4B2A7A1DAB48AE00E07143 /* 播放orange.png in Resources */,
 				3F2539511D9BFB460072831B /* 视频2.png in Resources */,
 				3F1F158A1DA9E36F00ACFF18 /* VedioPlayViewController.xib in Resources */,
@@ -1418,6 +1428,7 @@
 				3F1C62FA1DB0A221008779A0 /* VedioDetailController.xib in Resources */,
 				3F1C63101DB0BC7B008779A0 /* 鼓掌2.png in Resources */,
 				3F4B2B041DAE3C9600E07143 /* 返回.png in Resources */,
+				3F8062931DB7BA200072D549 /* 关于.png in Resources */,
 				3F4B2AC31DAD072400E07143 /* 下一首.png in Resources */,
 				3F1C62E11DAFBED9008779A0 /* 鼓掌.png in Resources */,
 				3F2539521D9BFB460072831B /* 外卖.png in Resources */,
@@ -1450,6 +1461,7 @@
 				3F18D6B81DB06E850081E40D /* 星空.jpeg in Resources */,
 				3F45A8501D9BA7FD00A83BB1 /* Main.storyboard in Resources */,
 				3F4B2AD61DADE0F600E07143 /* 粉.jpeg in Resources */,
+				3F8062921DB7BA200072D549 /* 清理.png in Resources */,
 				3F18D6A31DAFAA4A0081E40D /* 多云.png in Resources */,
 				3F1F153E1DA9DE8000ACFF18 /* RadioDetailList.xib in Resources */,
 				3F4B2AA91DABD72000E07143 /* RadioTwoCell.xib in Resources */,
@@ -1794,13 +1806,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanouclass4.SHAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE = "991b4a6f-8ea6-4b0d-924f-759efafd81cc";
 				PROVISIONING_PROFILE_SPECIFIER = TaylorTest;
-=======
-				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
-				PROVISIONING_PROFILE_SPECIFIER = HEHE;
->>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1810,13 +1817,8 @@
 			baseConfigurationReference = 2BEEDCAA33316EC1D3FB37CC /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jian Song (REJD3965ZK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jian Song (REJD3965ZK)";
-=======
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jian Song (S2CRPD33DC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jian Song (S2CRPD33DC)";
->>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				DEVELOPMENT_TEAM = S2CRPD33DC;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1860,13 +1862,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanouclass4.SHAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-<<<<<<< HEAD
 				PROVISIONING_PROFILE = "991b4a6f-8ea6-4b0d-924f-759efafd81cc";
 				PROVISIONING_PROFILE_SPECIFIER = TaylorTest;
-=======
-				PROVISIONING_PROFILE = "db71c459-cfb9-4be9-9fbb-8d7f9e4064e6";
-				PROVISIONING_PROFILE_SPECIFIER = HEHE;
->>>>>>> cc2a57d4ff679d6a9bbbc7d76ea7a88c450e9392
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -241,7 +241,12 @@
     cell.mainTitle.text = model.title;
     cell.subTitle.text = model.digest;
     cell.From.text = model.source;
-    cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
+    if (model.replyCount>=10000) {
+        cell.followCount.text = [NSString stringWithFormat:@"%.1f万",model.replyCount/10000.0];
+    }else{
+        cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
+    }
+
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [cell setSeparatorInset:UIEdgeInsetsZero];
