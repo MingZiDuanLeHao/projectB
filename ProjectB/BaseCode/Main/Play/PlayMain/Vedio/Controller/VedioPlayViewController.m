@@ -85,10 +85,6 @@ static NSString *cellID = @"playCell";
     _tableV.showsVerticalScrollIndicator = NO;
     //上提加载更多
     _tableV.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        // 进入刷新状态后会自动调用这个block
-        //最新
-//        self.page ++;
-//        self.lastestView = @"-1";
            [self requestData];
     }];
     
@@ -124,49 +120,23 @@ static NSString *cellID = @"playCell";
 
                 CGRect tmpRect = [label.text boundingRectWithSize:CGSizeMake(SWidth - 10, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil] context:nil];
                 if ([arr containsObject:@"ad"]&& W == 0) {
-                    // NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+
                 }else
                 {
-                //   NSLog(@">>>>>>%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
+
                    [self.dataArray addObject:dicGroup];
                     NSDictionary *dicWH = @{@"wight": [NSString stringWithFormat:@"%d",W],@"hight":[NSString stringWithFormat:@"%d",H]};
                     [self.hightArray2 addObject:dicWH];
                    [self.hightArray addObject:@(H * (SWidth - 10) /W + tmpRect.size.height + 90) ];
                 }
             }
-          //  NSLog(@"self.dataArray.count____%lu",(unsigned long)self.dataArray.count);
-    
-            
-//            for (NSDictionary *dicGroup1 in self.dataArray) {
-//                double W = [dicGroup1[@"group"][@"video_width"] doubleValue];
-//                double H = [dicGroup1[@"group"][@"video_height"] doubleValue];
-//               NSLog(@"!!!!!!!!!!!!!%f,%f,%lu",W,H,(unsigned long)self.dataArray.count);
-//                if (W != 0) {
-//                    [self.hightArray addObject:@(H * SWidth /W) ];
-//                }else{
-//                    [self.dataArray removeObject:dicGroup1];
-//                    NSLog( @">>>>>>%lu",(unsigned long)dataArr.count);
-//                }
-//               
-//              
-//            }
-            
-            
-//
-//            //取出最后一个图片的时间戳,加载更多的时候需要
-//            PictureModelItems *model1 =  [self.PictureModel.items lastObject];
-//            self.updateTime = model1.updateTime;
-            
-         //   if (self.hightArray.count != 0) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [_tableV reloadData];
-                    [_tableV.mj_footer endRefreshing];
-                });
-            }
-         //   }
-   
-        
-        
+  
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableV reloadData];
+            [_tableV.mj_footer endRefreshing];
+        });
+    }
+  
     } error:^(NSError *error) {
         NSLog(@"error===%@",error);
     } view:self.view];
@@ -278,20 +248,7 @@ static NSString *cellID = @"playCell";
     NSString *comment = [NSString stringWithFormat:@"%ld",[dic[@"comment_count"] integerValue]];
 
 
-    cell.zanBtn.layer.cornerRadius = 4;
-    cell.zanBtn.layer.borderWidth = 2;
-    cell.zanBtn.layer.masksToBounds = YES;
-    cell.zanBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-    
-    cell.caiBtn.layer.cornerRadius = 4;
-    cell.caiBtn.layer.borderWidth = 2;
-    cell.caiBtn.layer.masksToBounds = YES;
-    cell.caiBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-    
-    cell.commentBtn.layer.cornerRadius = 4;
-    cell.commentBtn.layer.borderWidth = 2;
-    cell.commentBtn.layer.masksToBounds = YES;
-    cell.commentBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+
     _QindexPath = [NSIndexPath new];
     _QindexPath = indexPath;
     
@@ -312,29 +269,24 @@ static NSString *cellID = @"playCell";
     [cell.caiBtn setTitle:cai_select forState:UIControlStateSelected];
     [cell.caiBtn setImage:[UIImage imageNamed:@"便便2"] forState:UIControlStateSelected];
     
- //图片设置边角
-    cell.img.layer.cornerRadius = 4;
-    cell.img.layer.borderWidth = 2;
-    cell.img.layer.masksToBounds = YES;
-    cell.img.layer.borderColor = [[UIColor whiteColor] CGColor];
+
     
-    __block UIProgressView *pv;
+    __block UIProgressView *pv = [[UIProgressView alloc]init];
     pv.backgroundColor = [UIColor grayColor];
     pv.progressTintColor = [UIColor greenColor];
     pv.trackTintColor = [UIColor redColor];
     __weak UIImageView *weakImageView = cell.img;
     
-    [cell.img sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]
+    [weakImageView sd_setImageWithURL:[NSURL URLWithString:url_listArr[0][@"url"]]
                 placeholderImage:[UIImage imageNamed:@"占位图"]
                          options:SDWebImageCacheMemoryOnly
                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                            if (!pv) {
+                            if (pv) {
                                 float showProgress = (float)receivedSize/(float)expectedSize;
                                 [pv setProgress:showProgress];
-                                [weakImageView addSubview:pv = [UIProgressView.alloc initWithProgressViewStyle:UIProgressViewStyleDefault]];
+                                [weakImageView addSubview:pv ];
                                 pv.frame = CGRectMake(0, 0, 100, 20);
-                                [pv setProgress:receivedSize/expectedSize animated:YES];
-                                //NSLog(@"=======%f,%ld,%ld",showProgress,receivedSize,expectedSize);
+                          
                             } 
                         } 
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) { 
@@ -426,6 +378,7 @@ static NSString *cellID = @"playCell";
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
 
+    //第一次进入
     if (self.isFirstEnter) {
         VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
         CGRect frame = cell.img.frame;
@@ -440,6 +393,7 @@ static NSString *cellID = @"playCell";
         _indexPath = indexPath;
         self.isFirstEnter = NO;
     }else{
+        //点击的不是上一个点击
         if (_indexPath.row!= indexPath.row) {
             [self releaseWMPlayer];
             VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
@@ -455,6 +409,7 @@ static NSString *cellID = @"playCell";
             _indexPath = indexPath;
         }else
         {
+            //是上一个点击,已经播放结束
             if (self.isFinish) {
             VedioPlayCell *cell = [_tableV cellForRowAtIndexPath:indexPath];
             CGRect frame = cell.img.frame;
@@ -477,35 +432,6 @@ static NSString *cellID = @"playCell";
 {
     
 }
-
-
-
-//- (NHBaseTableViewCell *)nh_cellAtIndexPath:(NSIndexPath *)indexPath {
-//    // 1. 创建cell
-//    NHHomeTableViewCell *cell = [NHHomeTableViewCell cellWithTableView:self.tableView];
-//    
-//    // 2. 设置数据
-//    NHHomeTableViewCellFrame *cellFrame = self.cellFrameArray[indexPath.row];
-//    cell.cellFrame = cellFrame;
-//    cell.delegate = self;
-//    cell.isFromHomeController = YES;
-//    
-//    // 3. 返回cell
-//    return cell;
-//}
-
-//- (void)nh_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(NHBaseTableViewCell *)cell {
-//    NHDynamicDetailViewController *controller = [[NHDynamicDetailViewController alloc] initWithCellFrame:self.cellFrameArray[indexPath.row]];
-//    [self pushVc:controller];
-//}
-
-
-
-//- (CGFloat)nh_cellheightAtIndexPath:(NSIndexPath *)indexPath {
-//    NHHomeTableViewCellFrame *cellFrame = self.cellFrameArray[indexPath.row];
-//    return cellFrame.cellHeight;
-//}
-#pragma mark - 支持横屏
 
 
 

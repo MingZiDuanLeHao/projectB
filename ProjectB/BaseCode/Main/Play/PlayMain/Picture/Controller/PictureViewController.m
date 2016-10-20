@@ -28,7 +28,7 @@
     
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
     self.navigationController.navigationBar.shadowImage=[UIImage new];
-    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
+//    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
     
 //    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"图片";

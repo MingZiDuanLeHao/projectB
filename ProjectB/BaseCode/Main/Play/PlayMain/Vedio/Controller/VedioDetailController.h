@@ -13,8 +13,6 @@
 @interface VedioDetailController : BarButtomViewController
 /**index*/
 @property(nonatomic,assign) NSInteger index;
-@property(nonatomic,strong) NSMutableArray *dataArray;
-@property(nonatomic,strong) NSMutableArray *hightArray;
 @property(nonatomic,strong) NSDictionary *hightDic;
 @property(nonatomic,strong) NSString *vedioUrl;
 @property(nonatomic,strong) NSString *imgUrl;

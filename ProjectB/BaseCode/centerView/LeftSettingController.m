@@ -16,6 +16,7 @@
 
 
 @property (nonatomic,strong ) NSArray *array;
+@property (nonatomic,strong ) NSArray *imgArray;
 @property (nonatomic,strong ) UITableView *tableView;
 
 @end
@@ -53,6 +54,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _array = @[@"主页",@"清理缓存",@"关于"];
+    _imgArray = @[[UIImage imageNamed:@"主页"],[UIImage imageNamed:@"清理"],[UIImage imageNamed:@"关于"]];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     
@@ -121,6 +123,7 @@
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, str.length)];
     
     cell.textLabel.attributedText = str;
+    cell.imageView.image = _imgArray[indexPath.row];
     
     
     cell.backgroundColor = [UIColor clearColor];

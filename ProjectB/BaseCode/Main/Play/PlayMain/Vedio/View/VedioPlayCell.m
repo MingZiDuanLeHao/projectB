@@ -17,46 +17,29 @@
 @implementation VedioPlayCell
 
 - (void)awakeFromNib {
-    // Initialization code
-
-        CGRect frame = self.frame;
+    [super awakeFromNib];
+    self.contentView.layer.cornerRadius = 2;
     
-//    
-//    self.zanBtn.backgroundColor = [UIColor grayColor];
-//
-//    self.zanBtn.titleLabel.font = [UIFont systemFontOfSize: 12.0];
-//    [self.zanBtn setImage:[UIImage imageNamed:@"鼓掌1"] forState:UIControlStateNormal];
-//    [self.zanBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 5, 30, 0)];
-//    [self.zanBtn setTitleEdgeInsets:UIEdgeInsetsMake(30, -65, 0, 0)];
-//    
-//
-//    
-//    
-//    //踩
-//    self.caiBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width/2 -30 , frame.size.height - 85, 60, 60)];
-//    
-//    self.caiBtn.backgroundColor = [UIColor grayColor];
-//    [self.caiBtn setTitle:@"11111" forState:UIControlStateNormal];
-//    self.caiBtn.titleLabel.font = [UIFont systemFontOfSize: 12.0];
-//    [self.caiBtn setImage:[UIImage imageNamed:@"便便1"] forState:UIControlStateNormal];
-//    [self.caiBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 5, 30, 0)];
-//    [self.caiBtn setTitleEdgeInsets:UIEdgeInsetsMake(30, -65, 0, 0)];
-//    
-//    //[self addSubview: self.caiBtn];
-//    
-//    
-//    
-//    //评论
-//    UIButton *commentBtn = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width -65, frame.size.height - 85, 60, 60)];
-//    
-//    commentBtn.backgroundColor = [UIColor grayColor];
-//    [commentBtn setTitle:@"11111" forState:UIControlStateNormal];
-//    commentBtn.titleLabel.font = [UIFont systemFontOfSize: 12.0];
-//    [commentBtn setImage:[UIImage imageNamed:@"评论"] forState:UIControlStateNormal];
-//    [commentBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 5, 30, 0)];
-//    [commentBtn setTitleEdgeInsets:UIEdgeInsetsMake(30, -65, 0, 0)];
+    self.zanBtn.layer.cornerRadius = 4;
+    self.zanBtn.layer.borderWidth = 2;
+    self.zanBtn.layer.masksToBounds = YES;
+    self.zanBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     
-    //[self addSubview: commentBtn];
+    self.caiBtn.layer.cornerRadius = 4;
+    self.caiBtn.layer.borderWidth = 2;
+    self.caiBtn.layer.masksToBounds = YES;
+    self.caiBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    self.commentBtn.layer.cornerRadius = 4;
+    self.commentBtn.layer.borderWidth = 2;
+    self.commentBtn.layer.masksToBounds = YES;
+    self.commentBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    //图片设置边角
+    self.img.layer.cornerRadius = 4;
+    self.img.layer.borderWidth = 2;
+    self.img.layer.masksToBounds = YES;
+    self.img.layer.borderColor = [[UIColor whiteColor] CGColor];
 }
 
 

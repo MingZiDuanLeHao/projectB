@@ -103,6 +103,7 @@
     self.contentScrollView.showsHorizontalScrollIndicator = NO;
     self.contentScrollView.pagingEnabled = YES;
     self.contentScrollView.delegate = self;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.contentScrollView setContentOffset: CGPointMake(0, 0)];
     UILabel *first = (UILabel *)[self.view viewWithTag:100];
     first.textColor = [UIColor redColor];
@@ -128,7 +129,6 @@
     _isDrawnDown = YES;
     [self askData];
 }
-
 -(void)setupContent
 {
     for (NSInteger i = 0; i < 6; i++) {
@@ -241,8 +241,13 @@
     cell.mainTitle.text = model.title;
     cell.subTitle.text = model.digest;
     cell.From.text = model.source;
-    cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
+    if (model.replyCount>=10000) {
+        cell.followCount.text = [NSString stringWithFormat:@"%.1f万",model.replyCount/10000.0];
+    }else{
+        cell.followCount.text = [NSString stringWithFormat:@"%.f",model.replyCount];
+    }
 
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [cell setSeparatorInset:UIEdgeInsetsZero];
     [cell setLayoutMargins:UIEdgeInsetsZero];

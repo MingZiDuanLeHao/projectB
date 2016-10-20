@@ -23,6 +23,8 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 @property (nonatomic,strong) WMPlayer *wmPlayer;
 @property (nonatomic,strong) VedioConmmentModelVedioConmmentModel *detailModel;
+@property (strong,nonatomic) NSMutableArray *topCommentArr;
+@property (strong,nonatomic) NSMutableArray *recentCommentArr;
 
 
 @property (nonatomic, copy) NSString *url;
@@ -45,7 +47,6 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     [super viewDidLoad];
     [self initUI];
     [self requestData];
-   // NSLog(@"==========%@,%@,%@,%@,%ld",self.content,self.vedioUrl,self.imgUrl,self.groupID,self.vedioHight);
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -76,9 +77,7 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
         self.tableV.frame = CGRectMake(5, 10 + 300, SWidth - 10, SHeight - 10 - 300);
     }
      //播放器
-    
-    //self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5, 5, SWidth - 10, 300)];
-    
+
     self.wmPlayer.delegate = self;
     
     self.wmPlayer.URLString = self.vedioUrl;
@@ -91,7 +90,6 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     _tableV.dataSource = self;
     _tableV.backgroundColor = [UIColor lightGrayColor];
     [_tableV registerNib:[UINib nibWithNibName:@"VedioCommentCell" bundle:nil] forCellReuseIdentifier:vedioDetailCell];
-//    [self.tableV registerClass:[UITableViewCell class] forCellReuseIdentifier:vedioDetailCell];
     [self.view addSubview:_tableV];
 
     UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(5, 400, SWidth - 10, 100)];
@@ -135,7 +133,13 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
             
             self.detailModel = [VedioConmmentModelVedioConmmentModel modelObjectWithDictionary:dic];
 
- 
+           //把最新和最热评论放进数组
+            for (VedioConmmentModelTopComments *topCell in self.detailModel.data.topComments) {
+                [self.topCommentArr addObject:topCell];
+            }
+            for (VedioConmmentModelRecentComments *topCell in self.detailModel.data.recentComments) {
+                [self.recentCommentArr addObject:topCell];
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [_tableV reloadData];
                 [_tableV.mj_footer endRefreshing];
@@ -150,26 +154,20 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 }
 
 #pragma mark - 懒加载
--(NSMutableArray *)dataArray
+
+-(NSMutableArray *)topCommentArr
 {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
+    if (!_topCommentArr) {
+        _topCommentArr = [NSMutableArray array];
     }
-    return _dataArray;
+    return _topCommentArr;
 }
--(NSMutableArray *)hightArray
+-(NSMutableArray *)recentCommentArr
 {
-    if (!_hightArray) {
-        _hightArray = [NSMutableArray array];
+    if (!_recentCommentArr) {
+        _recentCommentArr = [NSMutableArray array];
     }
-    return _hightArray;
-}
--(NSDictionary *)hightDic
-{
-    if (!_hightDic) {
-        _hightDic = [NSDictionary dictionary];
-    }
-    return _hightDic;
+    return _recentCommentArr;
 }
 -(UITableView *)tableV
 {
@@ -189,10 +187,10 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return _detailModel.data.topComments.count;
+        return _topCommentArr.count;
     }else if (section ==1)
     {
-       return _detailModel.data.recentComments.count;
+       return _recentCommentArr.count;
     }else{
         return 0;
     }
@@ -210,7 +208,7 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 
     if (indexPath.section == 0) {
-        VedioConmmentModelTopComments *topicComment = self.detailModel.data.topComments[indexPath.row];
+        VedioConmmentModelTopComments *topicComment = self.topCommentArr[indexPath.row];
        // [cell.avatar sd_setImageWithURL:[NSURL URLWithString:topicComment.avatarUrl]];
         [cell.avatar sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:topicComment.avatarUrl] placeholderImage:[UIImage imageNamed:@"4.jpg"] options:0 progress:nil completed:nil];
         cell.nameLabel.text = topicComment.userName;
@@ -219,19 +217,17 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
         cell.timeLabel.text = [self timeTranformWithTime:topicComment.createTime];
         
     }else if(indexPath.section == 1){
-        VedioConmmentModelRecentComments *recentComment = self.detailModel.data.recentComments[indexPath.row];
+        VedioConmmentModelRecentComments *recentComment = self.recentCommentArr[indexPath.row];
         [cell.avatar sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:recentComment.avatarUrl] placeholderImage:[UIImage imageNamed:@"4.jpg"] options:0 progress:nil completed:nil];
-       // [cell.avatar sd_setImageWithURL:[NSURL URLWithString:recentComment.avatarUrl]];
+
         cell.nameLabel.text = recentComment.userName;
         cell.contemtLabel.text = recentComment.text;
         cell.numZan.text = [NSString stringWithFormat:@"%.0f赞",recentComment.diggCount];
 
         cell.timeLabel.text = [self timeTranformWithTime:recentComment.createTime];
     }
-//
 
-    cell.backView.layer.cornerRadius = 4;
-    cell.backView.layer.masksToBounds = YES;
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;
