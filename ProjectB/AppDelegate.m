@@ -74,7 +74,7 @@
     
     
     //tabbar
-    mainTab.viewControllers = @[newNav,pausenav];
+    mainTab.viewControllers = @[pausenav,newNav];
     mainTab.tabBar.tintColor = [UIColor orangeColor];
     
     [self.drawerController setCenterViewController:mainTab withCloseAnimation:YES completion:nil];
@@ -172,9 +172,9 @@
             [_manager requestWhenInUseAuthorization];
         }
         // 要想继续获取位置，需要使用以下属性进行设置（注意勾选后台模式：location）但会出现蓝条
-        if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
-            _manager.allowsBackgroundLocationUpdates = YES;
-        }
+//        if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
+//            _manager.allowsBackgroundLocationUpdates = YES;
+//        }
         
     }
     return _manager;

@@ -44,6 +44,16 @@ static NSString *rightCell = @"rightCell";
     
     
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=nil;
+}
 
 -(void)initUI
 {

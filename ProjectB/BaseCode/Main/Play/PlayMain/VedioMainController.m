@@ -32,18 +32,16 @@
 -(void)viewWillAppear:(BOOL)animated
 {
    ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = NO;
-//    [self.navigationController.navigationBar setColor:[UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0]];
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
-    self.view.backgroundColor = [UIColor colorWithRed:216.0/255 green:76.0/255 blue:68.0/255 alpha:1.0];
 
+//        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+//        self.navigationController.navigationBar.shadowImage=nil;
+    
 }
 
 -(void)initUI
 {
     self.title = @"视听";
-    
+    self.view.backgroundColor = [UIColor orangeColor];
     UIImageView *img1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SWidth/2, (SHeight - 64-46)/2)];
     img1.image = [UIImage imageNamed:@"视频.jpg"];
     img1.tag = 100;
@@ -94,7 +92,7 @@
     
     UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 75, ((SHeight - 64-46)/4)-40, 150, 80)];
     label1.textAlignment = NSTextAlignmentCenter;
-    label1.textColor = [UIColor orangeColor];
+    label1.textColor = [UIColor whiteColor];
     label1.font = [UIFont systemFontOfSize:26];
     label1.text = @"芊芊世界";
     [img1 addSubview:label1];
@@ -104,15 +102,15 @@
     UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 75, ((SHeight - 64-46)/4)-40, 150, 80)];
     label2.font = [UIFont systemFontOfSize:26];
     label2.textAlignment = NSTextAlignmentCenter;
-    label2.text = @"U need AV";
-    label2.textColor = [UIColor whiteColor];
+    label2.text = @"洗涤心灵";
+    label2.textColor = [UIColor orangeColor];
     [img2 addSubview:label2];
     
     
     UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 75, ((SHeight - 64-46) /4)-40, 150, 80)];
     label3.font = [UIFont systemFontOfSize:26];
     label3.textAlignment = NSTextAlignmentCenter;
-    label3.textColor = [UIColor whiteColor];
+    label3.textColor = [UIColor greenColor];
     label3.text = @"哈哈哈哈";
     [img3 addSubview:label3];
     
@@ -120,7 +118,7 @@
     UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(SWidth/4 - 75, ((SHeight - 64-46)/4)-40, 150, 80)];
     label4.font = [UIFont systemFontOfSize:26];
     label4.textAlignment = NSTextAlignmentCenter;
-    label4.textColor = [UIColor orangeColor];
+    label4.textColor = [UIColor whiteColor];
     label4.text = @"倾听彼此";
     [img4 addSubview:label4];
 }

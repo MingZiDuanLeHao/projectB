@@ -52,8 +52,8 @@ static NSString *cellID = @"playCell";
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-    self.navigationController.navigationBar.shadowImage=[UIImage new];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    self.navigationController.navigationBar.shadowImage=[UIImage new];
     [self.wmPlayer resetWMPlayer];
    
 }
@@ -61,8 +61,8 @@ static NSString *cellID = @"playCell";
 {
     self.isFirstEnter = YES;
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
-    self.navigationController.navigationBar.shadowImage=nil;
+//    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+//    self.navigationController.navigationBar.shadowImage=nil;
 }
 
 
@@ -71,7 +71,7 @@ static NSString *cellID = @"playCell";
 //    [self.navigationController.navigationBar setColor:[UIColor whiteColor]];
 //    [self.navigationController.navigationBar setBackgroundColor:[UIColor lightGrayColor]];
     self.title = @"视频";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+//    self.view.backgroundColor = [UIColor lightGrayColor];
    // self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableV.frame = CGRectMake(10, 0, SWidth - 20, SHeight +64);
     _tableV.delegate = self;
