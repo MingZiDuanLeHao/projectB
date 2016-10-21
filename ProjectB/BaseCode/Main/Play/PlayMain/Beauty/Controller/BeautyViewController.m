@@ -194,7 +194,7 @@ static NSString * const BeautyId = @"beauty";
     //download.
     [download setImage:[UIImage imageNamed:@"下载1"] forState:UIControlStateNormal];
     [download setImage:[UIImage imageNamed:@"下载2"] forState:UIControlStateHighlighted];
-    download.tag = 20000 + indexPath.row;
+    download.tag = 40000 + indexPath.row;
     [download addTarget:self action:@selector(downloadHandle:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:download];
     
@@ -224,11 +224,13 @@ static NSString * const BeautyId = @"beauty";
 //下载图片
 -(void)downloadHandle:(UIButton *)sender
 {
-    BeautyModelItems *model1 =  self.muArr[sender.tag - 10000];
+    NSLog(@"!!!!!!!!!!!%ld",(long)sender.tag);
+    BeautyModelItems *model1 =  self.muArr[sender.tag - 40000];
 
     UIImageView *gtp = [[UIImageView alloc] init];
 //    ZGLPhotoModel *model = _modelArr[_currentPage];
 //    **重点内容**
+   
     [gtp sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]];
     
     UIImageWriteToSavedPhotosAlbum(gtp.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
