@@ -39,22 +39,13 @@
     
     
 }
--(void)viewWillAppear:(BOOL)animated
-{
 
- 
-}
 
 -(void)initUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     _array = @[@"主页",@"清理缓存",@"关于"];
-    _imgArray = @[[UIImage imageNamed:@"主页"],[UIImage imageNamed:@"清理"],[UIImage imageNamed:@"关于"]];
+//    _imgArray = @[[UIImage imageNamed:@"主页"],[UIImage imageNamed:@"清理"],[UIImage imageNamed:@"关于"]];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     
@@ -76,23 +67,13 @@
     [_tableView.tableHeaderView addSubview:view];
     self.tableView.tableFooterView = [UIView new];
     
-    //毛玻璃
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-//    self.navigationController.navigationBar.shadowImage=[UIImage new];
     
     UIImageView * imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"red.jpg"]];
     imageview.userInteractionEnabled = YES;
-//    imageview.contentMode = UIViewContentModeScaleAspectFit;
     imageview.frame = [UIScreen mainScreen].bounds;
     [self.view insertSubview:imageview belowSubview:_tableView];
     
-//    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    
-//    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
-//    
-//    effectview.frame = [UIScreen mainScreen].bounds;
-//    
-//    [self.view insertSubview:effectview aboveSubview:imageview];
+
     //把tableView和cell改透明
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.separatorColor = [UIColor whiteColor];
@@ -123,7 +104,7 @@
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, str.length)];
     
     cell.textLabel.attributedText = str;
-    cell.imageView.image = _imgArray[indexPath.row];
+//    cell.imageView.image = _imgArray[indexPath.row];
     
     
     cell.backgroundColor = [UIColor clearColor];
@@ -163,14 +144,11 @@
             [[SDImageCache sharedImageCache]clearDisk];
             //推出警告框
            
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"已为你清理%.2fM缓存",cacheM]  preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"已为你清理%.2fM缓存",cacheM]  preferredStyle:UIAlertControllerStyleAlert];
             
-        //UIAlertControllerStyleAlert 是居中显示的文本框
-        UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
-            //UIAlertActionStyleDestructive 红色
-            //UIAlertActionStyleDefault 蓝色
-            //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
-            //是点击确定时的操作
+
+        UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+
             
         }];
         [alertVC addAction:queren];
@@ -190,12 +168,8 @@
             
             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"关于" message:[NSString stringWithFormat:@"来自瓶子和蠢欢,么么哒😘"]  preferredStyle:UIAlertControllerStyleAlert];  //mark alertControllerWith  sheet
             
-            //UIAlertControllerStyleAlert 是居中显示的文本框
             UIAlertAction *queren = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {       //mark actionWith
-                //UIAlertActionStyleDestructive 红色
-                //UIAlertActionStyleDefault 蓝色
-                //UIAlertActionStyleCancel 蓝色加粗 且在提示框外
-                //是点击确定时的操作
+               
                 
             }];
             [alertVC addAction:queren];
