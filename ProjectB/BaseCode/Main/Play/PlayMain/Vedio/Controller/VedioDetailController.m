@@ -46,12 +46,21 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    
     [self requestData];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self releaseWMPlayer];
+   [self releaseWMPlayer];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=nil;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+    self.navigationController.navigationBar.shadowImage=[UIImage new];
+    
 }
 
 
@@ -64,28 +73,34 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(5,5, SWidth - 10, 300)];
     backgroundView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:backgroundView];
+    UIImageView *imgView = [[UIImageView alloc]init];
+
     float vedioH = [self.hightDic[@"hight"] floatValue];
     float vedioW = [self.hightDic[@"wight"] floatValue];
-
+    
     if (vedioW/vedioH >= (SWidth - 10)/300) {
         CGFloat currentH = (SWidth - 10)*vedioH/vedioW;
-        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5, 5 , SWidth - 10, currentH)];
+        imgView.frame = CGRectMake(5, 5 , SWidth - 10, currentH);
         self.tableV.frame = CGRectMake(5, currentH +10, SWidth - 10, SHeight - 10 - currentH);
     }else{
         CGFloat currentW = 300 * vedioW / vedioH;
-        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5  + (SWidth - 10 - currentW)/2, 5 , currentW, 300)];
+        imgView.frame = CGRectMake(5  + (SWidth - 10 - currentW)/2, 5 , currentW, 300);
         self.tableV.frame = CGRectMake(5, 10 + 300, SWidth - 10, SHeight - 10 - 300);
     }
-     //播放器
-
-    self.wmPlayer.delegate = self;
-    
-    self.wmPlayer.URLString = self.vedioUrl;
-    [self.view addSubview:self.wmPlayer];
-    [self.wmPlayer.player play];
-    
+    //显示图片
+    [imgView sd_setImageWithURL:[NSURL URLWithString:self.imgUrl]];
+    [self.view addSubview:imgView];
     
 
+    
+    UIButton *playOrPause = [[UIButton alloc]initWithFrame:CGRectMake((SWidth - 60)/2, (imgView.frame.size.height - 60)/2, 60, 60)];
+    [playOrPause setImage:[UIImage imageNamed:@"播放"] forState:UIControlStateNormal];
+    [playOrPause addTarget:self action:@selector(playHandle) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:playOrPause];
+    
+    [self addWmPlayer];
+    
     _tableV.delegate = self;
     _tableV.dataSource = self;
     _tableV.backgroundColor = [UIColor lightGrayColor];
@@ -116,7 +131,32 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
     _tableV.rowHeight = UITableViewAutomaticDimension;
     
 }
-
+-(void)playHandle
+{
+    [self addWmPlayer];
+}
+-(void)addWmPlayer
+{
+    float vedioH = [self.hightDic[@"hight"] floatValue];
+    float vedioW = [self.hightDic[@"wight"] floatValue];
+    
+    if (vedioW/vedioH >= (SWidth - 10)/300) {
+        CGFloat currentH = (SWidth - 10)*vedioH/vedioW;
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5, 5 , SWidth - 10, currentH)];
+       
+    }else{
+        CGFloat currentW = 300 * vedioW / vedioH;
+        self.wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(5  + (SWidth - 10 - currentW)/2, 5 , currentW, 300)];
+     
+    }
+    //播放器
+    
+    self.wmPlayer.delegate = self;
+    
+    self.wmPlayer.URLString = self.vedioUrl;
+    [self.view addSubview:self.wmPlayer];
+    [self.wmPlayer.player play];
+}
 
 
 -(void)requestData
@@ -290,6 +330,7 @@ static NSString *vedioDetailCell = @"vedioDetailCell";
 
 - (void)toCell {
     [_wmPlayer removeFromSuperview];
+    [self releaseWMPlayer];
     [UIView animateWithDuration:0.5f animations:^{
         _wmPlayer.transform = CGAffineTransformIdentity;
         // _wmPlayer.frame = self.imageView.bounds;

@@ -11,5 +11,6 @@
 @interface ReuseView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *HudView;
+@property (strong,nonatomic) UIProgressView *pv;
 
 @end
