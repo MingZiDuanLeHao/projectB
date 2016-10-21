@@ -259,7 +259,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NewsDetailController *detailVC = [NewsDetailController new];
-    T1441074311424 *model =  _base.t1441074311424[indexPath.row];
+    T1441074311424 *model =  _DataArr[indexPath.row];
     detailVC.postid = model.postid;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
