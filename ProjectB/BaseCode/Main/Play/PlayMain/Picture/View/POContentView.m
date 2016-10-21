@@ -251,43 +251,40 @@
 
     }
 
-    view.backgroundColor = [UIColor lightGrayColor];
-    //图片的边角
-    view.layer.cornerRadius = 4;
-    view.layer.borderWidth = 2;
-    view.layer.masksToBounds = YES;
-    view.layer.borderColor = [[UIColor whiteColor] CGColor];
- 
     PictureModelItems *model1 =  self.PictureModel.items[nIndex];
     
-
+    view.pv.hidden = NO;
     //带进度条的img
-    __block UIProgressView *pv = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
-    pv.backgroundColor = [UIColor lightGrayColor];
-    pv.progressTintColor = [UIColor greenColor];
+    __block UIProgressView *pv = view.pv;
     __weak ReuseView *weakView = view;
 
     [weakView.img sd_setImageWithURL:[NSURL URLWithString:model1.wpicMiddle]
                 placeholderImage:nil
-                         options:SDWebImageCacheMemoryOnly
-                        progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                options:SDWebImageCacheMemoryOnly
+                progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                             if (pv) {
                                 float showProgress = (float)receivedSize/(float)expectedSize;
-                               // [pv setProgress:showProgress];
-                                [weakView addSubview:pv ];
-                               
-                                pv.frame = CGRectMake(0, pv.superview.frame.size.height - 20, pv.superview.frame.size.width, 20);
+                               pv.frame = CGRectMake(0, pv.superview.frame.size.height - 10, pv.superview.frame.size.width, 10);
                                 [pv setProgress:showProgress animated:YES];
                             }
                         }
-                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                           [pv removeFromSuperview];
-                           pv = nil;
+                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                           pv.hidden = YES;
                        }];
     
     if (nIndex >= 2) {
         PictureModelItems *model1 =  self.PictureModel.items[nIndex - 2];
+        //文字内容
         self.labelContent.text = model1.wbody;
+        int a = [self isValidateName:model1.wbody];
+        if (a >160) {
+            self.labelContent.font = [UIFont systemFontOfSize:12];
+        }else if(a<=160 && a>=120){
+            self.labelContent.font = [UIFont systemFontOfSize:14];
+        }else
+        {
+            self.labelContent.font = [UIFont systemFontOfSize:17];
+        }
     }
     
     if (nIndex == 19) {
@@ -300,7 +297,7 @@
     NSUInteger size = [[SDImageCache sharedImageCache] getSize];
 
    // if (150 < size/1000.0/1000) {
-        NSLog(@"缓存大小%fM",size/1000.0/1000);
+//        NSLog(@"缓存大小%fM",size/1000.0/1000);
         [[SDImageCache sharedImageCache]clearMemory];
        // [[SDImageCache sharedImageCache]clearDisk];
    // }
@@ -309,6 +306,20 @@
     self.index = nIndex;
 
     return view;
+}
+- (int)isValidateName:(NSString *)name{
+    int  character = 0;
+    for(int i=0; i< [name length];i++){
+        int a = [name characterAtIndex:i];
+        if( a > 0x4e00 && a < 0x9fff){ //判断是否为中文
+            character +=2;
+        }else{
+            character +=1;
+        }
+    }
+    
+    return character;
+    
 }
 
 - (void)popupOverlayer:(POPopupOverlayer *)popupOverlayer movingItemViewWithTranslation:(CGPoint)translation atIndex:(NSUInteger)nIndex;{

@@ -60,6 +60,7 @@ static NSString *cellID = @"playCell";
 -(void)viewWillAppear:(BOOL)animated
 {
     self.isFirstEnter = YES;
+    self.navigationController.navigationBarHidden = NO;
     ((AppDelegate *)([UIApplication sharedApplication].delegate)).mainTabble.tabBar.hidden = YES;
 //    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:0];
 //    self.navigationController.navigationBar.shadowImage=nil;
@@ -113,12 +114,14 @@ static NSString *cellID = @"playCell";
                 label.text = dicGroup[@"group"][@"text"];
               //  NSLog(@"===========%@",label.text);
                 // label的字体 HelveticaNeue  Courier
-                UIFont *fnt = [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
+                UIFont *fnt = [UIFont fontWithName:@"System" size:17.0f];
                 label.font = fnt;
                 label.numberOfLines = 0;
+                
                 label.lineBreakMode = NSLineBreakByWordWrapping;
 
                 CGRect tmpRect = [label.text boundingRectWithSize:CGSizeMake(SWidth - 10, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:fnt,NSFontAttributeName, nil] context:nil];
+                NSLog(@"!!!!!!!!!!!!!%f",tmpRect.size.height);
                 if ([arr containsObject:@"ad"]&& W == 0) {
 
                 }else
